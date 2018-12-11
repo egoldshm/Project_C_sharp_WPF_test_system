@@ -14,7 +14,8 @@ namespace BE{
         private CarType carType;
         private bool [,] workDays = new bool [5, 6];
         private float maxDistance;
-    
+        
+
         public Tester()
         {
             
