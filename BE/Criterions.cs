@@ -15,8 +15,12 @@ namespace BE
         private Criterion[] Criterions;
         public CriterionsOfTest()
             {
+            //TODO: impect it.
+            Criterions = new Criterions();
+            foreach(var i in TYPE_OF_CRITERIONS)
+                {
+                Criterions.
 }
-
-
+}
     }
 }
