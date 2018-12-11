@@ -1,15 +1,18 @@
 ﻿using System;
 namespace BE
 {
+    /// <summary>
+    /// class for driving test. the connect between Tester and Trainee.
+    /// </summary>
     public class Test
     {
-        private int TestNumber;
-        private int TesterNumber;
-        private int TraineeNumber;
-        private DateTime dateOfTest;
-        private DateTime realDateOfTest;
-        private Address addressOfBegining;
-        private CriterionsOfTest criterions;
+        private int _TestNumber;
+        private int _TesterNumber;
+        private int _TraineeNumber;
+        private DateTime _dateOfTest;
+        private DateTime _realDateOfTest;
+        private Address _addressOfBegining;
+        private CriterionsOfTest _criterions;
         private bool pass;
         private string testerNote;
 

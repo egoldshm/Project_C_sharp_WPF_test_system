@@ -1,18 +1,26 @@
 ﻿using System;
 namespace BE
 {
-    enum Criterion
+    enum CriterionMode
     {
         passed, Fails
     }
+    struct Criterion
+        {
+        string name;
+        CriterionMode mode;
+        }
     public class CriterionsOfTest
     {
-        private Criterion keepingDistants;
-        private Criterion reverseParking;
-        private Criterion lookingAtTheMirror;
-        private Criterion semaphors;
-
-
-
+        private Criterion[] Criterions;
+        public CriterionsOfTest()
+            {
+            //TODO: impect it.
+            Criterions = new Criterions();
+            foreach(var i in TYPE_OF_CRITERIONS)
+                {
+                Criterions.
+}
+}
     }
 }

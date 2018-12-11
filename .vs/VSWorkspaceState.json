@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "ExpandedNodes": [
     "",
@@ -5,4 +6,13 @@
   ],
   "SelectedNode": "\\BE\\Tester.cs",
   "PreviewInSolutionExplorer": false
+=======
+{
+  "ExpandedNodes": [
+    "",
+    "\\BE"
+  ],
+  "SelectedNode": "\\BE\\Criterions.cs",
+  "PreviewInSolutionExplorer": false
+>>>>>>> 9ea54a4ebfaf888ec80f31df4ec97a76beee124d
 }

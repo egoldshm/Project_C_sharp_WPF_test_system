@@ -26,4 +26,12 @@ namespace BE{
                 return firstName + " " + familyName;
         }
     }
+<<<<<<< HEAD
+=======
+
+    public override string ToString()
+    {
+            return firstName + " " + familyName;
+     }
+>>>>>>> 9ea54a4ebfaf888ec80f31df4ec97a76beee124d
 }
