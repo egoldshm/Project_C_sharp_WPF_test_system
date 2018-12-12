@@ -1,5 +1,6 @@
 ﻿using System;
-namespace BE{
+namespace BE
+{
     public class Tester
     {
         private int _id;//has to appear
@@ -37,7 +38,7 @@ namespace BE{
         
         public override string ToString()
         {
-                return _firstName + " " + _familyName;
+                return firstName + " " + lastName;
         }
     }
 
