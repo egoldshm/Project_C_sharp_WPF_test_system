@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 namespace BE
 {
     enum CriterionMode
@@ -15,7 +15,8 @@ namespace BE
         private List<Criterion> criterions;
         public CriterionsOfTest()
         {
-            criterions = new Criterion();
+            criterions = new List<Criterion>();
+
          }
     }
 }
