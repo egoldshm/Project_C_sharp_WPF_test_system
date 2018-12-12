@@ -12,15 +12,10 @@ namespace BE
         }
     public class CriterionsOfTest
     {
-        private Criterion[] Criterions;
+        private List<Criterion> criterions;
         public CriterionsOfTest()
-            {
-            //TODO: impect it.
-            Criterions = new Criterions();
-            foreach(var i in TYPE_OF_CRITERIONS)
-                {
-                Criterions.
-}
-}
+        {
+            criterions = new Criterion();
+         }
     }
 }
