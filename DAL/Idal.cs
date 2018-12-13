@@ -1,14 +1,16 @@
-﻿using System;
+﻿using BE;
+using System;
 
 namespace DAL
 {
+     
     public interface Idal
     {
         
-        public void addTester(Tester tester);
-        public void deleteTester(Tester tester);
-        public void deleteTester(int id);
+        void addTester(Tester tester);
+        void deleteTester(Tester tester);
+        void deleteTester(int id);
 
-        public void addStudent();
+        void addStudent();
     }
 }

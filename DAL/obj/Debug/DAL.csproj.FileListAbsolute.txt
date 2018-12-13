@@ -1,0 +1,2 @@
+C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
