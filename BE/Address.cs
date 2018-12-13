@@ -2,7 +2,7 @@
 
 namespace BE
 {
-    struct Address
+    public struct Address
     {
         string street_name;
         int building_number;

@@ -1,22 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 namespace BE
 {
-    enum CriterionMode
+    public enum CriterionMode
     {
-        passed, Fails
+        passed, Fails, NotDetermined
     }
-    struct Criterion
+    public struct Criterion
+    {
+        string _name;
+        public string Name { get => _name; set => _name = value; }
+        public CriterionMode Mode { get => _mode; set => _mode = value; }
+        CriterionMode _mode;
+        public Criterion(string name)
         {
-        string name;
-        CriterionMode mode;
+            _name = name ?? throw new ArgumentNullException(nameof(name));
+            _mode = CriterionMode.NotDetermined;
         }
+
+    }
     public class CriterionsOfTest
     {
-        private List<Criterion> criterions;
+        private List<Criterion> _criterions;
         public CriterionsOfTest()
         {
-            criterions = new List<Criterion>();
-
+            Criterions = new List<Criterion>();
+            //TODO: try do it smarter way
+            foreach(var i in Configuration.TYPE_OF_CRITERIONS)
+            {
+                Criterions.Add(new Criterion(i));
+            }
          }
+
+        public List<Criterion> Criterions { get => _criterions; set => _criterions = value; }
     }
 }
