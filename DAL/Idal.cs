@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic
 namespace DAL
 {
      
@@ -19,6 +19,11 @@ namespace DAL
         void AddFutureTest(BE.Test test);
         void AddFutureTest(BE.Tester tester, BE.Trainee trainee, DateTime time, BE.Address address);
 
+        void FinishTest(int id, BE.CriterionsOfTest criterions, bool pass, string note);
+
+        List<BE.Test> GetAllTests();
+        List<BE.Tester> GetAllTesters();
+        List<BE.Trainee> GetAllTrainees();
     }
 }
 

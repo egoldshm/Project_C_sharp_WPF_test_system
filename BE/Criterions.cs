@@ -21,11 +21,11 @@ namespace BE
     }
     public class CriterionsOfTest
     {
-        private List<Criterion> _criterions;
+        private Criterion[] _criterions;
         public CriterionsOfTest()
         {
-            Criterions = new List<Criterion>();
             //TODO: try do it smarter way
+
             foreach(var i in Configuration.TYPE_OF_CRITERIONS)
             {
                 Criterions.Add(new Criterion(i));
