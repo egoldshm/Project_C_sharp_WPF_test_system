@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic
+using System.Collections.Generic;
 namespace DAL
 {
      
@@ -7,12 +7,12 @@ namespace DAL
     {
         
         void AddTester(BE.Tester tester);
-        void DeleteTester(BE.Tester tester);
+        void DeleteTester(int id);
         void UploadTester(int id, BE.Tester tester);
         void UploadTester(BE.Tester tester);
 
         void addStudent(BE.Trainee trainee);
-        void deleteStudent(BE.Trainee trainee);
+        void deleteStudent(int id);
         void uploadStudent(int id, BE.Trainee trainee);
         void uploadStudent(BE.Trainee trainee);
 

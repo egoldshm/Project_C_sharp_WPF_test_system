@@ -33,7 +33,14 @@ namespace BE
             RealDateOfTest = realDateOfTest;
             AddressOfBegining = addressOfBegining;
         }
-
+        //constractor for futhur test.
+        public Test(int testerNumber, int traineeNumber
+            , DateTime dateOfTest, Address addressOfBegining)
+            : this(testerNumber, traineeNumber)
+        {
+            DateOfTest = dateOfTest;
+            AddressOfBegining = addressOfBegining;
+        }
         public Test(Tester tester, Trainee trainee) : this(tester.id, trainee.Id) { }
 
         public static int TestIdTotal { get => _testIdTotal; private set => _testIdTotal = value; }
