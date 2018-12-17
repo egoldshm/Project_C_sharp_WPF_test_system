@@ -2,3 +2,7 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BE\bin\Debug\net
 C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\netstandard1.4\BE.csprojAssemblyReference.cache
 C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\netstandard1.4\BE.csproj.CoreCompileInputs.cache
 C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\netstandard1.4\BE.AssemblyInfo.cs
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\BE\bin\Debug\netstandard1.4\BE.deps.json
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\netstandard1.4\BE.csprojAssemblyReference.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\netstandard1.4\BE.csproj.CoreCompileInputs.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\netstandard1.4\BE.AssemblyInfo.cs

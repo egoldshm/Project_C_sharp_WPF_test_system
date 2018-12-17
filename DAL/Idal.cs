@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace DAL
 {
      
-    public interface Idal
+    public interface IDal
     {
         
         void AddTester(BE.Tester tester);

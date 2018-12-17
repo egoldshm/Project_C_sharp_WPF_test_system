@@ -7,7 +7,7 @@ using BE;
 using DAL;
 namespace imp_Dal 
 {
-    public class imp_Dal : Idal
+    public class imp_Dal : IDal
     {
         public void AddFutureTest(Test test)
         {

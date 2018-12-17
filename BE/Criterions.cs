@@ -21,7 +21,7 @@ namespace BE
     }
     public class CriterionsOfTest
     {
-        private Criterion[] _criterions;
+        private List<Criterion> _criterions; // solved some issues to do with parsing (if shouldn't be like so, attribute should be changed)
         public CriterionsOfTest()
         {
             //TODO: try do it smarter way
