@@ -5,16 +5,6 @@ namespace DAL
      
     public interface IDal
     {
-        #region Tester
-
-        void AddTester(BE.Tester tester);
-        void DeleteTester(int id);
-        void UploadTester(int id, BE.Tester tester);
-        void UploadTester(BE.Tester tester);
-        List<BE.Tester> GetAllTesters();
-
-        #endregion
-
         #region Trainee
 
         void addTrainee(BE.Trainee trainee);
@@ -22,6 +12,16 @@ namespace DAL
         void uploadTrainee(int id, BE.Trainee trainee);
         void uploadTrainee(BE.Trainee trainee);
         List<BE.Trainee> GetAllTrainees();
+
+        #endregion
+
+        #region Tester
+
+        void AddTester(BE.Tester tester);
+        void DeleteTester(int id);
+        void UploadTester(int id, BE.Tester tester);
+        void UploadTester(BE.Tester tester);
+        List<BE.Tester> GetAllTesters();
 
         #endregion
 

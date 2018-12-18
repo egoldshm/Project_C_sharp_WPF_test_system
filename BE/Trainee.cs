@@ -3,6 +3,7 @@ namespace BE
 {
     public class Trainee
     {
+        #region Private variables
         private int _id;
         private string _firstName;
         private string _familyName;
@@ -15,6 +16,10 @@ namespace BE
         private string _schoolName;
         private string _teacherName;
         private int _lessonsNumber;
+
+        #endregion
+
+        #region CTORs
 
         public Trainee(int id)
         {
@@ -44,6 +49,10 @@ namespace BE
             this.lessonsNumber = lessonsNumber;
         }
 
+        #endregion
+
+        #region Properties
+
         public int id { get => _id; set => _id = value; }
         public string firstName { get => _firstName; set => _firstName = value; }
         public string familyName { get => _familyName; set => _familyName = value; }
@@ -56,6 +65,8 @@ namespace BE
         public string schoolName { get => _schoolName; set => _schoolName = value; }
         public string teacherName { get => _teacherName; set => _teacherName = value; }
         public int lessonsNumber { get => _lessonsNumber; set => _lessonsNumber = value; }
+
+        #endregion
 
         public override string ToString()
         {

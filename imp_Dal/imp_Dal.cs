@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using DAL;
-namespace imp_Dal 
+namespace imp_Dal
 {
     public class imp_Dal : IDal
     {
@@ -51,10 +51,9 @@ namespace imp_Dal
         {
             //TODO: need to send copy. how to do it?
             throw new NotImplementedException();
-            return DS.DataSource.trainees;
         }
 
-        public void uploadTrainee(int id, Trainee trainee)
+        public void uploadTrainee(int id, Trainee trainee)//what is the difference between the two?
         {
             throw new NotImplementedException();
         }
@@ -104,7 +103,6 @@ namespace imp_Dal
         {
             //TODO: need to send copy. how to do it?
             throw new NotImplementedException();
-            return DS.DataSource.testers;
         }
 
         public void UploadTester(int id, Tester tester)
@@ -149,7 +147,6 @@ namespace imp_Dal
         {
             //TODO: need to send copy. how to do it?
             throw new NotImplementedException();
-            return DS.DataSource.tests;
         }
 
         #endregion

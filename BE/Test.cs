@@ -6,7 +6,7 @@ namespace BE
     /// </summary>
     public class Test
     {
-        
+        #region Private variables
         private static int _testIdTotal = 10000000;
         private readonly int _TestNumber;
         private int _TesterId;
@@ -17,6 +17,10 @@ namespace BE
         private CriterionsOfTest _criterions;
         private bool pass;
         private string testerNote;
+
+        #endregion
+
+        #region CTORs
 
         public Test(int testerNumber, int traineeNumber)
         {
@@ -43,7 +47,11 @@ namespace BE
         }
         public Test(Tester tester, Trainee trainee) : this(tester.id, trainee.id) { }
 
+        #endregion
+
         public static int TestIdTotal { get => _testIdTotal; private set => _testIdTotal = value; }
+
+        #region Properties
 
         public int TestNumber { get => _TestNumber;}
         public int TesterId { get => _TesterId; set => _TesterId = value; }
@@ -54,6 +62,8 @@ namespace BE
         public CriterionsOfTest Criterions { get => _criterions; set => _criterions = value; }
         public bool Pass { get => pass; set => pass = value; }
         public string TesterNote { get => testerNote; set => testerNote = value; }
+
+        #endregion
 
         public override string ToString()
         {

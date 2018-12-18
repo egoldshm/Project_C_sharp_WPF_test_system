@@ -3,6 +3,8 @@ namespace BE
 {
     public class Tester
     {
+        #region Private variables
+
         private int _id;
         private string _lastName;
         private string _firstName;
@@ -15,6 +17,10 @@ namespace BE
         private CarType _carType;
         private bool [,] _workDays = new bool [5, 6];
         private float _maxDistance;
+
+        #endregion
+
+        #region CTORs
 
         public Tester(int id)
         {
@@ -42,6 +48,10 @@ namespace BE
             this.maxDistance = maxDistance;
         }
 
+        #endregion
+
+        #region Properties
+
         public int id { get => _id; set => _id = value; }
         public string lastName { get => _lastName; set => _lastName = value; }
         public string firstName { get => _firstName; set => _firstName = value; }
@@ -54,7 +64,9 @@ namespace BE
         public CarType carType { get => _carType; set => _carType = value; }
         public bool[,] workDays { get => _workDays; set => _workDays = value; }
         public float maxDistance { get => _maxDistance; set => _maxDistance = value; }
-        
+
+        #endregion
+
         public override string ToString()
         {
                 return firstName + " " + lastName;

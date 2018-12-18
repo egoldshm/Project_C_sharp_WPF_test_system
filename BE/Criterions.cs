@@ -6,6 +6,7 @@ namespace BE
     {
         passed, Fails, NotDetermined
     }
+    
     public struct Criterion
     {
         string _name;
