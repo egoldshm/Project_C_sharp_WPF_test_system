@@ -50,7 +50,6 @@ namespace imp_Dal
         public List<Trainee> GetAllTrainees()
         {
             //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
             return DS.DataSource.trainees;
         }
 

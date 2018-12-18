@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\BE",
-    "\\DAL"
+    "\\BE\\bin",
+    "\\BE\\obj",
+    "\\BE\\obj\\Release",
+    "\\DAL",
+    "\\DS",
+    "\\DS\\DS",
+    "\\imp_Dal",
+    "\\imp_Dal\\bin"
   ],
-  "SelectedNode": "\\Solution.sln",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }
