@@ -3,27 +3,36 @@ using System.Collections.Generic;
 namespace DAL
 {
      
-    public interface Idal
+    public interface IDal
     {
-        
+        #region Tester
+
         void AddTester(BE.Tester tester);
         void DeleteTester(int id);
         void UploadTester(int id, BE.Tester tester);
         void UploadTester(BE.Tester tester);
+        List<BE.Tester> GetAllTesters();
 
-        void addStudent(BE.Trainee trainee);
-        void deleteStudent(int id);
-        void uploadStudent(int id, BE.Trainee trainee);
-        void uploadStudent(BE.Trainee trainee);
+        #endregion
+
+        #region Trainee
+
+        void addTrainee(BE.Trainee trainee);
+        void deleteTrainee(int id);
+        void uploadTrainee(int id, BE.Trainee trainee);
+        void uploadTrainee(BE.Trainee trainee);
+        List<BE.Trainee> GetAllTrainees();
+
+        #endregion
+
+        #region Test
 
         void AddFutureTest(BE.Test test);
         void AddFutureTest(BE.Tester tester, BE.Trainee trainee, DateTime time, BE.Address address);
-
+        List<BE.Test> GetAllTests();
         void FinishTest(int id, BE.CriterionsOfTest criterions, bool pass, string note);
 
-        List<BE.Test> GetAllTests();
-        List<BE.Tester> GetAllTesters();
-        List<BE.Trainee> GetAllTrainees();
+        #endregion
     }
 }
 
