@@ -96,8 +96,8 @@ namespace imp_Dal
                     DS.DataSource.testers.Remove(item);
                     return;
                 }
-                throw new Exception("Attempted to delete an unexistent tester");
             }
+            throw new Exception("Attempted to delete an unexistent tester");
         }
 
         public List<Tester> GetAllTesters()
@@ -113,12 +113,19 @@ namespace imp_Dal
 
         public void UploadTester(int id, Tester tester)
         {
-            throw new NotImplementedException();
+            foreach(var item in DS.DataSource.testers)
+            {
+                if(item.id == id)
+                {
+                    DS.DataSource.testers.Add(tester);
+                    DS.DataSource.testers.Remove(item);
+                }
+            }
         }
 
         public void UploadTester(Tester tester)
         {
-            throw new NotImplementedException();
+            UploadTester(tester.id, tester);
         }
 
         #endregion Tester
