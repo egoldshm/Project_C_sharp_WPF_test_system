@@ -3,4 +3,6 @@ VSWorkspaceState.json
 slnx.sqlite
 db.lock
 .vs
-/c/program files (x86)/microsoft visual studio/2017/community/common7/ide/commonextensions/microsoft/teamfoundation/team explorer/Git/mingw32/libexec/git-core/git-askpass.exe
+git-askpass.exe
+storage.ide-shm
+storage.ide-wal
