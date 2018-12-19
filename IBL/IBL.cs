@@ -59,13 +59,13 @@ namespace Ibl
 
         List<Test> GetTestsByDay(DateTime date);
 
-        IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false);
+        IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType();
 
-        IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false);
+        IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName();
       
-        IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher(bool sorted = false);
+        IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher();
 
-        IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false);
+        IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters();
 
         #endregion getters
     }
