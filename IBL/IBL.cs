@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
-namespace IBL
+namespace Ibl
 {
     public interface IBL
     {
@@ -59,13 +59,13 @@ namespace IBL
 
         List<Test> GetTestsByDay(DateTime date);
 
-        IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType();
+        IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false);
 
-        IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName();
+        IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false);
       
-        IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher();
+        IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher(bool sorted = false);
 
-        IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters();
+        IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false);
 
         #endregion getters
     }
