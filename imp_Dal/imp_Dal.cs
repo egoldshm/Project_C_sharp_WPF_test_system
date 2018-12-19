@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using DAL;
+
 namespace imp_Dal 
 {
     public class imp_Dal : IDal
@@ -43,14 +44,14 @@ namespace imp_Dal
 
         public List<Trainee> GetAllTrainees()
         {
-            DS.DataSource.testers.Add(tester);
+           // DS.DataSource.testers.Add(tester);
         }
 
-        public void deleteStudent(int id)
+        public void deleteStudent(int id_p)
         {
             foreach (var item in DS.DataSource.trainees)
             {
-                if (item.Id == id)
+                if (item.id == id)p)
                     DS.DataSource.trainees.Remove(item);
             }
         }
