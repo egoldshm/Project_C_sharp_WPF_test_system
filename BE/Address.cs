@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace BE
+﻿namespace BE
 {
     public struct Address
     {
-        string street_name;
-        int building_number;
-        string city;
+        private string street_name;
+        private int building_number;
+        private string city;
     }
 }

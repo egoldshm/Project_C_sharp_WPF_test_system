@@ -2,3 +2,10 @@ C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DA
 C:\Users\eitan\source\repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DAL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DAL.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\BE.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\BE.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.pdb

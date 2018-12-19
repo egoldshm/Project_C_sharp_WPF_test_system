@@ -1,20 +1,14 @@
-﻿//I have some questions in general about some of the implementation of this class.
-//It seems like we're not allowed to treat the data structure storing our data as a list necessarily (e.g. in the remove functions), rather we must use a generic of some sort
-//Where should we be doing the exception handling for this bit of code?
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BE;
-using DAL;
 
-namespace imp_Dal 
+namespace imp_Dal
 {
     public class imp_Dal : IDal
     {
-
         #region Trainee
+
         public void addTrainee(Trainee trainee)
         {
             foreach (var item in DS.DataSource.trainees)
@@ -37,46 +31,69 @@ namespace imp_Dal
                 }
             }
 
-        public void addStudent(Trainee trainee)
-        {
-            DS.DataSource.trainees.Add(trainee);
+            foreach (var item in DS.DataSource.trainees)
+            {
+                if (item.id == id)
+                {
+                    DS.DataSource.trainees.Remove(item);
+                    return;
+                }
+            }
+            throw new Exception("Attempted to delete an unexistent trainee");
         }
 
         public List<Trainee> GetAllTrainees()
         {
-           // DS.DataSource.testers.Add(tester);
-        }
+            List<Trainee> ret = new List<Trainee>(DS.DataSource.trainees.Count);
 
-        public void deleteStudent(int id_p)
-        {
-            foreach (var item in DS.DataSource.trainees)
+            DS.DataSource.trainees.ForEach((item) =>
             {
-                if (item.id == id)p)
-                    DS.DataSource.trainees.Remove(item);
-            }
+                ret.Add(new Trainee(item));
+            });
+            return ret;
         }
 
-        #endregion
+        public void uploadTrainee(int id, Trainee trainee)//what is the difference between the two?
+        {
+            throw new NotImplementedException();
+        }
+
+        public void uploadTrainee(Trainee trainee)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion Trainee
 
         #region Tester
+
         public void AddTester(Tester tester)
         {
             foreach (var item in DS.DataSource.testers)
             {
-                if(item.id == id)
-                    DS.DataSource.testers.Remove(item);
+                if (item.id == tester.id)
+                {
+                    throw new Exception("The tester already exists!");
+                }
             }
+            DS.DataSource.testers.Add(tester);
         }
 
         public void DeleteTester(int id)
         {
             foreach (var item in DS.DataSource.tests)
             {
-                if(item.TestNumber == id)
+                if (item.TesterId == id)
                 {
-                    item.Criterions = criterions;
-                    item.Pass = pass;
-                    item.TesterNote = note;
+                    throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
+                }
+            }
+
+            foreach (var item in DS.DataSource.testers)
+            {
+                if (item.id == id)
+                {
+                    DS.DataSource.testers.Remove(item);
                     return;
                 }
                 throw new Exception("Attempted to delete an unexistent tester");
@@ -85,9 +102,13 @@ namespace imp_Dal
 
         public List<Tester> GetAllTesters()
         {
-            //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
-            return DS.DataSource.testers;
+            List<Tester> ret = new List<Tester>(DS.DataSource.testers.Count);
+
+            DS.DataSource.testers.ForEach((item) =>
+            {
+                ret.Add(new Tester(item));
+            });
+            return ret;
         }
 
         public void UploadTester(int id, Tester tester)
@@ -100,7 +121,11 @@ namespace imp_Dal
             throw new NotImplementedException();
         }
 
-        public void uploadStudent(int id, Trainee trainee)
+        #endregion Tester
+
+        #region Test
+
+        public void AddFutureTest(Test test)
         {
             DS.DataSource.tests.Add(test);
         }
@@ -114,7 +139,7 @@ namespace imp_Dal
         {
             foreach (var item in DS.DataSource.tests)
             {
-                if(item.TestNumber == id)
+                if (item.TestNumber == id)
                 {
                     item.Criterions = criterions;
                     item.Pass = pass;
@@ -127,12 +152,15 @@ namespace imp_Dal
 
         public List<Test> GetAllTests()
         {
-            //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
-            return DS.DataSource.tests;
+            List<Test> ret = new List<Test>(DS.DataSource.tests.Count);
+
+            DS.DataSource.tests.ForEach((item) =>
+            {
+                ret.Add(new Test(item));
+            });
+            return ret;
         }
 
-        #endregion
-        
+        #endregion Test
     }
 }
