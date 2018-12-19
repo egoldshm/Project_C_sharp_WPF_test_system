@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace BE
 {
     /// <summary>
@@ -7,6 +8,7 @@ namespace BE
     public class Test
     {
         #region Private variables
+
         private static int _testIdTotal = 10000000;
         private readonly int _TestNumber;
         private int _TesterId;
@@ -18,7 +20,7 @@ namespace BE
         private bool pass;
         private string testerNote;
 
-        #endregion
+        #endregion Private variables
 
         #region CTORs
 
@@ -37,6 +39,7 @@ namespace BE
             RealDateOfTest = realDateOfTest;
             AddressOfBegining = addressOfBegining;
         }
+
         //constructor for father test.
         public Test(int testerId, int traineeId
             , DateTime dateOfTest, Address addressOfBegining)
@@ -45,15 +48,32 @@ namespace BE
             DateOfTest = dateOfTest;
             AddressOfBegining = addressOfBegining;
         }
-        public Test(Tester tester, Trainee trainee) : this(tester.id, trainee.id) { }
 
-        #endregion
+        public Test(Tester tester, Trainee trainee) : this(tester.id, trainee.id)
+        {
+        }
+
+        //copy CTOR for get_all
+        public Test(Test test)
+        {
+            //this.TestNumber = test.TestNumber; need to see if needed by get_all, because otherwise, I don't see a possible way to have it read only
+            this.TesterId = test.TesterId;
+            this.TraineeId = test.TraineeId;
+            this.DateOfTest = test.DateOfTest;
+            this.RealDateOfTest = test.RealDateOfTest;
+            this.AddressOfBegining = test.AddressOfBegining;
+            this.Criterions = test.Criterions;
+            this.Pass = test.Pass;
+            this.TesterNote = test.TesterNote;
+        }
+
+        #endregion CTORs
 
         public static int TestIdTotal { get => _testIdTotal; private set => _testIdTotal = value; }
 
         #region Properties
 
-        public int TestNumber { get => _TestNumber;}
+        public int TestNumber { get => _TestNumber; }
         public int TesterId { get => _TesterId; set => _TesterId = value; }
         public int TraineeId { get => _TraineeId; set => _TraineeId = value; }
         public DateTime DateOfTest { get => _dateOfTest; set => _dateOfTest = value; }
@@ -63,7 +83,7 @@ namespace BE
         public bool Pass { get => pass; set => pass = value; }
         public string TesterNote { get => testerNote; set => testerNote = value; }
 
-        #endregion
+        #endregion Properties
 
         public override string ToString()
         {

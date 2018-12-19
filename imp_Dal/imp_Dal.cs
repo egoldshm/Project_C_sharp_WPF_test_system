@@ -1,19 +1,14 @@
-﻿//I have some questions in general about some of the implementation of this class.
-//It seems like we're not allowed to treat the data structure storing our data as a list necessarily (e.g. in the remove functions), rather we must use a generic of some sort
-//Where should we be doing the exception handling for this bit of code?
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BE;
-using DAL;
+
 namespace imp_Dal
 {
     public class imp_Dal : IDal
     {
-
         #region Trainee
+
         public void addTrainee(Trainee trainee)
         {
             foreach (var item in DS.DataSource.trainees)
@@ -49,8 +44,13 @@ namespace imp_Dal
 
         public List<Trainee> GetAllTrainees()
         {
-            //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
+            List<Trainee> ret = new List<Trainee>(DS.DataSource.trainees.Count);
+
+            DS.DataSource.trainees.ForEach((item) =>
+            {
+                ret.Add(new Trainee(item));
+            });
+            return ret;
         }
 
         public void uploadTrainee(int id, Trainee trainee)//what is the difference between the two?
@@ -63,9 +63,10 @@ namespace imp_Dal
             throw new NotImplementedException();
         }
 
-        #endregion
+        #endregion Trainee
 
         #region Tester
+
         public void AddTester(Tester tester)
         {
             foreach (var item in DS.DataSource.testers)
@@ -87,7 +88,7 @@ namespace imp_Dal
                     throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
                 }
             }
-            
+
             foreach (var item in DS.DataSource.testers)
             {
                 if (item.id == id)
@@ -101,8 +102,13 @@ namespace imp_Dal
 
         public List<Tester> GetAllTesters()
         {
-            //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
+            List<Tester> ret = new List<Tester>(DS.DataSource.testers.Count);
+
+            DS.DataSource.testers.ForEach((item) =>
+            {
+                ret.Add(new Tester(item));
+            });
+            return ret;
         }
 
         public void UploadTester(int id, Tester tester)
@@ -114,7 +120,8 @@ namespace imp_Dal
         {
             throw new NotImplementedException();
         }
-        #endregion
+
+        #endregion Tester
 
         #region Test
 
@@ -132,7 +139,7 @@ namespace imp_Dal
         {
             foreach (var item in DS.DataSource.tests)
             {
-                if(item.TestNumber == id)
+                if (item.TestNumber == id)
                 {
                     item.Criterions = criterions;
                     item.Pass = pass;
@@ -145,11 +152,15 @@ namespace imp_Dal
 
         public List<Test> GetAllTests()
         {
-            //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
+            List<Test> ret = new List<Test>(DS.DataSource.tests.Count);
+
+            DS.DataSource.tests.ForEach((item) =>
+            {
+                ret.Add(new Test(item));
+            });
+            return ret;
         }
 
-        #endregion
-        
+        #endregion Test
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System;
+
 namespace BE
 {
     public class Trainee
     {
         #region Private variables
+
         private int _id;
         private string _firstName;
         private string _familyName;
@@ -17,7 +19,7 @@ namespace BE
         private string _teacherName;
         private int _lessonsNumber;
 
-        #endregion
+        #endregion Private variables
 
         #region CTORs
 
@@ -26,7 +28,7 @@ namespace BE
             this.id = id;
         }
 
-        public Trainee(int id, string firstName, string familyName) :this(id)
+        public Trainee(int id, string firstName, string familyName) : this(id)
         {
             this.firstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
             this.familyName = familyName ?? throw new ArgumentNullException(nameof(familyName));
@@ -49,7 +51,21 @@ namespace BE
             this.lessonsNumber = lessonsNumber;
         }
 
-        #endregion
+        //copy CTOR for get_all
+        public Trainee(Trainee trainee)
+        {
+            this.gender = trainee.gender;
+            this.phoneNumber = trainee.phoneNumber;
+            this.address = trainee.address;
+            this.birthday = trainee.birthday;
+            this.typeCarLearned = trainee.typeCarLearned;
+            this.giltBoxTypeLearned = trainee.giltBoxTypeLearned;
+            this.schoolName = trainee.schoolName ?? throw new ArgumentNullException(nameof(schoolName));
+            this.teacherName = trainee.teacherName ?? throw new ArgumentNullException(nameof(teacherName));
+            this.lessonsNumber = trainee.lessonsNumber;
+        }
+
+        #endregion CTORs
 
         #region Properties
 
@@ -66,7 +82,7 @@ namespace BE
         public string teacherName { get => _teacherName; set => _teacherName = value; }
         public int lessonsNumber { get => _lessonsNumber; set => _lessonsNumber = value; }
 
-        #endregion
+        #endregion Properties
 
         public override string ToString()
         {
