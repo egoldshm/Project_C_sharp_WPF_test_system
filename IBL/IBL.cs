@@ -48,17 +48,25 @@ namespace IBL
 
         #endregion Test
 
+        #region getters
         List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x);
 
         List<Tester> GetTestersWhoFreeInTime(DateTime date);
 
         List<Test> GetTestsByConditon(Func<Test, bool> checkFunction);
 
-        List<Test> TestsByTrainee(Trainee trainee);
+        List<Test> GetTestsByTrainee(Trainee trainee);
 
-        bool EntitledToDrivingLicense(Trainee trainee);
+        List<Test> GetTestsByDay(DateTime date);
 
-        List<Test> TestsByDay(DateTime date);
+        IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType();
 
+        IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName();
+      
+        IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher();
+
+        IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters();
+
+        #endregion getters
     }
 }
