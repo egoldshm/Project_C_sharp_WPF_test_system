@@ -4,5 +4,6 @@ slnx.sqlite
 db.lock
 .vs
 git-askpass.exe
+/c/program files (x86)/microsoft visual studio/2017/community/common7/ide/commonextensions/microsoft/teamfoundation/team explorer/Git/mingw32/libexec/git-core/git-askpass.exe
 storage.ide-shm
 storage.ide-wal
