@@ -36,32 +36,23 @@ namespace imp_Dal
                 }
             }
 
-            foreach (var item in DS.DataSource.trainees)
-            {
-                if (item.id == id)
-                {
-                    DS.DataSource.trainees.Remove(item);
-                    return;
-                }
-            }
-            throw new Exception("Attempted to delete an unexistent trainee");
+        public void addStudent(Trainee trainee)
+        {
+            DS.DataSource.trainees.Add(trainee);
         }
 
         public List<Trainee> GetAllTrainees()
         {
-            //TODO: need to send copy. how to do it?
-            throw new NotImplementedException();
-            return DS.DataSource.trainees;
+            DS.DataSource.testers.Add(tester);
         }
 
-        public void uploadTrainee(int id, Trainee trainee)
+        public void deleteStudent(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public void uploadTrainee(Trainee trainee)
-        {
-            throw new NotImplementedException();
+            foreach (var item in DS.DataSource.trainees)
+            {
+                if (item.Id == id)
+                    DS.DataSource.trainees.Remove(item);
+            }
         }
 
         #endregion
@@ -71,29 +62,20 @@ namespace imp_Dal
         {
             foreach (var item in DS.DataSource.testers)
             {
-                if (item.id == tester.id)
-                {
-                    throw new Exception("The tester already exists!");
-                }
+                if(item.id == id)
+                    DS.DataSource.testers.Remove(item);
             }
-            DS.DataSource.testers.Add(tester);
         }
 
         public void DeleteTester(int id)
         {
             foreach (var item in DS.DataSource.tests)
             {
-                if (item.TesterId == id)
+                if(item.TestNumber == id)
                 {
-                    throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
-                }
-            }
-            
-            foreach (var item in DS.DataSource.testers)
-            {
-                if (item.id == id)
-                {
-                    DS.DataSource.testers.Remove(item);
+                    item.Criterions = criterions;
+                    item.Pass = pass;
+                    item.TesterNote = note;
                     return;
                 }
                 throw new Exception("Attempted to delete an unexistent tester");
@@ -116,11 +98,8 @@ namespace imp_Dal
         {
             throw new NotImplementedException();
         }
-        #endregion
 
-        #region Test
-
-        public void AddFutureTest(Test test)
+        public void uploadStudent(int id, Trainee trainee)
         {
             DS.DataSource.tests.Add(test);
         }
