@@ -1,14 +1,12 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BE;
+
 namespace Ibl
 {
     public interface IBL
     {
-
         #region Trainee
 
         void addTrainee(BE.Trainee trainee);
@@ -50,6 +48,7 @@ namespace Ibl
         #endregion Test
 
         #region getters
+
         List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x);
 
         List<Tester> GetTestersWhoFreeInTime(DateTime date);
@@ -63,7 +62,7 @@ namespace Ibl
         IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false);
 
         IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false);
-      
+
         IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher(bool sorted = false);
 
         IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false);

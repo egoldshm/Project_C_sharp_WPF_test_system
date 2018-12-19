@@ -18,6 +18,7 @@ namespace DAL
         List<BE.Trainee> GetAllTrainees();
 
         BE.Trainee GetTraineeById(int id);
+
         #endregion Trainee
 
         #region Tester
@@ -47,6 +48,7 @@ namespace DAL
         void FinishTest(int id, BE.CriterionsOfTest criterions, bool pass, string note);
 
         BE.Test GetTestByNumber(int number);
+
         #endregion Test
     }
 }

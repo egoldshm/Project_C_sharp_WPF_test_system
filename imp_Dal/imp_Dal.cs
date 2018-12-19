@@ -127,9 +127,9 @@ namespace imp_Dal
 
         public void UploadTester(int id, Tester tester)
         {
-            foreach(var item in DS.DataSource.testers)
+            foreach (var item in DS.DataSource.testers)
             {
-                if(item.id == id)
+                if (item.id == id)
                 {
                     DS.DataSource.testers.Add(tester);
                     DS.DataSource.testers.Remove(item);
@@ -154,7 +154,6 @@ namespace imp_Dal
 
             return new Tester(list[0]);
         }
-
 
         #endregion Tester
 
