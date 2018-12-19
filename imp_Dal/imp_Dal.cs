@@ -2,6 +2,7 @@
 using DAL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace imp_Dal
 {
@@ -61,6 +62,19 @@ namespace imp_Dal
         public void uploadTrainee(Trainee trainee)
         {
             throw new NotImplementedException();
+        }
+
+        public Trainee GetTraineeById(int id)
+        {
+            List<Trainee> list = new List<Trainee>(from s in DS.DataSource.trainees where s.id == id select s);
+
+            if (list.Count > 1)
+                throw new Exception(String.Format("More than one trainee owns ID: {0}. Check your data source", id));
+
+            if (list.Count == 0)
+                return null;
+
+            return new Trainee(list[0]);
         }
 
         #endregion Trainee
@@ -128,6 +142,20 @@ namespace imp_Dal
             UploadTester(tester.id, tester);
         }
 
+        public Tester GetTesterByID(int id)
+        {
+            List<Tester> list = new List<Tester>(from s in DS.DataSource.testers where s.id == id select s);
+
+            if (list.Count > 1)
+                throw new Exception(String.Format("More than one tester owns ID: {0}. Check your data source", id));
+
+            if (list.Count == 0)
+                return null;
+
+            return new Tester(list[0]);
+        }
+
+
         #endregion Tester
 
         #region Test
@@ -168,6 +196,24 @@ namespace imp_Dal
             return ret;
         }
 
+        public Test GetTestByNumber(int number)
+        {
+            List<Test> list = new List<Test>(from s in DS.DataSource.tests where s.TestNumber == number select s);
+
+            if (list.Count > 1)
+                throw new Exception(String.Format("More than one test owns number: {0}. Check your data source", number));
+
+            if (list.Count == 0)
+                return null;
+
+            return new Test(list[0]);
+        }
+
         #endregion Test
+
+        public static IDal GetDal()
+        {
+            return new imp_Dal();
+        }
     }
 }
