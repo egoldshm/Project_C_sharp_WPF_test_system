@@ -49,7 +49,7 @@ namespace BE
             AddressOfBegining = addressOfBegining;
         }
 
-        public Test(Tester tester, Trainee trainee) : this(tester.id, trainee.id)
+        public Test(Tester tester, Trainee trainee) : this(tester.Id, trainee.Id)
         {
         }
 

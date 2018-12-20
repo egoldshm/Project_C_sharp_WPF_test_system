@@ -7,13 +7,13 @@ namespace DAL
     {
         #region Trainee
 
-        void addTrainee(BE.Trainee trainee);
+        void AddTrainee(BE.Trainee trainee);
 
-        void deleteTrainee(int id);
+        void DeleteTrainee(int id);
 
-        void uploadTrainee(int id, BE.Trainee trainee);
+        void UploadTrainee(int id, BE.Trainee trainee);
 
-        void uploadTrainee(BE.Trainee trainee);
+        void UploadTrainee(BE.Trainee trainee);
 
         List<BE.Trainee> GetAllTrainees();
 

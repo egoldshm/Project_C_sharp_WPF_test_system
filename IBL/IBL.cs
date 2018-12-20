@@ -9,13 +9,13 @@ namespace Ibl
     {
         #region Trainee
 
-        void addTrainee(BE.Trainee trainee);
+        void AddTrainee(BE.Trainee trainee);
 
-        void deleteTrainee(int id);
+        void DeleteTrainee(int id);
 
-        void uploadTrainee(int id, BE.Trainee trainee);
+        void UploadTrainee(int id, BE.Trainee trainee);
 
-        void uploadTrainee(BE.Trainee trainee);
+        void UploadTrainee(BE.Trainee trainee);
 
         List<BE.Trainee> GetAllTrainees();
 
@@ -51,7 +51,7 @@ namespace Ibl
 
         List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x);
 
-        List<Tester> GetTestersWhoFreeInTime(DateTime date);
+        List<Tester> GetTestersByAvailableTime(DateTime date);
 
         List<Test> GetTestsByConditon(Func<Test, bool> checkFunction);
 

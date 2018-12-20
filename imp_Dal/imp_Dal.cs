@@ -6,15 +6,15 @@ using System.Linq;
 
 namespace imp_Dal
 {
-    public class imp_Dal : IDal
+    public class Imp_Dal : IDal
     {
         #region Trainee
 
-        public void addTrainee(Trainee trainee)
+        public void AddTrainee(Trainee trainee)
         {
             foreach (var item in DS.DataSource.trainees)
             {
-                if (item.id == trainee.id)
+                if (item.Id == trainee.Id)
                 {
                     throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
                 }
@@ -22,7 +22,7 @@ namespace imp_Dal
             DS.DataSource.trainees.Add(trainee);
         }
 
-        public void deleteTrainee(int id)
+        public void DeleteTrainee(int id)
         {
             foreach (var item in DS.DataSource.tests)
             {
@@ -34,7 +34,7 @@ namespace imp_Dal
 
             foreach (var item in DS.DataSource.trainees)
             {
-                if (item.id == id)
+                if (item.Id == id)
                 {
                     DS.DataSource.trainees.Remove(item);
                     return;
@@ -54,19 +54,19 @@ namespace imp_Dal
             return ret;
         }
 
-        public void uploadTrainee(int id, Trainee trainee)//what is the difference between the two?
+        public void UploadTrainee(int id, Trainee trainee)//what is the difference between the two?
         {
             throw new NotImplementedException();
         }
 
-        public void uploadTrainee(Trainee trainee)
+        public void UploadTrainee(Trainee trainee)
         {
             throw new NotImplementedException();
         }
 
         public Trainee GetTraineeById(int id)
         {
-            List<Trainee> list = new List<Trainee>(from s in DS.DataSource.trainees where s.id == id select s);
+            List<Trainee> list = new List<Trainee>(from s in DS.DataSource.trainees where s.Id == id select s);
 
             if (list.Count > 1)
                 throw new Exception(String.Format("More than one trainee owns ID: {0}. Check your data source", id));
@@ -85,7 +85,7 @@ namespace imp_Dal
         {
             foreach (var item in DS.DataSource.testers)
             {
-                if (item.id == tester.id)
+                if (item.Id == tester.Id)
                 {
                     throw new Exception("The tester already exists!");
                 }
@@ -105,7 +105,7 @@ namespace imp_Dal
 
             foreach (var item in DS.DataSource.testers)
             {
-                if (item.id == id)
+                if (item.Id == id)
                 {
                     DS.DataSource.testers.Remove(item);
                     return;
@@ -129,7 +129,7 @@ namespace imp_Dal
         {
             foreach (var item in DS.DataSource.testers)
             {
-                if (item.id == id)
+                if (item.Id == id)
                 {
                     DS.DataSource.testers.Add(tester);
                     DS.DataSource.testers.Remove(item);
@@ -139,12 +139,12 @@ namespace imp_Dal
 
         public void UploadTester(Tester tester)
         {
-            UploadTester(tester.id, tester);
+            UploadTester(tester.Id, tester);
         }
 
         public Tester GetTesterByID(int id)
         {
-            List<Tester> list = new List<Tester>(from s in DS.DataSource.testers where s.id == id select s);
+            List<Tester> list = new List<Tester>(from s in DS.DataSource.testers where s.Id == id select s);
 
             if (list.Count > 1)
                 throw new Exception(String.Format("More than one tester owns ID: {0}. Check your data source", id));
@@ -166,7 +166,7 @@ namespace imp_Dal
 
         public void AddFutureTest(Tester tester, Trainee trainee, DateTime time, Address address)
         {
-            DS.DataSource.tests.Add(new Test(tester.id, trainee.id, time, address));
+            DS.DataSource.tests.Add(new Test(tester.Id, trainee.Id, time, address));
         }
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
@@ -212,7 +212,7 @@ namespace imp_Dal
 
         public static IDal GetDal()
         {
-            return new imp_Dal();
+            return new Imp_Dal();
         }
     }
 }

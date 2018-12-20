@@ -5,7 +5,7 @@
         Private_Car, Two_wheeled_vehicles, Medium_truck, Heavy_truck
     }
 
-    public enum giltBoxType
+    public enum TransmissionType
     {
         Manual, Automatic
     }

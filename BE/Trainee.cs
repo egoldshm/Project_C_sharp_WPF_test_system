@@ -14,7 +14,7 @@ namespace BE
         private Address _TraineeAddress;
         private DateTime _birthday;
         private CarType _typeCarLearned;
-        private giltBoxType _giltBoxTypeLearned;
+        private TransmissionType _giltBoxTypeLearned;
         private string _schoolName;
         private string _teacherName;
         private int _lessonsNumber;
@@ -25,68 +25,68 @@ namespace BE
 
         public Trainee(int id)
         {
-            this.id = id;
+            this.Id = id;
         }
 
         public Trainee(int id, string firstName, string familyName) : this(id)
         {
-            this.firstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-            this.familyName = familyName ?? throw new ArgumentNullException(nameof(familyName));
+            this.FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
+            this.FamilyName = familyName ?? throw new ArgumentNullException(nameof(familyName));
         }
 
         public Trainee(int id, string firstName, string familyName
             , Gender gender, long phoneNumber
             , Address address, DateTime birthday
-            , CarType typeCarLearned, giltBoxType giltBoxTypeLearned
+            , CarType typeCarLearned, TransmissionType giltBoxTypeLearned
             , string schoolName, string teacherName, int lessonsNumber) : this(id, firstName, familyName)
         {
-            this.gender = gender;
-            this.phoneNumber = phoneNumber;
-            this.address = address;
-            this.birthday = birthday;
-            this.typeCarLearned = typeCarLearned;
-            this.giltBoxTypeLearned = giltBoxTypeLearned;
-            this.schoolName = schoolName ?? throw new ArgumentNullException(nameof(schoolName));
-            this.teacherName = teacherName ?? throw new ArgumentNullException(nameof(teacherName));
-            this.lessonsNumber = lessonsNumber;
+            this.Gender = gender;
+            this.PhoneNumber = phoneNumber;
+            this.Address = address;
+            this.Birthday = birthday;
+            this.TypeCarLearned = typeCarLearned;
+            this.TransmissionLearned = giltBoxTypeLearned;
+            this.SchoolName = schoolName ?? throw new ArgumentNullException(nameof(schoolName));
+            this.TeacherName = teacherName ?? throw new ArgumentNullException(nameof(teacherName));
+            this.LessonsNumber = lessonsNumber;
         }
 
         //copy CTOR for get_all
         public Trainee(Trainee trainee)
         {
-            this.gender = trainee.gender;
-            this.phoneNumber = trainee.phoneNumber;
-            this.address = trainee.address;
-            this.birthday = trainee.birthday;
-            this.typeCarLearned = trainee.typeCarLearned;
-            this.giltBoxTypeLearned = trainee.giltBoxTypeLearned;
-            this.schoolName = trainee.schoolName ?? throw new ArgumentNullException(nameof(schoolName));
-            this.teacherName = trainee.teacherName ?? throw new ArgumentNullException(nameof(teacherName));
-            this.lessonsNumber = trainee.lessonsNumber;
+            this.Gender = trainee.Gender;
+            this.PhoneNumber = trainee.PhoneNumber;
+            this.Address = trainee.Address;
+            this.Birthday = trainee.Birthday;
+            this.TypeCarLearned = trainee.TypeCarLearned;
+            this.TransmissionLearned = trainee.TransmissionLearned;
+            this.SchoolName = trainee.SchoolName ?? throw new ArgumentNullException(nameof(SchoolName));
+            this.TeacherName = trainee.TeacherName ?? throw new ArgumentNullException(nameof(TeacherName));
+            this.LessonsNumber = trainee.LessonsNumber;
         }
 
         #endregion CTORs
 
         #region Properties
 
-        public int id { get => _id; set => _id = value; }
-        public string firstName { get => _firstName; set => _firstName = value; }
-        public string familyName { get => _familyName; set => _familyName = value; }
-        public Gender gender { get => _gender; set => _gender = value; }
-        public long phoneNumber { get => _phoneNumber; set => _phoneNumber = value; }
-        public Address address { get => _TraineeAddress; set => _TraineeAddress = value; }
-        public DateTime birthday { get => _birthday; set => _birthday = value; }
-        public CarType typeCarLearned { get => _typeCarLearned; set => _typeCarLearned = value; }
-        public giltBoxType giltBoxTypeLearned { get => _giltBoxTypeLearned; set => _giltBoxTypeLearned = value; }
-        public string schoolName { get => _schoolName; set => _schoolName = value; }
-        public string teacherName { get => _teacherName; set => _teacherName = value; }
-        public int lessonsNumber { get => _lessonsNumber; set => _lessonsNumber = value; }
+        public int Id { get => _id; set => _id = value; }
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string FamilyName { get => _familyName; set => _familyName = value; }
+        public Gender Gender { get => _gender; set => _gender = value; }
+        public long PhoneNumber { get => _phoneNumber; set => _phoneNumber = value; }
+        public Address Address { get => _TraineeAddress; set => _TraineeAddress = value; }
+        public DateTime Birthday { get => _birthday; set => _birthday = value; }
+        public CarType TypeCarLearned { get => _typeCarLearned; set => _typeCarLearned = value; }
+        public TransmissionType TransmissionLearned { get => _giltBoxTypeLearned; set => _giltBoxTypeLearned = value; }
+        public string SchoolName { get => _schoolName; set => _schoolName = value; }
+        public string TeacherName { get => _teacherName; set => _teacherName = value; }
+        public int LessonsNumber { get => _lessonsNumber; set => _lessonsNumber = value; }
 
         #endregion Properties
 
         public override string ToString()
         {
-            return firstName + " " + familyName;
+            return FirstName + " " + FamilyName;
         }
     }
 }
