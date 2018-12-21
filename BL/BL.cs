@@ -166,28 +166,19 @@ namespace BL
 
         public List<Test> GetTestsByConditon(Func<Test, bool> checkFunction)
         {
-            throw new NotImplementedException();
+            return new List<Test>(from test in GetAllTests() where checkFunction(test) select test);
         }
 
         public List<Test> GetTestsByDay(DateTime date)
         {
-            throw new NotImplementedException();
+            return GetTestsByConditon((test) => { return test.DateOfTest.ToShortDateString() == date.ToShortDateString(); });
         }
 
         public List<Test> GetTestsByTrainee(Trainee trainee)
         {
-            throw new NotImplementedException();
+            return GetTestsByConditon((test) => { return test.TraineeId == trainee.Id; });
         }
 
-        public List<Test> TestsByDay(DateTime date)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Test> TestsByTrainee(Trainee trainee)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion Test
     }
