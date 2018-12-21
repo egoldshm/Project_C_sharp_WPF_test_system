@@ -1,0 +1,9 @@
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\DS.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\DS.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\BE.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\BE.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csprojAssemblyReference.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csproj.CoreCompileInputs.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csproj.CopyComplete
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.pdb
