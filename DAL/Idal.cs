@@ -6,42 +6,43 @@ namespace DAL
     public interface IDal
     {
         #region Trainee
+
         /// <summary>
-        /// 
+        /// Function that add trainee to the DB.
         /// </summary>
-        /// <param name="trainee"></param>
+        /// <param name="trainee"> The trainee to add.</param>
         void AddTrainee(BE.Trainee trainee);
 
         /// <summary>
-        /// 
+        /// Function that delete trainee from the DB by id number.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The id for delete</param>
         void DeleteTrainee(int id);
 
         /// <summary>
-        /// 
+        /// Function that get id and detail of trainee and upload the the detail.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="trainee"></param>
+        /// <param name="id">the id of trainee</param>
+        /// <param name="trainee">the detail of trainee</param>
         void UploadTrainee(int id, BE.Trainee trainee);
 
         /// <summary>
-        /// 
+        /// Function that get detail of trainee and upload the the detail.
         /// </summary>
-        /// <param name="trainee"></param>
+        /// <param name="trainee">the trainee to upload</param>
         void UploadTrainee(BE.Trainee trainee);
 
         /// <summary>
-        /// 
+        /// Function that return all the trainee in the DB. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Eeturn copy of all the trainee</returns>
         List<BE.Trainee> GetAllTrainees();
 
         /// <summary>
-        /// 
+        /// Function that get id and return the trainee by this id in the DB. 
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">the id of the trainee</param>
+        /// <returns>trainee by id</returns>
         BE.Trainee GetTraineeById(int id);
 
         #endregion Trainee
