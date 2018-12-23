@@ -64,26 +64,26 @@ namespace BL
         public IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false)
         {
             if (sorted)
-                throw new NotImplementedException();
+                return from item in dal.GetAllTrainees()
+                       orderby item.Id 
+                       group item by item.SchoolName;
 
             return from item in dal.GetAllTrainees()
-                   group item by item.SchoolName into g
-                   select g;
+                   group item by item.SchoolName;
         }
 
         public IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher(bool sorted = false)
         {
-            if (sorted)
-                throw new NotImplementedException();
-
-            return from item in dal.GetAllTrainees()
-                   group item by item.TeacherName into g
-                   select g;
+            return sorted ?
+                from item in dal.GetAllTrainees() orderby item.Id group item by item.TeacherName
+                : from item in dal.GetAllTrainees() group item by item.TeacherName;
         }
 
-        public IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false)//what do you mean by "number of testers"? there is no such field
+        public IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false)
         {
-            throw new NotImplementedException();
+            return sorted ?
+                from item in dal.GetAllTrainees() orderby item.Id group item by GetTestsByTrainee(item).Count
+                : from item in dal.GetAllTrainees() group item by GetTestsByTrainee(item).Count;
         }
 
         #endregion Trainee
@@ -111,16 +111,18 @@ namespace BL
 
         public IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false)
         {
-            if (sorted)
-                throw new NotImplementedException();
-            return from item in dal.GetAllTesters()
-                   group item by item.CarType into g
-                   select g;
+            return sorted ?
+                from item in dal.GetAllTesters() orderby item.Id group item by item.CarType
+                : from item in dal.GetAllTesters() group item by item.CarType;
         }
 
         public List<Tester> GetTestersByAvailableTime(DateTime date)
         {
-            throw new NotImplementedException();
+            if (date.DayOfWeek > DayOfWeek.Thursday)
+                throw new Exception(string.Format("There are no tests in {}", date.DayOfWeek));
+
+
+            return new List<Tester>(from item in dal.GetAllTesters() where item.WorkDays[date.DayOfWeek][1]==true)
         }
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
@@ -151,12 +153,20 @@ namespace BL
 
         public void AddFutureTest(Tester tester, Trainee trainee, DateTime time, Address address)
         {
-            throw new NotImplementedException();
+            var tests = new List<Test>(from test in GetTestsByTrainee(trainee) where (test.DateOfTest > DateTime.Now || test.RealDateOfTest != null) select test);
+            if (tests.Count > 0)
+                throw new Exception(string.Format("You can not set a test for a student {} because in the system already have a future test", trainee.Id));
+            //todo: to finish.
         }
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
-            throw new NotImplementedException();
+            if (dal.GetTestByNumber(id) == null)
+                throw new Exception(string.Format("The test with number {} is not found", id));
+            //TODO: work with criterions to think when is impotisble that trainee pass and when not.
+            if (false/*TODO:*/)
+                throw new Exception(string.Format("Hsdfsdjfnbjdfncbktsdjfmbkdfc", criterions));
+            dal.FinishTest(id, criterions, pass, note);
         }
 
         public List<Test> GetAllTests()
