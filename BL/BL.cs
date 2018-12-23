@@ -124,7 +124,11 @@ namespace BL
             if (date.Hour >= 9 && date.Hour <= 15)
                 hourByArr = date.Hour - 9;
             else throw new Exception(string.Format("You can not insert a test at {0} o'clock, it is an inactive hour", date.Hour));
-            return new List<Tester>(GetAllTesters((tester) => { return tester.WorkDays[(int)date.DayOfWeek, hourByArr]; }));
+            return new List<Tester>(GetAllTesters((tester) =>
+            {
+                return tester.WorkDays[(int)date.DayOfWeek, hourByArr] &&
+               !GetTestsByTesters(tester).Any((test) => { return test.DateOfTest.Hour == date.Hour; })
+                 ;  }));
         }
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
@@ -171,7 +175,6 @@ namespace BL
             dal.FinishTest(id, criterions, pass, note);
         }
 
-
         public List<Test> GetTestsByDay(DateTime date)
         {
             return GetAllTests((test) => { return test.DateOfTest.ToShortDateString() == date.ToShortDateString(); });
@@ -189,13 +192,16 @@ namespace BL
             return new List<Trainee>(dal.GetAllTrainees());
         }
 
-
-
         public List<Test> GetAllTests(Func<Test, bool> checkFunction = null)
         {
             if(checkFunction != null)
                 return new List<Test>(from test in GetAllTests() where checkFunction(test) select test);
             return new List<Test>(dal.GetAllTests());
+        }
+
+        public List<Test> GetTestsByTesters(Tester tester)
+        {
+                return GetAllTests((test) => { return test.TesterId == tester.Id; });
         }
 
 

@@ -102,6 +102,13 @@ namespace Ibl
         /// <summary>
         /// 
         /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+        List<Test> GetTestsByTesters(Tester tester);
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="id"></param>
         /// <param name="criterions"></param>
         /// <param name="pass"></param>
