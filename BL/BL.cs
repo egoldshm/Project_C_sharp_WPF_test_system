@@ -117,11 +117,14 @@ namespace BL
 
         public List<Tester> GetTestersByAvailableTime(DateTime date)
         {
+            //TODO: Make time management more flexible
+            int hourByArr;
             if (date.DayOfWeek > DayOfWeek.Thursday)
-                throw new Exception(string.Format("There are no tests in {}", date.DayOfWeek));
-
-
-            return new List<Tester>(from item in dal.GetAllTesters() where item.WorkDays[date.DayOfWeek][1]==true)
+                throw new Exception(string.Format("There are no tests in {0}", date.DayOfWeek));
+            if (date.Hour >= 9 && date.Hour <= 15)
+                hourByArr = date.Hour - 9;
+            else throw new Exception(string.Format("You can not insert a test at {0} o'clock, it is an inactive hour", date.Hour));
+            return new List<Tester>(GetAllTesters((tester) => { return tester.WorkDays[(int)date.DayOfWeek, hourByArr]; }));
         }
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
