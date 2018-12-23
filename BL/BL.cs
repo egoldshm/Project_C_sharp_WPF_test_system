@@ -46,10 +46,7 @@ namespace BL
             return false;
         }
 
-        public List<Trainee> GetAllTrainees()
-        {
-            return dal.GetAllTrainees();
-        }
+      
 
         public void UploadTrainee(int id, Trainee trainee)
         {
@@ -104,9 +101,11 @@ namespace BL
             dal.DeleteTester(id);
         }
 
-        public List<Tester> GetAllTesters()
+        public List<Tester> GetAllTesters(Func<Tester, bool> checkFunction = null)
         {
-            return dal.GetAllTesters();
+            if (checkFunction != null)
+                return new List<Tester>(from tester in dal.GetAllTesters() where checkFunction(tester) select tester);
+            return new List<Tester>(dal.GetAllTesters());
         }
 
         public IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false)
@@ -169,24 +168,31 @@ namespace BL
             dal.FinishTest(id, criterions, pass, note);
         }
 
-        public List<Test> GetAllTests()
-        {
-            return dal.GetAllTests();
-        }
-
-        public List<Test> GetTestsByConditon(Func<Test, bool> checkFunction)
-        {
-            return new List<Test>(from test in GetAllTests() where checkFunction(test) select test);
-        }
 
         public List<Test> GetTestsByDay(DateTime date)
         {
-            return GetTestsByConditon((test) => { return test.DateOfTest.ToShortDateString() == date.ToShortDateString(); });
+            return GetAllTests((test) => { return test.DateOfTest.ToShortDateString() == date.ToShortDateString(); });
         }
 
         public List<Test> GetTestsByTrainee(Trainee trainee)
         {
-            return GetTestsByConditon((test) => { return test.TraineeId == trainee.Id; });
+            return GetAllTests((test) => { return test.TraineeId == trainee.Id; });
+        }
+
+        public List<Trainee> GetAllTrainees(Func<Test, bool> checkFunction = null)
+        {
+            if (checkFunction != null)
+                return new List<Trainee>(from trainee in dal.GetAllTrainees() where checkFunction(trainee) select trainee);
+            return new List<Trainee>(dal.GetAllTrainees());
+        }
+
+
+
+        public List<Test> GetAllTests(Func<Test, bool> checkFunction = null)
+        {
+            if(checkFunction != null)
+                return new List<Test>(from test in GetAllTests() where checkFunction(test) select test);
+            return new List<Test>(dal.GetAllTests());
         }
 
 
