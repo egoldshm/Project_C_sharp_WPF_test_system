@@ -12,7 +12,7 @@ namespace Ibl
         /// Function that get a trainee and add him to the DB
         /// </summary>
         /// <param name="trainee"> the new trainee we add </param>
-        void AddTrainee(BE.Trainee trainee);
+        void AddTrainee(Trainee trainee);
 
         /// <summary>
         /// delete trainee by id.
@@ -25,7 +25,7 @@ namespace Ibl
         /// </summary>
         /// <param name="id">id of trainee to change</param>
         /// <param name="trainee">the details we changes</param>
-        void UploadTrainee(int id, BE.Trainee trainee);
+        void UploadTrainee(int id, Trainee trainee);
 
         /// <summary>
         /// function the use the first "UploadTrainee" and change the trainee
@@ -37,7 +37,7 @@ namespace Ibl
         /// function that get all the trainees in the DB
         /// </summary>
         /// <returns> return all the trainees</returns>
-        List<BE.Trainee> GetAllTrainees(Predicate<Trainee> checkFunction = null);
+        List<Trainee> GetAllTrainees(Predicate<Trainee> checkFunction = null);
 
         /// <summary>
         /// 
@@ -65,19 +65,19 @@ namespace Ibl
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tester"></param>
-        void UploadTester(int id, BE.Tester tester);
+        void UploadTester(int id, Tester tester);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tester"></param>
-        void UploadTester(BE.Tester tester);
+        void UploadTester(Tester tester);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        List<BE.Tester> GetAllTesters(Predicate<Tester> checkFunction = null);
+        List<Tester> GetAllTesters(Predicate<Tester> checkFunction = null);
         #endregion Tester
 
         #region Test
