@@ -37,7 +37,7 @@ namespace Ibl
         /// function that get all the trainees in the DB
         /// </summary>
         /// <returns> return all the trainees</returns>
-        List<BE.Trainee> GetAllTrainees(Func<Trainee, bool> checkFunction = null);
+        List<BE.Trainee> GetAllTrainees(Predicate<Trainee> checkFunction = null);
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace Ibl
         /// 
         /// </summary>
         /// <returns></returns>
-        List<BE.Tester> GetAllTesters(Func<Tester, bool> checkFunction = null);
+        List<BE.Tester> GetAllTesters(Predicate<Tester> checkFunction = null);
         #endregion Tester
 
         #region Test
@@ -102,7 +102,7 @@ namespace Ibl
         /// </summary>
         /// <param name="checkFunction"></param>
         /// <returns></returns>
-        List<BE.Test> GetAllTests(Func<Test, bool> checkFunction = null);
+        List<BE.Test> GetAllTests(Predicate<Test> checkFunction = null);
 
         /// <summary>
         /// 

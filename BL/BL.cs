@@ -124,8 +124,8 @@ namespace BL
                 throw new Exception(String.Format("Tester {0} is registered to {1} test(s), than we can delete him", id, countOftestsForTester));
             dal.DeleteTester(id);
         }
-
-        public List<Tester> GetAllTesters(Func<Tester, bool> checkFunction = null)
+        
+        public List<Tester> GetAllTesters(Predicate<Tester> checkFunction = null)
         {
             if (checkFunction != null)
                 return new List<Tester>(from tester in dal.GetAllTesters() where checkFunction(tester) select tester);
@@ -154,7 +154,7 @@ namespace BL
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
         {
-            throw new NotImplementedException();
+           return new List<Tester>(from tester in GetAllTesters())
         }
 
         public void UploadTester(int id, Tester tester)
@@ -206,14 +206,14 @@ namespace BL
             return GetAllTests(test => test.TraineeId == trainee.Id );
         }
 
-        public List<Trainee> GetAllTrainees(Func<Trainee, bool> checkFunction = null)
+        public List<Trainee> GetAllTrainees(Predicate<Trainee> checkFunction = null)
         {
             if (checkFunction != null)
                 return new List<Trainee>(from trainee in dal.GetAllTrainees() where checkFunction(trainee) select trainee);
             return new List<Trainee>(dal.GetAllTrainees());
         }
 
-        public List<Test> GetAllTests(Func<Test, bool> checkFunction = null)
+        public List<Test> GetAllTests(Predicate<Test> checkFunction = null)
         {
             if(checkFunction != null)
                 return new List<Test>(from test in GetAllTests() where checkFunction(test) select test);
