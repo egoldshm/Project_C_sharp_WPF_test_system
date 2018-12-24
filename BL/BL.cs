@@ -32,7 +32,7 @@ namespace BL
         private static bool CheckIfIDisValid(int id)
         {
             if (id.ToString().Length != 9)
-                throw new Exception(string.Format("id {0} is invalid. because it has {1} digits and normal id has 9.", id, id.ToString().Length));
+                throw new Exception(string.Format("id {0} is invalid. because it has {1} digits and valid id has 9.", id, id.ToString().Length));
             int lessId = id / 10;
             int sum = 0;
             for (int i = 1; lessId > 0; i++)
