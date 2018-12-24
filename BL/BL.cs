@@ -22,11 +22,38 @@ namespace BL
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// function that get a ID and return if is valid israeli number or not.
+        /// Exception:
+        ///     if the ID hasn't 9 digits
+        /// </summary>
+        /// <param name="id">israeli ID number</param>
+        /// <returns>True: this ID is valid israeli ID. False: isn't </returns>
+        private static bool CheckIfIDisValid(int id)
+        {
+            if (id.ToString().Length != 9)
+                throw new Exception(string.Format("id {0} is invalid. because it has {1} digits and normal id has 9.", id, id.ToString().Length));
+            int lessId = id / 10;
+            int sum = 0;
+            for (int i = 1; lessId > 0; i++)
+            {
+                int number1;
+                number1 = (i % 2 + 1) * (lessId % 10);
+                int number2 = number1 % 10 + number1 / 10;
+                sum += number2;
+                lessId /= 10;
+            }
+            int check_digit = (10 - sum % 10) % 10;
+            return check_digit == id % 10;
+        }
         #region Trainee
 
         public void AddTrainee(Trainee trainee)
         {
-
+            if(trainee.Id.ToString().Length != 9)
+                throw new Exception(string.Format("id {0} is invalid. because it has {1} digits and normal id has 9.", trainee.Id, trainee.Id.ToString().Length));
+            if (!CheckIfIDisValid(trainee.Id))
+                throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", trainee.Id));
             if (dal.GetTraineeById(trainee.Id) != null)
                 throw new Exception(string.Format("The trainee {0} already exists", trainee.ToString()));
             if (trainee.LessonsNumber < 0)
@@ -44,6 +71,8 @@ namespace BL
 
         public void DeleteTrainee(int id)
         {
+            if (!CheckIfIDisValid(id))
+                throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", id));
             if (dal.GetTraineeById(id) == null)
                 throw new Exception(string.Format("The trainee {0} doesn't exist", id));
             int countOfTestsForThisTrainee = GetTestsByTrainee(dal.GetTraineeById(id)).Count;
@@ -103,6 +132,8 @@ namespace BL
 
         public void AddTester(Tester tester)
         {
+            if (!CheckIfIDisValid(tester.Id))
+                throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", tester.Id));
             if (dal.GetTesterByID(tester.Id) != null)
                 throw new Exception(String.Format("The tester {0} already exists", tester.ToString()));
             int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
@@ -117,6 +148,8 @@ namespace BL
 
         public void DeleteTester(int id)
         {
+            if (!CheckIfIDisValid(id))
+                throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", id));
             if (dal.GetTesterByID(id) == null)
                 throw new Exception(String.Format("No tester with the id {0} exists", id));
             int countOftestsForTester = GetTestsByTesters(dal.GetTesterByID(id)).Count;
@@ -190,6 +223,7 @@ namespace BL
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
+
             if (dal.GetTestByNumber(id) == null)
                 throw new Exception(string.Format("The test with number {0} is not found", id));
             //TODO: work with criterions to think when is impotisble that trainee pass and when not.
