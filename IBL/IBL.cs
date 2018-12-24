@@ -37,7 +37,7 @@ namespace Ibl
         /// function that get all the trainees in the DB
         /// </summary>
         /// <returns> return all the trainees</returns>
-        List<BE.Trainee> GetAllTrainees(Func<Test, bool> checkFunction = null);
+        List<BE.Trainee> GetAllTrainees(Func<Trainee, bool> checkFunction = null);
 
         #endregion Trainee
 

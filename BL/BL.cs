@@ -161,14 +161,14 @@ namespace BL
         {
             var tests = new List<Test>(from test in GetTestsByTrainee(trainee) where (test.DateOfTest > DateTime.Now || test.RealDateOfTest != null) select test);
             if (tests.Count > 0)
-                throw new Exception(string.Format("You can not set a test for a student {} because in the system already have a future test", trainee.Id));
+                throw new Exception(string.Format("You can not set a test for a student {0} because in the system already have a future test", trainee.Id));
             //todo: to finish.
         }
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
             if (dal.GetTestByNumber(id) == null)
-                throw new Exception(string.Format("The test with number {} is not found", id));
+                throw new Exception(string.Format("The test with number {0} is not found", id));
             //TODO: work with criterions to think when is impotisble that trainee pass and when not.
             if (false/*TODO:*/)
                 throw new Exception(string.Format("Hsdfsdjfnbjdfncbktsdjfmbkdfc", criterions));
@@ -185,7 +185,7 @@ namespace BL
             return GetAllTests((test) => { return test.TraineeId == trainee.Id; });
         }
 
-        public List<Trainee> GetAllTrainees(Func<Test, bool> checkFunction = null)
+        public List<Trainee> GetAllTrainees(Func<Trainee, bool> checkFunction = null)
         {
             if (checkFunction != null)
                 return new List<Trainee>(from trainee in dal.GetAllTrainees() where checkFunction(trainee) select trainee);
