@@ -95,23 +95,14 @@ namespace imp_Dal
 
         public void DeleteTester(int id)
         {
-            foreach (var item in DS.DataSource.tests)
+            
+            if (DS.DataSource.tests.Any((test) => { return test.TesterId == id; }))
             {
-                if (item.TesterId == id)
-                {
-                    throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
-                }
+                throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
             }
-
-            foreach (var item in DS.DataSource.testers)
-            {
-                if (item.Id == id)
-                {
-                    DS.DataSource.testers.Remove(item);
-                    return;
-                }
-            }
-            throw new Exception("Attempted to delete an unexistent tester");
+            DS.DataSource.testers.RemoveAll((tester) => { return tester.Id == id; });
+            if (!DS.DataSource.testers.Any((tester) => { return tester.Id == id; }))
+                throw new Exception("Attempted to delete an unexistent tester");
         }
 
         public List<Tester> GetAllTesters()
