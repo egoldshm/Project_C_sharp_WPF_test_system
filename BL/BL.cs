@@ -54,7 +54,7 @@ namespace BL
 
         public bool EntitledToDrivingLicense(Trainee trainee)
         {
-            List<Test> testPassed = new List<Test>(GetTestsByTrainee(trainee).Where((t) => { return t.Pass; }));
+            List<Test> testPassed = new List<Test>(GetTestsByTrainee(trainee).Where(t =>  t.Pass));
             if (testPassed.Count >= 1)
                 return true;
             return false;
@@ -148,11 +148,8 @@ namespace BL
             if (date.Hour >= 9 && date.Hour <= 15)
                 hourByArr = date.Hour - 9;
             else throw new Exception(string.Format("You can not insert a test at {0} o'clock, it is an inactive hour", date.Hour));
-            return new List<Tester>(GetAllTesters((tester) =>
-            {
-                return tester.WorkDays[(int)date.DayOfWeek, hourByArr] &&
-               !GetTestsByTesters(tester).Any((test) => { return test.DateOfTest.Hour == date.Hour; })
-                 ;  }));
+            return new List<Tester>(GetAllTesters(tester =>
+            tester.WorkDays[(int)date.DayOfWeek, hourByArr] && !GetTestsByTesters(tester).Any(test => test.DateOfTest.Hour == date.Hour)));
         }
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
@@ -201,12 +198,12 @@ namespace BL
 
         public List<Test> GetTestsByDay(DateTime date)
         {
-            return GetAllTests((test) => { return test.DateOfTest.ToShortDateString() == date.ToShortDateString(); });
+            return GetAllTests(test => test.DateOfTest.ToShortDateString() == date.ToShortDateString());
         }
 
         public List<Test> GetTestsByTrainee(Trainee trainee)
         {
-            return GetAllTests((test) => { return test.TraineeId == trainee.Id; });
+            return GetAllTests(test => test.TraineeId == trainee.Id );
         }
 
         public List<Trainee> GetAllTrainees(Func<Trainee, bool> checkFunction = null)
@@ -225,7 +222,7 @@ namespace BL
 
         public List<Test> GetTestsByTesters(Tester tester)
         {
-                return GetAllTests((test) => { return test.TesterId == tester.Id; });
+                return GetAllTests(test => test.TesterId == tester.Id);
         }
 
         public List<Trainee> GetAllTraineesByLicense(bool hasLicense = true)

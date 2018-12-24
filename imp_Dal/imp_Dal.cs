@@ -96,12 +96,12 @@ namespace imp_Dal
         public void DeleteTester(int id)
         {
             
-            if (DS.DataSource.tests.Any((test) => { return test.TesterId == id; }))
+            if (DS.DataSource.tests.Any((test) => test.TesterId == id))
             {
                 throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
             }
-            DS.DataSource.testers.RemoveAll((tester) => { return tester.Id == id; });
-            if (!DS.DataSource.testers.Any((tester) => { return tester.Id == id; }))
+            DS.DataSource.testers.RemoveAll(tester => tester.Id == id);
+            if (!DS.DataSource.testers.Any(tester => tester.Id == id))
                 throw new Exception("Attempted to delete an unexistent tester");
         }
 
@@ -118,7 +118,7 @@ namespace imp_Dal
 
         public void UploadTester(int id, Tester tester)
         {      
-            foreach (var item in DS.DataSource.testers.Where((t) => { return t.Id == id; }))
+            foreach (var item in DS.DataSource.testers.Where((t) => t.Id == id))
             {
                     DS.DataSource.testers.Add(tester);
                     DS.DataSource.testers.Remove(item);
