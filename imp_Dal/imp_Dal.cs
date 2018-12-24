@@ -117,14 +117,11 @@ namespace imp_Dal
         }
 
         public void UploadTester(int id, Tester tester)
-        {
-            foreach (var item in DS.DataSource.testers)
+        {      
+            foreach (var item in DS.DataSource.testers.Where((t) => { return t.Id == id; }))
             {
-                if (item.Id == id)
-                {
                     DS.DataSource.testers.Add(tester);
                     DS.DataSource.testers.Remove(item);
-                }
             }
         }
 
