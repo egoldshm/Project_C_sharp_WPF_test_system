@@ -228,6 +228,17 @@ namespace BL
                 return GetAllTests((test) => { return test.TesterId == tester.Id; });
         }
 
+        public List<Trainee> GetAllTraineesByLicense(bool hasLicense = true)
+        {
+            return new List<Trainee>(from trainee in GetAllTrainees() where hasLicense ? EntitledToDrivingLicense(trainee) : !EntitledToDrivingLicense(trainee) select trainee);
+        }
+        
+
+        public List<Test> GetAllSuccessfullTestsByTester(Tester tester, bool successful = true)
+        {
+            return new List<Test>(from test in GetTestsByTesters(tester) where successful ? test.Pass : !test.Pass select test);
+        }
+
 
         #endregion Test
     }

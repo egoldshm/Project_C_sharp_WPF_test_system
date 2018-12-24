@@ -39,6 +39,12 @@ namespace Ibl
         /// <returns> return all the trainees</returns>
         List<BE.Trainee> GetAllTrainees(Func<Trainee, bool> checkFunction = null);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hasLicense"></param>
+        /// <returns></returns>
+        List<Trainee> GetAllTraineesByLicense(bool hasLicense = true);
         #endregion Trainee
 
         #region Tester
@@ -72,7 +78,6 @@ namespace Ibl
         /// </summary>
         /// <returns></returns>
         List<BE.Tester> GetAllTesters(Func<Tester, bool> checkFunction = null);
-
         #endregion Tester
 
         #region Test
@@ -151,6 +156,14 @@ namespace Ibl
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="tester"></param>
+        /// <param name="successful">flag for singal if we looking for successful or unsuccessful tests</param>
+        /// <returns></returns>
+        List<Test> GetAllSuccessfullTestsByTester(Tester tester, bool successful = true);
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="sorted"></param>
         /// <returns></returns>
         IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false);
@@ -175,6 +188,7 @@ namespace Ibl
         /// <param name="sorted"></param>
         /// <returns></returns>
         IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false);
+
 
         #endregion getters
     }
