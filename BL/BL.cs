@@ -57,14 +57,14 @@ namespace BL
             if (dal.GetTraineeById(trainee.Id) != null)
                 throw new Exception(string.Format("The trainee {0} already exists", trainee.ToString()));
             if (trainee.LessonsNumber < 0)
-                throw new Exception("A negative number of classes is impossible");
+                throw new Exception("A negative number of lessons is impossible");
             if (trainee.PhoneNumber.ToString().StartsWith("05") && trainee.PhoneNumber.ToString().Length == 10)
-                throw new Exception("The number phone have to be valid israeli number");
+                throw new Exception("The number phone has to be valid israeli number");
             int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
             int traineeBirthdayINT = int.Parse(trainee.Birthday.ToString("yyyyMMdd"));
             int age = (now - traineeBirthdayINT) / 10000;
             if (age < Configuration.MIN_STUDENT_AGE)
-                throw new Exception(string.Format("The trainee {0} is two young to driving test, The minimum is {1} and the trainee only {2}.", trainee.ToString(), Configuration.MIN_STUDENT_AGE, age));
+                throw new Exception(string.Format("The trainee {0} is too young to driving test, The minimum is {1} and the trainee only {2}.", trainee.ToString(), Configuration.MIN_STUDENT_AGE, age));
             dal.AddTrainee(trainee);
             
         }
@@ -77,7 +77,7 @@ namespace BL
                 throw new Exception(string.Format("The trainee {0} doesn't exist", id));
             int countOfTestsForThisTrainee = GetTestsByTrainee(dal.GetTraineeById(id)).Count;
             if (countOfTestsForThisTrainee > 0)
-                throw new Exception(string.Format("The trainee {0} register to {1} driving test(s). it unligal to delete him.", id, countOfTestsForThisTrainee));
+                throw new Exception(string.Format("The trainee {0} register to {1} driving test(s). it's illigal to delete him.", id, countOfTestsForThisTrainee));
             dal.DeleteTrainee(id);
         }
 
