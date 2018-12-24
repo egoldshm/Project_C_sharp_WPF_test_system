@@ -154,7 +154,9 @@ namespace BL
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
         {
-           return new List<Tester>(from tester in GetAllTesters())
+            //TODO: to implement the function realy
+            Random random = new Random();
+            return new List<Tester>(from tester in GetAllTesters() where random.Next(1000) < x select tester);
         }
 
         public void UploadTester(int id, Tester tester)
