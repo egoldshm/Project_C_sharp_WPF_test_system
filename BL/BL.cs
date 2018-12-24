@@ -46,6 +46,9 @@ namespace BL
         {
             if (dal.GetTraineeById(id) == null)
                 throw new Exception(string.Format("The trainee {0} doesn't exist", id));
+            int countOfTestsForThisTrainee = GetTestsByTrainee(dal.GetTraineeById(id)).Count;
+            if (countOfTestsForThisTrainee > 0)
+                throw new Exception(string.Format("The trainee {0} register to {1} driving test(s). it unligal to delete him.", id, countOfTestsForThisTrainee));
             dal.DeleteTrainee(id);
         }
 
@@ -102,6 +105,13 @@ namespace BL
         {
             if (dal.GetTesterByID(tester.Id) != null)
                 throw new Exception(String.Format("The tester {0} already exists", tester.ToString()));
+            int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+            int TesterBirthdayINT = int.Parse(tester.DateOfBirth.ToString("yyyyMMdd"));
+            int age = (now - TesterBirthdayINT) / 10000;
+            if (age > Configuration.MAX_TESTER_AGE)
+                throw new Exception(string.Format("Tester {0} is too old to be a tester. he {1} years old, and the the max age is {2}", tester.Id, age, Configuration.MAX_TESTER_AGE));
+            if (age < Configuration.MIN_TESTER_AGE)
+                throw new Exception(string.Format("Tester {0} is too young to be a tester. he only {1} years old, and the the min age is {2}", tester.Id, age, Configuration.MIN_TESTER_AGE));
             dal.AddTester(tester);
         }
 
@@ -109,6 +119,9 @@ namespace BL
         {
             if (dal.GetTesterByID(id) == null)
                 throw new Exception(String.Format("No tester with the id {0} exists", id));
+            int countOftestsForTester = GetTestsByTesters(dal.GetTesterByID(id)).Count;
+            if (countOftestsForTester > 0)
+                throw new Exception(String.Format("Tester {0} is registered to {1} test(s), than we can delete him", id, countOftestsForTester));
             dal.DeleteTester(id);
         }
 
