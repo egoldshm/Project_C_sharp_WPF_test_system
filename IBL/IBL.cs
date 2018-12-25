@@ -25,13 +25,13 @@ namespace Ibl
         /// </summary>
         /// <param name="id">id of trainee to change</param>
         /// <param name="trainee">the details we changes</param>
-        void UploadTrainee(int id, Trainee trainee);
+        void UpdateTrainee(int id, Trainee trainee);
 
         /// <summary>
-        /// function the use the first "UploadTrainee" and change the trainee
+        /// function the use the first "UpdateTrainee" and change the trainee
         /// </summary>
         /// <param name="trainee">the trainee we changes</param>
-        void UploadTrainee(BE.Trainee trainee);
+        void UpdateTrainee(BE.Trainee trainee);
 
         /// <summary>
         /// function that get all the trainees in the DB
@@ -65,13 +65,13 @@ namespace Ibl
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tester"></param>
-        void UploadTester(int id, Tester tester);
+        void UpdateTester(int id, Tester tester);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tester"></param>
-        void UploadTester(Tester tester);
+        void UpdateTester(Tester tester);
 
         /// <summary>
         /// 

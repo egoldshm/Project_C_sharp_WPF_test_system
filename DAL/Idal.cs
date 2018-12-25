@@ -20,17 +20,17 @@ namespace DAL
         void DeleteTrainee(int id);
 
         /// <summary>
-        /// Function that get id and detail of trainee and upload the the detail.
+        /// Function that get id and detail of trainee and Update the the detail.
         /// </summary>
         /// <param name="id">the id of trainee</param>
         /// <param name="trainee">the detail of trainee</param>
-        void UploadTrainee(int id, BE.Trainee trainee);
+        void UpdateTrainee(int id, BE.Trainee trainee);
 
         /// <summary>
-        /// Function that get detail of trainee and upload the the detail.
+        /// Function that get detail of trainee and Update the the detail.
         /// </summary>
-        /// <param name="trainee">the trainee to upload</param>
-        void UploadTrainee(BE.Trainee trainee);
+        /// <param name="trainee">the trainee to Update</param>
+        void UpdateTrainee(BE.Trainee trainee);
 
         /// <summary>
         /// Function that return all the trainee in the DB. 
@@ -65,13 +65,13 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tester"></param>
-        void UploadTester(int id, BE.Tester tester);
+        void UpdateTester(int id, BE.Tester tester);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tester"></param>
-        void UploadTester(BE.Tester tester);
+        void UpdateTester(BE.Tester tester);
 
         /// <summary>
         /// 

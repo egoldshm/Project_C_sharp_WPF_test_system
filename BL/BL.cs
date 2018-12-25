@@ -46,6 +46,19 @@ namespace BL
             int check_digit = (10 - sum % 10) % 10;
             return check_digit == id % 10;
         }
+        
+        /// <summary>
+        /// function that get Birthday in DateTime type and return age of the men who born there.
+        /// </summary>
+        /// <param name="birthday">the Birthday of the humen. type: DateTime</param>
+        /// <returns>age of the men (float) </returns>
+        private static float GetAgeByBirthday(DateTime birthday)
+        {
+            int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+            int birthdayINT = int.Parse(birthday.ToString("yyyyMMdd"));
+            float age = (now - birthdayINT) / 10000;
+            return age;
+        }
         #region Trainee
 
         public void AddTrainee(Trainee trainee)
@@ -60,10 +73,7 @@ namespace BL
                 throw new Exception("A negative number of lessons is impossible");
             if (trainee.PhoneNumber.ToString().StartsWith("05") && trainee.PhoneNumber.ToString().Length == 10)
                 throw new Exception("The number phone has to be valid israeli number");
-            int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
-            int traineeBirthdayINT = int.Parse(trainee.Birthday.ToString("yyyyMMdd"));
-            int age = (now - traineeBirthdayINT) / 10000;
-            if (age < Configuration.MIN_STUDENT_AGE)
+            if (GetAgeByBirthday(trainee.Birthday) < Configuration.MIN_STUDENT_AGE)
                 throw new Exception(string.Format("The trainee {0} is too young to driving test, The minimum is {1} and the trainee only {2}.", trainee.ToString(), Configuration.MIN_STUDENT_AGE, age));
             dal.AddTrainee(trainee);
             
@@ -91,14 +101,21 @@ namespace BL
 
       
 
-        public void UploadTrainee(int id, Trainee trainee)
+        public void UpdateTrainee(int id, Trainee trainee)
         {
-            throw new NotImplementedException();
+            if (id != trainee.Id)
+                throw new Exception(string.Format("It is impossible to change a trainee's ID (from {0} to {1})", id, trainee.Id));
+            Trainee oldTrainee = dal.GetTraineeById(id);
+            if (GetAgeByBirthday(trainee.Birthday) < Configuration.MIN_STUDENT_AGE)
+                throw new Exception(string.Format("you cant change birthday of trainee {0}, this make him to be too young to do driving test", id));
+            if (GetTestsByTrainee(trainee).Any(test => dal.GetTesterByID(test.TesterId).CarType != trainee.TypeCarLearned))
+                throw new Exception(string.Format("It is not possible to change the type of vehicle of the trainee {0} because he is registered for the test with the old vehicle type", id));
+            dal.UpdateTrainee(id, trainee);
         }
 
-        public void UploadTrainee(Trainee trainee)
+        public void UpdateTrainee(Trainee trainee)
         {
-            throw new NotImplementedException();
+            UpdateTrainee(trainee.Id, trainee);
         }
 
         public IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false)
@@ -136,9 +153,7 @@ namespace BL
                 throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", tester.Id));
             if (dal.GetTesterByID(tester.Id) != null)
                 throw new Exception(String.Format("The tester {0} already exists", tester.ToString()));
-            int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
-            int TesterBirthdayINT = int.Parse(tester.DateOfBirth.ToString("yyyyMMdd"));
-            int age = (now - TesterBirthdayINT) / 10000;
+            float age = GetAgeByBirthday(tester.DateOfBirth);
             if (age > Configuration.MAX_TESTER_AGE)
                 throw new Exception(string.Format("Tester {0} is too old to be a tester. he {1} years old, and the the max age is {2}", tester.Id, age, Configuration.MAX_TESTER_AGE));
             if (age < Configuration.MIN_TESTER_AGE)
@@ -187,19 +202,28 @@ namespace BL
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
         {
-            //TODO: to implement the function realy
+            //TODO: to implement the function realy. (now it fake)
             Random random = new Random();
             return new List<Tester>(from tester in GetAllTesters() where random.Next(1000) < x select tester);
         }
 
-        public void UploadTester(int id, Tester tester)
+        public void UpdateTester(int id, Tester tester)
         {
-            throw new NotImplementedException();
+            if (id != tester.Id)
+                throw new Exception(string.Format("It is impossible to change a tester's ID (from {0} to {1})", id, tester.Id));
+            if (GetAgeByBirthday(tester.DateOfBirth) < Configuration.MIN_TESTER_AGE)
+                throw new Exception(string.Format("you cant change birthday of tester {0}, this make him to be too young to do be tester", id));
+            if (GetAgeByBirthday(tester.DateOfBirth) > Configuration.MAX_TESTER_AGE)
+                throw new Exception(string.Format("you cant change birthday of tester {0}, this make him to be too old to do be tester", id));
+            if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
+                throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
+            //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help pleas!!
+            dal.UpdateTester(id, tester);
         }
 
-        public void UploadTester(Tester tester)
+        public void UpdateTester(Tester tester)
         {
-            throw new NotImplementedException();
+            dal.UpdateTester(tester.Id, tester);
         }
 
         #endregion Tester

@@ -54,12 +54,12 @@ namespace imp_Dal
             return ret;
         }
 
-        public void UploadTrainee(int id, Trainee trainee)//what is the difference between the two?
+        public void UpdateTrainee(int id, Trainee trainee)//what is the difference between the two?
         {
             throw new NotImplementedException();
         }
 
-        public void UploadTrainee(Trainee trainee)
+        public void UpdateTrainee(Trainee trainee)
         {
             throw new NotImplementedException();
         }
@@ -116,7 +116,7 @@ namespace imp_Dal
             return ret;
         }
 
-        public void UploadTester(int id, Tester tester)
+        public void UpdateTester(int id, Tester tester)
         {      
             foreach (var item in DS.DataSource.testers.Where((t) => t.Id == id))
             {
@@ -125,9 +125,9 @@ namespace imp_Dal
             }
         }
 
-        public void UploadTester(Tester tester)
+        public void UpdateTester(Tester tester)
         {
-            UploadTester(tester.Id, tester);
+            UpdateTester(tester.Id, tester);
         }
 
         public Tester GetTesterByID(int id)
