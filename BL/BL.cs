@@ -218,6 +218,8 @@ namespace BL
             if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
                 throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
             //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help pleas!!
+            if (GetTestsByTesters(tester).Count > tester.MaxWeeklyTests)
+                throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
             dal.UpdateTester(id, tester);
         }
 
@@ -232,13 +234,23 @@ namespace BL
 
         public void AddFutureTest(Test test)
         {
+            if (dal.GetTesterByID(test.TesterId) == null)
+                throw new Exception(string.Format("tester {0} not exists in the DB.", test.TesterId));
+            if (dal.GetTraineeById(test.TraineeId) == null)
+                throw new Exception(string.Format("trainee {0} not exists in the DB.", test.TraineeId));
             if (dal.GetTestByNumber(test.TestNumber) != null)
                 throw new Exception(String.Format("Test number {0} already exists", test.TestNumber));
+            //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
             dal.AddFutureTest(test);
         }
 
         public void AddFutureTest(Tester tester, Trainee trainee, DateTime time, Address address)
         {
+            if (dal.GetTesterByID(tester.Id) == null)
+                throw new Exception(string.Format("tester {0} not exists in the DB.", tester.Id));
+            if (dal.GetTraineeById(trainee.Id) == null)
+                throw new Exception(string.Format("trainee {0} not exists in the DB.", trainee.Id));
+           //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
             var tests = new List<Test>(from test in GetTestsByTrainee(trainee) where (test.DateOfTest > DateTime.Now || test.RealDateOfTest != null) select test);
             if (tests.Count > 0)
                 throw new Exception(string.Format("You can not set a test for a student {0} because in the system already have a future test", trainee.Id));
