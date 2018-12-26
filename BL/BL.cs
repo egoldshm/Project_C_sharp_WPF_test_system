@@ -9,11 +9,11 @@ namespace BL
 {
     public class BL : IBL
     {
-        private IDal dal;
+        private static IDal dal;
 
         public BL()
         {
-            dal = imp_Dal.Imp_Dal.GetDal();
+            dal = factoryDal.FactoryDal.GetDal();
             Init();
         }
 

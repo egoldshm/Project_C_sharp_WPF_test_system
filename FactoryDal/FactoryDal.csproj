@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFACA3D5-3901-4CD0-BBFB-5327A0AE1BA2}</ProjectGuid>
+    <ProjectGuid>{41447ED5-7BE9-4E3A-B856-9C5ED13E0735}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BL</RootNamespace>
-    <AssemblyName>BL</AssemblyName>
+    <RootNamespace>FactoryDal</RootNamespace>
+    <AssemblyName>FactoryDal</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,25 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL.cs" />
+    <Compile Include="FactoryDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE.csproj">
-      <Project>{8a77bcc1-5d6d-43a9-8769-1a10e9331191}</Project>
-      <Name>BE</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{8366e01a-057a-4048-b21a-56ae05ecf54b}</Project>
       <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FactoryDal\FactoryDal.csproj">
-      <Project>{41447ed5-7be9-4e3a-b856-9c5ed13e0735}</Project>
-      <Name>FactoryDal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IBL\IBL.csproj">
-      <Project>{942e0748-52d2-4ede-9fa0-2267ccef5e54}</Project>
-      <Name>IBL</Name>
     </ProjectReference>
     <ProjectReference Include="..\imp_Dal\imp_Dal.csproj">
       <Project>{f0f9d571-130f-4b13-bc49-bf0e5e894733}</Project>

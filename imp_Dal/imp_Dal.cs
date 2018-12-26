@@ -197,10 +197,5 @@ namespace imp_Dal
         }
 
         #endregion Test
-
-        public static IDal GetDal()
-        {
-            return new Imp_Dal();
-        }
     }
 }
