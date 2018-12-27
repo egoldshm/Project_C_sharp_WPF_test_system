@@ -289,7 +289,7 @@ namespace BL
         public List<Test> GetAllTests(Predicate<Test> checkFunction = null)
         {
             if(checkFunction != null)
-                return new List<Test>(from test in GetAllTests() where checkFunction(test) select test);
+                return new List<Test>(from test in dal.GetAllTests() where checkFunction(test) select test);
             return new List<Test>(dal.GetAllTests());
         }
 
