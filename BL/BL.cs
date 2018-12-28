@@ -250,8 +250,9 @@ namespace BL
                 throw new Exception("you cant set future test for the past.");
             //TODO: check the tester dont pass the max weekly tests, i have no idea how to do it. help. REPLY: tell me if htis works...
             var WeeklyTests = new List<Test>((from test in GetTestsByTesters(tester)
-                                              let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
-                                              where time.AddDays(diff * -1).Date == test.RealDateOfTest.AddDays(diff * -1).Date
+                                              let TestDiff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
+                                              let TimeDiff = (7 + time.DayOfWeek - DayOfWeek.Sunday) % 7
+                                              where time.AddDays(TimeDiff * -1).Date == test.RealDateOfTest.AddDays(TestDiff * -1).Date
                                               select test));
             if (WeeklyTests.Count > tester.MaxWeeklyTests)
                 throw new Exception(string.Format("The tester {0} can't have a test at {1} due to hte fact he exceded the maximum amount of tests that week", tester.ToString(), time.ToString()));
