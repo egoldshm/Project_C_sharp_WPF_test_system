@@ -120,13 +120,9 @@ namespace BL
 
         public IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false)
         {
-            if (sorted)
-                return from item in dal.GetAllTrainees()
-                       orderby item.Id 
-                       group item by item.SchoolName;
-
-            return from item in dal.GetAllTrainees()
-                   group item by item.SchoolName;
+            return sorted?
+                from item in dal.GetAllTrainees() orderby item.Id group item by item.SchoolName
+                : from item in dal.GetAllTrainees() group item by item.SchoolName;
         }
 
         public IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher(bool sorted = false)
@@ -189,10 +185,10 @@ namespace BL
 
         public List<Tester> GetTestersByAvailableTime(DateTime date)
         {
-            //TODO: Make time management more flexible
+            //TODO: Make time management more flexible REPLY: What do you mean by "more flexible"? it seems prety flexible to me...
             int hourByArr;
             if (date.DayOfWeek > DayOfWeek.Thursday)
-                throw new Exception(string.Format("There are no tests in {0}", date.DayOfWeek));
+                throw new Exception(string.Format("There are no tests on {0}", date.DayOfWeek));
             if (date.Hour >= 9 && date.Hour <= 15)
                 hourByArr = date.Hour - 9;
             else throw new Exception(string.Format("You can not insert a test at {0} o'clock, it is an inactive hour", date.Hour));
@@ -202,7 +198,7 @@ namespace BL
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
         {
-            //TODO: to implement the function realy. (now it fake)
+            //TODO: to implement the function realy. (now it fake) for that we need to use google maps... that is a different part of the project if I recall correctly
             Random random = new Random();
             return new List<Tester>(from tester in GetAllTesters() where random.Next(1000) < x select tester);
         }
@@ -217,9 +213,12 @@ namespace BL
                 throw new Exception(string.Format("you cant change birthday of tester {0}, this make him to be too old to do be tester", id));
             if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
                 throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
-            //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help pleas!!
-            if (GetTestsByTesters(tester).Count > tester.MaxWeeklyTests)//TODO: fix it, how we find the weekly tests?
-                throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
+            //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help please!! REPLY: Look at what I did and tell me if it's fine
+            var WeeklyTests = new List<IGrouping<DateTime,Test>>((from test in GetTestsByTesters(tester) let diff = (7+test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday)%7 group test by test.RealDateOfTest.AddDays(diff*-1).Date));
+            //if (WeeklyTests.Count > tester.MaxWeeklyTests)//TODO: fix it, how we find the weekly tests? REPLY: Tell me if this makes sense to you
+            foreach(var Week in WeeklyTests)
+                if(Week.ToList().Count > tester.MaxWeeklyTests)
+                    throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
             dal.UpdateTester(id, tester);
         }
 
@@ -251,9 +250,13 @@ namespace BL
                 throw new Exception(string.Format("trainee {0} not exists in the DB.", trainee.Id));
             if (DateTime.Now > time)
                 throw new Exception("you cant set future test for the past.");
-            //TODO: check the tester dont pass the max weekly tests, i have no idea how to do it. help.
-            //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
-            if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null))
+            //TODO: check the tester dont pass the max weekly tests, i have no idea how to do it. help. REPLY: tell me if htis works...
+            var WeeklyTests = new List<Test>((from test in GetTestsByTesters(tester) let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
+                                              where time.AddDays(diff * -1).Date ==  test.RealDateOfTest.AddDays(diff * -1).Date select test));
+            if (WeeklyTests.Count > tester.MaxWeeklyTests)
+                throw new Exception(string.Format("The tester {0} can't have a test at {1} due to hte fact he exceded the maximum amount of tests that week", tester.ToString(), time.ToString()));
+                    //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
+                    if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null))
                 throw new Exception(string.Format("You can not set a test for a student {0} because in the system already have a future test", trainee.Id));
             //todo: to finish.
         }
