@@ -74,7 +74,7 @@ namespace BL
             if (trainee.PhoneNumber.ToString().StartsWith("05") && trainee.PhoneNumber.ToString().Length == 10)
                 throw new Exception("The number phone has to be valid israeli number");
             if (GetAgeByBirthday(trainee.Birthday) < Configuration.MIN_STUDENT_AGE)
-                throw new Exception(string.Format("The trainee {0} is too young to driving test, The minimum is {1} and the trainee only {2}.", trainee.ToString(), Configuration.MIN_STUDENT_AGE, age));
+                throw new Exception(string.Format("The trainee {0} is too young to driving test, The minimum is {1} and the trainee only {2}.", trainee.ToString(), Configuration.MIN_STUDENT_AGE, GetAgeByBirthday(trainee.Birthday)));
             dal.AddTrainee(trainee);
             
         }
@@ -253,7 +253,7 @@ namespace BL
                 throw new Exception("you cant set future test for the past.");
             //TODO: check the tester dont pass the max weekly tests, i have no idea how to do it. help.
             //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
-            if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null)) ;
+            if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null))
                 throw new Exception(string.Format("You can not set a test for a student {0} because in the system already have a future test", trainee.Id));
             //todo: to finish.
         }
