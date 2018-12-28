@@ -8,52 +8,51 @@
         Title="MainWindow" Height="450" Width="800" FontSize="30" FontFamily="David">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Content="מסך פשוט - בשביל להדגים את שלב 1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontFamily="Gisha"/>
+        <Label Content="מסך פשוט - בשביל להדגים את שלב 1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontFamily="Gisha" />
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Content="Add Traniee" Grid.Column="0"/>
-            <Button Content="Add Tester" Grid.Column="1"/>
-            <Button Content="Add Test" Grid.Column="2"/>
+            <Button Content="Add Traniee" Grid.Column="0" />
+            <Button Content="Add Tester" Grid.Column="1" />
+            <Button Content="Add Test" Grid.Column="2" />
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Content="show all trainees" Grid.Column="0"/>
-            <Button Content="show all testers" Grid.Column="1"/>
-            <Button Content="show all tests" Grid.Column="2"/>
+            <Button Content="show all trainees" Grid.Column="0" />
+            <Button Content="show all testers" Grid.Column="1" />
+            <Button Content="show all tests" Grid.Column="2" />
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Content="show all trainees" Grid.Column="0"/>
-            <Button Content="show all testers" Grid.Column="1"/>
-            <Button Content="show all tests" Grid.Column="2"/>
+            <Button Content="show all trainees" Grid.Column="0" />
+            <Button Content="show all testers" Grid.Column="1" />
+            <Button Content="show all tests" Grid.Column="2" />
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Content="update trainee" Grid.Column="0"/>
-            <Button Content="update tester" Grid.Column="1"/>
-            <Button Content="finish test" Grid.Column="2"/>
+            <Button Content="update trainee" Grid.Column="0" />
+            <Button Content="update tester" Grid.Column="1" />
+            <Button Content="finish test" Grid.Column="2" />
         </Grid>
     </Grid>
 </Window>

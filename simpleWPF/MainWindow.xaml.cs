@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ibl;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Ibl;
+
 namespace simpleWPF
 {
     /// <summary>
@@ -21,6 +9,7 @@ namespace simpleWPF
     public partial class MainWindow : Window
     {
         private static IBL bl = factoryBL.FactoryBL.GetBL();
+
         public MainWindow()
         {
             InitializeComponent();

@@ -56,8 +56,8 @@ namespace imp_Dal
 
         public void UpdateTrainee(int id, Trainee trainee)
         {
-           Trainee trainee_old = GetTraineeById(trainee.Id);
-           if (trainee_old  == null)
+            Trainee trainee_old = GetTraineeById(trainee.Id);
+            if (trainee_old == null)
                 throw new Exception(string.Format("not found trainee {0}", trainee.Id));
             DS.DataSource.trainees.Remove(trainee_old);
             DS.DataSource.trainees.Add(trainee);
@@ -101,7 +101,6 @@ namespace imp_Dal
 
         public void DeleteTester(int id)
         {
-            
             if (DS.DataSource.tests.Any((test) => test.TesterId == id))
             {
                 throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
@@ -124,9 +123,9 @@ namespace imp_Dal
 
         public void UpdateTester(int id, Tester tester)
         {
-           Tester item = GetTesterByID(id);
-           DS.DataSource.testers.Add(tester);
-           DS.DataSource.testers.Remove(item);   
+            Tester item = GetTesterByID(id);
+            DS.DataSource.testers.Add(tester);
+            DS.DataSource.testers.Remove(item);
         }
 
         public void UpdateTester(Tester tester)
@@ -164,11 +163,11 @@ namespace imp_Dal
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
             Test test = GetTestByNumber(id);
-            if(test == null)
+            if (test == null)
                 throw new Exception("Attempted to finish an unexistent test");
             test.Criterions = criterions ?? throw new Exception("You have to insert criterions to finish test");
             test.Pass = pass;
-            test.TesterNote = note;  
+            test.TesterNote = note;
         }
 
         public List<Test> GetAllTests()

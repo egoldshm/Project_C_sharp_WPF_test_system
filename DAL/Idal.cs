@@ -33,13 +33,13 @@ namespace DAL
         void UpdateTrainee(BE.Trainee trainee);
 
         /// <summary>
-        /// Function that return all the trainee in the DB. 
+        /// Function that return all the trainee in the DB.
         /// </summary>
         /// <returns>Eeturn copy of all the trainee</returns>
         List<BE.Trainee> GetAllTrainees();
 
         /// <summary>
-        /// Function that get id and return the trainee by this id in the DB. 
+        /// Function that get id and return the trainee by this id in the DB.
         /// </summary>
         /// <param name="id">the id of the trainee</param>
         /// <returns>trainee by id</returns>
@@ -48,39 +48,40 @@ namespace DAL
         #endregion Trainee
 
         #region Tester
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         void AddTester(BE.Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         void DeleteTester(int id);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tester"></param>
         void UpdateTester(int id, BE.Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         void UpdateTester(BE.Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         List<BE.Tester> GetAllTesters();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -89,14 +90,15 @@ namespace DAL
         #endregion Tester
 
         #region Test
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="test"></param>
         void AddFutureTest(BE.Test test);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         /// <param name="trainee"></param>
@@ -105,13 +107,13 @@ namespace DAL
         void AddFutureTest(BE.Tester tester, BE.Trainee trainee, DateTime time, BE.Address address);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         List<BE.Test> GetAllTests();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="criterions"></param>
@@ -120,7 +122,7 @@ namespace DAL
         void FinishTest(int id, BE.CriterionsOfTest criterions, bool pass, string note);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>

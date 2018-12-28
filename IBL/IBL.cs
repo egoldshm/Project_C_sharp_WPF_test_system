@@ -8,6 +8,7 @@ namespace Ibl
     public interface IBL
     {
         #region Trainee
+
         /// <summary>
         /// Function that get a trainee and add him to the DB
         /// </summary>
@@ -40,56 +41,59 @@ namespace Ibl
         List<Trainee> GetAllTrainees(Predicate<Trainee> checkFunction = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hasLicense"></param>
         /// <returns></returns>
         List<Trainee> GetAllTraineesByLicense(bool hasLicense = true);
+
         #endregion Trainee
 
         #region Tester
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         void AddTester(BE.Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         void DeleteTester(int id);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tester"></param>
         void UpdateTester(int id, Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         void UpdateTester(Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         List<Tester> GetAllTesters(Predicate<Tester> checkFunction = null);
+
         #endregion Tester
 
         #region Test
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="test"></param>
         void AddFutureTest(BE.Test test);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         /// <param name="trainee"></param>
@@ -98,21 +102,21 @@ namespace Ibl
         void AddFutureTest(BE.Tester tester, BE.Trainee trainee, DateTime time, BE.Address address);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="checkFunction"></param>
         /// <returns></returns>
         List<BE.Test> GetAllTests(Predicate<Test> checkFunction = null);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name=""></param>
         /// <returns></returns>
         List<Test> GetTestsByTesters(Tester tester);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="criterions"></param>
@@ -125,7 +129,7 @@ namespace Ibl
         #region getters
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <param name="x"></param>
@@ -133,28 +137,28 @@ namespace Ibl
         List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
         List<Tester> GetTestersByAvailableTime(DateTime date);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="trainee"></param>
         /// <returns></returns>
         List<Test> GetTestsByTrainee(Trainee trainee);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
         List<Test> GetTestsByDay(DateTime date);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="tester"></param>
         /// <param name="successful">flag for singal if we looking for successful or unsuccessful tests</param>
@@ -162,33 +166,32 @@ namespace Ibl
         List<Test> GetAllSuccessfullTestsByTester(Tester tester, bool successful = true);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sorted"></param>
         /// <returns></returns>
         IEnumerable<IGrouping<CarType, Tester>> GetTestersByCarType(bool sorted = false);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sorted"></param>
         /// <returns></returns>
         IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sorted"></param>
         /// <returns></returns>
         IEnumerable<IGrouping<string, Trainee>> GetTraineesByTeacher(bool sorted = false);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sorted"></param>
         /// <returns></returns>
         IEnumerable<IGrouping<int, Trainee>> GetTraineseByNumOfTesters(bool sorted = false);
-
 
         #endregion getters
     }

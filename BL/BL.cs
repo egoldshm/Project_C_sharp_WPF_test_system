@@ -46,7 +46,7 @@ namespace BL
             int check_digit = (10 - sum % 10) % 10;
             return check_digit == id % 10;
         }
-        
+
         /// <summary>
         /// function that get Birthday in DateTime type and return age of the men who born there.
         /// </summary>
@@ -59,11 +59,12 @@ namespace BL
             float age = (now - birthdayINT) / 10000;
             return age;
         }
+
         #region Trainee
 
         public void AddTrainee(Trainee trainee)
         {
-            if(trainee.Id.ToString().Length != 9)
+            if (trainee.Id.ToString().Length != 9)
                 throw new Exception(string.Format("id {0} is invalid. because it has {1} digits and normal id has 9.", trainee.Id, trainee.Id.ToString().Length));
             if (!CheckIfIDisValid(trainee.Id))
                 throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", trainee.Id));
@@ -76,7 +77,6 @@ namespace BL
             if (GetAgeByBirthday(trainee.Birthday) < Configuration.MIN_STUDENT_AGE)
                 throw new Exception(string.Format("The trainee {0} is too young to driving test, The minimum is {1} and the trainee only {2}.", trainee.ToString(), Configuration.MIN_STUDENT_AGE, GetAgeByBirthday(trainee.Birthday)));
             dal.AddTrainee(trainee);
-            
         }
 
         public void DeleteTrainee(int id)
@@ -93,13 +93,11 @@ namespace BL
 
         public bool EntitledToDrivingLicense(Trainee trainee)
         {
-            List<Test> testPassed = new List<Test>(GetTestsByTrainee(trainee).Where(t =>  t.Pass));
+            List<Test> testPassed = new List<Test>(GetTestsByTrainee(trainee).Where(t => t.Pass));
             if (testPassed.Count >= 1)
                 return true;
             return false;
         }
-
-      
 
         public void UpdateTrainee(int id, Trainee trainee)
         {
@@ -120,7 +118,7 @@ namespace BL
 
         public IEnumerable<IGrouping<string, Trainee>> GetTraineesBySchoolName(bool sorted = false)
         {
-            return sorted?
+            return sorted ?
                 from item in dal.GetAllTrainees() orderby item.Id group item by item.SchoolName
                 : from item in dal.GetAllTrainees() group item by item.SchoolName;
         }
@@ -168,7 +166,7 @@ namespace BL
                 throw new Exception(String.Format("Tester {0} is registered to {1} test(s), than we can delete him", id, countOftestsForTester));
             dal.DeleteTester(id);
         }
-        
+
         public List<Tester> GetAllTesters(Predicate<Tester> checkFunction = null)
         {
             if (checkFunction != null)
@@ -214,10 +212,10 @@ namespace BL
             if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
                 throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
             //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help please!! REPLY: Look at what I did and tell me if it's fine
-            var WeeklyTests = new List<IGrouping<DateTime,Test>>((from test in GetTestsByTesters(tester) let diff = (7+test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday)%7 group test by test.RealDateOfTest.AddDays(diff*-1).Date));
+            var WeeklyTests = new List<IGrouping<DateTime, Test>>((from test in GetTestsByTesters(tester) let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7 group test by test.RealDateOfTest.AddDays(diff * -1).Date));
             //if (WeeklyTests.Count > tester.MaxWeeklyTests)//TODO: fix it, how we find the weekly tests? REPLY: Tell me if this makes sense to you
-            foreach(var Week in WeeklyTests)
-                if(Week.ToList().Count > tester.MaxWeeklyTests)
+            foreach (var Week in WeeklyTests)
+                if (Week.ToList().Count > tester.MaxWeeklyTests)
                     throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
             dal.UpdateTester(id, tester);
         }
@@ -251,19 +249,20 @@ namespace BL
             if (DateTime.Now > time)
                 throw new Exception("you cant set future test for the past.");
             //TODO: check the tester dont pass the max weekly tests, i have no idea how to do it. help. REPLY: tell me if htis works...
-            var WeeklyTests = new List<Test>((from test in GetTestsByTesters(tester) let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
-                                              where time.AddDays(diff * -1).Date ==  test.RealDateOfTest.AddDays(diff * -1).Date select test));
+            var WeeklyTests = new List<Test>((from test in GetTestsByTesters(tester)
+                                              let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
+                                              where time.AddDays(diff * -1).Date == test.RealDateOfTest.AddDays(diff * -1).Date
+                                              select test));
             if (WeeklyTests.Count > tester.MaxWeeklyTests)
                 throw new Exception(string.Format("The tester {0} can't have a test at {1} due to hte fact he exceded the maximum amount of tests that week", tester.ToString(), time.ToString()));
-                    //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
-                    if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null))
+            //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
+            if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null))
                 throw new Exception(string.Format("You can not set a test for a student {0} because in the system already have a future test", trainee.Id));
             //todo: to finish.
         }
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
-
             if (dal.GetTestByNumber(id) == null)
                 throw new Exception(string.Format("The test with number {0} is not found", id));
             //TODO: work with criterions to think when is impotisble that trainee pass and when not.
@@ -279,7 +278,7 @@ namespace BL
 
         public List<Test> GetTestsByTrainee(Trainee trainee)
         {
-            return GetAllTests(test => test.TraineeId == trainee.Id );
+            return GetAllTests(test => test.TraineeId == trainee.Id);
         }
 
         public List<Trainee> GetAllTrainees(Predicate<Trainee> checkFunction = null)
@@ -291,27 +290,25 @@ namespace BL
 
         public List<Test> GetAllTests(Predicate<Test> checkFunction = null)
         {
-            if(checkFunction != null)
+            if (checkFunction != null)
                 return new List<Test>(from test in dal.GetAllTests() where checkFunction(test) select test);
             return new List<Test>(dal.GetAllTests());
         }
 
         public List<Test> GetTestsByTesters(Tester tester)
         {
-                return GetAllTests(test => test.TesterId == tester.Id);
+            return GetAllTests(test => test.TesterId == tester.Id);
         }
 
         public List<Trainee> GetAllTraineesByLicense(bool hasLicense = true)
         {
             return new List<Trainee>(from trainee in GetAllTrainees() where hasLicense ? EntitledToDrivingLicense(trainee) : !EntitledToDrivingLicense(trainee) select trainee);
         }
-        
 
         public List<Test> GetAllSuccessfullTestsByTester(Tester tester, bool successful = true)
         {
             return new List<Test>(from test in GetTestsByTesters(tester) where successful ? test.Pass : !test.Pass select test);
         }
-
 
         #endregion Test
     }
