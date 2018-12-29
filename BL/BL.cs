@@ -196,7 +196,7 @@ namespace BL
 
         public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
         {
-            //TODO: to implement the function realy. (now it fake) for that we need to use google maps... that is a different part of the project if I recall correctly
+            //TODO: after the second part - connect it to google maps.
             Random random = new Random();
             return new List<Tester>(from tester in GetAllTesters() where random.Next(1000) < x select tester);
         }
@@ -211,11 +211,10 @@ namespace BL
                 throw new Exception(string.Format("you cant change birthday of tester {0}, this make him to be too old to do be tester", id));
             if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
                 throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
-            //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help please!! REPLY: Look at what I did and tell me if it's fine
+            //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help please!! REPLY: Look at what I did and tell me if it's fine. E.G REPLY: i dont understand what you did. explan to me pleas
             var WeeklyTests = new List<IGrouping<DateTime, Test>>((from test in GetTestsByTesters(tester) let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7 group test by test.RealDateOfTest.AddDays(diff * -1).Date));
-            //if (WeeklyTests.Count > tester.MaxWeeklyTests)//TODO: fix it, how we find the weekly tests? REPLY: Tell me if this makes sense to you
-            foreach (var Week in WeeklyTests)
-                if (Week.ToList().Count > tester.MaxWeeklyTests)
+            //if (WeeklyTests.Count > tester.MaxWeeklyTests)//TODO: fix it, how we find the weekly tests? REPLY: Tell me if this makes sense to you. E.G reply. look fine. but i didnt absulutly understand everything... hope it good. i change minor thing for use anonimy function...
+            if(WeeklyTests.Any(Week => Week.ToList().Count > tester.MaxWeeklyTests))
                     throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
             dal.UpdateTester(id, tester);
         }
