@@ -7,3 +7,12 @@ C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ar
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csproj.CopyComplete
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.dll
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\DS.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\DS.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\BE.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\BE.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csprojAssemblyReference.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csproj.CoreCompileInputs.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csproj.CopyComplete
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.pdb

@@ -1,6 +1,7 @@
 ﻿using Ibl;
 using System.Windows;
-
+using BE;
+using System.Windows.Controls;
 namespace simpleWPF
 {
     /// <summary>
@@ -13,6 +14,23 @@ namespace simpleWPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void AddTraineeClick(object sender, RoutedEventArgs e)
+        {
+            InputDialogSample input = new InputDialogSample()
+            bl.AddTrainee(new Trainee())
+        }
+
+        private void AddTesterClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddTestClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

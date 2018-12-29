@@ -8,3 +8,5 @@
 *storage.ide-shm
 *storage.ide-wal
 *.vs/slnx.sqlite
+.vs/Solution/v15/Server/sqlite3/storage.ide
+.vs/Solution/v15/Server/sqlite3/storage.ide-wal

@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="InputDialogSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +66,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InputDialogSample.xaml.cs">
+      <DependentUpon>InputDialogSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -95,6 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{8a77bcc1-5d6d-43a9-8769-1a10e9331191}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FactoryBL\FactoryBL.csproj">
       <Project>{3f855b06-a1a4-4bb6-9a56-89686c706dfe}</Project>
       <Name>FactoryBL</Name>

@@ -1,2 +1,15 @@
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csprojAssemblyReference.cache
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csproj.CoreCompileInputs.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\imp_Dal.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\imp_Dal.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\BE.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DAL.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DS.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\BE.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DAL.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DS.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csprojAssemblyReference.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csproj.CoreCompileInputs.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csproj.CopyComplete
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.pdb
