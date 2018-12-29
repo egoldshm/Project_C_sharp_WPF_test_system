@@ -1,4 +1,5 @@
-﻿namespace BE
+﻿
+namespace BE
 {
     public static class Configuration
     {
@@ -8,6 +9,7 @@
         public const int MIN_DAYS_BETWEEN_TESTS = 7;
         public const int MIN_LESSON_BEFORE_TEST = 27;
         public const int MIN_TESTER_AGE = 30;
+        public const int DURATION_OF_TEST = 30;
 
         public static readonly string[] TYPE_OF_CRITERIONS = new string[] { "keeping distance"
             ,"reverse parking","looking at The mirror"
