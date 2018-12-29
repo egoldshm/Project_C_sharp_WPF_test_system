@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button x:Name="AddTrainee" Content="Add Traniee" Grid.Column="0" Click="AddTraineeClick"/>
+            <Button x:Name="AddTrainee" Content="Add Traniee" Grid.Column="0" Click="AddTraineeClick" />
             <Button x:Name="AddTester" Content="Add Tester" Grid.Column="1" Click="AddTesterClick" />
             <Button x:Name="AddTest" Content="Add Test" Grid.Column="2" Click="AddTestClick" />
         </Grid>
