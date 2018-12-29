@@ -19,7 +19,19 @@ namespace BL
 
         private void Init()
         {
-            throw new NotImplementedException();
+            try
+            {
+                AddFutureTest(new Test(new Tester(324218544, "Coren", "Eyal"), new Trainee(324218544, "Darshan", "Ariel")));
+                AddTrainee(new Trainee(324218544, "Darshan", "Ariel"));
+                AddTester(new Tester(324218544, "Coren", "Eyal"));
+                AddTester(new Tester(324218544));
+                AddTrainee(new Trainee(123456789));
+                AddFutureTest(new Test(new Tester(0), new Trainee(0)));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -160,10 +172,10 @@ namespace BL
             if (!CheckIfIDisValid(id))
                 throw new Exception(string.Format("id {0} is invalid israeli number. by the rules of ID numbers", id));
             if (dal.GetTesterByID(id) == null)
-                throw new Exception(String.Format("No tester with the id {0} exists", id));
+                throw new Exception(string.Format("No tester with the id {0} exists", id));
             int countOftestsForTester = GetTestsByTesters(dal.GetTesterByID(id)).Count;
             if (countOftestsForTester > 0)
-                throw new Exception(String.Format("Tester {0} is registered to {1} test(s), than we can delete him", id, countOftestsForTester));
+                throw new Exception(string.Format("Tester {0} is registered to {1} test(s), than we can delete him", id, countOftestsForTester));
             dal.DeleteTester(id);
         }
 
@@ -211,11 +223,21 @@ namespace BL
                 throw new Exception(string.Format("you cant change birthday of tester {0}, this make him to be too old to do be tester", id));
             if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
                 throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
-            //TODO: check if the tester still available when the tests fixed. and if he dont pass the max hour in week. help please!! REPLY: Look at what I did and tell me if it's fine. E.G REPLY: i dont understand what you did. explan to me pleas
-            var WeeklyTests = new List<IGrouping<DateTime, Test>>((from test in GetTestsByTesters(tester) let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7 group test by test.RealDateOfTest.AddDays(diff * -1).Date));
-            //if (WeeklyTests.Count > tester.MaxWeeklyTests)//TODO: fix it, how we find the weekly tests? REPLY: Tell me if this makes sense to you. E.G reply. look fine. but i didnt absulutly understand everything... hope it good. i change minor thing for use anonimy function...
-            if(WeeklyTests.Any(Week => Week.ToList().Count > tester.MaxWeeklyTests))
-                    throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
+            var WeeklyTests = new List<IGrouping<DateTime, Test>>(from test in GetTestsByTesters(tester)
+                                                                  let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
+                                                                  group test by test.RealDateOfTest.AddDays(diff * -1).Date);
+            if (WeeklyTests.Any(Week => Week.ToList().Count > tester.MaxWeeklyTests))
+                throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
+
+            foreach (var test1 in GetTestsByTesters(tester))
+                foreach (var test2 in GetTestsByTesters(tester))
+                {
+                    if (test1 == test2)
+                        break;
+                    if ((test1.RealDateOfTest - test2.RealDateOfTest).Duration().Minutes < BE.Configuration.DURATION_OF_TEST)
+                        throw new Exception(string.Format("Can't update Tester {0} because it has overlaping scheduled tests", tester.ToString()));
+                }
+
             dal.UpdateTester(id, tester);
         }
 
@@ -235,7 +257,7 @@ namespace BL
             if (dal.GetTraineeById(test.TraineeId) == null)
                 throw new Exception(string.Format("trainee {0} not exists in the DB.", test.TraineeId));
             if (dal.GetTestByNumber(test.TestNumber) != null)
-                throw new Exception(String.Format("Test number {0} already exists", test.TestNumber));
+                throw new Exception(string.Format("Test number {0} already exists", test.TestNumber));
             AddFutureTest(dal.GetTesterByID(test.TesterId), dal.GetTraineeById(test.TraineeId), test.DateOfTest, test.AddressOfBegining);
         }
 
@@ -247,18 +269,26 @@ namespace BL
                 throw new Exception(string.Format("trainee {0} not exists in the DB.", trainee.Id));
             if (DateTime.Now > time)
                 throw new Exception("you cant set future test for the past.");
-            //TODO: check the tester dont pass the max weekly tests, i have no idea how to do it. help. REPLY: tell me if htis works...
-            var WeeklyTests = new List<Test>((from test in GetTestsByTesters(tester)
-                                              let TestDiff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
-                                              let TimeDiff = (7 + time.DayOfWeek - DayOfWeek.Sunday) % 7
-                                              where time.AddDays(TimeDiff * -1).Date == test.RealDateOfTest.AddDays(TestDiff * -1).Date
-                                              select test));
+            var WeeklyTests = new List<Test>(from test in GetTestsByTesters(tester)
+                                             let TestDiff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
+                                             let TimeDiff = (7 + time.DayOfWeek - DayOfWeek.Sunday) % 7
+                                             where time.AddDays(TimeDiff * -1).Date == test.RealDateOfTest.AddDays(TestDiff * -1).Date
+                                             select test);
             if (WeeklyTests.Count > tester.MaxWeeklyTests)
                 throw new Exception(string.Format("The tester {0} can't have a test at {1} due to hte fact he exceded the maximum amount of tests that week", tester.ToString(), time.ToString()));
-            //TODO: צריך לבדוק שהטסטר פנוי בזמן הזה
             if (GetTestsByTrainee(trainee).Any(test => test.DateOfTest > DateTime.Now || test.RealDateOfTest != null))
                 throw new Exception(string.Format("You can not set a test for a student {0} because in the system already have a future test", trainee.Id));
-            //todo: to finish.
+
+            var NumberOfTestsInTimeSpan = new List<Test>(from test in GetTestsByTesters(tester)
+                                                         let timespan = test.RealDateOfTest - time
+                                                         where timespan.Duration().Minutes < 30
+                                                         select test);
+
+            foreach (var test in GetTestsByTesters(tester))
+                if ((test.RealDateOfTest - time).Duration().Minutes < BE.Configuration.DURATION_OF_TEST)
+                    throw new Exception(string.Format("The tester {0} has no time on {1} at {2}", tester.ToString(), time.ToString("dddd, MMMM dd yyyy"), time.ToString("t")));
+
+            dal.AddFutureTest(new Test(tester.Id, trainee.Id, time, address));
         }
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
@@ -268,6 +298,8 @@ namespace BL
             //TODO: work with criterions to think when is impotisble that trainee pass and when not.
             if (false/*TODO:*/)
                 throw new Exception(string.Format("Hsdfsdjfnbjdfncbktsdjfmbkdfc", criterions));
+
+            throw new NotImplementedException();
             dal.FinishTest(id, criterions, pass, note);
         }
 
