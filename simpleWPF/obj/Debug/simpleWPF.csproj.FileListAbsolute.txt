@@ -31,3 +31,5 @@ C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\simpleWPF\obj\Debug\simpleWPF.
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\simpleWPF\obj\Debug\simpleWPF.exe
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\simpleWPF\obj\Debug\simpleWPF.pdb
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\simpleWPF\obj\Debug\inputBox.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\simpleWPF\obj\Debug\InputDialogSample.baml
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\simpleWPF\obj\Debug\InputDialogSample.g.cs

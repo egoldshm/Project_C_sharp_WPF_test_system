@@ -19,8 +19,15 @@ namespace simpleWPF
 
         private void AddTraineeClick(object sender, RoutedEventArgs e)
         {
-            InputDialogSample input = new InputDialogSample()
-            bl.AddTrainee(new Trainee())
+            InputDialogSample inputId = new InputDialogSample("enter id");
+            InputDialogSample inputFirstName = new InputDialogSample("enter first name");
+            InputDialogSample inputLastName = new InputDialogSample("enter Last Name");
+            InputDialogSample inputSchoolName = new InputDialogSample("enter school name");
+            InputDialogSample inputTeacherName = new InputDialogSample("enter teacher name");
+            InputDialogSample inputPhone = new InputDialogSample("enter phone number");
+
+
+            bl.AddTrainee(new Trainee(inputId.Answer, inputFirstName.Answer, inputLastName.Answer, inputSchoolName.Answer, int.Parse(inputPhone.Answer));
         }
 
         private void AddTesterClick(object sender, RoutedEventArgs e)
