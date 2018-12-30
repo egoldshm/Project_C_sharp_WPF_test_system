@@ -57,6 +57,26 @@ namespace SimpleUI
                             Console.WriteLine(item);
                         }
                         break;
+                    case 10:
+                        try
+                        {
+                            List<Test> list = bl.GetTestsByTesters(bl.GetTesterById(int.Parse(input("id"))));
+                            foreach (var item in list)
+                            {
+                                Console.WriteLine(item);
+                            }
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine("ERROR!! {0}", e.Message);
+                        }
+                        break;
+                    case 11:
+                        DoActionWithCheck(deleteTrainee);
+                        break;
+                    case 12:
+                        DoActionWithCheck(deleteTester);
+                        break;
                     default:
                         break;
                 }
@@ -64,7 +84,19 @@ namespace SimpleUI
             while (num != 0);
         }
 
+        private static void deleteTester()
+        {
+            string id = input("id");
+            bl.DeleteTester(int.Parse(id));
+        }
 
+        private static void deleteTrainee()
+        {
+            string id = input("id");
+            bl.DeleteTrainee(int.Parse(id));
+            
+        }
+        
         private static void DoActionWithCheck(Action action)
         {
             try

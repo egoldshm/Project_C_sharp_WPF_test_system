@@ -57,7 +57,7 @@ namespace BE
             this.DateOfBirth = tester.DateOfBirth;
             this.Gender = tester.Gender;
             this.PhoneNumber = tester.PhoneNumber;
-            this.Address = tester.Address ?? throw new ArgumentNullException(nameof(Address));
+            this.Address = tester.Address;
             this.YearsOfExperience = tester.YearsOfExperience;
             this.MaxWeeklyTests = tester.MaxWeeklyTests;
             this.CarType = tester.CarType;

@@ -82,6 +82,7 @@ namespace Ibl
         /// <returns></returns>
         List<Tester> GetAllTesters(Predicate<Tester> checkFunction = null);
 
+        Tester GetTesterById(int id);
         #endregion Tester
 
         #region Test

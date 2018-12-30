@@ -5,8 +5,8 @@ namespace DS
 {
     public static class DataSource
     {
-        static public List<Tester> testers;
-        static public List<Trainee> trainees;
-        static public List<Test> tests;
+        static public List<Tester> testers = new List<Tester>();
+        static public List<Trainee> trainees = new List<Trainee>();
+        static public List<Test> tests = new List<Test>();
     }
 }

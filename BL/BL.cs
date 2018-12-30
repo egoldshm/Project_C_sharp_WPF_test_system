@@ -362,6 +362,11 @@ namespace BL
             return dal.GetTestByNumber(number);
         }
 
+        public Tester GetTesterById(int id)
+        {
+            return dal.GetTesterByID(id);
+        }
+
         #endregion Test
     }
 }
