@@ -1,0 +1,2 @@
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\SimpleUI\obj\Debug\SimpleUI.csprojAssemblyReference.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\SimpleUI\obj\Debug\SimpleUI.csproj.CoreCompileInputs.cache

@@ -2,8 +2,8 @@
 {
     public struct Address
     {
-        private string street_name;
-        private int building_number;
-        private string city;
+        public string street_name;
+        public int building_number;
+        public string city;
     }
 }

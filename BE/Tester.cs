@@ -12,7 +12,7 @@ namespace BE
         private DateTime _dateOfBirth;
         private Gender _gender;
         private long _phoneNumber;
-        private string _address;
+        private Address _address;
         private int _yearsOfExperience;
         private int _maxWeeklyTests;
         private CarType _carType;
@@ -34,14 +34,14 @@ namespace BE
             this.FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
         }
 
-        public Tester(int id, string lastName, string firstName, DateTime dateOfBirth, Gender gender, long phoneNumber, string address, int yearsOfExperience, int maxWeeklyTests, CarType carType, bool[,] workDays, float maxDistance) : this(id)
+        public Tester(int id, string lastName, string firstName, DateTime dateOfBirth, Gender gender, long phoneNumber, Address address, int yearsOfExperience, int maxWeeklyTests, CarType carType, bool[,] workDays, float maxDistance) : this(id)
         {
             this.LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
             this.FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
             this.DateOfBirth = dateOfBirth;
             this.Gender = gender;
             this.PhoneNumber = phoneNumber;
-            this.Address = address ?? throw new ArgumentNullException(nameof(address));
+            this.Address = address;
             this.YearsOfExperience = yearsOfExperience;
             this.MaxWeeklyTests = maxWeeklyTests;
             this.CarType = carType;
@@ -75,7 +75,7 @@ namespace BE
         public DateTime DateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
         public Gender Gender { get => _gender; set => _gender = value; }
         public long PhoneNumber { get => _phoneNumber; set => _phoneNumber = value; }
-        public string Address { get => _address; set => _address = value; }
+        public Address Address { get => _address; set => _address = value; }
         public int YearsOfExperience { get => _yearsOfExperience; set => _yearsOfExperience = value; }
         public int MaxWeeklyTests { get => _maxWeeklyTests; set => _maxWeeklyTests = value; }
         public CarType CarType { get => _carType; set => _carType = value; }

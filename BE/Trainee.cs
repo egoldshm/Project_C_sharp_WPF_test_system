@@ -88,5 +88,10 @@ namespace BE
         {
             return FirstName + " " + FamilyName;
         }
+
+        public static implicit operator Trainee(Trainee v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
