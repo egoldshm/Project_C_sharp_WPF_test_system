@@ -61,10 +61,8 @@ namespace SimpleUI
                         try
                         {
                             List<Test> list = bl.GetTestsByTesters(bl.GetTesterById(int.Parse(input("id"))));
-                            foreach (var item in list)
-                            {
-                                Console.WriteLine(item);
-                            }
+                            list.ForEach(test => Console.WriteLine(test));
+                                
                         }
                         catch(Exception e)
                         {
@@ -136,8 +134,6 @@ namespace SimpleUI
             birthday = Console.ReadLine();
             Console.WriteLine("enter carType (1 for Heavy_truck, 2 for Medium_truck, 3 for Private_Car,4 for Two_wheeled_vehicles");
             carType = Console.ReadLine();
-            Console.WriteLine("enter teacher Name:");
-            teacherName = Console.ReadLine();
             Console.WriteLine("enter max distans:");
             maxDistanse = Console.ReadLine();
             Console.WriteLine("enter max weeky hours:");
@@ -274,8 +270,6 @@ namespace SimpleUI
             birthday = Console.ReadLine();
             Console.WriteLine("enter carType (1 for Heavy_truck, 2 for Medium_truck, 3 for Private_Car,4 for Two_wheeled_vehicles");
             carType = Console.ReadLine();
-            Console.WriteLine("enter teacher Name:");
-            teacherName = Console.ReadLine();
             Console.WriteLine("enter max distans:");
             maxDistanse = Console.ReadLine();
             Console.WriteLine("enter max weeky hours:");
