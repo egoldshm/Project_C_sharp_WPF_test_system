@@ -1,7 +1,7 @@
-﻿using Ibl;
+﻿using BE;
+using Ibl;
 using System.Windows;
-using BE;
-using System.Windows.Controls;
+
 namespace simpleWPF
 {
     /// <summary>
@@ -15,7 +15,6 @@ namespace simpleWPF
         {
             InitializeComponent();
         }
-
 
         private void AddTraineeClick(object sender, RoutedEventArgs e)
         {
@@ -32,12 +31,10 @@ namespace simpleWPF
 
         private void AddTesterClick(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void AddTestClick(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

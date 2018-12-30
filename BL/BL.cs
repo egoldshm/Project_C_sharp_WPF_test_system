@@ -296,10 +296,25 @@ namespace BL
             if (dal.GetTestByNumber(id) == null)
                 throw new Exception(string.Format("The test with number {0} is not found", id));
             //TODO: work with criterions to think when is impotisble that trainee pass and when not.
-            if (false/*TODO:*/)
-                throw new Exception(string.Format("Hsdfsdjfnbjdfncbktsdjfmbkdfc", criterions));
+            var distribution = new List<IGrouping<BE.CriterionMode, string>>(from criterion in criterions.Criterions group criterion.Name by criterion.Mode);
 
-            throw new NotImplementedException();
+            List<string> passed = new List<string>(0);
+            List<string> failed = new List<string>(0);
+            List<string> NotDetermind = new List<string>(0);
+            foreach (var mode in distribution)
+            {
+                if (mode.Key == BE.CriterionMode.passed)
+                    passed = mode.ToList<string>();
+                if (mode.Key == BE.CriterionMode.Fails)
+                    failed = mode.ToList<string>();
+                if (mode.Key == BE.CriterionMode.NotDetermined)
+                    NotDetermind = mode.ToList<string>();
+            }
+            float grade = passed.Count / (failed.Count + NotDetermind.Count);
+            if (pass && grade < BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)
+                throw new Exception(string.Format("Test number {0} couldn't have been passed, since not enough criteria have been met", id));
+            if (!pass && grade > BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)
+                throw new Exception(string.Format("Test number {0} couldn't have been failed, since enough criteria have been met for the trainee to pass", id));
             dal.FinishTest(id, criterions, pass, note);
         }
 
