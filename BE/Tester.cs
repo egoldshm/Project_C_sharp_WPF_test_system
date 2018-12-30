@@ -87,7 +87,7 @@ namespace BE
 
         public override string ToString()
         {
-            return FirstName + " " + LastName;
+            return Id + " (" + FirstName + " " + LastName + ")";
         }
     }
 }

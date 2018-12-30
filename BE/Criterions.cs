@@ -25,6 +25,11 @@ namespace BE
         {
             Mode = mode;
         }
+
+        public override string ToString()
+        {
+            return Name + ": " + nameof(Mode);
+        }
     }
 
     public class CriterionsOfTest
@@ -45,5 +50,19 @@ namespace BE
         }
 
         public List<Criterion> Criterions { get => _criterions; set => _criterions = value; }
+
+        public override bool Equals(object obj)
+        {
+            var test = obj as CriterionsOfTest;
+            return test != null &&
+                   EqualityComparer<List<Criterion>>.Default.Equals(Criterions, test.Criterions);
+        }
+
+        public override string ToString()
+        {
+            string str = "";
+            Criterions.ForEach(criterion => str += "| " + criterion);
+            return str;
+        }
     }
 }

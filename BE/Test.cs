@@ -88,7 +88,7 @@ namespace BE
 
         public override string ToString()
         {
-            return TestNumber.ToString();
+            return TestNumber + ". tester: " + TesterId + ". trainee: " + TraineeId;
         }
     }
 }
