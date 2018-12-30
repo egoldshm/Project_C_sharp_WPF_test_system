@@ -54,6 +54,9 @@ namespace BE
         //copy CTOR for get_all
         public Trainee(Trainee trainee)
         {
+            this.FirstName = trainee.FirstName;
+            this.FamilyName = trainee.FamilyName;
+            this.Id = trainee.Id;
             this.Gender = trainee.Gender;
             this.PhoneNumber = trainee.PhoneNumber;
             this.Address = trainee.Address;

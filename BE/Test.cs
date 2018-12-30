@@ -10,7 +10,7 @@ namespace BE
         #region Private variables
 
         private static int _testIdTotal = 10000000;
-        private readonly int _TestNumber;
+        private int _TestNumber;
         private int _TesterId;
         private int _TraineeId;
         private DateTime _dateOfTest;
@@ -54,9 +54,10 @@ namespace BE
         }
 
         //copy CTOR for get_all
-        public Test(Test test)
+        public Test(Test test) 
         {
             //this.TestNumber = test.TestNumber; need to see if needed by get_all, because otherwise, I don't see a possible way to have it read only
+            this._TestNumber = test.TestNumber;
             this.TesterId = test.TesterId;
             this.TraineeId = test.TraineeId;
             this.DateOfTest = test.DateOfTest;

@@ -52,6 +52,7 @@ namespace BE
         //copy CTOR for get_all
         public Tester(Tester tester)
         {
+            this.Id = tester.Id;
             this.LastName = tester.LastName ?? throw new ArgumentNullException(nameof(LastName));
             this.FirstName = tester.FirstName ?? throw new ArgumentNullException(nameof(FirstName));
             this.DateOfBirth = tester.DateOfBirth;
