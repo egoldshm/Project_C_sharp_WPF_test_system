@@ -124,6 +124,7 @@ namespace Ibl
         /// <param name="note"></param>
         void FinishTest(int id, BE.CriterionsOfTest criterions, bool pass, string note);
 
+        Test GetTestByNumber(int number);
         #endregion Test
 
         #region getters

@@ -357,6 +357,11 @@ namespace BL
             return new List<Test>(from test in GetTestsByTesters(tester) where successful ? test.Pass : !test.Pass select test);
         }
 
+        public Test GetTestByNumber(int number)
+        {
+            return dal.GetTestByNumber(number);
+        }
+
         #endregion Test
     }
 }

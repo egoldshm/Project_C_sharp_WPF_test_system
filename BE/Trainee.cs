@@ -86,7 +86,7 @@ namespace BE
 
         public override string ToString()
         {
-            return FirstName + " " + FamilyName;
+            return Id + "(" + FirstName + " " + FamilyName + ")";
         }
 
         public static implicit operator Trainee(Trainee v)

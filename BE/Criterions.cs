@@ -20,6 +20,11 @@ namespace BE
             _name = name ?? throw new ArgumentNullException(nameof(name));
             _mode = CriterionMode.NotDetermined;
         }
+
+        public Criterion(string name, CriterionMode mode) : this(name)
+        {
+            Mode = mode;
+        }
     }
 
     public class CriterionsOfTest
@@ -32,6 +37,11 @@ namespace BE
             {
                 Criterions.Add(new Criterion(i));
             }
+        }
+
+        public CriterionsOfTest(List<Criterion> criterions)
+        {
+            Criterions = criterions ?? throw new ArgumentNullException(nameof(criterions));
         }
 
         public List<Criterion> Criterions { get => _criterions; set => _criterions = value; }
