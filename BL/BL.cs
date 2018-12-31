@@ -346,6 +346,8 @@ namespace BL
 
         public List<Test> GetTestsByTesters(Tester tester)
         {
+            if (GetTesterById(tester.Id) == null)
+                throw new Exception(string.Format("tester {0} not exist in the system", tester.Id));
             return GetAllTests(test => test.TesterId == tester.Id);
         }
 
