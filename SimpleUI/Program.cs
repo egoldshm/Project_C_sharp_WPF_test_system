@@ -448,7 +448,6 @@ namespace SimpleUI
                 else
                     Newlist.Add(new Criterion(list[i].Name, CriterionMode.Fails));
             }
-            Newlist.Sort();
             string passed = input("wheater he passed");
             bool _passed;
             if (passed == "0")

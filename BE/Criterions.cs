@@ -37,6 +37,7 @@ namespace BE
 
         public CriterionsOfTest()
         {
+            Criterions = new List<Criterion>();
             foreach (var i in Configuration.TYPE_OF_CRITERIONS)
             {
                 Criterions.Add(new Criterion(i));
