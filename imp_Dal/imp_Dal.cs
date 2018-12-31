@@ -12,35 +12,18 @@ namespace imp_Dal
 
         public void AddTrainee(Trainee trainee)
         {
-            foreach (var item in DS.DataSource.trainees)
-            {
-                if (item.Id == trainee.Id)
-                {
-                    throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
-                }
-            }
+            if (DS.DataSource.trainees.Any(item => item.Id == trainee.Id))
+                throw new Exception("The tester you attempted to delete has tests scheduled. please make sure the tester is free before deleting!");
             DS.DataSource.trainees.Add(trainee);
         }
 
         public void DeleteTrainee(int id)
         {
-            foreach (var item in DS.DataSource.tests)
-            {
-                if (item.TraineeId == id)
-                {
-                    throw new Exception("The trainee you attempted to delete has tests scheduled. please make sure the trainee is free before deleting!");
-                }
-            }
-
-            foreach (var item in DS.DataSource.trainees)
-            {
-                if (item.Id == id)
-                {
-                    DS.DataSource.trainees.Remove(item);
-                    return;
-                }
-            }
-            throw new Exception("Attempted to delete an unexistent trainee");
+            if(DS.DataSource.tests.Any(item => item.TraineeId == id))
+                throw new Exception("The trainee you attempted to delete has tests scheduled. please make sure the trainee is free before deleting!");
+            DS.DataSource.trainees.RemoveAll(item => item.Id == id);
+            if(!DS.DataSource.trainees.Any(item => item.Id == id))
+                throw new Exception("Attempted to delete an unexistent trainee");
         }
 
         public List<Trainee> GetAllTrainees()
@@ -89,13 +72,8 @@ namespace imp_Dal
 
         public void AddTester(Tester tester)
         {
-            foreach (var item in DS.DataSource.testers)
-            {
-                if (item.Id == tester.Id)
-                {
-                    throw new Exception("The tester already exists!");
-                }
-            }
+            if(DS.DataSource.testers.Any(item => item.Id == tester.Id))
+                throw new Exception("The tester already exists!");
             DS.DataSource.testers.Add(tester);
         }
 
