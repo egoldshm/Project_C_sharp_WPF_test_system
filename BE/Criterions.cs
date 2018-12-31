@@ -20,7 +20,6 @@ namespace BE
             _name = name ?? throw new ArgumentNullException(nameof(name));
             _mode = CriterionMode.NotDetermined;
         }
-
         public Criterion(string name, CriterionMode mode) : this(name)
         {
             Mode = mode;
@@ -38,25 +37,22 @@ namespace BE
 
         public CriterionsOfTest()
         {
+            Criterions = new List<Criterion>();
             foreach (var i in Configuration.TYPE_OF_CRITERIONS)
             {
                 Criterions.Add(new Criterion(i));
             }
         }
-
+        public CriterionsOfTest(CriterionsOfTest criterions)
+        {
+            this.Criterions = new List<Criterion>(criterions.Criterions);
+        }
         public CriterionsOfTest(List<Criterion> criterions)
         {
             Criterions = criterions ?? throw new ArgumentNullException(nameof(criterions));
         }
 
         public List<Criterion> Criterions { get => _criterions; set => _criterions = value; }
-
-        public override bool Equals(object obj)
-        {
-            var test = obj as CriterionsOfTest;
-            return test != null &&
-                   EqualityComparer<List<Criterion>>.Default.Equals(Criterions, test.Criterions);
-        }
 
         public override string ToString()
         {

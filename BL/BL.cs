@@ -310,8 +310,10 @@ namespace BL
                 if (mode.Key == BE.CriterionMode.NotDetermined)
                     NotDetermind = mode.ToList<string>();
             }
-            float grade = passed.Count / (failed.Count + NotDetermind.Count);
-            if (pass && grade < BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)
+            float grade = 100;
+            if (failed.Count + NotDetermind.Count != 0)
+                grade = passed.Count / (failed.Count + NotDetermind.Count);
+            if (pass && grade < (((float)BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)/100))
                 throw new Exception(string.Format("Test number {0} couldn't have been passed, since not enough criteria have been met", id));
             if (!pass && grade > BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)
                 throw new Exception(string.Format("Test number {0} couldn't have been failed, since enough criteria have been met for the trainee to pass", id));
@@ -344,6 +346,8 @@ namespace BL
 
         public List<Test> GetTestsByTesters(Tester tester)
         {
+            if (GetTesterById(tester.Id) == null)
+                throw new Exception(string.Format("tester {0} not exist in the system", tester.Id));
             return GetAllTests(test => test.TesterId == tester.Id);
         }
 
