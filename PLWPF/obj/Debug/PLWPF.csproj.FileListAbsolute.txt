@@ -1,0 +1,15 @@
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\PLWPF.exe.config
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\PLWPF.exe
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\PLWPF.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csprojAssemblyReference.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\MainWindow.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\App.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF_MarkupCompile.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF_MarkupCompile.lref
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\MainWindow.baml
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.g.resources
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.Properties.Resources.resources
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csproj.GenerateResource.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csproj.CoreCompileInputs.cache
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.exe
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.pdb
