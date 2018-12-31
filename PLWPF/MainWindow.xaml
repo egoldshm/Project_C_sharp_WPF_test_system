@@ -5,13 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" MinHeight="500" MinWidth="800" Height="500" Width="800">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Welcome to the best .NET app in the world!" FontSize="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Dubai Medium"/>
+            <Grid Grid.Row="1">
+                <TextBox Margin ="15" x:Name="UserName" Grid.Column="1" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Dubai Medium"/>
+                <Label Content="Username:" Grid.Column="0" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"  FontFamily="Dubai Medium"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="2">
+                <PasswordBox Margin ="15" x:Name="password" Grid.Column="1" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <Label Content="password:" Grid.Column="0" FontSize="35" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Dubai Medium"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="3" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+
+                </Grid.ColumnDefinitions>
+                <Button Content="Trainee and you havn't account? register here" Grid.Column="0" RenderTransformOrigin="0.5,0.5" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" FontSize="10"/>
+                <Button Content="Login as your role" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="50" FontFamily="Dubai Medium"/>
+            </Grid>
+
         </Grid>
     </Grid>
 </Window>
