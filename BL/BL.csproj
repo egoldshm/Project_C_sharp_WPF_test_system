@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
-      <Project>{8a77bcc1-5d6d-43a9-8769-1a10e9331191}</Project>
+      <Project>{3e64cf85-0867-4107-9160-4c0767869006}</Project>
       <Name>BE</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
@@ -65,6 +65,9 @@
       <Project>{f0f9d571-130f-4b13-bc49-bf0e5e894733}</Project>
       <Name>imp_Dal</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
