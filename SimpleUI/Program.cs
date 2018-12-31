@@ -141,7 +141,7 @@ namespace SimpleUI
                 {
                     if(first)
                     {
-                        Console.WriteLine("{0}:  ",nameof(item.CarType));
+                        Console.WriteLine("{0}:  ",item.CarType);
                         first = false;
                     }
                     Console.WriteLine(item);
@@ -436,6 +436,8 @@ namespace SimpleUI
         {
             string id = input("id");
             Test test = bl.GetTestByNumber(int.Parse(id));
+            if (test == null)
+                throw new Exception("test not found");
             List<Criterion> list = new List<Criterion>(test.Criterions.Criterions);
             List<Criterion> Newlist = new List<Criterion>();
             for (int i = 0; i < list.Count; i++)

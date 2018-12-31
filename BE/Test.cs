@@ -26,6 +26,7 @@ namespace BE
 
         public Test(int testerNumber, int traineeNumber)
         {
+            Criterions = new CriterionsOfTest();
             _TestNumber = TestIdTotal++;
             TesterId = testerNumber;
             TraineeId = traineeNumber;
@@ -66,6 +67,8 @@ namespace BE
             this.Criterions = test.Criterions;
             this.Pass = test.Pass;
             this.TesterNote = test.TesterNote;
+            this.Criterions = new CriterionsOfTest(test.Criterions);
+            
         }
 
         #endregion CTORs
