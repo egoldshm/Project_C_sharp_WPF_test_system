@@ -75,11 +75,112 @@ namespace SimpleUI
                     case 12:
                         DoActionWithCheck(deleteTester);
                         break;
+                    case 13:
+                        DoActionWithCheck(GetllTraineesByLicense);
+                        break;
+                    case 14:
+                        DoActionWithCheck(GetTraineesBySchoolName);
+                        break;
+                    case 15:
+                        DoActionWithCheck(GetTraineesByTeacher);
+                        break;
+                    case 16:
+                        DoActionWithCheck(GetTestersByCarType);
+                        break;
+                    case 17:
+                        DoActionWithCheck(GetTraineseByNumOfTesters);
+                        break;
+                    case 18:
+                        DoActionWithCheck(GetAllSuccessfullTestsByTester);
+                        break;
                     default:
                         break;
                 }
             }
             while (num != 0);
+        }
+
+        private static void GetTraineseByNumOfTesters()
+        {
+            foreach (IGrouping<int, Trainee> group in bl.GetTraineseByNumOfTesters(true))
+            {
+                bool first = true;
+                foreach(Trainee item in group)
+                {
+                    if (first)
+                    {
+                        Console.WriteLine("{0}: ", bl.GetTestsByTrainee(item).Count);
+                        first = false;
+                    }
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
+        private static void GetAllSuccessfullTestsByTester()
+        {
+            string id = input("id of the Tester for search Successfull Tests");
+            int count = 1;
+            bl.GetAllSuccessfullTestsByTester(bl.GetTesterById(int.Parse(id))).ForEach(test => { Console.WriteLine("{0}: {1}", count, test); count++; });
+
+        }
+
+        private static void GetllTraineesByLicense()
+        {
+            string forLicense = input("0 for Trainee who haven't License and else for who have License");
+            int count = 1;
+            bl.GetAllTraineesByLicense(forLicense != "0").ForEach(trinee => { Console.WriteLine("{0}: {1}", count, trinee); count++; });
+        }
+
+        private static void GetTestersByCarType()
+        {
+            foreach (IGrouping<CarType, Tester> group in bl.GetTestersByCarType(true))
+            {
+                bool first = true;
+                foreach (Tester item in group)
+                {
+                    if(first)
+                    {
+                        Console.WriteLine("{0}:  ",nameof(item.CarType));
+                        first = false;
+                    }
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
+        private static void GetTraineesByTeacher()
+        {
+            foreach (IGrouping<string, Trainee> group in bl.GetTraineesByTeacher(true))
+            {
+                bool first = true;
+                foreach (Trainee item in group)
+                {
+                    if (first)
+                    {
+                        Console.WriteLine("{0}:  ", item.TeacherName);
+                        first = false;
+                    }
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
+        private static void GetTraineesBySchoolName()
+        {
+            foreach (IGrouping<string, Trainee> group in bl.GetTraineesBySchoolName())
+            {
+                bool first = true;
+                foreach (Trainee item in group)
+                {
+                    if (first)
+                    {
+                        Console.WriteLine("{0}:  ", item.SchoolName);
+                        first = false;
+                    }
+                    Console.WriteLine(item);
+                }
+            }
         }
 
         private static void deleteTester()
@@ -316,9 +417,12 @@ namespace SimpleUI
             Console.WriteLine("10: show all tests by tester");
             Console.WriteLine("11: delete trainee");
             Console.WriteLine("12: delete tester");
-            Console.WriteLine("13: delete test");
-            Console.WriteLine("14: Get All Trainees By License");
-            Console.WriteLine("15:....");
+            Console.WriteLine("13: Get All Trainees By License");
+            Console.WriteLine("14: Get Trainees By School Name");
+            Console.WriteLine("15: Get Trainees By Teacher");
+            Console.WriteLine("16: Get Testers By CarType");
+            Console.WriteLine("17: Get Trainese By Num Of Testers"); 
+            Console.WriteLine("18: Get All Successfull Tests By Tester");
             Console.WriteLine("0: exit.");
             do
             {
