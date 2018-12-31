@@ -19,3 +19,24 @@ C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.csproj.CopyComplete
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.dll
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\FactoryBL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\FactoryBL.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\BL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\IBL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DAL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\BE.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\FactoryDal.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\imp_Dal.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DS.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\BL.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\IBL.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DAL.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\BE.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\FactoryDal.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\imp_Dal.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DS.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.csprojAssemblyReference.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.csproj.CoreCompileInputs.cache
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.csproj.CopyComplete
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.pdb
