@@ -128,6 +128,17 @@ namespace Ibl
         Test GetTestByNumber(int number);
         #endregion Test
 
+
+        #region User
+
+        bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj);
+
+        BE.User GetUser(string username, string password);
+
+        bool ChangePassword(BE.User user, string OldPassword, string NewPassword);
+
+        #endregion User
+
         #region getters
 
         /// <summary>

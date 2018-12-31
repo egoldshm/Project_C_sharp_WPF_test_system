@@ -21,6 +21,8 @@ namespace BL
         {
             try
             {
+                CreateUser("eitan", "4545", User.RoleTypes.Admin, null);
+                CreateUser("Ariel", "hello world", User.RoleTypes.Admin, null);
                 AddTrainee(new Trainee(324218544, "Darshan", "Ariel",Gender.Male,0584007353,new Address(),DateTime.Parse("16.10.2000"),CarType.Private_Car,TransmissionType.Manual,"a","b",30));
                 AddTester(new Tester(324218544, "Coren", "Eyal", DateTime.Parse("16.10.1970"), Gender.Male, 0581234567, new Address(), 15, 3, CarType.Private_Car, new bool[5, 6], 100));
                 AddFutureTest(new Test(324218544, 324218544, DateTime.Parse("1.2.2019"), new Address()));
@@ -372,5 +374,32 @@ namespace BL
         }
 
         #endregion Test
+
+        #region User
+
+        public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj)
+        {
+            if (roleTypes == User.RoleTypes.School && !(obj is string))
+                throw new Exception("to user as School should be connect to string");
+            if (roleTypes == User.RoleTypes.Teacher && !(obj is string))
+                throw new Exception("to user as Teacher should be connect to string");
+            if (roleTypes == User.RoleTypes.Trainee && !(obj is Trainee))
+                throw new Exception("to user as trainee should be connect to Trainee");
+            if (roleTypes == User.RoleTypes.Tester && !(obj is Tester))
+                throw new Exception("to user as Tester should be connect to Tester");
+            return dal.CreateUser(username, password, roleTypes, obj);
+        }
+
+        public BE.User GetUser(string username, string password)
+        {
+            return dal.GetUser(username, password);
+        }
+
+        public bool ChangePassword(BE.User user, string OldPassword, string NewPassword)
+        {
+            return dal.ChangePassword(user, OldPassword, NewPassword);
+        }
+
+        #endregion User
     }
 }

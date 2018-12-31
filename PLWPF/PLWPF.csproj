@@ -94,5 +94,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{3e64cf85-0867-4107-9160-4c0767869006}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FactoryBL\FactoryBL.csproj">
+      <Project>{3f855b06-a1a4-4bb6-9a56-89686c706dfe}</Project>
+      <Name>FactoryBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBL\IBL.csproj">
+      <Project>{942e0748-52d2-4ede-9fa0-2267ccef5e54}</Project>
+      <Name>IBL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

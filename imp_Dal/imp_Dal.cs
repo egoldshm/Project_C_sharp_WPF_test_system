@@ -173,5 +173,30 @@ namespace imp_Dal
         }
 
         #endregion Test
+
+        #region User
+        public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj)
+        {
+            string hashPassword = User.GetSha512FromString(password);
+            User user = new User(roleTypes, obj, username, hashPassword);
+            if (DS.DataSource.users.Any(_user => _user.Username == username))
+                return false;
+            DS.DataSource.users.Add(user);
+            return true;
+        }
+        public BE.User GetUser(string username, string password)
+        {
+            if(!DS.DataSource.users.Any(user => user.Password == BE.User.GetSha512FromString(password) && user.Username == username))
+                return null;
+            return DS.DataSource.users.Find(user => user.Password == BE.User.GetSha512FromString(password) && user.Username == username);
+        }
+
+        public bool ChangePassword(BE.User user, string OldPassword, string NewPassword)
+        {
+            BE.User old_user = GetUser(user.Username, OldPassword);
+            return old_user.changePassword(OldPassword, NewPassword);
+        }
+
+        #endregion User
     }
 }
