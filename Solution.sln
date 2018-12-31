@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryBL", "FactoryBL\Fact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUI", "SimpleUI\SimpleUI.csproj", "{F436EC0F-AD78-468B-9496-E2076167095A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLWPF", "PLWPF\PLWPF.csproj", "{0FD1AD26-8B2A-4A54-8F4A-F7B2720D6876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{F436EC0F-AD78-468B-9496-E2076167095A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F436EC0F-AD78-468B-9496-E2076167095A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F436EC0F-AD78-468B-9496-E2076167095A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FD1AD26-8B2A-4A54-8F4A-F7B2720D6876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FD1AD26-8B2A-4A54-8F4A-F7B2720D6876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FD1AD26-8B2A-4A54-8F4A-F7B2720D6876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FD1AD26-8B2A-4A54-8F4A-F7B2720D6876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
