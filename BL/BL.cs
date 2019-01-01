@@ -28,6 +28,7 @@ namespace BL
                 CreateUser("ariel", "4545", User.RoleTypes.Trainee, new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
                 AddTester(new Tester(324218544, "Coren", "Eyal", DateTime.Parse("16.10.1970"), Gender.Male, 0581234567, new Address(), 15, 3, CarType.Private_Car, new bool[5, 6], 100));
                 AddFutureTest(new Test(324218544, 324218544, DateTime.Parse("1.2.2019"), new Address()));
+                AddTrainee(new Trainee(322521303, "eitan", "goldshmidt", Gender.Male, 0584007354, new Address(), DateTime.Parse("26.11.2000"), CarType.Private_Car, TransmissionType.Manual, "yatmal", "doron", 30));
                 AddTester(new Tester(324218544));
                 AddTrainee(new Trainee(123456789));
                 AddFutureTest(new Test(new Tester(0), new Trainee(0)));
@@ -153,6 +154,10 @@ namespace BL
                 : from item in dal.GetAllTrainees() group item by GetTestsByTrainee(item).Count;
         }
 
+        public Trainee GetTraineeById(int num)
+        {
+            return dal.GetTraineeById(num);
+        }
         #endregion Trainee
 
         #region Tester

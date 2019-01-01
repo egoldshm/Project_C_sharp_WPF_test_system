@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ibl;
 using BE;
 namespace PLWPF
 {
@@ -20,7 +21,7 @@ namespace PLWPF
     public partial class TraineeMainWindow : Window
     {
         readonly Trainee trainee;
-        public TraineeMainWindow(User user)
+        public TraineeMainWindow(User user, IBL bl)
         {
             InitializeComponent();
             if(user.role != User.RoleTypes.Trainee || !(user.ConnectTo is Trainee))
@@ -29,6 +30,11 @@ namespace PLWPF
             }
             trainee = new Trainee(user.ConnectTo as Trainee);
             details.DataContext = trainee;
+            if(bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
+            {
+                LicenseLable.Content = "you have License!";
+                LicenseLable.Foreground = new SolidColorBrush(Colors.Green);
+            }
             welcomeMessage.Content = "Welcome " + trainee.FirstName + " " + trainee.FamilyName;
         }
     }

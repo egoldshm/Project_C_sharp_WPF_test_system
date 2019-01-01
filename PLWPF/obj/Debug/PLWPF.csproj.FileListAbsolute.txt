@@ -64,3 +64,8 @@ C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\imp_Dal.pdb
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\DS.pdb
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\TraineeMainWindow.baml
 C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csproj.CopyComplete
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\CreatNewTraineeUser.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\CreatNewTraineeUser.baml
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\showInfoAboutTrainee.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\showInfoAboutTrainee.baml
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs

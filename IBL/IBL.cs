@@ -47,6 +47,8 @@ namespace Ibl
         /// <returns></returns>
         List<Trainee> GetAllTraineesByLicense(bool hasLicense = true);
 
+        Trainee GetTraineeById(int num);
+
         #endregion Trainee
 
         #region Tester
@@ -127,7 +129,6 @@ namespace Ibl
 
         Test GetTestByNumber(int number);
         #endregion Test
-
 
         #region User
 

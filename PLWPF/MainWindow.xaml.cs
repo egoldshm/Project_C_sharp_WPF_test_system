@@ -43,7 +43,7 @@ namespace PLWPF
                 switch (user.role)
                 {
                     case User.RoleTypes.Trainee:
-                        TraineeMainWindow window = new TraineeMainWindow(user);
+                        TraineeMainWindow window = new TraineeMainWindow(user,bl);
                         window.Show();
                         Close();
                         break;
@@ -71,6 +71,19 @@ namespace PLWPF
             password.Password = "";
             MessageBox.Show("You log out.");
 
+        }
+
+        private void Button_Click_CreateNewTraineeUser(object sender, RoutedEventArgs e)
+        {
+            newAccount.IsEnabled = false;
+            CreatNewTraineeUser window = new CreatNewTraineeUser();
+            window.Show();
+            window.Closed += Window_Closed1;
+        }
+
+        private void Window_Closed1(object sender, EventArgs e)
+        {
+            newAccount.IsEnabled = true;
         }
     }
 }
