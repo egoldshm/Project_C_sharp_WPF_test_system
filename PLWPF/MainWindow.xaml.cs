@@ -43,7 +43,9 @@ namespace PLWPF
                 switch (user.role)
                 {
                     case User.RoleTypes.Trainee:
-                        //show trainee window
+                        TraineeMainWindow window = new TraineeMainWindow(user);
+                        window.ShowDialog();
+                        window.Closed += Window_Closed;
                         break;
                     case User.RoleTypes.Teacher:
                         //show teacher window
@@ -61,6 +63,14 @@ namespace PLWPF
                         break;
                 }
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            this.UserName.Text = "";
+            password.Password = "";
+            MessageBox.Show("You log out.");
+
         }
     }
 }

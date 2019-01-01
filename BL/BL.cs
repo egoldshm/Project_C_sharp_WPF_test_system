@@ -22,8 +22,10 @@ namespace BL
             try
             {
                 CreateUser("eitan", "4545", User.RoleTypes.Admin, null);
+                CreateUser("ariel", "4545", User.RoleTypes.Trainee, null);
                 CreateUser("Ariel", "hello world", User.RoleTypes.Admin, null);
                 AddTrainee(new Trainee(324218544, "Darshan", "Ariel",Gender.Male,0584007353,new Address(),DateTime.Parse("16.10.2000"),CarType.Private_Car,TransmissionType.Manual,"a","b",30));
+                CreateUser("ariel", "4545", User.RoleTypes.Trainee, new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
                 AddTester(new Tester(324218544, "Coren", "Eyal", DateTime.Parse("16.10.1970"), Gender.Male, 0581234567, new Address(), 15, 3, CarType.Private_Car, new bool[5, 6], 100));
                 AddFutureTest(new Test(324218544, 324218544, DateTime.Parse("1.2.2019"), new Address()));
                 AddTester(new Tester(324218544));
