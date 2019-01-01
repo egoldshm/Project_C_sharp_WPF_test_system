@@ -22,25 +22,30 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Content="ID:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
             <Label Grid.Column="1" Grid.Row="0" x:Name="id" Content ="{Binding Path=Id}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="1" Content="Address:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="1" x:Name="Address" Content ="{Binding Path=Address}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="2" Content="Phone number:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True"/>
-            <Label Grid.Column="1" Grid.Row="2" x:Name="phonenumber" Content = "{Binding Path=PhoneNumber}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="3" Content="Teacher's name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="3" x:Name="teachersname" Content = "{Binding Path=TeacherName}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="4" Content="Lesson num" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="4" x:Name="Lessonnum" Content = "{Binding Path=LessonsNumber}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="5" Content="car type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="5" x:Name="cartype" Content = "{Binding Path=TypeCarLearned}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="6" Content="Transmission Learned" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="6" x:Name="TransmissionLearned" Content = "{Binding Path=TransmissionLearned}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="7" Content="School Name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="7" x:Name="SchoolName" Content = "{Binding Path=SchoolName}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
-            <Label Grid.Column="0" Grid.Row="8" Content="Birthday:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
-            <Label Grid.Column="1" Grid.Row="8" x:Name="Birthday" Content = "{Binding Path=Birthday}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="0" Content="ID:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="1" x:Name="firstName" Content ="{Binding Path=FirstName}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="first name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="2" x:Name="lastName" Content ="{Binding Path=FamilyName}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Family name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="3" x:Name="Address" Content ="{Binding Path=Address}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="address:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />    
+            <Label Grid.Column="0" Grid.Row="4" Content="Phone number:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True"/>
+            <Label Grid.Column="1" Grid.Row="4" x:Name="phonenumber" Content = "{Binding Path=PhoneNumber}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="5" Content="Teacher's name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="5" x:Name="teachersname" Content = "{Binding Path=TeacherName}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="6" Content="Lesson num" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="6" x:Name="Lessonnum" Content = "{Binding Path=LessonsNumber}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="7" Content="car type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="7" x:Name="cartype" Content = "{Binding Path=TypeCarLearned}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="8" Content="Transmission Learned" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="8" x:Name="TransmissionLearned" Content = "{Binding Path=TransmissionLearned}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="9" Content="School Name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="9" x:Name="SchoolName" Content = "{Binding Path=SchoolName}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Grid.Column="0" Grid.Row="10" Content="Birthday:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" />
+            <Label Grid.Column="1" Grid.Row="10" x:Name="Birthday" Content = "{Binding Path=Birthday}" Margin="6" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
 
     </Grid>
 </UserControl>
