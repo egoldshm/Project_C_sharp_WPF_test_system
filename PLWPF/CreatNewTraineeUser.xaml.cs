@@ -43,18 +43,14 @@ namespace PLWPF
             if(trainee == null)
             {
                 MessageBox.Show(string.Format("Trainee with id {0} not found.", id));
-                inputUsername.Text = "";
-                inputPassword.Password = "";
-                inputId.Text = "";
+                clearTestsBox();
             }
             else
             {
                 if (!bl.CreateUser(username, password, User.RoleTypes.Trainee, trainee))
                 {
                     MessageBox.Show(string.Format("Trainee with username {0} already exist.", username));
-                    inputUsername.Text = "";
-                    inputPassword.Password = "";
-                    inputId.Text = "";
+                    clearTestsBox();
                 }
                 else
                 {
@@ -63,6 +59,14 @@ namespace PLWPF
                 }
             }
         }
+
+        private void clearTestsBox()
+        {
+            inputUsername.Text = "";
+            inputPassword.Password = "";
+            inputId.Text = "";
+        }
+
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
