@@ -45,3 +45,22 @@ C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ar
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csproj.CopyComplete
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.exe
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\TraineeMainWindow.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\BE.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\FactoryBL.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\IBL.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\BL.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\DAL.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\FactoryDal.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\imp_Dal.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\DS.dll
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\BE.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\FactoryBL.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\IBL.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\BL.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\DAL.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\FactoryDal.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\imp_Dal.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\bin\Debug\DS.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\TraineeMainWindow.baml
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csproj.CopyComplete

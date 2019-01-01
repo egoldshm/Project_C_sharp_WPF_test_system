@@ -23,11 +23,11 @@ namespace PLWPF
         public TraineeMainWindow(User user)
         {
             InitializeComponent();
-            if(user.role != User.RoleTypes.Trainee || !(user.connectTo is Trainee))
+            if(user.role != User.RoleTypes.Trainee || !(user.ConnectTo is Trainee))
             {
                 throw new Exception("worng user sended to trainee");
             }
-            trainee = new Trainee(user.connectTo as Trainee);
+            trainee = new Trainee(user.ConnectTo as Trainee);
         }
     }
 }

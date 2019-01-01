@@ -44,8 +44,8 @@ namespace PLWPF
                 {
                     case User.RoleTypes.Trainee:
                         TraineeMainWindow window = new TraineeMainWindow(user);
-                        window.ShowDialog();
-                        window.Closed += Window_Closed;
+                        window.Show();
+                        Close();
                         break;
                     case User.RoleTypes.Teacher:
                         //show teacher window

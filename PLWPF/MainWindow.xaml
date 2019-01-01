@@ -39,7 +39,7 @@
 
                 </Grid.ColumnDefinitions>
                 <Button Content="Trainee and you havn't account? register here" Grid.Column="0" RenderTransformOrigin="0.5,0.5" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" FontSize="10"/>
-                <Button Content="Login as your role" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="50" FontFamily="Dubai Medium"/>
+                <Button Content="Login as your role" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="50" FontFamily="Dubai Medium" Click="Button_Click"/>
             </Grid>
 
         </Grid>
