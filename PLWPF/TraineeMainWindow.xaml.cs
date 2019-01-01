@@ -30,12 +30,43 @@ namespace PLWPF
             }
             trainee = new Trainee(user.ConnectTo as Trainee);
             details.DataContext = trainee;
-            if(bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
+            if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {
+                testFuture.Content = "view the test you passed";
                 LicenseLable.Content = "you have License!";
+                testFuture.Click += viewTestYouPassed;
                 LicenseLable.Foreground = new SolidColorBrush(Colors.Green);
             }
+            else
+            {
+                if (bl.GetTestsByTrainee(trainee).Count == 0 || bl.GetTestsByTrainee(trainee).Last().Criterions.Criterions.TrueForAll(criterion => criterion.Mode != CriterionMode.NotDetermined))
+                {
+                    testFuture.Content = "add test";
+                    testFuture.Click += addTestToTrainee;
+                }
+                else
+                {
+                    testFuture.Content = "view test";
+                    testFuture.Click += viewTest;
+                }
+
+            }
             welcomeMessage.Content = "Welcome " + trainee.FirstName + " " + trainee.FamilyName;
+        }
+
+        private void viewTest(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void viewTestYouPassed(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void addTestToTrainee(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
