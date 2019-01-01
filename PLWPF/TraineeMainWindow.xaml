@@ -12,7 +12,7 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
-            <Label Content="Welcome {0}" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium"/>
+            <Label Content="Welcome {0}" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium" BorderBrush="#FFCCF123" BorderThickness="7"/>
             <Grid Grid.Row="1" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5*"/>
@@ -31,19 +31,39 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Column="0" Grid.Row="0" Content="Name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                    <Label Grid.Column="0" Content="Name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" >
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
                     <Label Grid.Column="1" Grid.Row="0" x:Name="name" Content ="name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-                    <Label Grid.Column="0" Grid.Row="1" Content="Address:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                    <Label Grid.Column="0" Grid.Row="1" Content="Address:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" >
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
                     <Label Grid.Column="1" Grid.Row="1" x:Name="Address" Content ="Address" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-                    <Label Grid.Column="0" Grid.Row="2" Content="Phone number:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                    <Label Grid.Column="0" Grid.Row="2" Content="Phone number:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" >
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
                     <Label Grid.Column="1" Grid.Row="2" x:Name="phonenumber" Content ="phonenumber" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-                    <Label Grid.Column="0" Grid.Row="3" Content="Teacher's name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                    <Label Grid.Column="0" Grid.Row="3" Content="Teacher's name:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" >
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
                     <Label Grid.Column="1" Grid.Row="3" x:Name="teachersname" Content ="phonenumber" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-                    <Label Grid.Column="0" Grid.Row="4" Content="Lesson num" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                    <Label Grid.Column="0" Grid.Row="4" Content="Lesson num" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="#FF2673FB" BorderThickness="3" ClipToBounds="True" >
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
                     <Label Grid.Column="1" Grid.Row="4" x:Name="Lessonnum" Content ="Lessonnum" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
 
                 </Grid>
-                <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+                <Grid Grid.Row="1" Grid.Column="1" Margin="5" Background="#FF49B3DA">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition  Height="*"/>
