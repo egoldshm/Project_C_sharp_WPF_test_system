@@ -14,5 +14,10 @@ namespace BE
             this.building_number = building_number;
             this.city = city ?? throw new ArgumentNullException(nameof(city));
         }
+
+        public override string ToString()
+        {
+            return city + " " + street_name + (building_number != 0 ? " (" + building_number + ")" : "");
+        }
     }
 }

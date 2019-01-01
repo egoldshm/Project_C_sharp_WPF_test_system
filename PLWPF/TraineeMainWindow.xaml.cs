@@ -28,6 +28,8 @@ namespace PLWPF
                 throw new Exception("worng user sended to trainee");
             }
             trainee = new Trainee(user.ConnectTo as Trainee);
+            details.DataContext = trainee;
+            welcomeMessage.Content = "Welcome " + trainee.FirstName + " " + trainee.FamilyName;
         }
     }
 }
