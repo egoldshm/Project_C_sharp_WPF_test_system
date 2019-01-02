@@ -78,5 +78,24 @@ namespace PLWPF
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            createTrainee.Visibility = Visibility.Visible;
+            buttons.Visibility = Visibility.Hidden;
+            addTraineeUsercontol.traineeAdded += AddTraineeUsercontol_traineeAdded;
+            this.MinHeight += 50;
+            this.MaxHeight += 80;
+            this.Height += 50;
+        }
+
+        private void AddTraineeUsercontol_traineeAdded(object sender, EventArgs e)
+        {
+            createTrainee.Visibility = Visibility.Hidden;
+            create1.Visibility = Visibility.Visible;
+            this.MinHeight -= 30;
+            this.MaxHeight -= 80;
+            this.Height -= 30;
+            MessageBox.Show("the trainee created. you can register now as user");
+        }
     }
 }

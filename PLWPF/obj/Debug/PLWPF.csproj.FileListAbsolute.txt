@@ -108,3 +108,5 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.exe
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.pdb
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddTrainee.g.cs
+C:\Users\eitan\Desktop\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddTrainee.baml

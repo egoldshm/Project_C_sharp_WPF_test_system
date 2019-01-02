@@ -19,8 +19,12 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Content="I exist in the system" FontSize="25" Margin="20" Background="#FFA9BCFF" Click="Button_Click"/>
-                <Button Grid.Column="1" Content="I to added as trainee" FontSize="25" Margin="20" Background="#FFB4F7B0"/>
+                <Button Grid.Column="1" Content="I to added as trainee" FontSize="25" Margin="20" Background="#FFB4F7B0" Click="Button_Click_2"/>
             </Grid>
+            <Grid Grid.Row="1" x:Name="createTrainee" Visibility="Hidden">
+                <local:AddTrainee x:Name="addTraineeUsercontol"/>
+            </Grid>
+            
             <Grid Grid.Row="1" x:Name="create1" Visibility="Hidden">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"/>

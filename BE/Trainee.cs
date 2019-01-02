@@ -22,7 +22,9 @@ namespace BE
         #endregion Private variables
 
         #region CTORs
-
+        public Trainee()
+        {
+        }
         public Trainee(int id)
         {
             this.Id = id;
