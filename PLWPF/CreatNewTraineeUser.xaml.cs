@@ -39,6 +39,11 @@ namespace PLWPF
             string id = inputId.Text;
             string username = inputUsername.Text;
             string password = inputPassword.Password;
+            if (id == "" || username == "" || password == "")
+            {
+                MessageBox.Show("input box one or more empty");
+                return;
+            }
             Trainee trainee = bl.GetTraineeById(int.Parse(id));
             if(trainee == null)
             {

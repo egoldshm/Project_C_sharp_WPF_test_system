@@ -24,3 +24,16 @@ C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ar
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csproj.CopyComplete
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.dll
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\imp_Dal.dll
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\imp_Dal.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\BE.dll
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DAL.dll
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DS.dll
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\BE.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DAL.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\DS.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csprojAssemblyReference.cache
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csproj.CoreCompileInputs.cache
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.csproj.CopyComplete
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.dll
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\imp_Dal\obj\Debug\imp_Dal.pdb
