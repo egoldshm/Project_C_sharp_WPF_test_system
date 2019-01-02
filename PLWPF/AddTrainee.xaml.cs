@@ -62,7 +62,6 @@ namespace PLWPF
                     MessageBox.Show(string.Format("you have a cells {0} is empty, fill all and try again", whoEmpty));
                     return;
                 }
-                trainee.Id = int.Parse(idTextBox.Text);
                 Address address;
                 address.building_number = int.Parse(building_number.Text);
                 address.city = city.Text;
