@@ -2,7 +2,7 @@
 *.suo
 *slnx.sqlite
 *db.lock
-*.vs
+.vs
 *git-askpass.exe
 */c/program files (x86)/microsoft visual studio/2017/community/common7/ide/commonextensions/microsoft/teamfoundation/team explorer/Git/mingw32/libexec/git-core/git-askpass.exe
 *storage.ide-shm
@@ -11,3 +11,7 @@
 .vs/Solution/v15/Server/sqlite3/storage.ide
 .vs/Solution/v15/Server/sqlite3/storage.ide-wal
 .vs/slnx.sqlite
+*.dll
+*.pdb
+*.exe
+*cache
