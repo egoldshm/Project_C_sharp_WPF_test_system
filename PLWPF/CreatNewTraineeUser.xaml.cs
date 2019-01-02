@@ -84,7 +84,6 @@ namespace PLWPF
             buttons.Visibility = Visibility.Hidden;
             addTraineeUsercontol.traineeAdded += AddTraineeUsercontol_traineeAdded;
             this.MinHeight += 50;
-            this.MaxHeight += 80;
             this.Height += 50;
         }
 

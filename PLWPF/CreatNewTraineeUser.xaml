@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="CreatNewTraineeUser" MaxWidth="600" MinWidth="600" MaxHeight="500" MinHeight="500" FontFamily="Miriam" Height="500" d:DesignWidth="600">
+        Title="CreatNewTraineeUser" MinWidth="600" MinHeight="500" FontFamily="Miriam" Height="500" d:DesignWidth="600">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
