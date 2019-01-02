@@ -34,20 +34,17 @@ namespace PLWPF
             {
                 testFuture.Content = "view the test you passed";
                 LicenseLable.Content = "you have License!";
-                testFuture.Click += viewTestYouPassed;
                 LicenseLable.Foreground = new SolidColorBrush(Colors.Green);
             }
             else
             {
                 if (bl.GetTestsByTrainee(trainee).Count == 0 || bl.GetTestsByTrainee(trainee).Last().Criterions.Criterions.TrueForAll(criterion => criterion.Mode != CriterionMode.NotDetermined))
                 {
-                    testFuture.Content = "add test";
-                    testFuture.Click += addTestToTrainee;
+                    testFuture.Header = "add test";
                 }
                 else
                 {
-                    testFuture.Content = "view test";
-                    testFuture.Click += viewTest;
+                    testFuture.Header = "view test";
                 }
 
             }

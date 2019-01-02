@@ -17,27 +17,21 @@
 
             <Label Content="Welcome {0}" x:Name="welcomeMessage" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium" BorderBrush="#FFCCF123" BorderThickness="7"/>
             <Grid Grid.Row="1" x:Name="details" Margin="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-               <local:showInfoAboutTrainee Grid.Column="0" Grid.Row="1" />
-                <Grid Grid.Row="1" Grid.Column="1" Margin="5" Background="#FF49B3DA">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition  Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                <TabControl VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <TabItem Header="trainee info" >
+                        <Grid>
+                            <local:showInfoAboutTrainee />
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name ="testFuture" Header="see Test">
+                        <Grid Background="#FFE5E5E5"/>
+                    </TabItem>
+                    <TabItem Header="update trainee">
+                        <Grid Background="#FFE5E5E5"/>
+                    </TabItem>
+                    <TabItem Header="lastTests"/>
 
-                    </Grid.RowDefinitions>
-                    <Button x:Name ="testFuture" Content="SetTest" Grid.Row="0" Margin="4" FontSize="20"/>
-                    <Button Content="change details" Grid.Row="1" Margin="4" FontSize="20"/>
-                    <Button x:Name="lastTests" Content="See lasts tests" Grid.Row="2" Margin="4" FontSize="20"/>
-                    <Button Content="Button" Grid.Row="3" Margin="4" FontSize="20"/>
-                    <Button Content="Button" Grid.Row="4" Margin="4" FontSize="20"/>
-                </Grid>
+                </TabControl>
 
             </Grid>
         </Grid>
