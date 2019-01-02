@@ -22,7 +22,7 @@ namespace BE
         #endregion Private variables
 
         #region CTORs
-
+        public Tester() { }
         public Tester(int id)
         {
             this.Id = id;
