@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="CreatNewTraineeUser" MinHeight="450" MinWidth="800" FontFamily="Miriam">
+        Title="CreatNewTraineeUser" MaxWidth="600" MinWidth="600" MaxHeight="500" MinHeight="500" FontFamily="Miriam" Height="500" d:DesignWidth="600">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="30*"/>
             </Grid.RowDefinitions>
-            <Label Content="Trainee? create a new user in the our cool system!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="35" BorderThickness="5" BorderBrush="#FF81D3C7"/>
+            <Label Content="Trainee? create a new user in the our cool system!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderThickness="5" BorderBrush="#FF81D3C7"/>
             <Grid Grid.Row="1" x:Name="buttons">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="I exist in the system" FontSize="40" Margin="20" Background="#FFA9BCFF" Click="Button_Click"/>
-                <Button Grid.Column="1" Content="I to added as trainee" FontSize="35" Margin="20" Background="#FFB4F7B0"/>
+                <Button Grid.Column="0" Content="I exist in the system" FontSize="25" Margin="20" Background="#FFA9BCFF" Click="Button_Click"/>
+                <Button Grid.Column="1" Content="I to added as trainee" FontSize="25" Margin="20" Background="#FFB4F7B0"/>
             </Grid>
             <Grid Grid.Row="1" x:Name="create1" Visibility="Hidden">
                 <Grid.RowDefinitions>
@@ -36,14 +36,14 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Enter your id:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="35" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" MaxLength="9" x:Name="inputId" PreviewTextInput="NumberValidationTextBox" Grid.Row="0" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40"/>
-                    <Label Grid.Row="1" Content="Enter your username:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="35" Grid.Column="0"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="inputUsername" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40"/>
-                    <Label Grid.Row="2" Content="Enter your new password:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="35" Grid.Column="0"/>
-                    <PasswordBox Grid.Row="2" Grid.Column="2" x:Name="inputPassword"  Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40"/>
+                    <Label Content="Enter your id:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" MaxLength="9" x:Name="inputId" PreviewTextInput="NumberValidationTextBox" Grid.Row="0" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
+                    <Label Grid.Row="1" Content="Enter your username:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="inputUsername" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
+                    <Label Grid.Row="2" Content="Enter your new password:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
+                    <PasswordBox Grid.Row="2" Grid.Column="2" x:Name="inputPassword"  Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
                 </Grid>
-                <Button Grid.Row="2" Content="Create user" FontSize="60" Margin="5" Background="#FFB4F7B0" Click="Button_Click_1"/>
+                <Button Grid.Row="2" Content="Create user" FontSize="50" Margin="5" Background="#FFB4F7B0" Click="Button_Click_1"/>
             </Grid>
         </Grid>
     </Grid>
