@@ -182,3 +182,5 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\PLWPF.pdb
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ViewTesters.g.cs
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ViewTesters.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\DeleteTrainee.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\DeleteTrainee.baml

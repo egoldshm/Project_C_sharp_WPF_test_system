@@ -16,7 +16,7 @@
             
             <Label Content="Welcome {0}" x:Name="welcomeMessage" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium" BorderBrush="#FFCCF123" BorderThickness="7"/>
             <Grid Grid.Row="1" x:Name="details" Margin="3">
-                <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro">
+                <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro" SelectionChanged="TabControl_SelectionChanged">
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Template">
@@ -65,7 +65,7 @@
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="delete trainee">
-                                    
+                                    <local:DeleteTrainee />
                                 </TabItem>
                                 <TabItem Header="delete Tester">
 
@@ -91,14 +91,14 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="view" Header="view">
+                    <TabItem x:Name ="view" Header="view" >
                         <Grid>
                             <TabControl TabStripPlacement="Left">
-                                <TabItem Header="view trainees">
-                                    <local:ViewTrainees/>
+                                <TabItem Header="view trainees" >
+                                    <local:ViewTrainees x:Name="viewTraineeUserconrol"/>
                                 </TabItem>
                                 <TabItem Header="view Testers">
-                                <local:ViewTesters />
+                                    <local:ViewTesters x:Name="viewTestersUsercontrol"/>
                                 </TabItem>
                                 <TabItem Header="view Tests">
 

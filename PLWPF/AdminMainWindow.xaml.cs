@@ -21,6 +21,7 @@ namespace PLWPF
     public partial class AdminMainWindow : Window
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
+        public static event EventHandler DataChanged;
         public AdminMainWindow(User user)
         {
             if (user.role != User.RoleTypes.Admin)
@@ -51,6 +52,16 @@ namespace PLWPF
             MainWindow window = new MainWindow();
             window.Show();
             this.Close();
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(view.IsSelected)
+            {
+                viewTestersUsercontrol.initializeData();
+                viewTraineeUserconrol.initializeData();
+            }
+
         }
     }
 }

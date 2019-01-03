@@ -14,7 +14,7 @@
                 <RowDefinition Height="347*"/>
             </Grid.RowDefinitions>
 
-            <ListView x:Name="traineeListView" SelectionMode="Single" Grid.Row="1">
+            <ListView x:Name="TesterListView" SelectionMode="Single" Grid.Row="1" ItemsSource="{Binding}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn x:Name="birthdayColumn" Width="80" Header="Birthday">
@@ -24,10 +24,10 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn x:Name="familyNameColumn" Width="80" Header="Family Name">
+                        <GridViewColumn x:Name="familyNameColumn" Header="Family Name">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Label Content="{Binding FamilyName}" Margin="-6,-1"/>
+                                    <Label Content="{Binding FamilyName}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

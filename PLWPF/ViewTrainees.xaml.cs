@@ -28,9 +28,15 @@ namespace PLWPF
         {
             InitializeComponent();
             trainees = new List<Trainee>(bl.GetAllTrainees());
+            initializeData();
+
+        }
+
+        public void initializeData()
+        {
+            trainees = new List<Trainee>(bl.GetAllTrainees());
             ToDisplay = trainees;
             list.DataContext = ToDisplay;
-
         }
 
         private void ViewLicenseOwners_Click(object sender, RoutedEventArgs e)

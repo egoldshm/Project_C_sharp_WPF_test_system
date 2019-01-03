@@ -21,9 +21,9 @@ namespace imp_Dal
         {
             if(DS.DataSource.tests.Any(item => item.TraineeId == id))
                 throw new Exception("The trainee you attempted to delete has tests scheduled. please make sure the trainee is free before deleting!");
-            DS.DataSource.trainees.RemoveAll(item => item.Id == id);
-            if(!DS.DataSource.trainees.Any(item => item.Id == id))
+            if (!DS.DataSource.trainees.Any(item => item.Id == id))
                 throw new Exception("Attempted to delete an unexistent trainee");
+            DS.DataSource.trainees.RemoveAll(item => item.Id == id);
         }
 
         public List<Trainee> GetAllTrainees()

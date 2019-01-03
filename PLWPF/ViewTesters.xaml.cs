@@ -24,12 +24,18 @@ namespace PLWPF
         IBL bl = factoryBL.FactoryBL.GetBL();
         public List<Tester> testers;
         public List<Tester> toDisplay;
+
         public ViewTesters()
         {
             InitializeComponent();
+            initializeData();
+        }
+
+        public void initializeData()
+        {
             testers = bl.GetAllTesters();
             toDisplay = testers;
-            traineeListView.DataContext = toDisplay;
+            list.DataContext = toDisplay;
         }
     }
 }
