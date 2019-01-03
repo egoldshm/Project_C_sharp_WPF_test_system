@@ -73,6 +73,9 @@
     <Compile Include="TraineeMainWindow.xaml.cs">
       <DependentUpon>TraineeMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewTesters.xaml.cs">
+      <DependentUpon>ViewTesters.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewTrainees.xaml.cs">
       <DependentUpon>ViewTrainees.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TraineeMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewTesters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

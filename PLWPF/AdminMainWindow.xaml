@@ -98,7 +98,7 @@
                                     <local:ViewTrainees/>
                                 </TabItem>
                                 <TabItem Header="view Testers">
-
+                                <local:ViewTesters />
                                 </TabItem>
                                 <TabItem Header="view Tests">
 

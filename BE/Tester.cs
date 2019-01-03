@@ -22,20 +22,23 @@ namespace BE
         #endregion Private variables
 
         #region CTORs
-        public Tester() { }
+        public Tester() { _workDays = new bool[5, 6]; }
         public Tester(int id)
         {
+            _workDays = new bool[5, 6];
             this.Id = id;
         }
 
         public Tester(int id, string lastName, string firstName) : this(id)
         {
+            _workDays = new bool[5, 6];
             this.LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
             this.FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
         }
 
         public Tester(int id, string lastName, string firstName, DateTime dateOfBirth, Gender gender, long phoneNumber, Address address, int yearsOfExperience, int maxWeeklyTests, CarType carType, bool[,] workDays, float maxDistance) : this(id)
         {
+            _workDays = new bool[5, 6];
             this.LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
             this.FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
             this.DateOfBirth = dateOfBirth;

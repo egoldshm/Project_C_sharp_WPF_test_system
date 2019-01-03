@@ -33,12 +33,13 @@ namespace PLWPF
                 for (int j = 0; j < 6; j++)
                 {
                     CheckBox checkBox = new CheckBox();
-                    WorkHours.Children.Add(checkBox);
                     Grid.SetRow(checkBox, i+1);
                     Grid.SetColumn(checkBox, j+1);
                     checkBox.Margin = new Thickness(3);
                     checkBox.Name = "checkBox" + i + "_" + j;
                     checkBox.HorizontalAlignment = HorizontalAlignment.Center;
+                    WorkHours.Children.Add(checkBox);
+
                 }
             }
             genderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
@@ -57,7 +58,7 @@ namespace PLWPF
             try
             {
                 bool oneOrMoreEmpty = false;
-                foreach (Control txtbxs in this.grid1.Children)
+                foreach (UIElement txtbxs in this.grid1.Children)
                 {
 
                     if (txtbxs is TextBox)
@@ -76,12 +77,18 @@ namespace PLWPF
                     MessageBox.Show("you have a cells empty, fill all and try again");
                     return;
                 }
-                Address address;
-                address.building_number = int.Parse(building_number.Text);
-                address.city = city.Text;
-                address.street_name = street.Text;
-                tester.Address = address;
+                tester.Address = new Address(street.Text, int.Parse(building_number.Text), city.Text);
+                tester.WorkDays = new bool[5, 6];
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                         tester.WorkDays[i, j] = WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).Select(box => (bool)box.IsChecked).First();
+                    }
+                }
                 bl.AddTester(tester);
+                tester = new Tester();
+                grid1.DataContext = tester;
             }
             catch (Exception ex)
             {
