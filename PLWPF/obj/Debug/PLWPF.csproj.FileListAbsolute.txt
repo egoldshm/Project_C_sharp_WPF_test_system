@@ -131,3 +131,5 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddTra
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AdminMainWindow.baml
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ViewTrainees.g.cs
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ViewTrainees.baml
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ViewTrainees.g.cs
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ViewTrainees.baml
