@@ -21,7 +21,6 @@ namespace PLWPF
     public partial class AdminMainWindow : Window
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
-        public static event EventHandler DataChanged;
         public AdminMainWindow(User user)
         {
             if (user.role != User.RoleTypes.Admin)

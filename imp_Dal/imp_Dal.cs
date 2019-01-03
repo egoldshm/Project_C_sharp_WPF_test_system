@@ -42,7 +42,7 @@ namespace imp_Dal
             Trainee trainee_old = GetTraineeById(trainee.Id);
             if (trainee_old == null)
                 throw new Exception(string.Format("not found trainee {0}", trainee.Id));
-            DS.DataSource.trainees.Remove(trainee_old);
+            DS.DataSource.trainees.RemoveAll(t => t.Id == id);
             DS.DataSource.trainees.Add(trainee);
         }
 

@@ -80,10 +80,9 @@
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="update trainee">
-
+                                    <local:UpdateTrainee />
                                 </TabItem>
                                 <TabItem Header="update Tester">
-
                                 </TabItem>
                                 <TabItem Header="finish Test">
 
