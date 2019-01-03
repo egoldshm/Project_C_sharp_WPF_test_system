@@ -27,3 +27,10 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.cspr
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.pdb
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DAL.dll
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DAL.pdb
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\BE.dll
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\BE.pdb
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.dll
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\obj\Debug\DAL.pdb

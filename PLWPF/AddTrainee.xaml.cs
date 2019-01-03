@@ -62,11 +62,7 @@ namespace PLWPF
                     MessageBox.Show(string.Format("you have a cells {0} is empty, fill all and try again", whoEmpty));
                     return;
                 }
-                Address address;
-                address.building_number = int.Parse(building_number.Text);
-                address.city = city.Text;
-                address.street_name = street_name.Text;
-                trainee.Address = address;
+                trainee.Address = new Address(city.Text, int.Parse(building_number.Text), street_name.Text);
                 bl.AddTrainee(trainee);
                 traineeAdded(this, new EventArgs());
             }
