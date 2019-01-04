@@ -1,0 +1,25 @@
+TODO list:
+  A. to fix:
+    1. to add search opion on "view tester" (already exist UserControl)
+  B. to create user contol of:
+    1. add test. (to add opion of get time that tester can of get another tester.)
+    2. view tests.
+    3. finish test.
+    4. delete tester.
+    5. update tester.
+    6. delete test (need to create function on the BL)
+ C. to create window of:
+    1. tester window:
+      a. view datails (simple UserControl)
+      b. view tests (only for him - use exist UserControl)
+      c. delete his test only (only for him - use exist UserControl or  create new UC)
+      d. finish tests  (only for him - use exist UserControl)
+    2. teacher window:
+      a. view trainees
+      b. view trainees's tests only.
+      c. add tests for his trainees.
+    3. to complete trainee window.
+
+ D. to design that it will be nice.
+ 
+ probebly i forget few things.
