@@ -56,7 +56,7 @@
 
                                 </TabItem>
                                 <TabItem Header="Add User">
-
+                            <local:AddUser />
                                 </TabItem>
                             </TabControl>
                         </Grid>

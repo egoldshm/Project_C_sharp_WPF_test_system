@@ -386,6 +386,10 @@ namespace BL
 
         public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj)
         {
+            if (username == string.Empty)
+                throw new Exception("username is empty");
+            if (password == string.Empty)
+                throw new Exception("password is empty");
             if (roleTypes == User.RoleTypes.School && !(obj is string))
                 throw new Exception("to user as School should be connect to string");
             if (roleTypes == User.RoleTypes.Teacher && !(obj is string))
