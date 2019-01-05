@@ -28,7 +28,7 @@ namespace PLWPF
                 throw new Exception("user isn't admin");
             }
             InitializeComponent();
-            welcomeMessage.Content = "Welcome " + user.Username;
+            title.user = user;
         }
 
         private void viewTest(object sender, RoutedEventArgs e)
@@ -44,13 +44,6 @@ namespace PLWPF
         private void addTestToTrainee(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow window = new MainWindow();
-            window.Show();
-            this.Close();
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

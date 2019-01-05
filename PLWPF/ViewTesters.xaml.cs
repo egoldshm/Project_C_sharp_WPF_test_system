@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,20 +23,20 @@ namespace PLWPF
     public partial class ViewTesters : UserControl
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
-        public List<Tester> testers;
-        public List<Tester> toDisplay;
+        public ObservableCollection<Tester> testers;
+        public ObservableCollection<Tester> toDisplay;
 
         public ViewTesters()
         {
             InitializeComponent();
+            list.DataContext = toDisplay;
             initializeData();
         }
 
         public void initializeData()
         {
-            testers = bl.GetAllTesters();
+            testers = new ObservableCollection<Tester>(bl.GetAllTesters());
             toDisplay = testers;
-            list.DataContext = toDisplay;
         }
     }
 }

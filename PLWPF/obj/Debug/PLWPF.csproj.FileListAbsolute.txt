@@ -192,3 +192,7 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\UpdateTrainee.baml
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddUser.g.cs
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddUser.baml
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\title.g.cs
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\title.baml
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ChangePassword.g.cs
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ChangePassword.baml

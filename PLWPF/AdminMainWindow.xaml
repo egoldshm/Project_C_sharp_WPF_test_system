@@ -12,9 +12,7 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
-            <Label Content="Admin mode" Margin="5,4" HorizontalAlignment="Left" VerticalContentAlignment="Top"/>
-            
-            <Label Content="Welcome {0}" x:Name="welcomeMessage" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium" BorderBrush="#FFCCF123" BorderThickness="7"/>
+            <local:title x:Name="title"/>
             <Grid Grid.Row="1" x:Name="details" Margin="3">
                 <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro" SelectionChanged="TabControl_SelectionChanged">
                     <TabControl.Resources>
@@ -110,7 +108,6 @@
                 </TabControl>
 
             </Grid>
-            <Button x:Name="exit" Content="Log out" Margin="5" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Window>

@@ -33,8 +33,6 @@ namespace PLWPF
             if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {
                 testFuture.Content = "view the test you passed";
-                LicenseLable.Content = "you have License!";
-                LicenseLable.Foreground = new SolidColorBrush(Colors.Green);
             }
             else
             {
@@ -48,7 +46,7 @@ namespace PLWPF
                 }
 
             }
-            welcomeMessage.Content = "Welcome " + trainee.FirstName + " " + trainee.FamilyName;
+            title.user = user;
         }
 
         private void viewTest(object sender, RoutedEventArgs e)

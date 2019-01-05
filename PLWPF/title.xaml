@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="PLWPF.title"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="181.707" d:DesignWidth="800">
+    <Grid>
+        <Label x:Name="role" Content="" ContentStringFormat="You are login as {0}"  Margin="0,70,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Gisha"/>
+        <Label Content="איתן" ContentStringFormat="Welcome {0}" x:Name="welcomeMessage" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium"/>
+        <Button Content="Log out" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" FontSize="36" Background="White" FontFamily="Sitka Display" Click="Button_Click"/>
+        <Label Visibility="Hidden" x:Name="LicenseLable" Content="you have no License" Margin="6,4" HorizontalAlignment="Right" VerticalContentAlignment="Top" Foreground="#FFCF2929" FontSize="20"/>
+        <Button Content="change password" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5" FontSize="15" Background="White" FontFamily="Sitka Display" Click="Button_Click_1"/>
+    </Grid>
+</UserControl>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,19 +23,19 @@ namespace PLWPF
     public partial class ViewTrainees : UserControl
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
-        public List<Trainee> trainees;
-        public List<Trainee> ToDisplay;
+        public ObservableCollection<Trainee> trainees;
+        public ObservableCollection<Trainee> ToDisplay;
         public ViewTrainees()
         {
             InitializeComponent();
-            trainees = new List<Trainee>(bl.GetAllTrainees());
+            trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
             initializeData();
 
         }
 
         public void initializeData()
         {
-            trainees = new List<Trainee>(bl.GetAllTrainees());
+            trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
             ToDisplay = trainees;
             list.DataContext = ToDisplay;
         }
@@ -47,28 +48,27 @@ namespace PLWPF
             }
             else if (ShowNoLicense.IsChecked == false && ViewLicenseOwners.IsChecked == true)
             {
-                ToDisplay = new List<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(true).Any(tr2 => tr.Id == tr2.Id)));
+                ToDisplay = new ObservableCollection<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(true).Any(tr2 => tr.Id == tr2.Id)));
             }
             else if(ShowNoLicense.IsChecked == true && ViewLicenseOwners.IsChecked == false)
             {
-                ToDisplay = new List<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(false).Any(tr2 => tr.Id == tr2.Id)));
+                ToDisplay = new ObservableCollection<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(false).Any(tr2 => tr.Id == tr2.Id)));
             }
             else
             {
-                ToDisplay = new List<Trainee>();
+                ToDisplay = new ObservableCollection<Trainee>();
             }
-            list.DataContext = ToDisplay;
         }
 
         private void Search(object sender, RoutedEventArgs e)
         {
             if (SearchBar.Text == "")
             {
-                trainees = new List<Trainee>(bl.GetAllTrainees());
+                trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
             }
             else if (SearchID.IsChecked == true)
             {
-                trainees = new List<Trainee>();
+                trainees = new ObservableCollection<Trainee>();
                 trainees.Add(new Trainee(bl.GetTraineeById(int.Parse(SearchBar.Text))));
             }
             else if (SearchName.IsChecked == true)
@@ -77,14 +77,14 @@ namespace PLWPF
             }
             else if (SearchSchool.IsChecked == true)
             {
-                var help = new List<List<Trainee>>(from Group in bl.GetTraineesBySchoolName() where Group.Key == SearchBar.Text select Group.ToList());
+                var help = new ObservableCollection<ObservableCollection<Trainee>>(from Group in bl.GetTraineesBySchoolName() where Group.Key == SearchBar.Text select Group.ToList());
                 if (help.Count > 1)
                 {
                     throw new Exception(string.Format("More than one school is named {0}", SearchBar.Text));
                 }
                 if (help.Count == 0)
                 {
-                    trainees = new List<Trainee>();
+                    trainees = new ObservableCollection<Trainee>();
                 }
                 else
                 {
@@ -93,14 +93,14 @@ namespace PLWPF
             }
             else if (SearchTeacher.IsChecked == true)
             {
-                var help = new List<List<Trainee>>(from Group in bl.GetTraineesByTeacher() where Group.Key == SearchBar.Text select Group.ToList());
+                var help = new ObservableCollection<ObservableCollection<Trainee>>(from Group in bl.GetTraineesByTeacher() where Group.Key == SearchBar.Text select Group.ToList());
                 if (help.Count > 1)
                 {
                     throw new Exception(string.Format("More than one Teacher is named {0}", SearchBar.Text));
                 }
                 if (help.Count == 0)
                 {
-                    trainees = new List<Trainee>();
+                    trainees = new ObservableCollection<Trainee>();
                 }
                 else
                 {
