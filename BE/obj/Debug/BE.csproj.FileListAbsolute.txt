@@ -20,4 +20,3 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\BE.
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\BE.dll
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\BE.pdb
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\BE\obj\Debug\BE.csprojAssemblyReference.cache
-C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BE\obj\Debug\BE.csprojAssemblyReference.cache
