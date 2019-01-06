@@ -25,7 +25,7 @@ namespace PLWPF
         {
             InitializeComponent();
             User = user1;
-            if(!(User.role == User.RoleTypes.Tester && User.ConnectTo is Tester))
+            if(User.role != User.RoleTypes.Admin && User.role != User.RoleTypes.Tester || !(User.ConnectTo is Tester))
             {
                 throw new Exception("User valid");
             }

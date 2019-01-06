@@ -31,12 +31,17 @@ namespace BE
 
         private RoleTypes _role;
 
-        private readonly object connectTo;
+        private object connectTo;
 
         public RoleTypes role { get => _role; }
         public string Username { get => username; }
         public string Password { get => password; }
-        public object ConnectTo { get => connectTo; }
+        public object ConnectTo { get => connectTo; set
+            {
+                if (role == RoleTypes.Admin)
+                    connectTo = value;
+            }
+        }
 
         private readonly string username;
         private string password;
