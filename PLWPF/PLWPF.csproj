@@ -79,6 +79,9 @@
     <Compile Include="showInfoAboutTrainee.xaml.cs">
       <DependentUpon>showInfoAboutTrainee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TesterMainWindow.xaml.cs">
+      <DependentUpon>TesterMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="title.xaml.cs">
       <DependentUpon>title.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="showInfoAboutTrainee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TesterMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
