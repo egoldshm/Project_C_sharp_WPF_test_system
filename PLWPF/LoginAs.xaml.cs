@@ -73,6 +73,7 @@ namespace PLWPF
                 NewRole = (User.RoleTypes)role.SelectionBoxItem;
                 if (NewRole == oldRole)
                     return;
+                button.Content = NewRole.ToString().ToLower();
                 switch (NewRole)
                 {
                     case User.RoleTypes.Trainee:
