@@ -65,6 +65,14 @@
                         <Button x:Name="SearchButton" Grid.Column="1" Content="Search" HorizontalAlignment="center"  VerticalAlignment="center" Width="75" Click="Search" />
                     </Grid>
                 </Grid>
+                <ComboBox x:Name ="sortByComboBox"  Grid.ColumnSpan="2" Grid.Column="3" Margin="3">
+                    <ComboBoxItem Content="first name"/>
+                    <ComboBoxItem Content="Family name"/>
+                    <ComboBoxItem Content="ID"/>
+                    <ComboBoxItem Content="Lesson numbers"/>
+
+                </ComboBox>
+                <Button x:Name="sortByButton" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3" Margin="4" Click="sortByButton_Click" ContentStringFormat="sort by {0}" Content="{Binding SelectionBoxItem, ElementName=sortByComboBox, Mode=OneWay}"/>
             </Grid>
         </Grid>
         <Grid x:Name="list" Grid.Row="1">

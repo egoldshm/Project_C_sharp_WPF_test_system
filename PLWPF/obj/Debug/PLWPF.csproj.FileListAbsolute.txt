@@ -216,3 +216,5 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\App.ba
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\App.baml
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\myPasswordBox.g.cs
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\myPasswordBox.baml
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\myPasswordBox.g.cs
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\myPasswordBox.baml

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,21 +23,21 @@ namespace PLWPF
     public partial class ViewTrainees : UserControl
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
-        public List<Trainee> trainees;
-        public List<Trainee> ToDisplay;
+        public ObservableCollection<Trainee> trainees;
+        public ObservableCollection<Trainee> ToDisplay;
         public ViewTrainees()
         {
             InitializeComponent();
-            trainees = new List<Trainee>(bl.GetAllTrainees());
-            initializeData();
+            trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
+            ToDisplay = trainees;
+            list.DataContext = ToDisplay;
 
         }
 
         public void initializeData()
         {
-            trainees = new List<Trainee>(bl.GetAllTrainees());
+            trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
             ToDisplay = trainees;
-            list.DataContext = ToDisplay;
         }
 
         private void ViewLicenseOwners_Click(object sender, RoutedEventArgs e)
@@ -47,28 +48,27 @@ namespace PLWPF
             }
             else if (ShowNoLicense.IsChecked == false && ViewLicenseOwners.IsChecked == true)
             {
-                ToDisplay = new List<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(true).Any(tr2 => tr.Id == tr2.Id)));
+                ToDisplay = new ObservableCollection<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(true).Any(tr2 => tr.Id == tr2.Id)));
             }
             else if(ShowNoLicense.IsChecked == true && ViewLicenseOwners.IsChecked == false)
             {
-                ToDisplay = new List<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(false).Any(tr2 => tr.Id == tr2.Id)));
+                ToDisplay = new ObservableCollection<Trainee>(trainees.Where(tr => bl.GetAllTraineesByLicense(false).Any(tr2 => tr.Id == tr2.Id)));
             }
             else
             {
-                ToDisplay = new List<Trainee>();
+                ToDisplay = new ObservableCollection<Trainee>();
             }
-            list.DataContext = ToDisplay;
         }
 
         private void Search(object sender, RoutedEventArgs e)
         {
             if (SearchBar.Text == "")
             {
-                trainees = new List<Trainee>(bl.GetAllTrainees());
+                trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
             }
             else if (SearchID.IsChecked == true)
             {
-                trainees = new List<Trainee>();
+                trainees = new ObservableCollection<Trainee>();
                 trainees.Add(new Trainee(bl.GetTraineeById(int.Parse(SearchBar.Text))));
             }
             else if (SearchName.IsChecked == true)
@@ -84,11 +84,11 @@ namespace PLWPF
                 }
                 if (help.Count == 0)
                 {
-                    trainees = new List<Trainee>();
+                    trainees = new ObservableCollection<Trainee>();
                 }
                 else
                 {
-                    trainees = help[0];
+                    trainees = new ObservableCollection<Trainee>(help[0]);
                 }
             }
             else if (SearchTeacher.IsChecked == true)
@@ -100,15 +100,34 @@ namespace PLWPF
                 }
                 if (help.Count == 0)
                 {
-                    trainees = new List<Trainee>();
+                    trainees = new ObservableCollection<Trainee>();
                 }
                 else
                 {
-                    trainees = help[0];
+                    trainees = new ObservableCollection<Trainee>(help[0]);
                 }
             }
-
+            ToDisplay = trainees;
+            list.DataContext = ToDisplay;
             ViewLicenseOwners_Click(null, null);
         }
+
+        private void sortByButton_Click(object sender, RoutedEventArgs e)
+        {
+            string value = sortByComboBox.SelectionBoxItem.ToString();
+            List<Trainee> sortList = new List<Trainee>(ToDisplay);
+            if (value == "first name")
+                sortList.Sort((trainee1, trainee2) => string.Compare(trainee1.FirstName.ToLower(), trainee2.FirstName.ToLower()));
+            if (value == "Family name")
+                sortList.Sort((trainee1, trainee2) => string.Compare(trainee1.FamilyName.ToLower(), trainee2.FamilyName.ToLower()));
+            if (value == "ID")
+                sortList.Sort((trainee1, trainee2) => string.Compare(trainee1.Id.ToString(), trainee2.Id.ToString()));
+            if (value == "Lesson numbers")
+                sortList.Sort((trainee1, trainee2) => (trainee1.LessonsNumber).CompareTo(trainee2.LessonsNumber));
+            ToDisplay = new ObservableCollection<Trainee>(sortList);
+            list.DataContext = ToDisplay;
+
+        }
+
     }
 }
