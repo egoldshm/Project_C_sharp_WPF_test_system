@@ -200,3 +200,16 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\TesterMainWindow.baml
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\LoginAs.g.cs
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\LoginAs.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddUser.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ChangePassword.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\LoginAs.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\TesterMainWindow.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\title.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\UpdateTrainee.g.cs
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\AddUser.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\ChangePassword.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\LoginAs.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\TesterMainWindow.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\title.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\UpdateTrainee.baml
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\PLWPF\obj\Debug\App.baml
