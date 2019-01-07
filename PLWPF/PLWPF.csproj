@@ -79,6 +79,9 @@
     <Compile Include="LoginAs.xaml.cs">
       <DependentUpon>LoginAs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="myPasswordBox.xaml.cs">
+      <DependentUpon>myPasswordBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="showInfoAboutTrainee.xaml.cs">
       <DependentUpon>showInfoAboutTrainee.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="myPasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="showInfoAboutTrainee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

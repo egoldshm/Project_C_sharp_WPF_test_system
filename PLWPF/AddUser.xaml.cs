@@ -119,7 +119,7 @@ namespace PLWPF
             Username.Background = null;
         }
 
-        private void Password_PasswordChanged(object sender, RoutedEventArgs e)
+        private void Password_PasswordChanged_1(object sender, EventArgs e)
         {
             password.Background = null;
         }

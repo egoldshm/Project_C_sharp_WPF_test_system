@@ -6,6 +6,7 @@ namespace BE
 {
     public class User
     {
+
         public static string GetSha512FromString(string strData)
         {
             var message = Encoding.ASCII.GetBytes(strData);

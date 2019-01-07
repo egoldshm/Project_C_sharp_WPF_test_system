@@ -35,7 +35,7 @@
         <Label Content="username:" Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
         <TextBox x:Name="Username" TextChanged="Username_TextChanged" Grid.Row="1" Margin="15" Grid.Column="1"/>
         <Label Content="password:" Grid.Column="0" Grid.Row="2" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
-        <PasswordBox x:Name="password" PasswordChanged="Password_PasswordChanged" Grid.Row="2" Margin="15" Grid.Column="1" />
+        <local:myPasswordBox x:Name="password" Grid.Row="2" Margin="15" Grid.Column="1" />
         <Label x:Name="chooseType" Grid.Row="3" Visibility="Hidden" Content="choose" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         <ComboBox x:Name="items" Visibility="Hidden" Grid.Row="3" Grid.Column="1" Margin="10,15"/>
         <Button Content="create user"  Grid.Row="4" Grid.ColumnSpan="2" Margin="10,15" FontSize="35" Click="Button_Click"/>
