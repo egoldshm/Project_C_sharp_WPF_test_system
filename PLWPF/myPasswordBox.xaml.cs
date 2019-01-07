@@ -21,7 +21,6 @@ namespace PLWPF
     /// 
     public partial class myPasswordBox : UserControl
     {
-        public event EventHandler Changed;
         private string CreatePassword(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -48,14 +47,14 @@ namespace PLWPF
             {
                 inputPassword.Visibility = Visibility.Hidden;
                 inputPassword_Text.Visibility = Visibility.Visible;
-                password_hidder.Content = "hide password";
+                password_hidder.Content = "hide\npassword";
                 inputPassword_Text.Text = inputPassword.Password;
             }
             else
             {
                 inputPassword.Visibility = Visibility.Visible;
                 inputPassword_Text.Visibility = Visibility.Hidden;
-                password_hidder.Content = "show password";
+                password_hidder.Content = "show\npassword";
                 inputPassword.Password = inputPassword_Text.Text;
             }
             hidePassword = !hidePassword;
