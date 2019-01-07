@@ -233,8 +233,8 @@ namespace BL
             if (GetTestsByTesters(tester).Any(test => dal.GetTraineeById(tester.Id).TypeCarLearned != tester.CarType))
                 throw new Exception(string.Format("It is not possible to change the type of vehicle of the tester {0} because he is registered for the test with the old vehicle type", id));
             var WeeklyTests = new List<IGrouping<DateTime, Test>>(from test in GetTestsByTesters(tester)
-                                                                  let diff = (7 + test.RealDateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
-                                                                  group test by test.RealDateOfTest.AddDays(diff * -1).Date);
+                                                                  let diff = (7 + test.DateOfTest.DayOfWeek - DayOfWeek.Sunday) % 7
+                                                                  group test by test.DateOfTest.AddDays(diff * -1).Date);
             if (WeeklyTests.Any(Week => Week.ToList().Count > tester.MaxWeeklyTests))
                 throw new Exception(string.Format("You tried to change the max weekly tester. but tester {0} already registered to {1} tests, that it more from {2}", tester.Id, tester.MaxWeeklyTests, tester.MaxWeeklyTests));
 
@@ -243,7 +243,7 @@ namespace BL
                 {
                     if (test1 == test2)
                         break;
-                    if ((test1.RealDateOfTest - test2.RealDateOfTest).Duration().Minutes < BE.Configuration.DURATION_OF_TEST)
+                    if ((test1.DateOfTest - test2.DateOfTest).Duration().Minutes < BE.Configuration.DURATION_OF_TEST)
                         throw new Exception(string.Format("Can't update Tester {0} because it has overlaping scheduled tests", tester.ToString()));
                 }
 

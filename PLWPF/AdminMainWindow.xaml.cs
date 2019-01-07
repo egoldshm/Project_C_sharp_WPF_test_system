@@ -55,5 +55,15 @@ namespace PLWPF
             }
 
         }
+
+        private void AddTest_Loaded()
+        {
+
+        }
+
+        private void AddTest_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

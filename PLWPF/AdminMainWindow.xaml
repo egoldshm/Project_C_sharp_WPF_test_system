@@ -40,8 +40,8 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem/>
-                    <TabItem Header="add" >
+                    <TabItem Header="Home"/>
+                    <TabItem Header="Add" >
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="Add Trainee">
@@ -51,7 +51,7 @@
                                     <local:AddTester />
                                 </TabItem>
                                 <TabItem Header="Add Test">
-
+                                    <local:AddTest Loaded="AddTest_Loaded"/>
                                 </TabItem>
                                 <TabItem Header="Add User">
                             <local:AddUser />
@@ -59,7 +59,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="delete" Header="delete" >
+                    <TabItem x:Name ="delete" Header="Delete" >
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="delete trainee">
@@ -74,7 +74,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="update" Header="update">
+                    <TabItem x:Name ="update" Header="Update">
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="update trainee">
@@ -88,7 +88,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="view" Header="view" >
+                    <TabItem x:Name ="view" Header="View" >
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="view trainees" >
