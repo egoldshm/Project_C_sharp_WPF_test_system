@@ -13,7 +13,7 @@
                 <RowDefinition Height="30*"/>
             </Grid.RowDefinitions>
             <Label Content="Trainee? create a new user in the our cool system!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderThickness="5" BorderBrush="#FF81D3C7"/>
-            <Grid Grid.Row="1" x:Name="buttons">
+            <Grid Grid.Row="1" x:Name="buttons" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -24,13 +24,13 @@
             <Grid Grid.Row="1" x:Name="createTrainee" Visibility="Hidden">
                 <local:AddTrainee x:Name="addTraineeUsercontol"/>
             </Grid>
-            
+
             <Grid Grid.Row="1" x:Name="create1" Visibility="Hidden">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -45,9 +45,9 @@
                     <Label Grid.Row="1" Content="Enter your username:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="inputUsername" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
                     <Label Grid.Row="2" Content="Enter your new password:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
-                    <PasswordBox Grid.Row="2" Grid.Column="2" x:Name="inputPassword"  Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
+                    <local:myPasswordBox Grid.Row="2" Grid.Column="1" x:Name="inputPassword"/>
                 </Grid>
-                <Button Grid.Row="2" Content="Create user" FontSize="50" Margin="5" Background="#FFB4F7B0" Click="Button_Click_1"/>
+                <Button Grid.Row="2" Content="Create user" FontSize="50" Margin="5" Background="White" Click="Button_Click_1"/>
             </Grid>
         </Grid>
     </Grid>

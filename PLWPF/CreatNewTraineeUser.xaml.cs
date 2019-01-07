@@ -96,5 +96,6 @@ namespace PLWPF
             this.Height -= 30;
             MessageBox.Show("the trainee created. you can register now as user");
         }
+
     }
 }

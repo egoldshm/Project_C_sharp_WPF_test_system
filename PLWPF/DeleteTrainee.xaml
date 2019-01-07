@@ -13,7 +13,14 @@
                 <RowDefinition Height="30*"/>
                 <RowDefinition Height="30*"/>
             </Grid.RowDefinitions>
-            <ComboBox Margin="10,15" x:Name="idlist"/>
+            <ComboBox Margin="10,15" x:Name="idlist">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
             <Button Content="delete trainee " x:Name="button" Grid.Row="1" Margin="20,25" FontSize="35" Click="button_Click"/>
         </Grid>
     </Grid>

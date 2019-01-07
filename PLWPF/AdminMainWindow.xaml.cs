@@ -29,6 +29,7 @@ namespace PLWPF
             }
             InitializeComponent();
             title.user = user;
+            loginas.User = user;
         }
 
         private void viewTest(object sender, RoutedEventArgs e)

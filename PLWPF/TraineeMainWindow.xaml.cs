@@ -20,15 +20,26 @@ namespace PLWPF
     /// </summary>
     public partial class TraineeMainWindow : Window
     {
+        Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
         readonly Trainee trainee;
-        public TraineeMainWindow(User user, IBL bl)
+        public TraineeMainWindow(User user)
         {
             InitializeComponent();
-            if(user.role != User.RoleTypes.Trainee || !(user.ConnectTo is Trainee))
+            if(user.role == User.RoleTypes.Admin)
+            {
+                trainee = user.ConnectTo as Trainee;
+                title.user = user;
+                if(trainee == null)
+                {
+                    throw new Exception("worng user sended to trainee");
+                }
+            }
+            else if(user.role != User.RoleTypes.Trainee || !(user.ConnectTo is Trainee))
             {
                 throw new Exception("worng user sended to trainee");
             }
-            trainee = new Trainee(user.ConnectTo as Trainee);
+            else
+                trainee = new Trainee(user.ConnectTo as Trainee);
             details.DataContext = trainee;
             if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {

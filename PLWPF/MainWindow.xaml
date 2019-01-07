@@ -14,7 +14,7 @@
                 <RowDefinition Height="1.5*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Welcome to the best .NET app in the world!" FontSize="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Dubai Medium"/>
+            <Label Grid.Row="0" Content="Welcome to the our driving system!" FontSize="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Dubai Medium"/>
             <Grid Grid.Row="1">
                 <TextBox Margin ="15" x:Name="UserName" Grid.Column="1" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Dubai Medium"/>
                 <Label Content="Username:" Grid.Column="0" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"  FontFamily="Dubai Medium"/>

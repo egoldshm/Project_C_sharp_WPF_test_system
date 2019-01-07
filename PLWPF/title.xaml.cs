@@ -50,6 +50,17 @@ namespace PLWPF
                         break;
                     case User.RoleTypes.Admin:
                         welcomeMessage.Content = user.Username;
+                        if(user.ConnectTo != null)
+                        {
+                            if (user.ConnectTo is Trainee)
+                                role.Content = role.Content + " As Trainee";
+                            if (user.ConnectTo is Tester)
+                                role.Content = role.Content + " As Tester";
+                            if (user.ConnectTo is string && bl.GetAllTrainees().Any(t => t.SchoolName == user.ConnectTo.ToString()))
+                                role.Content = role.Content + " As School";
+                            if (user.ConnectTo is string && bl.GetAllTrainees().Any(t => t.TeacherName == user.ConnectTo.ToString()))
+                                role.Content = role.Content + " As Teacher";
+                        }
                         break;
                 }
             }

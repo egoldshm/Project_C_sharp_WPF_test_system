@@ -43,7 +43,7 @@ namespace PLWPF
                 switch (user.role)
                 {
                     case User.RoleTypes.Trainee:
-                        TraineeMainWindow windowTrainee = new TraineeMainWindow(user,bl);
+                        TraineeMainWindow windowTrainee = new TraineeMainWindow(user);
                         windowTrainee.Show();
                         Close();
                         break;
@@ -51,7 +51,9 @@ namespace PLWPF
                         
                         break;
                     case User.RoleTypes.Tester:
-                        //show tester window
+                        TesterMainWindow window = new TesterMainWindow(user);
+                        window.Show();
+                        Close();
                         break;
                     case User.RoleTypes.School:
                         //show school window
