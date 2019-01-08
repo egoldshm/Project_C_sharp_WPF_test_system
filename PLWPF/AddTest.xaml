@@ -11,42 +11,57 @@
         <CollectionViewSource x:Key="testViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Test}, CreateList=True}"/>
     </UserControl.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
 
-        <Grid x:Name="grid1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DataContext="{StaticResource testViewSource}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
-            <DatePicker x:Name="dateOfTestDatePicker" VerticalAlignment="Center" SelectedDate="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
-            <!--<Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Pass:"/>
-            <CheckBox x:Name="passCheckBox" VerticalAlignment="Bottom" Grid.Row="1" Margin="3.4,0,0,9.6" IsChecked="{Binding Pass, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>-->
-            <!--<Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Real Date Of Test:"/>
-            <DatePicker x:Name="realDateOfTestDatePicker" VerticalAlignment="Center" SelectedDate="{Binding RealDateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>-->
-            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id:"/>
-            <TextBox x:Name="testerIdTextBox" Width="120" VerticalAlignment="Center" Text="{Binding TesterId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-            <!--<Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Note:"/>
-            <TextBox x:Name="testerNoteTextBox" Width="120" VerticalAlignment="Center" Text="{Binding TesterNote, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>-->
-            <!--<Label VerticalAlignment="Center" Grid.Row="5" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Test Number:"/>
-            <TextBox x:Name="testNumberTextBox" Width="120" VerticalAlignment="Center" Text="{Binding TestNumber, Mode=OneWay}" Grid.Row="5" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>-->
-            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:"/>
-            <TextBox x:Name="traineeIdTextBox" Width="120" VerticalAlignment="Center" Text="{Binding TraineeId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-            <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City:"/>
-            <TextBox x:Name="city" Grid.Row="3" Margin="3,5"  Grid.Column="1"/>
-            <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street:"/>
-            <TextBox x:Name="street" Grid.Row="4" Margin="3,5"  Grid.Column="1"/>
-            <Label VerticalAlignment="Center" Grid.Row="5" Margin="3,5"  Grid.Column="0" Content="building number:"/>
-            <TextBox x:Name="building_number" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Margin="3,5" Grid.Column="1"/>
+            <Grid x:Name="grid1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DataContext="{StaticResource testViewSource}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
+                <DatePicker x:Name="dateOfTestDatePicker" VerticalAlignment="Center" SelectedDate="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id:"/>
+                <ComboBox Margin="10,15" x:Name="testerIdList" Grid.Column="1" Grid.Row="1">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                </ComboBox>
+                <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:"/>
+                <ComboBox Margin="10,15" x:Name="traineeIdList" Grid.Column="1" Grid.Row="2">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                </ComboBox>
+                <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City:"/>
+                <TextBox x:Name="city" Grid.Row="3" Margin="3,5"  Grid.Column="1"/>
+                <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street:"/>
+                <TextBox x:Name="street" Grid.Row="4" Margin="3,5"  Grid.Column="1"/>
+                <Label VerticalAlignment="Center" Grid.Row="5" Margin="3,5"  Grid.Column="0" Content="building number:"/>
+                <TextBox x:Name="building_number" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Margin="3,5" Grid.Column="1"/>
+            </Grid>
+
         </Grid>
-
+        <Grid Grid.Row="1">
+            <Button x:Name="button" Content="Add Test" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click"/>
+        </Grid>
     </Grid>
 </UserControl>
