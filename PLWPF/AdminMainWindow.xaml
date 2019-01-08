@@ -51,7 +51,7 @@
                                     <local:AddTester />
                                 </TabItem>
                                 <TabItem Header="Add Test">
-                                    <local:AddTest Loaded="AddTest_Loaded"/>
+                                    <local:AddTest/>
                                 </TabItem>
                                 <TabItem Header="Add User">
                             <local:AddUser />
@@ -63,10 +63,10 @@
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="delete trainee">
-                                    <local:DeleteTrainee />
+                                    <local:DeleteTrainee x:Name="deleteTrainee_uc"/>
                                 </TabItem>
                                 <TabItem Header="delete Tester">
-
+                                    <local:DeleteTester x:Name="deleteTester_uc"/>
                                 </TabItem>
                                 <TabItem Header="delete Test">
                                     <Label Content="not implemented"/>

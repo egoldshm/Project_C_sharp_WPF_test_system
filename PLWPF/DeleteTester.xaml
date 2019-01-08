@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PLWPF.DeleteTrainee"
+﻿<UserControl x:Class="PLWPF.DeleteTester"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -21,16 +21,16 @@
                     </LinearGradientBrush>
                 </ComboBox.Background>
             </ComboBox>
-            <Button ContentStringFormat="delete trainee {0}" x:Name="button" Grid.Row="1" Margin="20,25" FontSize="30" Background="White" Click="button_Click" Content="{Binding SelectionBoxItem, ElementName=idlist}">
+            <Button ContentStringFormat="delete Tester {0}" x:Name="button" Grid.Row="1" Margin="20,25" Background="White" FontSize="30" Click="button_Click" Content="{Binding SelectionBoxItem, ElementName=idlist}">
                 <Button.Style>
                     <Style>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=idlist, Path=SelectionBoxItem}" Value="">
-                            <Setter Property="Button.IsEnabled" Value="false"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-                    </Button.Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=idlist, Path=SelectionBoxItem}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
             </Button>
         </Grid>
     </Grid>

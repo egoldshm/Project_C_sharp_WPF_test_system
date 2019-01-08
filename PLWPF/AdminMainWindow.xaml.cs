@@ -54,7 +54,11 @@ namespace PLWPF
                 viewTestersUsercontrol.initializeData();
                 viewTraineeUserconrol.initializeData();
             }
-
+           if(delete.IsSelected)
+            {
+                deleteTester_uc.initializeData();
+                deleteTrainee_uc.initializeData();
+            }
         }
 
         private void AddTest_Loaded()

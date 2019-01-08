@@ -16,21 +16,21 @@ using BE;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for DeleteTrainee.xaml
+    /// Interaction logic for DeleteTester.xaml
     /// </summary>
-    public partial class DeleteTrainee : UserControl
+    public partial class DeleteTester : UserControl
     {
         Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
-        public DeleteTrainee()
+        public DeleteTester()
         {
             InitializeComponent();
-            this.idlist.ItemsSource = bl.GetAllTrainees(trainee => bl.GetAllTests(test => test.TraineeId == trainee.Id).Count == 0);
+            idlist.ItemsSource = bl.GetAllTesters(Tester => bl.GetAllTests(test => test.TesterId == Tester.Id).Count == 0);
         }
 
         public void initializeData()
         {
-            var list= bl.GetAllTrainees(trainee => bl.GetAllTests(test => test.TraineeId == trainee.Id).Count == 0);
-            if (this.idlist.ItemsSource.ToString() != list.ToString())
+            var list = bl.GetAllTesters(Tester => bl.GetAllTests(test => test.TesterId == Tester.Id).Count == 0);
+            if (list.ToString() != idlist.ItemsSource.ToString())
                 this.idlist.ItemsSource = list;
         }
 
@@ -38,11 +38,11 @@ namespace PLWPF
         {
             try
             {
-                int id = (idlist.SelectionBoxItem as Trainee).Id;
-                MessageBoxResult answer = MessageBox.Show("do you sure you want delete trainee " + id + "?", "Verify deletion", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                int id = (idlist.SelectionBoxItem as Tester).Id;
+                MessageBoxResult answer = MessageBox.Show("do you sure you want delete Tester " + id + "?", "Verify deletion", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (answer == MessageBoxResult.Yes)
                 {
-                    bl.DeleteTrainee(id);
+                    bl.DeleteTester(id);
                     MessageBox.Show("deleted successfully");
                     initializeData();
                 }
@@ -52,7 +52,7 @@ namespace PLWPF
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MainWindow.ErrorMessage(ex.Message);
             }
