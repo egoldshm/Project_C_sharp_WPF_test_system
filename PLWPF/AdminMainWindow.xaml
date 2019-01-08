@@ -83,7 +83,7 @@
                                 <TabItem Header="update Tester">
                                 </TabItem>
                                 <TabItem Header="finish Test">
-
+                                    <local:finishTest/>
                                 </TabItem>
                             </TabControl>
                         </Grid>

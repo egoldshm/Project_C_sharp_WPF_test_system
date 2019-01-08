@@ -79,6 +79,9 @@
     <Compile Include="DeleteTrainee.xaml.cs">
       <DependentUpon>DeleteTrainee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="finishTest.xaml.cs">
+      <DependentUpon>finishTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginAs.xaml.cs">
       <DependentUpon>LoginAs.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteTrainee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="finishTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

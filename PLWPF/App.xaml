@@ -485,6 +485,8 @@
             </Setter>
         </Style>
         <!-- End of Flat ComboBox -->
-
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+        </Style>
     </Application.Resources>
 </Application>
