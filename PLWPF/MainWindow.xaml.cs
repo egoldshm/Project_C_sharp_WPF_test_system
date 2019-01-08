@@ -26,7 +26,10 @@ namespace PLWPF
         {
             InitializeComponent();
         }
-
+        public static void ErrorMessage(string message)
+        {
+            MessageBox.Show(message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string username = this.UserName.Text;
@@ -36,7 +39,7 @@ namespace PLWPF
             {
                 this.UserName.Text = "";
                 password.Password = "";
-                MessageBox.Show("user name of password invaild");
+                MainWindow.ErrorMessage("user name of password invaild");
             }
             else
             {

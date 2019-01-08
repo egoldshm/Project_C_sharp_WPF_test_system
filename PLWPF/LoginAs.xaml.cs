@@ -39,7 +39,7 @@ namespace PLWPF
         {
             if (role.SelectionBoxItem.ToString() == string.Empty || item.SelectionBoxItem.ToString() == string.Empty)
             {
-                MessageBox.Show("Fill in all the cells and try again");
+                MainWindow.ErrorMessage("Fill in all the cells and try again");
                 return;
             }
             User.RoleTypes NewRole = (User.RoleTypes)role.SelectionBoxItem;

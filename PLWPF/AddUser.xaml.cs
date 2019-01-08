@@ -33,7 +33,7 @@ namespace PLWPF
         {
             if(role == null)
             {
-                MessageBox.Show("choose role");
+                MainWindow.ErrorMessage("choose role");
                 return;
             }
             try
@@ -54,18 +54,18 @@ namespace PLWPF
                     password.Background = new SolidColorBrush(Colors.Red);
                 }
                 if (empty)
-                    MessageBox.Show("one or more from the nessery box empty");
+                    MainWindow.ErrorMessage("one or more from the nessery box empty");
                 else
                 {
                     bl.CreateUser(Username.Text, password.Password, (User.RoleTypes)role, items.SelectionBoxItem);
                     Username.Text = string.Empty;
                     password.Password = string.Empty;
-                    MessageBox.Show("new user created successfully");
+                    MainWindow.ErrorMessage("new user created successfully");
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MainWindow.ErrorMessage(ex.Message);
             }
         }
 

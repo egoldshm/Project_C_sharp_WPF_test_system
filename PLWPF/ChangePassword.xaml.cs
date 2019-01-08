@@ -34,23 +34,23 @@ namespace PLWPF
             User user = factoryBL.FactoryBL.GetBL().GetUser(username.Text, OldPassword.Password);
             if(user == null)
             {
-                MessageBox.Show("username or password is valid. try again!");
+                MainWindow.ErrorMessage("username or password is valid. try again!");
             }
             else if (NewPassword.Password != NewPassword2.Password)
                 {
-                    MessageBox.Show("Make sure you've entered the same password twice");
+                MainWindow.ErrorMessage("Make sure you've entered the same password twice");
                 }
             else
             {
                 bool done = factoryBL.FactoryBL.GetBL().ChangePassword(user, OldPassword.Password, NewPassword.Password);
                 if(done)
                 {
-                    MessageBox.Show("Password changed successfully.");
+                    MainWindow.ErrorMessage("Password changed successfully.");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Something happened. Failed to change password.");
+                    MainWindow.ErrorMessage("Something happened. Failed to change password.");
                 }
             }
         }

@@ -59,7 +59,7 @@ namespace PLWPF
                 }
                 if(oneOrMoreEmpty)
                 {
-                    MessageBox.Show(string.Format("you have a cells {0} is empty, fill all and try again", whoEmpty));
+                    MainWindow.ErrorMessage(string.Format("you have a cells {0} is empty, fill all and try again", whoEmpty));
                     return;
                 }
                 trainee.Address = new Address(city.Text, int.Parse(building_number.Text), street_name.Text);
@@ -68,7 +68,7 @@ namespace PLWPF
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MainWindow.ErrorMessage(ex.Message);
             }
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)

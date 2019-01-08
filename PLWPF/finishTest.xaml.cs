@@ -21,8 +21,6 @@ namespace PLWPF
     /// </summary>
     public partial class finishTest : UserControl
     {
-        bool pass;
-        string note;
         IBL bl = factoryBL.FactoryBL.GetBL();
         public finishTest()
         {
@@ -33,14 +31,48 @@ namespace PLWPF
                 var label = new Label();
                 label.Content = item.Name;
                 CheckBox checkBox = new CheckBox();
-                checkBox.Name = item.Name.Replace(" ", "_");
-                critrions.Children.Add(label);
+                checkBox.Content = item.Name;
                 critrions.Children.Add(checkBox);
             }
-            tests.ItemsSource = bl.GetAllTests();
+            tests.ItemsSource = bl.GetAllTests(test => test.Criterions.Criterions.Any(c => c.Mode == CriterionMode.NotDetermined));
         }
         public List<Test> Tests { set => tests.ItemsSource = value; }
-        public bool Pass { get => pass; set => pass = value; }
-        public string Note { get => note; set => note = value; }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bool pass = (bool)PassTest.IsChecked;
+                List<Criterion> newList = new List<Criterion>();
+                CriterionsOfTest criterionsOfTest = new CriterionsOfTest();
+                int id = (tests.SelectionBoxItem as Test).TestNumber;
+                DateTime dateTime = (tests.SelectionBoxItem as Test).DateOfTest;
+                //todo: fix the time part.
+                string note = TesterNote.Text;
+                foreach (var item in critrions.Children)
+                {
+                    if (item is CheckBox)
+                    {
+                        var checkBox = (item as CheckBox);
+                        CriterionMode mode = CriterionMode.Fails;
+                        if (checkBox.IsChecked == true)
+                            mode = CriterionMode.passed;
+                        newList.Add(new Criterion(checkBox.Content.ToString(), mode));
+                    }
+                }
+
+                bl.FinishTest(id, new CriterionsOfTest(newList), pass, note);
+                tests.ItemsSource = bl.GetAllTests(test => test.Criterions.Criterions.Any(c => c.Mode == CriterionMode.NotDetermined));
+                TesterNote.Text = "";
+                realDateOfTest.Text = "";
+                PassTest.IsChecked = false;
+            }
+            catch (Exception ex)
+            {
+                MainWindow.ErrorMessage(ex.Message);
+            }
+        }
+
+      
     }
 }

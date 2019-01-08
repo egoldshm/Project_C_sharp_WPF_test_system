@@ -41,25 +41,25 @@ namespace PLWPF
             string password = inputPassword.Password;
             if (id == "" || username == "" || password == "")
             {
-                MessageBox.Show("input box one or more empty");
+                MainWindow.ErrorMessage("input box one or more empty");
                 return;
             }
             Trainee trainee = bl.GetTraineeById(int.Parse(id));
             if(trainee == null)
             {
-                MessageBox.Show(string.Format("Trainee with id {0} not found.", id));
+                MainWindow.ErrorMessage(string.Format("Trainee with id {0} not found.", id));
                 clearTestsBox();
             }
             else
             {
                 if (!bl.CreateUser(username, password, User.RoleTypes.Trainee, trainee))
                 {
-                    MessageBox.Show(string.Format("Trainee with username {0} already exist.", username));
+                    MainWindow.ErrorMessage(string.Format("Trainee with username {0} already exist.", username));
                     clearTestsBox();
                 }
                 else
                 {
-                    MessageBox.Show("user created");
+                    MainWindow.ErrorMessage("user created");
                     this.Close();
                 }
             }
@@ -94,7 +94,7 @@ namespace PLWPF
             this.MinHeight -= 30;
             this.MaxHeight -= 80;
             this.Height -= 30;
-            MessageBox.Show("the trainee created. you can register now as user");
+            MainWindow.ErrorMessage("the trainee created. you can register now as user");
         }
 
     }

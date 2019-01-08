@@ -302,6 +302,8 @@ namespace BL
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
+            if(criterions.Criterions.Any(criterion => criterion.Mode == CriterionMode.NotDetermined))
+                throw new Exception("It is impossible that one of the criteria will not enter a value");
             if (dal.GetTestByNumber(id) == null)
                 throw new Exception(string.Format("The test with number {0} is not found", id));
             //TODO: work with criterions to think when is impotisble that trainee pass and when not.

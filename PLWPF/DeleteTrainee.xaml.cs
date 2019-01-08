@@ -48,7 +48,7 @@ namespace PLWPF
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MainWindow.ErrorMessage(ex.Message);
             }
         }
     }

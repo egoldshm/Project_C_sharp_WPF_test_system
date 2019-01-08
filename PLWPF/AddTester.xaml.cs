@@ -74,7 +74,7 @@ namespace PLWPF
                 }
                 if (oneOrMoreEmpty)
                 {
-                    MessageBox.Show("you have a cells empty, fill all and try again");
+                    MainWindow.ErrorMessage("you have a cells empty, fill all and try again");
                     return;
                 }
                 tester.Address = new Address(street.Text, int.Parse(building_number.Text), city.Text);
@@ -92,7 +92,7 @@ namespace PLWPF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MainWindow.ErrorMessage(ex.Message);
             }
         }
     }
