@@ -106,6 +106,9 @@
     <Compile Include="UpdateTrainee.xaml.cs">
       <DependentUpon>UpdateTrainee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewTest.xaml.cs">
+      <DependentUpon>ViewTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewTesters.xaml.cs">
       <DependentUpon>ViewTesters.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdateTrainee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -382,7 +382,7 @@ namespace BL
             return dal.GetTesterByID(id);
         }
 
-        bool isTestFinished(Test test)
+        public bool isTestFinished(Test test)
         {
             return !test.Criterions.Criterions.Any(c => c.Mode == CriterionMode.NotDetermined);
         }
