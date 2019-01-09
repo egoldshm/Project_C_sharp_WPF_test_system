@@ -53,6 +53,7 @@ namespace PLWPF
             {
                 viewTestersUsercontrol.initializeData();
                 viewTraineeUserconrol.initializeData();
+                ViewTest.Test = bl.GetAllTests()[0];
             }
            if(delete.IsSelected)
             {

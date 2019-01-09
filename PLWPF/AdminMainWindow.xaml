@@ -98,7 +98,7 @@
                                     <local:ViewTesters x:Name="viewTestersUsercontrol"/>
                                 </TabItem>
                                 <TabItem Header="view Tests">
-
+                                    <local:ViewTest x:Name="ViewTest"/>
                                 </TabItem>
                             </TabControl>
                         </Grid>

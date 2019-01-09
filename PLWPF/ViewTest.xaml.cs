@@ -31,13 +31,34 @@ namespace PLWPF
             set
             {
                 test = value;
-                grid1.DataContext = test;
                 if(factoryBL.FactoryBL.GetBL().isTestFinished(test))
                 {
-
+                    resert();
+                    foreach (object item in grid1.Children)
+                    {
+                        if (item is Label)
+                            (item as Label).Visibility = Visibility.Visible;
+                        if (item is CheckBox)
+                            (item as CheckBox).Visibility = Visibility.Visible;
+                    }
+                    gridCriterions.Visibility = Visibility.Visible;
+                    test.Criterions.Criterions.ForEach(criterion => { var label = new Label(); label.Content = string.Format("{0}: {1}", criterion.Name, criterion.Mode);
+                    gridCriterions.Children.Add(label);
+                    });
                 }
+                else
+                {
+                    InitializeComponent();
+                }
+                grid1.DataContext = test;
 
-
+            }
+        }
+        private void resert()
+        {
+            foreach (var item in gridCriterions.Children)
+            {
+                gridCriterions.Children.Remove((UIElement)item);
             }
         }
     }

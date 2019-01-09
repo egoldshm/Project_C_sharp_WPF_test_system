@@ -19,6 +19,8 @@
 
         </Style>
     </UserControl.Resources>
+    <ScrollViewer>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -65,4 +67,5 @@
             </Button.Style>
         </Button>
     </Grid>
+    </ScrollViewer>
 </UserControl>

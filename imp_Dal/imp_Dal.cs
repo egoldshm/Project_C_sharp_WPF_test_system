@@ -146,6 +146,8 @@ namespace imp_Dal
             test.Criterions = criterions ?? throw new Exception("You have to insert criterions to finish test");
             test.Pass = pass;
             test.TesterNote = note;
+            DS.DataSource.tests.RemoveAll(t => t.TestNumber == id);
+            DS.DataSource.tests.Add(test);
         }
 
         public List<Test> GetAllTests()

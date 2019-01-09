@@ -7,38 +7,50 @@
              xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.ViewTest"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer >
 
-        <Grid x:Name="grid1" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Label x:Name="testNumberLabel" Grid.Row="5" HorizontalAlignment="Left" Grid.Column="1" Content="{Binding TestNumber}"/>
-            <Label VerticalAlignment="Center" Grid.Row="6" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:"/>
-            <Label x:Name="traineeIdLabel" Grid.Row="6" Grid.Column="1" Content="{Binding TraineeId}"/>
-            <Label VerticalAlignment="Center" Grid.Row="0" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
-            <Label x:Name="testerIdLabel" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="{Binding TesterId}"/>
-            <Label VerticalAlignment="Center" Grid.Row="4" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Note:"/>
-            <Label x:Name="dateOfTestLabel" Grid.Row="0" Grid.Column="1" Content="{Binding DateOfTest}"/>
-            <Label VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Content="Pass:"/>
-            <CheckBox x:Name="passCheckBox" IsEnabled="False" Grid.Row="1"  IsChecked="{Binding Pass, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Column="1" Content=""/>
-            <Label VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Left" Grid.Column="0" Content="Real Date Of Test:" Height="26" Width="103"/>
-            <Label x:Name="realDateOfTestLabel" VerticalAlignment="Center" Grid.Row="2" Margin="3,12,0,12" HorizontalAlignment="Left" Grid.Column="1" Content="{Binding RealDateOfTest}" Height="10" Width="10"/>
-            <Label VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id:" Height="26" Width="57"/>
-            <Label x:Name="testerNoteLabel" VerticalAlignment="Center" Grid.Row="4" Margin="3,12,0,12" HorizontalAlignment="Left" Grid.Column="1" Content="{Binding TesterNote}" Height="10" Width="10"/>
-            <Label VerticalAlignment="Center" Grid.Row="5" HorizontalAlignment="Left" Grid.Column="0" Content="Test Number:" Height="26" Width="80"/>
-            <StackPanel />
+        <Grid>
+
+            <Grid x:Name="grid1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0"  Grid.Column="0" Content="Test Number:"  />
+                <Label x:Name="testNumberLabel" Grid.Row="0"  Grid.Column="1" Content="{Binding TestNumber}"/>
+                <Label  Grid.Row="1"  Grid.Column="0" Content="Trainee Id:"/>
+                <Label x:Name="traineeIdLabel" Grid.Row="1" Grid.Column="1" Content="{Binding TraineeId}"/>
+                <Label  Grid.Row="2" Grid.Column="0" Content="Tester Id:"  />
+                <Label x:Name="testerIdLabel"  Grid.Row="2" Grid.Column="1" Content="{Binding TesterId}"/>
+
+                <Label  Grid.Row="3" Grid.Column="0" Content="Date Of Test:"/>
+                <Label x:Name="dateOfTestLabel" Grid.Row="3" Grid.Column="1" Content="{Binding DateOfTest}"/>
+                <Label  Visibility="Collapsed" Grid.Row="4" Grid.Column="0" Content="Pass:"/>
+                <CheckBox x:Name="passCheckBox" Visibility="Collapsed" IsEnabled="False" Grid.Row="4" IsChecked="{Binding Pass, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Column="1" Content=""/>
+                <Label  Visibility="Collapsed" Grid.Row="5" Grid.Column="0" Content="Real Date Of Test:" />
+                <Label x:Name="realDateOfTestLabel" Visibility="Collapsed"  Grid.Row="5" Grid.Column="1" Content="{Binding RealDateOfTest}" />
+                <Label  Grid.Row="6"  Visibility="Collapsed" Grid.Column="0" Content="Tester Note:"/>
+                <Label x:Name="testerNoteLabel" Visibility="Collapsed" Grid.Row="6" Grid.Column="1" Content="{Binding TesterNote}" />
+                <Label Visibility="Collapsed" Grid.Row="7" FontSize="16" Content="Criterions: " Foreground="Red"/>
+                <StackPanel Grid.Row="8" x:Name="gridCriterions" Grid.ColumnSpan="2" Visibility="Collapsed"/>
+            </Grid>
+
         </Grid>
-
-    </Grid>
+    </ScrollViewer>
 </UserControl>
