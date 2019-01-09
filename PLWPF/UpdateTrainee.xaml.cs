@@ -24,14 +24,19 @@ namespace PLWPF
     {
 
         public event EventHandler traineeUpdated;
-        Trainee trainee;
+        private Trainee trainee;
         Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
         public List<Trainee> allTrainees;
+
+        public Trainee Trainee { get => trainee; set  { trainee = value;
+                idTextBox.Text = trainee.Id.ToString();
+                IdTextBox_DropDownClosed(this, new EventArgs()); } }
+
         public UpdateTrainee()
         {
             trainee = new Trainee();
             InitializeComponent();
-            DataContext = trainee;
+            DataContext = Trainee;
             genderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
             this.transmissionLearnedComboBox.ItemsSource = Enum.GetValues(typeof(TransmissionType));
             this.typeCarLearnedComboBox.ItemsSource = Enum.GetValues(typeof(CarType));
@@ -67,10 +72,10 @@ namespace PLWPF
                     MainWindow.ErrorMessage(string.Format("you have a cells {0} is empty, fill all and try again", whoEmpty));
                     return;
                 }
-                trainee.Address = new Address(city.Text, int.Parse(building_number.Text), street_name.Text);
-                bl.UpdateTrainee(trainee);
+                Trainee.Address = new Address(street_name.Text, int.Parse(building_number.Text), city.Text);
+                bl.UpdateTrainee(Trainee);
                 trainee = new Trainee();
-                DataContext = trainee;
+                DataContext = Trainee;
                 traineeUpdated?.Invoke(this, new EventArgs());
             }
             catch (Exception ex)
@@ -84,18 +89,18 @@ namespace PLWPF
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void IdTextBox_DropDownClosed(object sender, EventArgs e)
+        public void IdTextBox_DropDownClosed(object sender, EventArgs e)
         {
             if (idTextBox.Text != string.Empty)
             {
                 int id = int.Parse(idTextBox.Text);
                 trainee = bl.GetTraineeById(id);
-                if (trainee != null)
+                if (Trainee != null)
                 {
-                    DataContext = trainee;
-                    street_name.Text = trainee.Address.street_name;
-                    city.Text = trainee.Address.city;
-                    building_number.Text = trainee.Address.building_number.ToString();
+                    DataContext = Trainee;
+                    street_name.Text = Trainee.Address.street_name;
+                    city.Text = Trainee.Address.city;
+                    building_number.Text = Trainee.Address.building_number.ToString();
                 }
             }
         }

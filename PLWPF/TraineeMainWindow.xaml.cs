@@ -21,7 +21,7 @@ namespace PLWPF
     public partial class TraineeMainWindow : Window
     {
         Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
-        readonly Trainee trainee;
+        Trainee trainee;
         public TraineeMainWindow(User user)
         {
             InitializeComponent();
@@ -40,7 +40,11 @@ namespace PLWPF
             }
             else
                 trainee = new Trainee(user.ConnectTo as Trainee);
+            
             details.DataContext = trainee;
+            updateTrainee_uc.Trainee = trainee;
+            updateTrainee_uc.idTextBox.IsEnabled = false;
+            updateTrainee_uc.button.Click += updateTrainee_click;
             if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {
                 testFuture.Content = "view the test you passed";
@@ -58,6 +62,14 @@ namespace PLWPF
 
             }
             title.user = user;
+        }
+
+        private void updateTrainee_click(object sender, RoutedEventArgs e)
+        {
+            trainee = bl.GetTraineeById(trainee.Id);
+            details.DataContext = trainee;
+            updateTrainee_uc.Trainee = trainee;
+            MessageBox.Show("trainee updated successfully");
         }
 
         private void viewTest(object sender, RoutedEventArgs e)

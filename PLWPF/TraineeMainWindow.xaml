@@ -42,14 +42,14 @@
                     </TabControl.Resources>
                     <TabItem Header="trainee info" >
                         <Grid>
-                            <local:showInfoAboutTrainee/>
+                            <local:showInfoAboutTrainee x:Name="showTainee_uc"/>
                         </Grid>
                     </TabItem>
                     <TabItem x:Name ="testFuture" Header="see Test">
                         <Grid Background="#FFE5E5E5"/>
                     </TabItem>
                     <TabItem Header="update trainee">
-                        <Grid Background="#FFE5E5E5"/>
+                        <local:UpdateTrainee x:Name="updateTrainee_uc"/>
                     </TabItem>
                     <TabItem Header="lastTests"/>
 
