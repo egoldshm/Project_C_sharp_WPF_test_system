@@ -128,6 +128,9 @@ namespace Ibl
         void FinishTest(int id, BE.CriterionsOfTest criterions, bool pass, string note);
 
         Test GetTestByNumber(int number);
+
+        bool isTestFinished(Test test);
+
         #endregion Test
 
         #region User
