@@ -12,11 +12,32 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
+        <Grid x:Name="toolsOfDisplay">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By trainee:"/>
+            <Label Grid.Row="1" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By tester:"/>
+            <ComboBox Grid.Column="1" Margin="5" x:Name="trainee" SelectionChanged="comboBox_SelectionChanged"/>
+            <ComboBox Grid.Column="1" Grid.Row="1" Margin="5" x:Name="tester" SelectionChanged="comboBox_SelectionChanged"/>
+        </Grid>
+        <local:ViewTest Grid.Row="1" Grid.RowSpan="2" x:Name="viewSingleTest" Visibility="Collapsed"/>
+        <Button x:Name="backButton" Content="Back to all the tests" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Margin="10" Click="backButton_Click" Visibility="Collapsed"/>
+        <Grid Grid.Row="1" x:Name="menu">
             <Grid.Resources>
                 <Style TargetType="Label">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="Background" Value="Aquamarine"/>
+
                 </Style>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
@@ -25,8 +46,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Content="show details"/>
+            <Label Content="test number:" Grid.Column="1"/>
+            <Label Content="trainee:" Grid.Column="2"/>
+            <Label Content="tester:" Grid.Column="3"/>
+            <Label Content="date of test:" Grid.Column="4"/>
+            <Label Content="state:" Grid.Column="5"/>
         </Grid>
         <StackPanel x:Name="TestsView" Grid.Row="2"/>
     </Grid>
