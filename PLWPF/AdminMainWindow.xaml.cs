@@ -30,7 +30,7 @@ namespace PLWPF
             InitializeComponent();
             title.user = user;
             loginas.User = user;
-            ViewTest.AllTests = bl.GetAllTests();
+            ViewTest.AllExistTests = bl.GetAllTests();
         }
 
         private void viewTest(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace PLWPF
                 {
                     viewTestersUsercontrol.initializeData();
                     viewTraineeUserconrol.initializeData();
-                    ViewTest.AllTests = bl.GetAllTests();
+                    ViewTest.AllExistTests = bl.GetAllTests();
                 }
                 if (delete.IsSelected)
                 {

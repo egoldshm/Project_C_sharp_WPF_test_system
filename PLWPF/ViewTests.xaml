@@ -56,5 +56,16 @@
             <Label Content="state:" Grid.Column="5"/>
         </Grid>
         <StackPanel x:Name="TestsView" Grid.Row="2"/>
+        <Grid.ContextMenu>
+            <ContextMenu x:Name="clickMenu">
+                <MenuItem Header="Sort by">
+                    <MenuItem Header="test number" Click="SortByNumber"/>
+                    <MenuItem Header="trainee name" Click="SortByTraineName"/>
+                    <MenuItem Header="tester name" Click="SortByTesterName"/>
+                    <MenuItem Header="state" Click="SortByState"/>
+                    <MenuItem Header="date" Click="SortBydate"/>
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
     </Grid>
 </UserControl>
