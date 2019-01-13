@@ -76,7 +76,6 @@ namespace PLWPF
                 bl.UpdateTrainee(Trainee);
                 trainee = new Trainee();
                 DataContext = Trainee;
-                traineeUpdated?.Invoke(this, new EventArgs());
             }
             catch (Exception ex)
             {
