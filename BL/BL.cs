@@ -215,7 +215,7 @@ namespace BL
             tester.WorkDays[(int)date.DayOfWeek, hourByArr] && !GetTestsByTesters(tester).Any(test => test.DateOfTest.Hour == date.Hour)));
         }
 
-        public List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x)
+        public List<Tester> GetTestersWhoLiveInDistanceOfX(Address address, int x)
         {
             //TODO: after the second part - connect it to google maps.
             Random random = new Random();
