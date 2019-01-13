@@ -114,7 +114,21 @@
                                 <DataTrigger Binding="{Binding ElementName=phoneNumberTextBox, Path=Text}" Value="0">
                                     <Setter Property="Button.IsEnabled" Value="false"/>
                                 </DataTrigger>
-
+                                <DataTrigger Binding="{Binding ElementName=yearsOfExperienceTextBox, Path=Text}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=yearsOfExperienceTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=sheet, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=building_number, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
