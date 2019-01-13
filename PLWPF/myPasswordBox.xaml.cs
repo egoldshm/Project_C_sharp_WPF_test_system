@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace PLWPF
 {
     /// <summary>
@@ -63,7 +62,7 @@ namespace PLWPF
 
         private void Button_Click_generate(object sender, RoutedEventArgs e)
         {
-            string New_Password = CreatePassword(8);
+            string New_Password = CreatePassword(BE.Configuration.LENGHT_OF_RAND_PASSWORD);
             inputPassword.Password = inputPassword_Text.Text = New_Password;
         }
 
