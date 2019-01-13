@@ -64,7 +64,7 @@ namespace PLWPF
                 }
                 trainee.Address = new Address(city.Text, int.Parse(building_number.Text), street_name.Text);
                 bl.AddTrainee(trainee);
-                traineeAdded(this, new EventArgs());
+                traineeAdded(sender, new EventArgs());
             }
             catch(Exception ex)
             {
