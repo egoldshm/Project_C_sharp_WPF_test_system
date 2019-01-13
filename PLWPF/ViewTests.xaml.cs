@@ -42,11 +42,19 @@ namespace PLWPF
         public List<Test> AllTests { get => allTests;
             set
             {
-                allTests = new List<Test>(value.Where(test => { bool right = true;
+                allTests = new List<Test>(value.Where(test =>
+                {
+                    bool right = true;
                     if (trainee.SelectedItem is Trainee)
                         right = right && test.TraineeId == (trainee.SelectedItem as Trainee).Id;
                     if (tester.SelectedItem is Tester)
                         right = right && test.TesterId == (tester.SelectedItem as Tester).Id;
+                    if (unfinishedTests.IsChecked == false)
+                        right = right && !(getStateOfTest(test) == "not end yet");
+                    else if (unsuccessfulTests.IsChecked == false)
+                        right = right && !(getStateOfTest(test) == "faild");
+                    else if(successfulTests.IsChecked == false)
+                        right = right && !(getStateOfTest(test) == "pass");
                     return right;
                 }));
                 clearOldTests();
@@ -143,7 +151,8 @@ namespace PLWPF
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            AllTests = new List<Test>(AllExistTests);
+            if(AllExistTests != null)
+                AllTests = new List<Test>(AllExistTests);
         }
 
         private void SortByNumber(object sender, RoutedEventArgs e)
@@ -170,6 +179,11 @@ namespace PLWPF
         private void SortBydate(object sender, RoutedEventArgs e)
         {
             allTests.Sort((test1, test2) => DateTime.Compare(test1.DateOfTest, test2.DateOfTest));
+        }
+
+        private void SuccessfulTests_Checked(object sender, RoutedEventArgs e)
+        {
+            comboBox_SelectionChanged(sender, null);
         }
     }
 }

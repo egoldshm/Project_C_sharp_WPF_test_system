@@ -68,9 +68,9 @@ namespace PLWPF
         private void Role_DropDownClosed(object sender, EventArgs e)
         {
             User.RoleTypes NewRole;
-            if (role.SelectionBoxItem.ToString() != string.Empty && role.SelectionBoxItem is User.RoleTypes)
+            if (role.SelectedValue.ToString() != string.Empty && role.SelectedValue is User.RoleTypes)
             {
-                NewRole = (User.RoleTypes)role.SelectionBoxItem;
+                NewRole = (User.RoleTypes)role.SelectedValue;
                 if (NewRole == oldRole)
                     return;
                 button.Content = NewRole.ToString().ToLower();

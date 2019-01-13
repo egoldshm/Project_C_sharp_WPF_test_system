@@ -21,7 +21,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ComboBox Margin="10" x:Name="role" DropDownClosed ="Role_DropDownClosed"/>
+        <ComboBox Margin="10" x:Name="role" SelectionChanged="Role_DropDownClosed"/>
         <ComboBox x:Name="item" Grid.Row="1"/>
         <Button x:Name="button" ContentStringFormat="Login as {0}" Content="Admin" FontSize="25" Margin="15" Grid.Row="2" Click="Button_Click"/>
         

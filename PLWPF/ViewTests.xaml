@@ -14,10 +14,9 @@
         </Grid.RowDefinitions>
         <Grid x:Name="toolsOfDisplay">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -27,6 +26,11 @@
             <Label Grid.Row="1" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By tester:"/>
             <ComboBox Grid.Column="1" Margin="5" x:Name="trainee" SelectionChanged="comboBox_SelectionChanged"/>
             <ComboBox Grid.Column="1" Grid.Row="1" Margin="5" x:Name="tester" SelectionChanged="comboBox_SelectionChanged"/>
+
+            <CheckBox Grid.Column="2" Unchecked="SuccessfulTests_Checked" Checked="SuccessfulTests_Checked" x:Name="successfulTests" Margin="10" IsChecked="True" Content="Show successful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top"/>
+            <CheckBox Grid.Column="2" Unchecked="SuccessfulTests_Checked" Checked="SuccessfulTests_Checked" x:Name="unsuccessfulTests" Margin="10" IsChecked="True" Content="Show unsuccessful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="2" Unchecked="SuccessfulTests_Checked" Checked="SuccessfulTests_Checked" x:Name="unfinishedTests" Margin="10" IsChecked="True" Content="Show unfinished tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Bottom"/>
+
         </Grid>
         <local:ViewTest Grid.Row="1" Grid.RowSpan="2" x:Name="viewSingleTest" Visibility="Collapsed"/>
         <Button x:Name="backButton" Content="Back to all the tests" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Margin="10" Click="backButton_Click" Visibility="Collapsed"/>
