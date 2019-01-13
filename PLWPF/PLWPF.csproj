@@ -275,5 +275,8 @@
   <ItemGroup>
     <Resource Include="photos\icon.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="photos\LogoMOT-HE.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

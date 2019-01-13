@@ -40,7 +40,17 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem Header="Home"/>
+                    <TabItem Header="Home">
+                        <Grid>
+                            <Label Content="Welcome to the AMAZINING d.m.v system ever!!!" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50" FontSize="23" Foreground="#FF4977D8"/>
+                            <Label FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,50" FontSize="18">
+                                <TextBlock Foreground="#FF74CF5F">This project was developed by Eitan Goldschmidt and Ariel Darshan <LineBreak></LineBreak>
+                                during the course Mini Project in .NET and wpf with Mr. David Kidron</TextBlock>
+                            </Label>
+
+                            <Image Source=".\photos\LogoMOT-HE.png"/>
+                        </Grid>
+                    </TabItem>
                     <TabItem Header="Add" >
                         <Grid>
                             <TabControl TabStripPlacement="Left">
