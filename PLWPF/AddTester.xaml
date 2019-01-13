@@ -86,7 +86,40 @@
                     <Label HorizontalContentAlignment="Center" Grid.Row="4" Grid.Column="0" Content="13:00 - 14:00"/>
                     <Label HorizontalContentAlignment="Center" Grid.Row="5" Grid.Column="0" Content="14:00 - 15:00"/>
                 </Grid>
-                <Button Margin="5" Content="Add tester" Click="Button_Click" Grid.Row="14" Grid.ColumnSpan="2" MinHeight="30" FontSize="20"/>
+                <Button Margin="5" Content="Add tester" Click="Button_Click" Grid.Row="14" Grid.ColumnSpan="2" MinHeight="30" FontSize="20">
+                    <Button.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=idTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=lastNameTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=firstNameTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=maxDistanceTextBox, Path=Text}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=maxDistanceTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=maxWeeklyTestsTextBox, Path=Text}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=maxWeeklyTestsTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=phoneNumberTextBox, Path=Text}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                </Button>
             </Grid>
         </Grid>
     </ScrollViewer>
