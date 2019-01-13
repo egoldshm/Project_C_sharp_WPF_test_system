@@ -153,7 +153,7 @@ namespace Ibl
         /// <param name="address"></param>
         /// <param name="x"></param>
         /// <returns></returns>
-        List<Tester> GetTestersWhoLiveInDistantsOfX(Address address, int x);
+        List<Tester> GetTestersWhoLiveInDistanceOfX(Address address, int x);
 
         /// <summary>
         ///

@@ -23,7 +23,6 @@ namespace PLWPF
     public partial class UpdateTrainee: UserControl
     {
 
-        public event EventHandler traineeUpdated;
         private Trainee trainee;
         Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
         public List<Trainee> allTrainees;
