@@ -52,13 +52,13 @@ namespace PLWPF
         private void initializeData()
         {
             object obj = idTextBox.SelectedValue;
-            idTextBox.ItemsSource = bl.GetAllTesters();
+            idTextBox.ItemsSource = bl.GetAllTesters().Select(tester => tester.Id); ;
             idTextBox.SelectedValue = obj;
         }
 
         public void setTesters(List<Tester> list)
         {
-            idTextBox.ItemsSource = list;
+            idTextBox.ItemsSource = list.Select(tester => tester.Id);
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
@@ -99,9 +99,12 @@ namespace PLWPF
                         tester.WorkDays[i, j] = WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).Select(box => (bool)box.IsChecked).First();
                     }
                 }
-                bl.AddTester(tester);
-                tester = new Tester();
-                grid1.DataContext = tester;
+
+                bl.UpdateTester(tester);
+                MessageBox.Show(string.Format("tester {0} successfully updated", tester.Id));
+
+                clearAll();
+
             }
             catch (Exception ex)
             {
@@ -109,25 +112,23 @@ namespace PLWPF
             }
         }
 
-        private void IdTextBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void IdTextBox_SelectionChanged(object sender, EventArgs e)
         {
-            tester = idTextBox.SelectedValue as Tester;
-            grid1.DataContext = tester;
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 6; j++)
-                {
-                    WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).First().IsChecked = tester.WorkDays[i, j];
-                }
-            }
-            city.Text = tester.Address.city;
-            street.Text = tester.Address.street_name;
-            building_number.Text = tester.Address.building_number.ToString();
             try
             {
-                bl.UpdateTester(tester);
-                MessageBox.Show(string.Format("tester {0} successfully updated", tester.Id));
-                clearAll();
+                tester = bl.GetTesterById(int.Parse(idTextBox.SelectedValue.ToString()));
+                grid1.DataContext = tester;
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).First().IsChecked = tester.WorkDays[i, j];
+                    }
+                }
+                city.Text = tester.Address.city;
+                street.Text = tester.Address.street_name;
+                building_number.Text = tester.Address.building_number.ToString();
+
             }
             catch (Exception ex)
             {

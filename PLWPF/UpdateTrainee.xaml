@@ -72,7 +72,48 @@
                 <TextBox x:Name="street_name" Grid.Row="12"  Grid.Column="1"/>
                 <Label Grid.Row="13"  Grid.Column="0" Content="Building number:"/>
                 <TextBox x:Name="building_number" MaxLength="5" PreviewTextInput="NumberValidationTextBox" Grid.Row="13"  Grid.Column="1"/>
-                <Button Content="update trainee" Grid.Row="14" Grid.ColumnSpan="2" Margin="2" VerticalAlignment="Center" x:Name="button"  HorizontalAlignment="Stretch" Click="Button_Click"/>
+                <Button Content="update trainee" Grid.Row="14" Grid.ColumnSpan="2" Margin="2" VerticalAlignment="Center" x:Name="button"  HorizontalAlignment="Stretch" Click="Button_Click">
+                    <Button.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=birthdayDatePicker, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=familyNameTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=firstNameTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=idTextBox, Path=SelectedValue}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=lessonsNumberTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=phoneNumberTextBox, Path=Text}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=schoolNameTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=teacherNameTextBox, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=street_name, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=building_number, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                </Button>
             </Grid>
 
         </Grid>
