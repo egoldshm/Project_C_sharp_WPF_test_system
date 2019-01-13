@@ -50,8 +50,6 @@ namespace PLWPF
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Source is TabControl)
-            {
                 if (view.IsSelected)
                 {
                     viewTestersUsercontrol.initializeData();
@@ -63,17 +61,6 @@ namespace PLWPF
                     deleteTester_uc.initializeData();
                     deleteTrainee_uc.initializeData();
                 }
-            }
-        }
-
-        private void AddTest_Loaded()
-        {
-
-        }
-
-        private void AddTest_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

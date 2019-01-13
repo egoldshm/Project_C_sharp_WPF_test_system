@@ -387,6 +387,12 @@ namespace BL
             return !test.Criterions.Criterions.Any(c => c.Mode == CriterionMode.NotDetermined);
         }
 
+        public void deleteTest(int id)
+        {
+            if (GetTesterById(id) == null)
+                throw new Exception(string.Format("Test {0} not exist", id));
+            dal.deleteTest(id);
+        }
         #endregion Test
 
         #region User

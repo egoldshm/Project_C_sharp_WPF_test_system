@@ -131,6 +131,8 @@ namespace Ibl
 
         bool isTestFinished(Test test);
 
+        void deleteTest(int id);
+
         #endregion Test
 
         #region User

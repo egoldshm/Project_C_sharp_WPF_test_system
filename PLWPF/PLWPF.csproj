@@ -76,6 +76,9 @@
     <Compile Include="CreatNewTraineeUser.xaml.cs">
       <DependentUpon>CreatNewTraineeUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteTest.xaml.cs">
+      <DependentUpon>DeleteTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeleteTester.xaml.cs">
       <DependentUpon>DeleteTester.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,9 @@
     </Compile>
     <Compile Include="TraineeMainWindow.xaml.cs">
       <DependentUpon>TraineeMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTester.xaml.cs">
+      <DependentUpon>UpdateTester.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateTrainee.xaml.cs">
       <DependentUpon>UpdateTrainee.xaml</DependentUpon>
@@ -143,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreatNewTraineeUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TraineeMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateTester.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

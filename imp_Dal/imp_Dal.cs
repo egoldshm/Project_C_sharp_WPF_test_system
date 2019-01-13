@@ -149,6 +149,12 @@ namespace imp_Dal
             DS.DataSource.tests.RemoveAll(t => t.TestNumber == id);
             DS.DataSource.tests.Add(test);
         }
+        public void deleteTest(int id)
+        {
+            if (GetTestByNumber(id) == null)
+                throw new Exception(string.Format("test {0} not exist", id));
+            DS.DataSource.tests.RemoveAll(test => test.TestNumber == id);
+        }
 
         public List<Test> GetAllTests()
         {

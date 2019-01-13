@@ -21,11 +21,11 @@ namespace PLWPF
     /// <summary>
     /// Interaction logic for AddTester.xaml
     /// </summary>
-    public partial class AddTester : UserControl
+    public partial class UpdateTester : UserControl
     {
         Tester tester;
         IBL bl = factoryBL.FactoryBL.GetBL();
-        public AddTester()
+        public UpdateTester()
         {
             InitializeComponent();
             for (int i = 0; i < 5; i++)
@@ -33,8 +33,8 @@ namespace PLWPF
                 for (int j = 0; j < 6; j++)
                 {
                     CheckBox checkBox = new CheckBox();
-                    Grid.SetRow(checkBox, i+1);
-                    Grid.SetColumn(checkBox, j+1);
+                    Grid.SetRow(checkBox, i + 1);
+                    Grid.SetColumn(checkBox, j + 1);
                     checkBox.Margin = new Thickness(3);
                     checkBox.Name = "checkBox" + i + "_" + j;
                     checkBox.HorizontalAlignment = HorizontalAlignment.Center;
@@ -42,10 +42,23 @@ namespace PLWPF
 
                 }
             }
+            initializeData();
             genderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
             this.carTypeComboBox.ItemsSource = Enum.GetValues(typeof(CarType));
             tester = new Tester();
             grid1.DataContext = tester;
+        }
+
+        private void initializeData()
+        {
+            object obj = idTextBox.SelectedValue;
+            idTextBox.ItemsSource = bl.GetAllTesters();
+            idTextBox.SelectedValue = obj;
+        }
+
+        public void setTesters(List<Tester> list)
+        {
+            idTextBox.ItemsSource = list;
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
@@ -83,9 +96,37 @@ namespace PLWPF
                 {
                     for (int j = 0; j < 6; j++)
                     {
-                         tester.WorkDays[i, j] = WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).Select(box => (bool)box.IsChecked).First();
+                        tester.WorkDays[i, j] = WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).Select(box => (bool)box.IsChecked).First();
                     }
                 }
+                bl.AddTester(tester);
+                tester = new Tester();
+                grid1.DataContext = tester;
+            }
+            catch (Exception ex)
+            {
+                MainWindow.ErrorMessage(ex.Message);
+            }
+        }
+
+        private void IdTextBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tester = idTextBox.SelectedValue as Tester;
+            grid1.DataContext = tester;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).First().IsChecked = tester.WorkDays[i, j];
+                }
+            }
+            city.Text = tester.Address.city;
+            street.Text = tester.Address.street_name;
+            building_number.Text = tester.Address.building_number.ToString();
+            try
+            {
+                bl.UpdateTester(tester);
+                MessageBox.Show(string.Format("tester {0} successfully updated", tester.Id));
                 clearAll();
             }
             catch (Exception ex)
@@ -93,6 +134,7 @@ namespace PLWPF
                 MainWindow.ErrorMessage(ex.Message);
             }
         }
+
         private void clearAll()
         {
             tester = new Tester();

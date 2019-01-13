@@ -107,6 +107,12 @@ namespace DAL
         void AddFutureTest(BE.Tester tester, BE.Trainee trainee, DateTime time, BE.Address address);
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        void deleteTest(int id);
+ 
+        /// <summary>
         ///
         /// </summary>
         /// <returns></returns>

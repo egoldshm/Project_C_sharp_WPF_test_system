@@ -69,7 +69,7 @@
                                     <local:DeleteTester x:Name="deleteTester_uc"/>
                                 </TabItem>
                                 <TabItem Header="delete Test">
-                                    <Label Content="not implemented"/>
+                                    <local:DeleteTest x:Name="deleteTest_uc"/>
                                 </TabItem>
                             </TabControl>
                         </Grid>
@@ -78,12 +78,13 @@
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="update trainee">
-                                    <local:UpdateTrainee />
+                                    <local:UpdateTrainee x:Name="updateTrainee_uc"/>
                                 </TabItem>
                                 <TabItem Header="update Tester">
+                                    <local:UpdateTester x:Name="UpdateTester_uc"/>
                                 </TabItem>
                                 <TabItem Header="finish Test">
-                                    <local:finishTest/>
+                                    <local:finishTest x:Name="finishTest_uc"/>
                                 </TabItem>
                             </TabControl>
                         </Grid>
