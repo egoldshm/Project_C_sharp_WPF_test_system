@@ -27,9 +27,9 @@
             <ComboBox Grid.Column="1" Margin="5" x:Name="trainee" SelectionChanged="comboBox_SelectionChanged"/>
             <ComboBox Grid.Column="1" Grid.Row="1" Margin="5" x:Name="tester" SelectionChanged="comboBox_SelectionChanged"/>
 
-            <CheckBox Grid.Column="2" Unchecked="SuccessfulTests_Checked" Checked="SuccessfulTests_Checked" x:Name="successfulTests" Margin="10" IsChecked="True" Content="Show successful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top"/>
-            <CheckBox Grid.Column="2" Unchecked="SuccessfulTests_Checked" Checked="SuccessfulTests_Checked" x:Name="unsuccessfulTests" Margin="10" IsChecked="True" Content="Show unsuccessful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Center"/>
-            <CheckBox Grid.Column="2" Unchecked="SuccessfulTests_Checked" Checked="SuccessfulTests_Checked" x:Name="unfinishedTests" Margin="10" IsChecked="True" Content="Show unfinished tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Bottom"/>
+            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked"  x:Name="successfulTests" Margin="10" IsChecked="True" Content="Show successful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top"/>
+            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked" x:Name="unsuccessfulTests" Margin="10" IsChecked="True" Content="Show unsuccessful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked" x:Name="unfinishedTests" Margin="10" IsChecked="True" Content="Show unfinished tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Bottom"/>
 
         </Grid>
         <local:ViewTest Grid.Row="1" Grid.RowSpan="2" x:Name="viewSingleTest" Visibility="Collapsed"/>
