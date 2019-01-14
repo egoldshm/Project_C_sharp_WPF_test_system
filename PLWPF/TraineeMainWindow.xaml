@@ -52,7 +52,7 @@
                         <local:UpdateTrainee x:Name="updateTrainee_uc"/>
                     </TabItem>
                     <TabItem Header="lastTests"/>
-
+                    <local:Nothing/>
                 </TabControl>
 
             </Grid>

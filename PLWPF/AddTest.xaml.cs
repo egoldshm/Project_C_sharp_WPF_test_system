@@ -46,7 +46,7 @@ namespace PLWPF
                 MessageBoxResult answer = MessageBox.Show("Verify test scheduling", "are you sure you want to add a test for " + trainee.Id + " with " + tester.Id + "?", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (MessageBoxResult.Yes == answer)
                 {
-                    bl.AddFutureTest(tester, trainee, (DateTime)dateOfTestDatePicker.SelectedDate, new Address(city.Text, int.Parse(building_number.Text), street.Text));
+                    bl.AddFutureTest(tester, trainee, DateTime.Parse(dateOfTestDatePicker.Text), new Address(city.Text, int.Parse(building_number.Text), street.Text));
                     MessageBox.Show("added test");
                 }
                 else

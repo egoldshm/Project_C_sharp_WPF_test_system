@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PLWPF"
-             xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.UpdateTester"
+             xmlns:BE="clr-namespace:BE;assembly=BE"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="PLWPF.UpdateTester"
              mc:Ignorable="d" 
              d:DesignHeight="631" d:DesignWidth="800">
     <ScrollViewer >
@@ -44,13 +45,13 @@
                 <Label Grid.Row="5" Margin="3" Grid.Column="0" Content="Date Of Birth:"/>
                 <DatePicker x:Name="dateOfBirthDatePicker" SelectedDate="{Binding DateOfBirth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3,5"  Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Max Distance:"/>
-                <TextBox x:Name="maxDistanceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxDistance, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1"/>
+                <xctk:ByteUpDown x:Name="maxDistanceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxDistance, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="7" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Max Weekly Tests:"/>
-                <TextBox x:Name="maxWeeklyTestsTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxWeeklyTests, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3"  Grid.Column="1"/>
+                <xctk:ByteUpDown x:Name="maxWeeklyTestsTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxWeeklyTests, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3"  Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="8" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Phone Number:"/>
                 <TextBox x:Name="phoneNumberTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Margin="3"  Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="9" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Years Of Experience:"/>
-                <TextBox x:Name="yearsOfExperienceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding YearsOfExperience, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Margin="3"  Grid.Column="1"/>
+                <xctk:ByteUpDown x:Name="yearsOfExperienceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding YearsOfExperience, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Margin="3"  Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="10" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City:"/>
                 <TextBox x:Name="city" Grid.Row="10" Margin="3,5"  Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="11" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street:"/>

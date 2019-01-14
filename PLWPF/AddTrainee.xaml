@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PLWPF"
+                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.AddTrainee"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400" FontFamily="Miriam">
@@ -40,9 +41,9 @@
             <Label  Grid.Row="3" Margin="3" Grid.Column="0" Content="Gender:"/>
             <ComboBox x:Name="genderComboBox" Grid.Row="3" Margin="5" SelectedItem="{Binding Gender, Mode=TwoWay}" Grid.Column="1"/>
             <Label Grid.Row="4" Margin="3" Grid.Column="0" Content="Id:"/>
-            <TextBox x:Name="idTextBox" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Grid.Column="1"/>
+            <xctk:MaskedTextBox Mask="000000000" x:Name="idTextBox" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Grid.Column="1"/>
             <Label Grid.Row="5" Margin="3" Grid.Column="0" Content="Lessons Number:" />
-            <TextBox x:Name="lessonsNumberTextBox" MaxLength="3" PreviewTextInput="NumberValidationTextBox" Text="{Binding LessonsNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3" Grid.Column="1"/>
+            <xctk:ByteUpDown HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" x:Name="lessonsNumberTextBox" PreviewTextInput="NumberValidationTextBox" MaxLength="3" Text="{Binding LessonsNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3" Grid.Column="1"/>
             <Label Grid.Row="6" Margin="3" Grid.Column="0" Content="Phone Number:"/>
             <TextBox x:Name="phoneNumberTextBox" MaxLength="11" PreviewTextInput="NumberValidationTextBox" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1"/>
             <Label Grid.Row="7" Margin="3" Grid.Column="0" Content="School Name:"/>

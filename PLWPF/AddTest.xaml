@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PLWPF"
              xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.AddTest"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -17,7 +18,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
 
-            <Grid x:Name="grid1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DataContext="{StaticResource testViewSource}">
+            <Grid x:Name="grid1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -28,11 +29,11 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
-                <DatePicker x:Name="dateOfTestDatePicker" VerticalAlignment="Center" SelectedDate="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+                <xctk:DateTimePicker x:Name="dateOfTestDatePicker"  Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id:"/>
                 <ComboBox Margin="10,15" x:Name="testerIdList" Grid.Column="1" Grid.Row="1">
                     <ComboBox.Background>
@@ -58,10 +59,31 @@
                 <Label VerticalAlignment="Center" Grid.Row="5" Margin="3,5"  Grid.Column="0" Content="building number:"/>
                 <TextBox x:Name="building_number" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Margin="3,5" Grid.Column="1"/>
             </Grid>
-
         </Grid>
         <Grid Grid.Row="1">
-            <Button x:Name="button" Content="Add Test" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click"/>
+            <Button x:Name="button" Content="Add Test" Click="Button_Click">
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=dateOfTestDatePicker, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=traineeIdList, Path=SelectedIndex}" Value="0">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=testerIdList, Path=SelectedIndex}" Value="0">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=street, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=building_number, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
     </Grid>
 </UserControl>

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -73,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addressDistants.cs" />
     <Compile Include="AddTest.xaml.cs">
       <DependentUpon>AddTest.xaml</DependentUpon>
     </Compile>
@@ -111,6 +115,9 @@
     </Compile>
     <Compile Include="myPasswordBox.xaml.cs">
       <DependentUpon>myPasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nothing.xaml.cs">
+      <DependentUpon>Nothing.xaml</DependentUpon>
     </Compile>
     <Compile Include="showInfoAboutTrainee.xaml.cs">
       <DependentUpon>showInfoAboutTrainee.xaml</DependentUpon>
@@ -203,6 +210,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="myPasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nothing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

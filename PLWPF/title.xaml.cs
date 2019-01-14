@@ -25,6 +25,10 @@ namespace PLWPF
         public title()
         {
             InitializeComponent();
+            var image = new Image();
+            BitmapImage BitImg = new BitmapImage(new Uri(@".\photos\icon.jpg", UriKind.Relative));
+            image.Source = BitImg;
+            icon.Icon = image;
         }
 
         public User user { get => _user; set 
@@ -65,7 +69,6 @@ namespace PLWPF
                 }
             }
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window parentWindow = Window.GetWindow(this);
