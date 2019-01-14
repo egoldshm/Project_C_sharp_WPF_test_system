@@ -9,12 +9,12 @@ using System.Xml;
 /*
 namespace PLWPF
 {
-    class addressDistants
+    public class addressDistants
     {
-    
-        string origin = "pisga 45 st. jerusalem"; //or "תקווה פתח 100 העם אחד "etc.
+    string origin = "pisga 45 st. jerusalem"; //or "תקווה פתח 100 העם אחד "etc.
     string destination = "gilgal 78 st. ramat-gan";//or "גן רמת 10 בוטינסקי'ז "etc.
-    string KEY = @"<PUT_YOUR_KEY_HERE>";
+    string KEY = @"GmtHnHRTUGnEc3kUAIJrMgU9EWNy4SSB";
+    
     string url = @"https://www.mapquestapi.com/directions/v2/route" + @"?key=" + KEY +
      @"&from=" + origin +
      @"&to=" + destination +
