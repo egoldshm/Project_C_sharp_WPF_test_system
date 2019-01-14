@@ -68,10 +68,10 @@
                             <DataTrigger Binding="{Binding ElementName=dateOfTestDatePicker, Path=Text}" Value="">
                                 <Setter Property="Button.IsEnabled" Value="false"/>
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=traineeIdList, Path=SelectedIndex}" Value="0">
+                            <DataTrigger Binding="{Binding ElementName=traineeIdList, Path=SelectedIndex}" Value="-1">
                                 <Setter Property="Button.IsEnabled" Value="false"/>
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=testerIdList, Path=SelectedIndex}" Value="0">
+                            <DataTrigger Binding="{Binding ElementName=testerIdList, Path=SelectedIndex}" Value="-1">
                                 <Setter Property="Button.IsEnabled" Value="false"/>
                             </DataTrigger>
                             <DataTrigger Binding="{Binding ElementName=street, Path=Text}" Value="">

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using System.Xml;
-
+/*
 namespace PLWPF
 {
     class addressDistants
@@ -54,3 +54,4 @@ else //busy network or other error...
 }
     }
 }
+*/

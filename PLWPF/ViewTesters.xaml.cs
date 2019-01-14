@@ -29,8 +29,8 @@ namespace PLWPF
         public ViewTesters()
         {
             InitializeComponent();
-            list.DataContext = ToDisplay;
             initializeData();
+            list.DataContext = ToDisplay;
         }
 
         public void initializeData()

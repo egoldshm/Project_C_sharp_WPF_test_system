@@ -292,7 +292,7 @@ namespace BL
                                                          select test);
 
             foreach (var test in GetTestsByTesters(tester))
-                if ((test.RealDateOfTest - time).Duration().Minutes < BE.Configuration.DURATION_OF_TEST)
+                if ((test.DateOfTest - time).Duration().Minutes < BE.Configuration.DURATION_OF_TEST)
                     throw new Exception(string.Format("The tester {0} has no time on {1} at {2}", tester.ToString(), time.ToString("dddd, MMMM dd yyyy"), time.ToString("t")));
 
             dal.AddFutureTest(new Test(tester.Id, trainee.Id, time, address));
