@@ -22,7 +22,7 @@ namespace PLWPF
     /// </summary>
     public partial class UpdateTrainee: UserControl
     {
-
+        
         private Trainee trainee;
         Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
         public List<Trainee> allTrainees;

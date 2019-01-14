@@ -393,6 +393,15 @@ namespace BL
                 throw new Exception(string.Format("Test {0} not exist", id));
             dal.deleteTest(id);
         }
+        public Test createTest(int TraineeId)
+        {
+            Trainee trainee = GetTraineeById(TraineeId);
+            if (trainee == null)
+                throw new Exception(string.Format("Trainee {0} not exist, so you can set for him test", TraineeId));
+            //TODO: logic.
+            Test test= new (
+            return test;
+        }
         #endregion Test
 
         #region User

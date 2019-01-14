@@ -133,6 +133,8 @@ namespace Ibl
 
         void deleteTest(int id);
 
+        Test createTest(int TraineeId);
+
         #endregion Test
 
         #region User
