@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <local:title x:Name="title"/>
             <Grid Grid.Row="1" x:Name="details" Margin="3">
-                <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro">
+                <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro" >
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Template">
@@ -40,19 +40,24 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
+                    <TabItem Header="Home">
+                        <Grid>
+                            <Label Margin="0,30,0,0" HorizontalAlignment="Center" FontSize="35" Content="dear Trainee, Welcome to the new system!!"/>
+                        </Grid>
+                    </TabItem>
                     <TabItem Header="trainee info" >
                         <Grid>
                             <local:showInfoAboutTrainee x:Name="showTainee_uc"/>
                         </Grid>
                     </TabItem>
                     <TabItem x:Name ="testFuture" Header="see Test">
-                        <Grid Background="#FFE5E5E5"/>
+                        <local:ViewTest x:Name="viewTest_uc"/>
                     </TabItem>
                     <TabItem Header="update trainee">
                         <local:UpdateTrainee x:Name="updateTrainee_uc"/>
                     </TabItem>
                     <TabItem Header="lastTests"/>
-                    <local:Nothing/>
+                    <local:ViewTests/>
                 </TabControl>
 
             </Grid>

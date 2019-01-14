@@ -63,6 +63,9 @@
                                 <TabItem Header="Add Test">
                                     <local:AddTest/>
                                 </TabItem>
+                                <TabItem Header="Add auto Test">
+                                    <local:AddAutoTest/>
+                                </TabItem>
                                 <TabItem Header="Add User">
                             <local:AddUser />
                                 </TabItem>

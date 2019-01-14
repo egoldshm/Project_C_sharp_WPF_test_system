@@ -10,13 +10,15 @@
     <UserControl.Resources>
         <Style TargetType="Label">
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="Gisha"/>
+            <Setter Property="FontSize" Value="14"/>
         </Style>
     </UserControl.Resources>
     <ScrollViewer >
 
         <Grid>
 
-            <Grid x:Name="grid1" >
+            <Grid x:Name="grid1" Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -29,8 +31,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0"  Grid.Column="0" Content="Test Number:"  />
                 <Label x:Name="testNumberLabel" Grid.Row="0"  Grid.Column="1" Content="{Binding TestNumber}"/>

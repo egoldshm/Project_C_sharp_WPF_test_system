@@ -399,6 +399,10 @@ namespace BL
             List<Tester> testers = new List<Tester>(
                 GetTestersWhoLiveInDistanceOfX(address).Intersect(GetTestersByAvailableTime(time)));
             Random random = new Random();
+            if(testers.Count == 0)
+            {
+                throw new Exception("Not found testers in the wanted time and loctaion");
+            }
             Tester tester = testers[random.Next(testers.Count)];
             Test test = new Test(tester.Id, TraineeId, time, address);
             AddFutureTest(test);
