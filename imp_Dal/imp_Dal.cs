@@ -101,9 +101,14 @@ namespace imp_Dal
 
         public void UpdateTester(int id, Tester tester)
         {
-            Tester item = GetTesterByID(id);
+            //Tester item = new Tester(GetTesterByID(id));
+            int before = DS.DataSource.testers.Count();
+            DS.DataSource.testers = new List<Tester>(from tester1 in DS.DataSource.testers where id != tester1.Id select tester1);
+            if (before == DS.DataSource.testers.Count())
+            {
+                throw new Exception($"Wasnn't able to remove {tester.ToString()}");
+            }
             DS.DataSource.testers.Add(tester);
-            DS.DataSource.testers.Remove(item);
         }
 
         public void UpdateTester(Tester tester)

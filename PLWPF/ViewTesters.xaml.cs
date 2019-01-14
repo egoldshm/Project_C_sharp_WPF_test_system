@@ -44,18 +44,28 @@ namespace PLWPF
             if (CarTypeSearch.IsChecked == true)
             {
                 testers = new ObservableCollection<Tester>();
-                foreach (var TesterGroup in bl.GetTestersByCarType())
+                if (CarTypePicker.SelectedValue != null)
                 {
-                    if (TesterGroup.Key == (CarType)CarTypePicker.SelectedValue)
+                    foreach (var TesterGroup in bl.GetTestersByCarType())
                     {
-                        testers = new ObservableCollection<Tester>(TesterGroup.ToList());
-                        break;
+                        if (TesterGroup.Key == (CarType)CarTypePicker.SelectedValue)
+                        {
+                            testers = new ObservableCollection<Tester>(TesterGroup.ToList());
+                            break;
+                        }
                     }
                 }
             }
             else if (AvailableTimeSearch.IsChecked == true)
             {
-                testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DateTime.Parse(DatePicker.Text)));
+                if (DatePicker.Text != null)
+                {
+                    testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DateTime.Parse(DatePicker.Text)));
+                }
+                else
+                {
+                    testers = new ObservableCollection<Tester>();
+                }
             }
             else if (InDistanceOfSearch.IsChecked == true)
             {
@@ -65,7 +75,10 @@ namespace PLWPF
             else if(IdSearch.IsChecked == true)
             {
                 testers = new ObservableCollection<Tester>();
-                testers.Add(bl.GetTesterById(int.Parse(IdBox.Text)));
+                if (IdBox.Text != "")
+                {
+                    testers.Add(bl.GetTesterById(int.Parse(IdBox.Text)));
+                }
             }
             
             ToDisplay = testers;
@@ -79,7 +92,9 @@ namespace PLWPF
 
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
+            InitializeComponent();
             initializeData();
+            list.DataContext = ToDisplay;
         }
 
         private void CarTypeSearch_Checked(object sender, RoutedEventArgs e)

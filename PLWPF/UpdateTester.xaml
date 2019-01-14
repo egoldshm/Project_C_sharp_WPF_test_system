@@ -87,7 +87,7 @@
                     <Label HorizontalContentAlignment="Center" Grid.Row="4" Grid.Column="0" Content="13:00 - 14:00"/>
                     <Label HorizontalContentAlignment="Center" Grid.Row="5" Grid.Column="0" Content="14:00 - 15:00"/>
                 </Grid>
-                <Button Margin="5" Content="Add tester" Click="Button_Click" Grid.Row="14" Grid.ColumnSpan="2" MinHeight="30" FontSize="20">
+                <Button Margin="5,5.2,5.2,0" Content="Update tester" Click="Button_Click" Grid.Row="14" Grid.ColumnSpan="2" MinHeight="30" FontSize="20" Height="31" VerticalAlignment="Top">
                     <Button.Style>
                         <Style>
                             <Style.Triggers>
