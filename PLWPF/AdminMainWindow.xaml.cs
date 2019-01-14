@@ -50,17 +50,21 @@ namespace PLWPF
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-                if (view.IsSelected)
-                {
-                    viewTestersUsercontrol.initializeData();
-                    viewTraineeUserconrol.initializeData();
-                    ViewTest.AllExistTests = bl.GetAllTests();
-                }
-                if (delete.IsSelected)
-                {
-                    deleteTester_uc.initializeData();
-                    deleteTrainee_uc.initializeData();
-                }
+            if (view.IsSelected)
+            {
+                viewTestersUsercontrol.initializeData();
+                viewTraineeUserconrol.initializeData();
+                ViewTest.AllExistTests = bl.GetAllTests();
+            }
+            if (delete.IsSelected)
+            {
+                deleteTester_uc.initializeData();
+                deleteTrainee_uc.initializeData();
+            }
+            if (update.IsSelected)
+            {
+                updateTrainee_uc.initializeData();
+            }
         }
     }
 }

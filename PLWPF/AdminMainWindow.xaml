@@ -51,7 +51,7 @@
                             <Image Source=".\photos\LogoMOT-HE.png"/>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Add" >
+                    <TabItem x:Name="Add" Header="Add" >
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="Add Trainee">

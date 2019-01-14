@@ -27,7 +27,7 @@ namespace PLWPF
 
         private void trainee_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            addLesson.Content = trainee.SelectionBoxItem 
+            addLesson.Content = trainee.SelectionBoxItem;
         }
     }
 }

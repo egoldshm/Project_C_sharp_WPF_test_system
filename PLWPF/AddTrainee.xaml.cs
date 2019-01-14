@@ -35,7 +35,9 @@ namespace PLWPF
             this.transmissionLearnedComboBox.ItemsSource = Enum.GetValues(typeof(TransmissionType));
             this.typeCarLearnedComboBox.ItemsSource = Enum.GetValues(typeof(CarType));
         }
-
+        /// <summary>
+        /// event of create new trainee that happen when the button is click
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         { 
             try
@@ -64,7 +66,10 @@ namespace PLWPF
                 }
                 trainee.Address = new Address(city.Text, int.Parse(building_number.Text), street_name.Text);
                 bl.AddTrainee(trainee);
-                traineeAdded(sender, new EventArgs());
+                traineeAdded?.Invoke(sender, new EventArgs());
+                trainee = new Trainee();
+                DataContext = trainee;
+                city.Text = ""; building_number.Text = ""; street_name.Text = "";
             }
             catch(Exception ex)
             {

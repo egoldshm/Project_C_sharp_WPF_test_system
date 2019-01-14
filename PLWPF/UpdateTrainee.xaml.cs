@@ -43,7 +43,7 @@ namespace PLWPF
         }
         public void setTrainees(List<Trainee> trainees)
         {
-            this.idTextBox.ItemsSource = trainees;
+            this.idTextBox.ItemsSource = trainees.Select(_trainee => _trainee.Id);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -81,6 +81,14 @@ namespace PLWPF
                 MainWindow.ErrorMessage(ex.Message);
             }
         }
+
+        internal void initializeData()
+        {
+            int index = idTextBox.SelectedIndex;
+            idTextBox.ItemsSource = bl.GetAllTrainees().Select(_trainee => _trainee.Id);
+            idTextBox.SelectedIndex = index;
+        }
+
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
