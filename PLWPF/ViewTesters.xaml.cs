@@ -55,7 +55,7 @@ namespace PLWPF
             }
             else if (AvailableTimeSearch.IsChecked == true)
             {
-                testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DatePicker.DisplayDate));
+                testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DateTime.Parse(DatePicker.Text)));
             }
             else if (InDistanceOfSearch.IsChecked == true)
             {
@@ -72,12 +72,6 @@ namespace PLWPF
             list.DataContext = ToDisplay;
         }
 
-        private void AvailableTimeSearch_Checked(object sender, RoutedEventArgs e)
-        {
-            //SearchBar.Visibility = Visibility.Hidden;
-            DatePicker.Visibility = Visibility.Visible;
-        }
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -86,6 +80,18 @@ namespace PLWPF
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
             initializeData();
+        }
+
+        private void CarTypeSearch_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AvailableTimeSearch_Checked(object sender, RoutedEventArgs e)
+        {
+            CarTypePicker.Visibility = Visibility.Hidden;
+            IdBox.Visibility = Visibility.Hidden;
+            DatePicker.Visibility = Visibility.Visible;
         }
     }
 }
