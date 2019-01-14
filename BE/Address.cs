@@ -19,5 +19,10 @@ namespace BE
         {
             return city + " " + street_name + (building_number != 0 ? " (" + building_number + ")" : "");
         }
+        public double getDistance(Address address)
+        {
+            Random random = new Random();
+            return random.NextDouble() * 1000;
+        }
     }
 }

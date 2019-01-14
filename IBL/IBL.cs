@@ -133,7 +133,7 @@ namespace Ibl
 
         void deleteTest(int id);
 
-        Test createTest(int TraineeId);
+        Test createTest(int TraineeId, Address address, DateTime time);
 
         #endregion Test
 
@@ -153,9 +153,8 @@ namespace Ibl
         ///
         /// </summary>
         /// <param name="address"></param>
-        /// <param name="x"></param>
         /// <returns></returns>
-        List<Tester> GetTestersWhoLiveInDistanceOfX(Address address, int x);
+        List<Tester> GetTestersWhoLiveInDistanceOfX(Address address);
 
         /// <summary>
         ///

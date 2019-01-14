@@ -22,9 +22,9 @@ namespace BL
             try
             {
                 CreateUser("eitan", "4545", User.RoleTypes.Admin, null);
-                
+
                 CreateUser("Ariel", "hello world", User.RoleTypes.Admin, null);
-                AddTrainee(new Trainee(324218544, "Darshan", "Ariel",Gender.Male,0584007353,new Address(),DateTime.Parse("16.10.2000"),CarType.Private_Car,TransmissionType.Manual,"a","b",30));
+                AddTrainee(new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
                 CreateUser("ariel", "4545", User.RoleTypes.Trainee, new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
                 AddTester(new Tester(324218544, "Coren", "Eyal", DateTime.Parse("16.10.1970"), Gender.Male, 0581234567, new Address(), 15, 3, CarType.Private_Car, new bool[5, 6], 100));
                 AddFutureTest(new Test(324218544, 324218544, DateTime.Parse("1.2.2019"), new Address()));
@@ -215,11 +215,9 @@ namespace BL
             tester.WorkDays[(int)date.DayOfWeek, hourByArr] && !GetTestsByTesters(tester).Any(test => test.DateOfTest.Hour == date.Hour)));
         }
 
-        public List<Tester> GetTestersWhoLiveInDistanceOfX(Address address, int x)
+        public List<Tester> GetTestersWhoLiveInDistanceOfX(Address address)
         {
-            //TODO: after the second part - connect it to google maps.
-            Random random = new Random();
-            return new List<Tester>(from tester in GetAllTesters() where random.Next(1000) < x select tester);
+            return new List<Tester>(from tester in GetAllTesters() where tester.Address.getDistance(address) < tester.MaxDistance select tester);
         }
 
         public void UpdateTester(int id, Tester tester)
@@ -302,7 +300,7 @@ namespace BL
 
         public void FinishTest(int id, CriterionsOfTest criterions, bool pass, string note)
         {
-            if(criterions.Criterions.Any(criterion => criterion.Mode == CriterionMode.NotDetermined))
+            if (criterions.Criterions.Any(criterion => criterion.Mode == CriterionMode.NotDetermined))
                 throw new Exception("It is impossible that one of the criteria will not enter a value");
             if (dal.GetTestByNumber(id) == null)
                 throw new Exception(string.Format("The test with number {0} is not found", id));
@@ -324,7 +322,7 @@ namespace BL
             float grade = 100;
             if (failed.Count + NotDetermind.Count != 0)
                 grade = passed.Count / (failed.Count + NotDetermind.Count);
-            if (pass && grade < (((float)BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)/100))
+            if (pass && grade < (((float)BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING) / 100))
                 throw new Exception(string.Format("Test number {0} couldn't have been passed, since not enough criteria have been met", id));
             if (!pass && grade > BE.Configuration.PERCETAGE_REQUIRED_FOR_PASSING)
                 throw new Exception(string.Format("Test number {0} couldn't have been failed, since enough criteria have been met for the trainee to pass", id));
@@ -393,13 +391,17 @@ namespace BL
                 throw new Exception(string.Format("Test {0} not exist", id));
             dal.deleteTest(id);
         }
-        public Test createTest(int TraineeId)
+        public Test createTest(int TraineeId, Address address, DateTime time)
         {
             Trainee trainee = GetTraineeById(TraineeId);
             if (trainee == null)
                 throw new Exception(string.Format("Trainee {0} not exist, so you can set for him test", TraineeId));
-            //TODO: logic.
-            Test test= new (
+            List<Tester> testers = new List<Tester>(
+                GetTestersWhoLiveInDistanceOfX(address).Intersect(GetTestersByAvailableTime(time)));
+            Random random = new Random();
+            Tester tester = testers[random.Next(testers.Count)];
+            Test test = new Test(tester.Id, TraineeId, time, address);
+            AddFutureTest(test);
             return test;
         }
         #endregion Test
