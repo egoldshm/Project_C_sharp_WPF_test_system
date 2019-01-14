@@ -41,23 +41,31 @@ namespace PLWPF
 
         private void Search(object sender, RoutedEventArgs e)
         {
-            if (SearchBar.Text == "")
-            {
-                testers = new ObservableCollection<Tester>(bl.GetAllTesters());
-            }
-            else if (CarTypeSearch.IsChecked == true)
+            if (CarTypeSearch.IsChecked == true)
             {
                 testers = new ObservableCollection<Tester>();
-                testers.Add(new Tester(bl.GetTesterById(int.Parse(SearchBar.Text))));
+                foreach (var TesterGroup in bl.GetTestersByCarType())
+                {
+                    if (TesterGroup.Key == (CarType)CarTypePicker.SelectedValue)
+                    {
+                        testers = new ObservableCollection<Tester>(TesterGroup.ToList());
+                        break;
+                    }
+                }
             }
             else if (AvailableTimeSearch.IsChecked == true)
             {
-                
+                testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DatePicker.DisplayDate));
             }
             else if (InDistanceOfSearch.IsChecked == true)
             {
                 testers = new ObservableCollection<Tester>();
-                //testers.Add(new Tester(bl.GetTestersWhoLiveInDistanceOfX(int.Parse(SearchBar.Text))));
+                throw new NotImplementedException();
+            }
+            else if(IdSearch.IsChecked == true)
+            {
+                testers = new ObservableCollection<Tester>();
+                testers.Add(bl.GetTesterById(int.Parse(IdBox.Text)));
             }
             
             ToDisplay = testers;
@@ -66,8 +74,18 @@ namespace PLWPF
 
         private void AvailableTimeSearch_Checked(object sender, RoutedEventArgs e)
         {
-            SearchBar.Visibility = Visibility.Hidden;
+            //SearchBar.Visibility = Visibility.Hidden;
             DatePicker.Visibility = Visibility.Visible;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ViewAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            initializeData();
         }
     }
 }
