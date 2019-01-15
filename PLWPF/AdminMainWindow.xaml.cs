@@ -21,6 +21,7 @@ namespace PLWPF
     public partial class AdminMainWindow : Window
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
+        string OldTab;
         public AdminMainWindow(User user)
         {
             if (user.role != User.RoleTypes.Admin)
@@ -47,23 +48,31 @@ namespace PLWPF
         {
             throw new NotImplementedException();
         }
-
+        
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (view.IsSelected)
+            if (OldTab != tabControl.SelectedValue.ToString())
             {
-                viewTestersUsercontrol.initializeData();
-                viewTraineeUserconrol.initializeData();
-                ViewTest.AllExistTests = bl.GetAllTests();
-            }
-            if (delete.IsSelected)
-            {
-                deleteTester_uc.initializeData();
-                deleteTrainee_uc.initializeData();
-            }
-            if (update.IsSelected)
-            {
-                updateTrainee_uc.initializeData();
+                if (view.IsSelected)
+                {
+                    viewTestersUsercontrol.initializeData();
+                    viewTraineeUserconrol.initializeData();
+                    ViewTest.AllExistTests = bl.GetAllTests();
+                }
+                if (delete.IsSelected)
+                {
+                    deleteTester_uc.initializeData();
+                    deleteTrainee_uc.initializeData();
+                }
+                if (update.IsSelected)
+                {
+                    updateTrainee_uc.initializeData();
+                }
+                if (Add.IsSelected)
+                {
+                    AddLessonToTrainee_uc.initializeData();
+                }
+                OldTab = tabControl.SelectedValue.ToString();
             }
         }
     }
