@@ -80,6 +80,20 @@
                         </Grid>
                     </Grid>
                 </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox x:Name ="sortByComboBox"  Grid.ColumnSpan="2" Grid.Column="3" Margin="3">
+                    <ComboBoxItem Content="First name"/>
+                    <ComboBoxItem Content="Last name"/>
+                    <ComboBoxItem Content="ID"/>
+                    <ComboBoxItem Content="Years of experience"/>
+
+                </ComboBox>
+                <Button x:Name="sortByButton" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3" Margin="4" Click="sortByButton_Click" ContentStringFormat="sort by {0}" Content="{Binding SelectionBoxItem, ElementName=sortByComboBox, Mode=OneWay}"/>
+                </Grid>
                 <TextBlock x:Name="errorMessage" HorizontalAlignment="Center" Foreground="Red" FontSize="18" Background="AliceBlue" Grid.ColumnSpan="2" VerticalAlignment="Top" />
             </Grid>
             <ListView x:Name="testerListView" ItemsSource="{Binding}" Grid.Row="1" SelectionMode="Single">

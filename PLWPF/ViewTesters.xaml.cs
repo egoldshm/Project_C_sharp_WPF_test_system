@@ -225,5 +225,22 @@ namespace PLWPF
                 AddressNumber.Foreground = Brushes.Black;
             }
         }
+
+        private void sortByButton_Click(object sender, RoutedEventArgs e)
+        {
+            string value = sortByComboBox.SelectionBoxItem.ToString();
+            List<Tester> sortList = new List<Tester>(ToDisplay);
+            if (value == "First name")
+                sortList.Sort((tester1, tester2) => string.Compare(tester1.FirstName.ToLower(), tester2.FirstName.ToLower()));
+            if (value == "Last name")
+                sortList.Sort((tester1, tester2) => string.Compare(tester1.LastName.ToLower(), tester2.LastName.ToLower()));
+            if (value == "ID")
+                sortList.Sort((tester1, tester2) => string.Compare(tester1.Id.ToString(), tester2.Id.ToString()));
+            if (value == "Years of experience")
+                sortList.Sort((tester1, tester2) => (tester1.YearsOfExperience).CompareTo(tester2.YearsOfExperience));
+            ToDisplay = new ObservableCollection<Tester>(sortList);
+            list.DataContext = ToDisplay;
+
+        }
     }
 }
