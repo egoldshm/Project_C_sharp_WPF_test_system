@@ -81,7 +81,9 @@ namespace PLWPF
                 MainWindow.ErrorMessage(ex.Message);
             }
         }
-
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
         internal void initializeData()
         {
             int index = idTextBox.SelectedIndex;

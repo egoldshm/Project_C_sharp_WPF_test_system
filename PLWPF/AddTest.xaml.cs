@@ -27,8 +27,7 @@ namespace PLWPF
         public AddTest()
         {
             InitializeComponent();
-            traineeIdList.ItemsSource = bl.GetAllTrainees();
-            testerIdList.ItemsSource = bl.GetAllTesters();
+            initializeData();
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -59,6 +58,15 @@ namespace PLWPF
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
+        internal void initializeData()
+        {
+            traineeIdList.ItemsSource = bl.GetAllTrainees();
+            testerIdList.ItemsSource = bl.GetAllTesters();
         }
     }
 }

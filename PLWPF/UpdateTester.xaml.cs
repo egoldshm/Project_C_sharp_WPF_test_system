@@ -59,6 +59,10 @@ namespace PLWPF
             idTextBox.SelectedValue = tester.Id;
             idTextBox.IsEnabled = false;
         }
+
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
         public void initializeData()
         {
             object obj = idTextBox.SelectedValue;

@@ -51,7 +51,10 @@
                         </Grid>
                     </TabItem>
                     <TabItem x:Name ="testFuture" Header="see Test">
+                        <Grid>
                         <local:ViewTest x:Name="viewTest_uc"/>
+                        <local:AddAutoTest x:Name="addTest_uc" Visibility="Hidden"/>
+                        </Grid>
                     </TabItem>
                     <TabItem Header="update trainee">
                         <local:UpdateTrainee x:Name="updateTrainee_uc"/>

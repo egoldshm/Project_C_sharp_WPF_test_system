@@ -26,7 +26,9 @@ namespace PLWPF
             InitializeComponent();
             idlist.ItemsSource = bl.GetAllTesters(Tester => bl.GetAllTests(test => test.TesterId == Tester.Id).Count == 0);
         }
-
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
         public void initializeData()
         {
             var list = bl.GetAllTesters(Tester => bl.GetAllTests(test => test.TesterId == Tester.Id).Count == 0);

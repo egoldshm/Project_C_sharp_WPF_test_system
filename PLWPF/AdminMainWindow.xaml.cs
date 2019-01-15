@@ -21,7 +21,12 @@ namespace PLWPF
     public partial class AdminMainWindow : Window
     {
         IBL bl = factoryBL.FactoryBL.GetBL();
+
+        /// <summary>
+        /// string that check if we change the tab item.
+        /// </summary>
         string OldTab;
+
         public AdminMainWindow(User user)
         {
             if (user.role != User.RoleTypes.Admin)
@@ -48,7 +53,9 @@ namespace PLWPF
         {
             throw new NotImplementedException();
         }
-        
+        /// <summary>
+        /// event that check if the we change the Tab
+        /// </summary>
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (OldTab != tabControl.SelectedValue.ToString())
@@ -75,7 +82,10 @@ namespace PLWPF
                 if (Add.IsSelected)
                 {
                     AddLessonToTrainee_uc.initializeData();
+                    AddTest_uc.initializeData();
+                    AddAutoTest_uc.initializeData();
                 }
+                
                 OldTab = tabControl.SelectedValue.ToString();
             }
         }

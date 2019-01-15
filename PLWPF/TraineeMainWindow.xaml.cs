@@ -25,22 +25,22 @@ namespace PLWPF
         public TraineeMainWindow(User user)
         {
             InitializeComponent();
-            if(user.role == User.RoleTypes.Admin)
+            if (user.role == User.RoleTypes.Admin)
             {
                 trainee = user.ConnectTo as Trainee;
                 title.user = user;
-                if(trainee == null)
+                if (trainee == null)
                 {
                     throw new Exception("worng user sended to trainee");
                 }
             }
-            else if(user.role != User.RoleTypes.Trainee || !(user.ConnectTo is Trainee))
+            else if (user.role != User.RoleTypes.Trainee || !(user.ConnectTo is Trainee))
             {
                 throw new Exception("worng user sended to trainee");
             }
             else
                 trainee = new Trainee(user.ConnectTo as Trainee);
-            
+
             details.DataContext = trainee;
             updateTrainee_uc.Trainee = trainee;
             updateTrainee_uc.idTextBox.IsEnabled = false;
@@ -55,23 +55,38 @@ namespace PLWPF
             //set trainee for add lesson
             AddLessonToTrainee_uc.setTrainee(trainee);
 
+            setTestModeAndThUsercontrol();
+
+            title.user = user;
+        }
+
+        private void setTestModeAndThUsercontrol()
+        {
             if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {
                 testFuture.Content = "view the test you passed";
+                viewTest_uc.Test = bl.GetTestsByTrainee(trainee).Last();
+                addTest_uc.Visibility = Visibility.Hidden;
+                viewTests_uc.Visibility = Visibility.Visible;
             }
             else
             {
-                if (bl.GetTestsByTrainee(trainee).Count == 0 || bl.GetTestsByTrainee(trainee).Last().Criterions.Criterions.TrueForAll(criterion => criterion.Mode != CriterionMode.NotDetermined))
+                if (bl.GetTestsByTrainee(trainee).Count == 0 || bl.isTestFinished(bl.GetTestsByTrainee(trainee).Last()))
                 {
-                    testFuture.Header = "add test";
+                    testFuture.Header = "Add test";
+                    addTest_uc.Visibility = Visibility.Visible;
+                    viewTest_uc.Visibility = Visibility.Hidden;
+                    addTest_uc.setTrainee(trainee);
                 }
                 else
                 {
-                    testFuture.Header = "view test";
+                    testFuture.Header = "View your test";
+                    addTest_uc.Visibility = Visibility.Hidden;
+                    viewTest_uc.Visibility = Visibility.Visible;
+                    viewTest_uc.Test = bl.GetTestsByTrainee(trainee).Last();
                 }
 
             }
-            title.user = user;
         }
 
         private void updateTrainee_click(object sender, RoutedEventArgs e)

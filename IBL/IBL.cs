@@ -105,10 +105,10 @@ namespace Ibl
         void AddFutureTest(BE.Tester tester, BE.Trainee trainee, DateTime time, BE.Address address);
 
         /// <summary>
-        ///
+        /// function that return all the tests from the DB.
         /// </summary>
-        /// <param name="checkFunction"></param>
-        /// <returns></returns>
+        /// <param name="checkFunction">function for check</param>
+        /// <returns>List of all the Tests</returns>
         List<BE.Test> GetAllTests(Predicate<Test> checkFunction = null);
 
         /// <summary>

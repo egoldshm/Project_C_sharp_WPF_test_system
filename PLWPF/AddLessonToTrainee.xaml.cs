@@ -63,7 +63,9 @@ namespace PLWPF
                 addLesson.Content = t.LessonsNumber;
             }
         }
-
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
         internal void initializeData()
         {
             int num = trainee.SelectedIndex;

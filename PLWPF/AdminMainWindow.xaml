@@ -61,10 +61,10 @@
                                     <local:AddTester />
                                 </TabItem>
                                 <TabItem Header="Add Test">
-                                    <local:AddTest/>
+                                    <local:AddTest x:Name="AddTest_uc"/>
                                 </TabItem>
                                 <TabItem Header="Add auto Test">
-                                    <local:AddAutoTest/>
+                                    <local:AddAutoTest x:Name="AddAutoTest_uc"/>
                                 </TabItem>
                                 <TabItem Header="Add User">
                                     <local:AddUser x:Name="AddUser_uc"/>

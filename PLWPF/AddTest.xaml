@@ -61,7 +61,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <Button x:Name="button" Content="Add Test" Click="Button_Click" Margin="20,10">
+            <Button x:Name="button" Content="Add Test" Click="Button_Click" Margin="20,10" Background="White">
                 <Button.Style>
                     <Style>
                         <Style.Triggers>

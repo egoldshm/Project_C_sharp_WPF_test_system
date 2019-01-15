@@ -26,9 +26,27 @@ namespace PLWPF
         public AddAutoTest()
         {
             InitializeComponent();
-            traineeIdList.ItemsSource = bl.GetAllTrainees();
+            initializeData();
         }
+        /// <summary>
+        /// function that set list of trainees that will be aviable in the list. for teacher and school use.
+        /// </summary>
+        /// <param name="trainees">the list of the trainees that will be aviable</param>
+        public void setTrainees(List<Trainee> trainees)
+        {
+            traineeIdList.ItemsSource = trainees;
+        }
+        /// <summary>
+        /// set single trainee that will be able to set set for himself only. for Trainee use.
+        /// </summary>
+        /// <param name="trainee">the trainee that will be use alone.</param>
+        public void setTrainee(Trainee trainee)
+        {
+            traineeIdList.SelectedValue = trainee;
+            traineeIdList.Text = trainee.ToString();
+            traineeIdList.IsEnabled = false;
 
+        }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
@@ -54,6 +72,13 @@ namespace PLWPF
                 errorMessage.Content = ex.Message;
                 errorMessage.Foreground = new SolidColorBrush(Colors.Red);
             }
+        }
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
+        internal void initializeData()
+        {
+            traineeIdList.ItemsSource = bl.GetAllTrainees();
         }
     }
 }

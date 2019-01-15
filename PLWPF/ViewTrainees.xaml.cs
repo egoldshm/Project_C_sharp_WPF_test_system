@@ -33,7 +33,9 @@ namespace PLWPF
             list.DataContext = ToDisplay;
 
         }
-
+        /// <summary>
+        /// function that reset the element that may to change for update changes. for admin use.
+        /// </summary>
         public void initializeData()
         {
             trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
