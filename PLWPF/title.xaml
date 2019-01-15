@@ -11,8 +11,8 @@
         <Label x:Name="role" Content="" ContentStringFormat="You are login as {0}"  Margin="0,70,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Gisha"/>
         <Label ContentStringFormat="Welcome {0}" x:Name="welcomeMessage" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Dubai Medium"/>
         <Button Content="Log out" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" FontSize="36" Background="White" FontFamily="Sitka Display" Click="Button_Click"/>
-        <Label Visibility="Hidden" x:Name="LicenseLable" Content="you have no License" Margin="6,4" HorizontalAlignment="Right" VerticalContentAlignment="Top" Foreground="#FFCF2929" FontSize="20"/>
-        <Button Content="change password" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5" FontSize="15" Background="White" FontFamily="Sitka Display" Click="Button_Click_1"/>
+        <Label Visibility="Hidden" x:Name="LicenseLable" Content="you have no License"  HorizontalAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#FFCF2929" FontSize="20"/>
+        <Button Content="change password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="15" Background="White" FontFamily="Sitka Display" Click="Button_Click_1"/>
         <xctk:IconButton HorizontalAlignment="Right" x:Name="icon"/>
     </Grid>
 </UserControl>

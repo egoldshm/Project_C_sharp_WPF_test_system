@@ -13,7 +13,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <ComboBox x:Name="trainee" Margin="20,20" SelectionChanged="trainee_SelectionChanged"/>
-        <Button x:Name="addLesson" ContentStringFormat="Add one Lesson &#xA; number of Lesson: {0}" Content="aaa" Grid.Row='1' Margin="20,20"/>
+        <Button x:Name="addLesson" FontSize="40" HorizontalContentAlignment="Center" Visibility="Hidden" Click="AddLesson_Click" Content="14" FontFamily="Gisha" ContentStringFormat="number of Lesson: {0}" Grid.Row='1' Margin="20,20"/>
 
     </Grid>
 </UserControl>

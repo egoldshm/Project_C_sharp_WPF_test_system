@@ -49,7 +49,17 @@ namespace PLWPF
             grid1.DataContext = tester;
         }
 
-        private void initializeData()
+        /// <summary>
+        /// function for set and detrmine single tester for update
+        /// </summary>
+        public void setTester(Tester pTester)
+        {
+            grid1.DataContext = pTester;
+            tester = pTester;
+            idTextBox.SelectedValue = tester.Id;
+            idTextBox.IsEnabled = false;
+        }
+        public void initializeData()
         {
             object obj = idTextBox.SelectedValue;
             idTextBox.ItemsSource = bl.GetAllTesters().Select(tester => tester.Id); ;
@@ -102,8 +112,8 @@ namespace PLWPF
 
                 bl.UpdateTester(tester);
                 MessageBox.Show(string.Format("tester {0} successfully updated", tester.Id));
-
-                clearAll();
+                if(idTextBox.IsEnabled)
+                    clearAll();
 
             }
             catch (Exception ex)

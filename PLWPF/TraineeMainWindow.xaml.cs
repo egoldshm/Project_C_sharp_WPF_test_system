@@ -45,6 +45,13 @@ namespace PLWPF
             updateTrainee_uc.Trainee = trainee;
             updateTrainee_uc.idTextBox.IsEnabled = false;
             updateTrainee_uc.button.Click += updateTrainee_click;
+
+            //set view tests only for this tester
+            var list = new List<Trainee>(); list.Add(trainee);
+            viewTests_uc.setTraineeExist = list;
+            viewTests_uc.trainee.SelectedValue = trainee;
+            viewTests_uc.trainee.IsEnabled = false;
+
             if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {
                 testFuture.Content = "view the test you passed";

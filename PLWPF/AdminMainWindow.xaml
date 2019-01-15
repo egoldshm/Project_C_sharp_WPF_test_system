@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <local:title x:Name="title"/>
             <Grid Grid.Row="1" x:Name="details" Margin="3">
-                <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro" SelectionChanged="TabControl_SelectionChanged">
+                <TabControl VerticalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="15" Margin="3" BorderBrush="Gainsboro" x:Name="tabControl" SelectionChanged="TabControl_SelectionChanged">
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Template">
@@ -67,7 +67,10 @@
                                     <local:AddAutoTest/>
                                 </TabItem>
                                 <TabItem Header="Add User">
-                            <local:AddUser />
+                                    <local:AddUser x:Name="AddUser_uc"/>
+                                </TabItem>
+                                <TabItem Header="Add lesson to trainee">
+                                    <local:AddLessonToTrainee x:Name="AddLessonToTrainee_uc"/>
                                 </TabItem>
                             </TabControl>
                         </Grid>

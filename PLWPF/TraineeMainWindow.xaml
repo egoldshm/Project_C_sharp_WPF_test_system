@@ -57,7 +57,7 @@
                         <local:UpdateTrainee x:Name="updateTrainee_uc"/>
                     </TabItem>
                     <TabItem Header="lastTests"/>
-                    <local:ViewTests/>
+                    <local:ViewTests x:Name="viewTests_uc"/>
                 </TabControl>
 
             </Grid>
