@@ -84,12 +84,7 @@ namespace PLWPF
             ToDisplay = testers;
             list.DataContext = ToDisplay;
         }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+        
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
@@ -99,14 +94,98 @@ namespace PLWPF
 
         private void CarTypeSearch_Checked(object sender, RoutedEventArgs e)
         {
-
+            CarTypePicker.Visibility = Visibility.Visible;
+            IdBox.Visibility = Visibility.Hidden;
+            AddressGrid.Visibility = Visibility.Hidden;
+            DatePicker.Visibility = Visibility.Hidden;
+            //need to add the values to the combo box
         }
 
         private void AvailableTimeSearch_Checked(object sender, RoutedEventArgs e)
         {
             CarTypePicker.Visibility = Visibility.Hidden;
             IdBox.Visibility = Visibility.Hidden;
+            AddressGrid.Visibility = Visibility.Hidden;
             DatePicker.Visibility = Visibility.Visible;
+        }
+
+        private void InDistanceOfSearch_Checked(object sender, RoutedEventArgs e)
+        {
+            CarTypePicker.Visibility = Visibility.Hidden;
+            IdBox.Visibility = Visibility.Hidden;
+            AddressGrid.Visibility = Visibility.Visible;
+            DatePicker.Visibility = Visibility.Hidden;
+        }
+
+        private void IdSearch_Checked(object sender, RoutedEventArgs e)
+        {
+            CarTypePicker.Visibility = Visibility.Hidden;
+            IdBox.Visibility = Visibility.Visible;
+            AddressGrid.Visibility = Visibility.Hidden;
+            DatePicker.Visibility = Visibility.Hidden;
+        }
+
+        private void AddressCity_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddressCity.Text == "City")
+            {
+                AddressCity.Text = "";
+                AddressCity.Foreground = Brushes.Black;
+            }
+
+            if (AddressStreet.Text == "")
+            {
+                AddressStreet.Text = "Street";
+                AddressStreet.Foreground = Brushes.Gray;
+            }
+
+            if (AddressNumber.Text == "")
+            {
+                AddressNumber.Text = "Number";
+                AddressNumber.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void AddressStreet_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddressCity.Text == "")
+            {
+                AddressCity.Text = "City";
+                AddressCity.Foreground = Brushes.Gray;
+            }
+
+            if (AddressStreet.Text == "Street")
+            {
+                AddressStreet.Text = "";
+                AddressStreet.Foreground = Brushes.Black;
+            }
+
+            if (AddressNumber.Text == "")
+            {
+                AddressNumber.Text = "Number";
+                AddressNumber.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void AddressNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddressCity.Text == "")
+            {
+                AddressCity.Text = "City";
+                AddressCity.Foreground = Brushes.Gray;
+            }
+
+            if (AddressStreet.Text == "")
+            {
+                AddressStreet.Text = "Street";
+                AddressStreet.Foreground = Brushes.Gray;
+            }
+
+            if (AddressNumber.Text == "Number")
+            {
+                AddressNumber.Text = "";
+                AddressNumber.Foreground = Brushes.Black;
+            }
         }
     }
 }
