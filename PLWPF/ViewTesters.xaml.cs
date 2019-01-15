@@ -48,9 +48,28 @@ namespace PLWPF
                 testers = new ObservableCollection<Tester>();
                 if (CarTypePicker.SelectedValue != null)
                 {
+                    CarType input;
+                    switch(CarTypePicker.SelectedIndex)
+                    {
+                        case 0:
+                            input = CarType.Private_Car;
+                            break;
+                        case 1:
+                            input = CarType.Two_wheeled_vehicles;
+                            break;
+                        case 2:
+                            input = CarType.Medium_truck;
+                            break;
+                        case 3:
+                            input = CarType.Heavy_truck;
+                            break;
+                        default:
+                            ViewAllButton_Click(sender, e);
+                            return;
+                    }
                     foreach (var TesterGroup in bl.GetTestersByCarType())
                     {
-                        if (TesterGroup.Key == (CarType)CarTypePicker.SelectedValue)
+                        if (TesterGroup.Key == input)
                         {
                             testers = new ObservableCollection<Tester>(TesterGroup.ToList());
                             break;
@@ -71,8 +90,11 @@ namespace PLWPF
             }
             else if (InDistanceOfSearch.IsChecked == true)
             {
-                testers = new ObservableCollection<Tester>();
-                throw new NotImplementedException();
+                Address a = new Address();
+                a.city = AddressCity.Text;
+                a.street_name = AddressStreet.Text;
+                a.building_number = int.Parse(AddressNumber.Text);
+                testers = new ObservableCollection<Tester>(bl.GetTestersWhoLiveInDistanceOfX(a));
             }
             else if(IdSearch.IsChecked == true)
             {
@@ -100,7 +122,6 @@ namespace PLWPF
             IdBox.Visibility = Visibility.Hidden;
             AddressGrid.Visibility = Visibility.Hidden;
             DatePicker.Visibility = Visibility.Hidden;
-            //need to add the values to the combo box
         }
 
         private void AvailableTimeSearch_Checked(object sender, RoutedEventArgs e)

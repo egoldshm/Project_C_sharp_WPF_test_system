@@ -52,7 +52,12 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="1.5*" />
                         </Grid.ColumnDefinitions>
-                        <ComboBox x:Name="CarTypePicker" Grid.Column="1" Margin="10,20" Visibility="Hidden"/>
+                        <ComboBox x:Name="CarTypePicker" Grid.Column="1" Margin="10,20" Visibility="Hidden">
+                            <ComboBoxItem Content="Private car"/>
+                            <ComboBoxItem Content="Two wheeled vehicles"/>
+                            <ComboBoxItem Content="Medium truck"/>
+                            <ComboBoxItem Content="Heavy truck"/>
+                        </ComboBox>
                         <xctk:DateTimePicker x:Name="DatePicker" Grid.Column="1" Margin="10,20" Visibility="Hidden" />
                         <TextBox x:Name="IdBox" Grid.Column="1" Margin="10,20" Visibility="Hidden" />
                         <Grid x:Name="AddressGrid" Grid.Column="1" Visibility="Hidden">

@@ -58,7 +58,7 @@ namespace PLWPF
         /// </summary>
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (OldTab != tabControl.SelectedValue.ToString())
+            if (OldTab != null && OldTab != tabControl.SelectedValue.ToString())
             {
                 if (view.IsSelected)
                 {
