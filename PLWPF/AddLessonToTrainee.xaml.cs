@@ -28,7 +28,9 @@ namespace PLWPF
         public void setTrainee(Trainee pTrainee)
         {
             trainee.SelectedValue = pTrainee;
+            trainee.Text = pTrainee.ToString();
             trainee.IsEnabled = false;
+            addLesson.Content = pTrainee.LessonsNumber;
         }
         public void setTrainees(List<Trainee> pTrainee)
         {

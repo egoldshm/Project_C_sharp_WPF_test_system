@@ -52,6 +52,9 @@ namespace PLWPF
             viewTests_uc.trainee.SelectedValue = trainee;
             viewTests_uc.trainee.IsEnabled = false;
 
+            //set trainee for add lesson
+            AddLessonToTrainee_uc.setTrainee(trainee);
+
             if (bl.GetAllTraineesByLicense(true).Exists(_trainee => _trainee.Id == trainee.Id))
             {
                 testFuture.Content = "view the test you passed";
