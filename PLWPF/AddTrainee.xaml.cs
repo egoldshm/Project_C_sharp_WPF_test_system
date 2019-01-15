@@ -73,13 +73,18 @@ namespace PLWPF
             }
             catch(Exception ex)
             {
-                MainWindow.ErrorMessage(ex.Message);
+                errorMessage.Text = ex.Message;
             }
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            errorMessage.Text = "";
         }
     }
 }

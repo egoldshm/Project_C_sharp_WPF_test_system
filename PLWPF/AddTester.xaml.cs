@@ -53,10 +53,54 @@ namespace PLWPF
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        /// <summary>
+        /// function that get a ID and return if is valid israeli number or not.
+        /// Exception:
+        ///     if the ID hasn't 9 digits
+        /// </summary>
+        /// <param name="id">israeli ID number</param>
+        /// <returns>True: this ID is valid israeli ID. False: isn't </returns>
+        private static bool CheckIfIDisValid(int id)
+        {
+            if (id.ToString().Length != 9)
+                throw new Exception(string.Format("id {0} is invalid. because it has {1} digits and valid id has 9.", id, id.ToString().Length));
+            int lessId = id / 10;
+            int sum = 0;
+            for (int i = 1; lessId > 0; i++)
+            {
+                int number1;
+                number1 = (i % 2 + 1) * (lessId % 10);
+                int number2 = number1 % 10 + number1 / 10;
+                sum += number2;
+                lessId /= 10;
+            }
+            int check_digit = (10 - sum % 10) % 10;
+            return check_digit == id % 10;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                bool error = false;
+                //if the id is invalid - label error and out.
+                if(!CheckIfIDisValid(int.Parse(idTextBox.Text)))
+                {
+                    errorIdMessage.Visibility = Visibility.Visible;
+                    error = true;
+                }
+                //if the phone number is invalid - label error and out.
+                if (phoneNumberTextBox.Text.ToString().Length != 9)
+                {
+                    errorPhoneMessage.Visibility = Visibility.Visible;
+                    error = true;
+                }
+                //if was problem.
+                if(error)
+                {
+                    addTesterButton.Background = new SolidColorBrush(Colors.Red);
+                    return;
+                }
                 bool oneOrMoreEmpty = false;
                 foreach (UIElement txtbxs in this.grid1.Children)
                 {
@@ -86,11 +130,12 @@ namespace PLWPF
                          tester.WorkDays[i, j] = WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).Select(box => (bool)box.IsChecked).First();
                     }
                 }
+                bl.AddTester(tester);
                 clearAll();
             }
             catch (Exception ex)
             {
-                MainWindow.ErrorMessage(ex.Message);
+                errorMessage.Text = $"Error! {ex.Message}";
             }
         }
         private void clearAll()
@@ -107,6 +152,21 @@ namespace PLWPF
                     WorkHours.Children.OfType<CheckBox>().Where(box => box.Name == "checkBox" + i + "_" + j).First().IsChecked = false;
                 }
             }
+        }
+
+        /// <summary>
+        /// event that remove error message for id number.
+        /// </summary>
+        private void idTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            errorIdMessage.Visibility = Visibility.Collapsed;
+            errorPhoneMessage.Visibility = Visibility.Collapsed;
+            addTesterButton.Background = new SolidColorBrush(Colors.White);
+        }
+
+        private void addTesterButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            errorMessage.Text = "";
         }
     }
 }

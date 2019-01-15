@@ -60,7 +60,7 @@
             <TextBox x:Name="street_name" Grid.Row="12" Margin="3" Grid.Column="1"/>
             <Label Grid.Row="13" Margin="3" Grid.Column="0" Content="Building number:"/>
             <TextBox x:Name="building_number" MaxLength="5" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Margin="3" Grid.Column="1"/>
-            <Button Content="Add trainee" Grid.Row="14" Grid.ColumnSpan="2" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Click="Button_Click">
+            <Button Content="Add trainee" Grid.Row="14" Grid.ColumnSpan="2" Margin="2" MouseLeave="Button_MouseLeave" HorizontalAlignment="Stretch" Click="Button_Click">
                 <Button.Style>
                     <Style>
                         <Style.Triggers>
@@ -103,6 +103,7 @@
 
             </Button>
         </Grid>
+        <TextBlock HorizontalAlignment="Center" x:Name="errorMessage" Foreground="Red" Background="White" VerticalAlignment="Bottom" />
 
     </Grid>
 </UserControl>

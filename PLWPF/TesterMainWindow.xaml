@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="TesterMainWindow" Height="450" Width="700">
+        Title="tester mode - driving system" Width="900" Height="700" MinHeight="700" MinWidth="800" FontFamily="Dubai Medium">
     <Grid>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="132*"/>
-            <RowDefinition Height="287*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <local:title x:Name="title"/>
         <Grid Grid.Row="1" x:Name="details" Margin="3">

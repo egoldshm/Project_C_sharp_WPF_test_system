@@ -59,7 +59,7 @@
                             <ComboBoxItem Content="Heavy truck"/>
                         </ComboBox>
                         <xctk:DateTimePicker x:Name="DatePicker" Grid.Column="1" Margin="10,20" Visibility="Hidden" />
-                        <TextBox x:Name="IdBox" Grid.Column="1" Margin="10,20" Visibility="Hidden" />
+                        <TextBox x:Name="IdBox" Grid.Column="1" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Margin="10,20" FontSize="20" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                         <Grid x:Name="AddressGrid" Grid.Column="1" Visibility="Hidden">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -68,7 +68,7 @@
                             </Grid.RowDefinitions>
                             <TextBox x:Name="AddressCity" Text="City" Grid.Row="0" Margin="5" GotFocus="AddressCity_GotFocus" Foreground="Gray"/>
                             <TextBox x:Name="AddressStreet" Text="Street"  Grid.Row="1" Margin="5" GotFocus="AddressStreet_GotFocus" Foreground="Gray"/>
-                            <TextBox x:Name="AddressNumber" Text="Number"  Grid.Row="2" Margin="5" GotFocus="AddressNumber_GotFocus" Foreground="Gray"/>
+                            <TextBox x:Name="AddressNumber" Text="Number"  Grid.Row="2" Margin="5" PreviewTextInput="NumberValidationTextBox" GotFocus="AddressNumber_GotFocus" Foreground="Gray"/>
                         </Grid>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -80,6 +80,7 @@
                         </Grid>
                     </Grid>
                 </Grid>
+                <TextBlock x:Name="errorMessage" HorizontalAlignment="Center" Foreground="Red" FontSize="18" Background="AliceBlue" Grid.ColumnSpan="2" VerticalAlignment="Top" />
             </Grid>
             <ListView x:Name="testerListView" ItemsSource="{Binding}" Grid.Row="1" SelectionMode="Single">
                 <ListView.ItemContainerStyle>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d" Icon ="/photos/icon.jpg"
-        Title="TraineeMainWindow" Width="700" Height="400" MinHeight="700" MinWidth="400" FontFamily="Dubai Medium">
+        Title="trainee mode - driving system" Width="900" Height="700" MinHeight="700" MinWidth="800" FontFamily="Dubai Medium">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <local:title x:Name="title"/>
             <Grid Grid.Row="1" x:Name="details" Margin="3">
-                <TabControl VerticalAlignment="Bottom" HorizontalContentAlignment="Center" FontSize="15" Margin="3,0,3,3" BorderBrush="Gainsboro" Height="523" >
+                <TabControl FontSize="15" Margin="3,0,3,3" BorderBrush="Gainsboro" >
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Template">

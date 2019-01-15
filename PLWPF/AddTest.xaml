@@ -35,7 +35,7 @@
                 <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
                 <xctk:DateTimePicker x:Name="dateOfTestDatePicker"  Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id:"/>
-                <ComboBox Margin="10,15" x:Name="testerIdList" Grid.Column="1" Grid.Row="1">
+                <ComboBox Margin="10,15" x:Name="testerIdList" Grid.Column="1" Grid.Row="1" >
                     <ComboBox.Background>
                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                             <GradientStop Color="#FFF0F0F0" Offset="0"/>

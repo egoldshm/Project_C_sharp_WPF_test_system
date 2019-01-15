@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,72 +44,86 @@ namespace PLWPF
 
         private void Search(object sender, RoutedEventArgs e)
         {
-            if (CarTypeSearch.IsChecked == true)
+            try
             {
-                testers = new ObservableCollection<Tester>();
-                if (CarTypePicker.SelectedValue != null)
+                if (CarTypeSearch.IsChecked == true)
                 {
-                    CarType input;
-                    switch(CarTypePicker.SelectedIndex)
+                    testers = new ObservableCollection<Tester>();
+                    if (CarTypePicker.SelectedValue != null)
                     {
-                        case 0:
-                            input = CarType.Private_Car;
-                            break;
-                        case 1:
-                            input = CarType.Two_wheeled_vehicles;
-                            break;
-                        case 2:
-                            input = CarType.Medium_truck;
-                            break;
-                        case 3:
-                            input = CarType.Heavy_truck;
-                            break;
-                        default:
-                            ViewAllButton_Click(sender, e);
-                            return;
-                    }
-                    foreach (var TesterGroup in bl.GetTestersByCarType())
-                    {
-                        if (TesterGroup.Key == input)
+                        CarType input;
+                        switch (CarTypePicker.SelectedIndex)
                         {
-                            testers = new ObservableCollection<Tester>(TesterGroup.ToList());
-                            break;
+                            case 0:
+                                input = CarType.Private_Car;
+                                break;
+                            case 1:
+                                input = CarType.Two_wheeled_vehicles;
+                                break;
+                            case 2:
+                                input = CarType.Medium_truck;
+                                break;
+                            case 3:
+                                input = CarType.Heavy_truck;
+                                break;
+                            default:
+                                ViewAllButton_Click(sender, e);
+                                return;
+                        }
+                        foreach (var TesterGroup in bl.GetTestersByCarType())
+                        {
+                            if (TesterGroup.Key == input)
+                            {
+                                testers = new ObservableCollection<Tester>(TesterGroup.ToList());
+                                break;
+                            }
                         }
                     }
                 }
-            }
-            else if (AvailableTimeSearch.IsChecked == true)
-            {
-                if (DatePicker.Text != null)
+                else if (AvailableTimeSearch.IsChecked == true)
                 {
-                    testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DateTime.Parse(DatePicker.Text)));
+                    if (DatePicker.Text != null)
+                    {
+                        testers = new ObservableCollection<Tester>(bl.GetTestersByAvailableTime(DateTime.Parse(DatePicker.Text)));
+                    }
+                    else
+                    {
+                        testers = new ObservableCollection<Tester>();
+                    }
                 }
-                else
+                else if (InDistanceOfSearch.IsChecked == true)
+                {
+                    Address a = new Address();
+                    a.city = AddressCity.Text;
+                    a.street_name = AddressStreet.Text;
+                    a.building_number = int.Parse(AddressNumber.Text);
+                    testers = new ObservableCollection<Tester>(bl.GetTestersWhoLiveInDistanceOfX(a));
+                }
+                else if (IdSearch.IsChecked == true)
                 {
                     testers = new ObservableCollection<Tester>();
+                    if (IdBox.Text != "")
+                    {
+                        testers.Add(bl.GetTesterById(int.Parse(IdBox.Text)));
+                    }
                 }
+
+                ToDisplay = testers;
+                list.DataContext = ToDisplay;
+                errorMessage.Text = "";
             }
-            else if (InDistanceOfSearch.IsChecked == true)
+            catch(Exception ex)
             {
-                Address a = new Address();
-                a.city = AddressCity.Text;
-                a.street_name = AddressStreet.Text;
-                a.building_number = int.Parse(AddressNumber.Text);
-                testers = new ObservableCollection<Tester>(bl.GetTestersWhoLiveInDistanceOfX(a));
+                errorMessage.Text = ex.Message;
             }
-            else if(IdSearch.IsChecked == true)
-            {
-                testers = new ObservableCollection<Tester>();
-                if (IdBox.Text != "")
-                {
-                    testers.Add(bl.GetTesterById(int.Parse(IdBox.Text)));
-                }
-            }
-            
-            ToDisplay = testers;
-            list.DataContext = ToDisplay;
         }
-        
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
