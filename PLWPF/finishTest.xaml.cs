@@ -34,7 +34,7 @@ namespace PLWPF
                 checkBox.Content = item.Name;
                 critrions.Children.Add(checkBox);
             }
-            tests.ItemsSource = bl.GetAllTests(test => test.Criterions.Criterions.Any(c => c.Mode == CriterionMode.NotDetermined));
+            tests.ItemsSource = bl.GetAllTests(test => !bl.isTestFinished(test));
         }
         public List<Test> Tests { set => tests.ItemsSource = value; }
 
@@ -73,6 +73,13 @@ namespace PLWPF
             }
         }
 
-      
+        internal void initializeData()
+        {
+            tests.ItemsSource = bl.GetAllTests(test => !bl.isTestFinished(test));
+        }
+        internal void initializeDataForTester(Tester tester)
+        {
+            tests.ItemsSource = bl.GetAllTests(test => !bl.isTestFinished(test) && test.TesterId == tester.Id);
+        }
     }
 }

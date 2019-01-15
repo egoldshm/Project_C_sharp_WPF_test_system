@@ -39,15 +39,14 @@
                         </Setter>
                     </Style>
                 </TabControl.Resources>
-                <TabItem Header="Tester info" >
-                    <Grid>
-                    </Grid>
-                </TabItem>
                 <TabItem x:Name ="testers" Header="See tests">
-                    <Grid Background="#FFE5E5E5"/>
+                    <local:ViewTests x:Name="ViewTests_uc"/>
                 </TabItem>
                 <TabItem Header="update tester">
-                    <Grid Background="#FFE5E5E5"/>
+                    <local:UpdateTester x:Name="UpdateTester_uc"/>
+                </TabItem>
+                <TabItem Header="finish test">
+                    <local:finishTest x:Name="finishTest_uc" />
                 </TabItem>
 
             </TabControl>

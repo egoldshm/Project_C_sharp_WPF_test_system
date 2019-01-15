@@ -63,10 +63,14 @@ namespace PLWPF
                 {
                     deleteTester_uc.initializeData();
                     deleteTrainee_uc.initializeData();
+                    deleteTest_uc.initializeData();
                 }
                 if (update.IsSelected)
                 {
                     updateTrainee_uc.initializeData();
+                    UpdateTester_uc.initializeData();
+                    finishTest_uc.initializeData();
+                    AddLessonToTrainee_uc.initializeData();
                 }
                 if (Add.IsSelected)
                 {

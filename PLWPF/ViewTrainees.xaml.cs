@@ -38,6 +38,7 @@ namespace PLWPF
         {
             trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees());
             ToDisplay = trainees;
+            list.DataContext = ToDisplay;
         }
 
         private void ViewLicenseOwners_Click(object sender, RoutedEventArgs e)
