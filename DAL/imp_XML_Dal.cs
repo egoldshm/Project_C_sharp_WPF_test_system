@@ -83,13 +83,34 @@ namespace DAL
             if (DataSource.users.Any(_user => _user.Username == username))
                 return false;
             DataSource.users.Add(user);
-            XElement usernameElement = new XElement("user", user.Username);
-            XElement passswordElement = new XElement("user", user.Password);
-            XElement roleElement = new XElement("user", user.role);
-            XElement objElement = new XElement("user", user.ConnectTo);
-
-            usersRoot.Add();
+            XElement usernameElement = new XElement("username", user.Username);
+            XElement passswordElement = new XElement("password", user.Password);
+            XElement roleElement = new XElement("role", user.role);
+            XElement objElement = null;
+            switch (user.role)
+            {
+                case User.RoleTypes.Trainee:
+                    objElement = new XElement("ConnectTo", (user.ConnectTo as Trainee).Id);
+                    break;
+                case User.RoleTypes.Teacher:
+                case User.RoleTypes.School:
+                    objElement = new XElement("ConnectTo", user.ConnectTo.ToString());
+                    break;
+                case User.RoleTypes.Tester:
+                    objElement = new XElement("ConnectTo", (user.ConnectTo as Tester).Id);
+                    break;
+                case User.RoleTypes.Admin:
+                    objElement = new XElement("ConnectTo", null);
+                    break;
+            }
+            usersRoot.Add(new XElement("user", usernameElement, passswordElement, roleElement, objElement));
+            usersRoot.Save(Configuration.FILE_USERS);
             return true;
+        }
+
+        public User GetUser(string username, string password)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion UsersFunctions
@@ -146,10 +167,7 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public User GetUser(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
+ 
 
         public void UpdateTester(int id, Tester tester)
         {
@@ -182,10 +200,7 @@ namespace DAL
         {
 
         }
-        public void AddFutureTest(Tester tester, Trainee trainee, DateTime time, Address address)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         #endregion test_functions
 
