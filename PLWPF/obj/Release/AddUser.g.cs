@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using BE;
 using PLWPF;
 using System;
 using System.Diagnostics;

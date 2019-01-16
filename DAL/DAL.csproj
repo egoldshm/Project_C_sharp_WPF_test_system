@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Idal.cs" />
+    <Compile Include="imp_XML_Dal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xml_files.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -51,6 +53,10 @@
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{3e64cf85-0867-4107-9160-4c0767869006}</Project>
       <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS\DS\DS.csproj">
+      <Project>{106a391f-7ba3-4f1b-a4ba-013489252256}</Project>
+      <Name>DS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

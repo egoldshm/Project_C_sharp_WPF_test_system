@@ -3,6 +3,11 @@ namespace BE
 {
     public static class Configuration
     {
+        public const string FILE_TRAINEES = "/dataBases/trainees.xml";
+        public const string FILE_TESTERS = "/dataBases/testers.xml";
+        public const string FILE_TESTS = "/dataBases/tests.xml";
+        public const string FILE_USERS = "/dataBases/users.xml";
+        public const string FILE_CONFIG = "/dataBases/config.xml";
         public const int MIN_LESSONS = 27;
         public const double MAX_TESTER_AGE = 80;
         public const double MIN_STUDENT_AGE = 17;
