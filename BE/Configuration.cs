@@ -3,6 +3,7 @@ namespace BE
 {
     public static class Configuration
     {
+        public const string KEY_FOR_MAPS = @"GmtHnHRTUGnEc3kUAIJrMgU9EWNy4SSB";
         public const string FILE_TRAINEES = "/dataBases/trainees.xml";
         public const string FILE_TESTERS = "/dataBases/testers.xml";
         public const string FILE_TESTS = "/dataBases/tests.xml";
