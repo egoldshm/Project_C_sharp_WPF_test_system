@@ -73,7 +73,7 @@ namespace BE
 
         #endregion CTORs
 
-        public static int TestIdTotal { get => _testIdTotal; private set => _testIdTotal = value; }
+        public static int TestIdTotal { get => _testIdTotal; set => _testIdTotal = value; }
 
         #region Properties
 

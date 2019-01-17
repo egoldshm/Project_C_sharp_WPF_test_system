@@ -39,7 +39,7 @@ namespace PLWPF
             {
                 this.UserName.Text = "";
                 password.Password = "";
-                MainWindow.ErrorMessage("user name of password invaild");
+                errorMessage.Visibility = Visibility.Visible;
             }
             else
             {
@@ -51,7 +51,7 @@ namespace PLWPF
                         Close();
                         break;
                     case User.RoleTypes.Teacher:
-                        
+                        MessageBox.Show("לא מומש עדיין");
                         break;
                     case User.RoleTypes.Tester:
                         TesterMainWindow window = new TesterMainWindow(user);
@@ -59,7 +59,7 @@ namespace PLWPF
                         Close();
                         break;
                     case User.RoleTypes.School:
-                        //show school window
+                        MessageBox.Show("לא מומש עדיין");
                         break;
                     case User.RoleTypes.Admin:
                         AdminMainWindow windowAdmin = new AdminMainWindow(user);

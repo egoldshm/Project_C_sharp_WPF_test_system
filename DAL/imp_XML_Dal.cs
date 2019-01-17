@@ -12,6 +12,7 @@ namespace DAL
     public class imp_XML_Dal : IDal
     {
         XElement usersRoot;
+        XElement configRoot;
 
         /// <summary>
         /// constracor of this Dal. bring the data from the DB (xml) to the Lists.
@@ -23,13 +24,24 @@ namespace DAL
                 CreateUsersFiles();
             else
                 LoadUsersData();
-            try
+           if (File.Exists(Configuration.FILE_TESTERS) && File.ReadLines(Configuration.FILE_TESTERS).Count() > 2)
+               DataSource.testers = Xml_files.LoadFromXML<List<Tester>>(Configuration.FILE_TESTERS);
+           if (File.Exists(Configuration.FILE_TESTS) && File.ReadLines(Configuration.FILE_TESTS).Count() > 2)
+               DataSource.tests = Xml_files.LoadFromXML<List<Test>>(Configuration.FILE_TESTS);
+           if (File.Exists(Configuration.FILE_TRAINEES) && File.ReadLines(Configuration.FILE_TRAINEES).Count() > 2)
+               DataSource.trainees = Xml_files.LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEES);
+
+           //Static var
+            if (File.Exists(Configuration.FILE_CONFIG) && File.ReadLines(Configuration.FILE_CONFIG).Count() != 0)
             {
-                DataSource.testers = Xml_files.LoadFromXML<List<Tester>>(Configuration.FILE_TESTERS);
-                DataSource.tests = Xml_files.LoadFromXML<List<Test>>(Configuration.FILE_TESTS);
-                DataSource.trainees = Xml_files.LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEES);
+                if (!File.Exists(Configuration.FILE_CONFIG))
+                {
+                    configRoot = new XElement("staticNumber");
+                    configRoot.Value = "10000000";
+                    configRoot.Save(Configuration.FILE_USERS);
+                }
+                Test.TestIdTotal = int.Parse(XElement.Load(Configuration.FILE_CONFIG).Element("staticNumber").Value);
             }
-            catch (Exception ex) { }
 
         }
         /// <summary>
@@ -46,8 +58,8 @@ namespace DAL
         /// </summary>
         private void LoadUsersData()
         {
-            //try
-            //{
+            try
+            {
                 usersRoot = XElement.Load(Configuration.FILE_USERS);
                 foreach (var item in usersRoot.Elements())
                 {
@@ -71,11 +83,11 @@ namespace DAL
                     }
                     DataSource.users.Add(new User(role, newConnectTo, item.Element("username").Value, item.Element("password").Value));
                 }
-            //}
-            //catch
-            //{
-            //    throw new Exception("File upload problem");
-            //}
+            }
+            catch
+            {
+                throw new Exception("File upload problem");
+            }
         }
 
         #region TraineeFunctions
@@ -272,6 +284,8 @@ namespace DAL
 
         public void AddFutureTest(Test test)
         {
+            configRoot.Value = (int.Parse(configRoot.Value) + 1).ToString();
+            configRoot.Save(Configuration.FILE_CONFIG);
             DataSource.tests.Add(test);
             Xml_files.SaveToXML(DataSource.tests, Configuration.FILE_TESTS);
         }
