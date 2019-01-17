@@ -43,3 +43,5 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DAL\obj\Debug\DAL.csp
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DAL\obj\Debug\DAL.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DAL\obj\Debug\DAL.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.dll
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.pdb

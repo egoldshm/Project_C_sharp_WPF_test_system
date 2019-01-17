@@ -7,9 +7,9 @@ using System.IO;
 using System.Net;
 using System.Xml;
 using BE;
-namespace PLWPF
+namespace BL
 {
-    public class addressDistants
+    public static class addressDistants
     {
         /// <summary>
         /// function that get 2 addresses and return the distants.
@@ -17,7 +17,7 @@ namespace PLWPF
         /// <param name="origin"></param>
         /// <param name="destination"></param>
         /// <returns></returns>
-        public double distanceBetweenAddresses(Address origin, Address destination)
+        static public double distanceBetweenAddresses(Address origin, Address destination)
         {
             string url = @"https://www.mapquestapi.com/directions/v2/route" + @"?key=" + Configuration.KEY_FOR_MAPS +
              @"&from=" + origin +

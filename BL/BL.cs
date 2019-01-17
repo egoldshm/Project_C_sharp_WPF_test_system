@@ -3,6 +3,7 @@ using DAL;
 using Ibl;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace BL
@@ -217,7 +218,7 @@ namespace BL
 
         public List<Tester> GetTestersWhoLiveInDistanceOfX(Address address)
         {
-            return new List<Tester>(from tester in GetAllTesters() where tester.Address.getDistance(address) < tester.MaxDistance select tester);
+            return new List<Tester>(from tester in GetAllTesters() where addressDistants.distanceBetweenAddresses(address, tester.Address) < tester.MaxDistance select tester);
         }
 
         public void UpdateTester(int id, Tester tester)

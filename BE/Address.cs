@@ -17,12 +17,7 @@ namespace BE
 
         public override string ToString()
         {
-            return city + " " + street_name + (building_number != 0 ? " (" + building_number + ")" : "");
-        }
-        public double getDistance(Address address)
-        {
-            Random random = new Random();
-            return random.NextDouble() * 1000;
+            return $" {(building_number != 0 ? " " + building_number + "" : "")} {street_name} {city} ,Israel";
         }
     }
 }
