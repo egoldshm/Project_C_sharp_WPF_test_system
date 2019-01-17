@@ -15,7 +15,7 @@ namespace BL
         public BL()
         {
             dal = factoryDal.FactoryDal.GetDal();
-            Init();
+            //Init();
         }
 
         private void Init()
@@ -23,7 +23,6 @@ namespace BL
             try
             {
                 CreateUser("eitan", "4545", User.RoleTypes.Admin, null);
-
                 CreateUser("Ariel", "hello world", User.RoleTypes.Admin, null);
                 AddTrainee(new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
                 CreateUser("ariel", "4545", User.RoleTypes.Trainee, new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));

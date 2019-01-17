@@ -18,8 +18,8 @@ namespace DAL
             file.Close();
         }
         public static T LoadFromXML<T>(string path) {
-            FileStream file = new FileStream(path, FileMode.Open); XmlSerializer
-            xmlSerializer = new XmlSerializer(typeof(T));
+            FileStream file = new FileStream(path, FileMode.Open);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             T result = (T)xmlSerializer.Deserialize(file);
             file.Close();
             return result;

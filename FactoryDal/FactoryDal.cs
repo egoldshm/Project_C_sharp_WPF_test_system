@@ -11,7 +11,7 @@
         public static DAL.IDal GetDal()
         {
             if (dal == null)
-                dal = new imp_Dal.Imp_Dal();
+                dal = new DAL.imp_XML_Dal();
             return dal;
         }
     }

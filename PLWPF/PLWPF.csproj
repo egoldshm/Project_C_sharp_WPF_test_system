@@ -85,7 +85,6 @@
     <Compile Include="AddLessonToTrainee.xaml.cs">
       <DependentUpon>AddLessonToTrainee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="addressDistants.cs" />
     <Compile Include="AddTest.xaml.cs">
       <DependentUpon>AddTest.xaml</DependentUpon>
     </Compile>

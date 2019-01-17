@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfTrainee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Trainee>
+    <Id>324218544</Id>
+    <FirstName>Darshan</FirstName>
+    <FamilyName>Ariel</FamilyName>
+    <Gender>Male</Gender>
+    <PhoneNumber>584007353</PhoneNumber>
+    <Address>
+      <street_name>a</street_name>
+      <building_number>5</building_number>
+      <city>a</city>
+    </Address>
+    <Birthday>2000-10-16T00:00:00</Birthday>
+    <TypeCarLearned>Private_Car</TypeCarLearned>
+    <TransmissionLearned>Manual</TransmissionLearned>
+    <SchoolName>a</SchoolName>
+    <TeacherName>b</TeacherName>
+    <LessonsNumber>30</LessonsNumber>
+  </Trainee>
+</ArrayOfTrainee>
