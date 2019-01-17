@@ -20,7 +20,6 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\bin\Debug\IBL.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\bin\Debug\IBL.pdb
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\bin\Debug\BE.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\bin\Debug\BE.pdb
-C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\obj\Debug\IBL.csprojAssemblyReference.cache
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\obj\Debug\IBL.csproj.CoreCompileInputs.cache
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\obj\Debug\IBL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\obj\Debug\IBL.dll
@@ -43,3 +42,4 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\IBL\obj\Debug\IBL.csp
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\IBL\obj\Debug\IBL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\IBL\obj\Debug\IBL.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\IBL\obj\Debug\IBL.pdb
+C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\IBL\obj\Debug\IBL.csprojAssemblyReference.cache

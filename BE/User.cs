@@ -61,6 +61,7 @@ namespace BE
             this._role = this.role;
         }
 
+
         public User(RoleTypes role, object connectTo, string username, string password)
         {
             _role = role;

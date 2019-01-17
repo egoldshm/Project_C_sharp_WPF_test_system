@@ -46,15 +46,36 @@ namespace DAL
         /// </summary>
         private void LoadUsersData()
         {
-            try
-            {
+            //try
+            //{
                 usersRoot = XElement.Load(Configuration.FILE_USERS);
-                //problem here
-            }
-            catch
-            {
-                throw new Exception("File upload problem");
-            }
+                foreach (var item in usersRoot.Elements())
+                {
+                    User.RoleTypes role = (User.RoleTypes)Enum.Parse(typeof(User.RoleTypes), item.Element("role").Value);
+                    var obj = item.Element("ConnectTo").Value;
+                    object newConnectTo = null;
+                    switch (role)
+                    {
+                        case User.RoleTypes.Trainee:
+                            newConnectTo = GetTraineeById(int.Parse(obj));
+                            break;
+                        case User.RoleTypes.Tester:
+                            newConnectTo = GetTesterByID(int.Parse(obj));
+                            break;
+                        case User.RoleTypes.Admin:
+                        case User.RoleTypes.School:
+                        case User.RoleTypes.Teacher:
+                            newConnectTo = obj;
+                            break;
+
+                    }
+                    DataSource.users.Add(new User(role, newConnectTo, item.Element("username").Value, item.Element("password").Value));
+                }
+            //}
+            //catch
+            //{
+            //    throw new Exception("File upload problem");
+            //}
         }
 
         #region TraineeFunctions
@@ -307,12 +328,12 @@ namespace DAL
         #endregion test_functions
 
 
-        
 
 
 
 
-       
+
+
 
 
     }
