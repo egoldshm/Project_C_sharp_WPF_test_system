@@ -15,7 +15,7 @@
     <YearsOfExperience>12</YearsOfExperience>
     <MaxWeeklyTests>50</MaxWeeklyTests>
     <CarType>Private_Car</CarType>
-    <workDaysTostring>100000100000100000000000000000</workDaysTostring>
+    <workDaysTostring>111101111101111101111101110101</workDaysTostring>
     <MaxDistance>50</MaxDistance>
   </Tester>
 </ArrayOfTester>

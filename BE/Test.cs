@@ -24,6 +24,12 @@ namespace BE
 
         #region CTORs
 
+        public Test()
+        {
+            TesterId = 0;
+            TraineeId = 0;
+        }
+
         public Test(int testerNumber, int traineeNumber)
         {
             Criterions = new CriterionsOfTest();

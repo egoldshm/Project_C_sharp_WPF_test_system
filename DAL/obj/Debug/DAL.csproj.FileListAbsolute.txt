@@ -47,3 +47,5 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.dll
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.pdb
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.dll
+C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.pdb
