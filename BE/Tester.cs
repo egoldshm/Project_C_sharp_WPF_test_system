@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace BE
 {
@@ -83,7 +84,33 @@ namespace BE
         public int YearsOfExperience { get => _yearsOfExperience; set => _yearsOfExperience = value; }
         public int MaxWeeklyTests { get => _maxWeeklyTests; set => _maxWeeklyTests = value; }
         public CarType CarType { get => _carType; set => _carType = value; }
+        [XmlIgnore]
         public bool[,] WorkDays { get => _workDays; set => _workDays = value; }
+        public string workDaysTostring
+        {
+            get
+            {
+                string str = "";
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        str += WorkDays[i, j] ? "1" : "0";
+                    }
+                }
+                return str;
+            }
+            set
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        WorkDays[i, j] = value[j + i * 6] == '1';
+                    }
+                }
+            }
+        }
         public float MaxDistance { get => _maxDistance; set => _maxDistance = value; }
 
         #endregion Properties

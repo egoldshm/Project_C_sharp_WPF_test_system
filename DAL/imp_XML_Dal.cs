@@ -280,7 +280,7 @@ namespace DAL
 
         #endregion UsersFunctions
 
-        #region test_functions
+        #region TestFunctions
 
         public void AddFutureTest(Test test)
         {
@@ -339,7 +339,7 @@ namespace DAL
 
             return new Test(list[0]);
         }
-        #endregion test_functions
+        #endregion TestFunctions
 
 
 

@@ -66,14 +66,12 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\De
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\IBL.dll
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DAL.dll
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\FactoryDal.dll
-C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\imp_Dal.dll
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DS.dll
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\BE.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\BL.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\IBL.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DAL.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\FactoryDal.pdb
-C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\imp_Dal.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\DS.pdb
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.csprojAssemblyReference.cache
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\obj\Debug\FactoryBL.csproj.CoreCompileInputs.cache

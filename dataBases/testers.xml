@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfTester xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tester>
+    <Id>322521303</Id>
+    <LastName>a</LastName>
+    <FirstName>b</FirstName>
+    <DateOfBirth>1977-01-26T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>584007354</PhoneNumber>
+    <Address>
+      <street_name>b</street_name>
+      <building_number>14</building_number>
+      <city>a</city>
+    </Address>
+    <YearsOfExperience>12</YearsOfExperience>
+    <MaxWeeklyTests>50</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>100000100000100000000000000000</workDaysTostring>
+    <MaxDistance>50</MaxDistance>
+  </Tester>
+</ArrayOfTester>
