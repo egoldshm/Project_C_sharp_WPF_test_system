@@ -28,10 +28,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
-                        <xctk:DateTimePicker x:Name="dateOfTestDatePicker"  Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1"/>
-                        <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:"/>
-                        <ComboBox Margin="10,15" x:Name="traineeIdList" Grid.Column="1" Grid.Row="2">
+                        <Label Grid.Row="0" Margin="3" HorizontalContentAlignment="Left" Grid.Column="0" Content="Date Of Test" FontSize="{DynamicResource FontLabels}" FontFamily="{DynamicResource FontLabel}" Background="White" Foreground="{DynamicResource GoogleGreen}"/>
+                        <xctk:DateTimePicker x:Name="dateOfTestDatePicker"  Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3,5" Grid.Column="1"/>
+                        <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:" Foreground="{DynamicResource GoogleGreen}" FontSize="{DynamicResource FontLabels}" FontFamily="{DynamicResource FontLabel}"/>
+                        <ComboBox Margin="3,5" x:Name="traineeIdList" Grid.Column="1" Grid.Row="2">
                             <ComboBox.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
