@@ -465,6 +465,8 @@
             <System:Double x:Key="FontLabels">20</System:Double>
             <SolidColorBrush x:Key="GoogleGreen" Color="#FF3CBA54"/>
             <FontFamily x:Key="FontLabel">Narkisim</FontFamily>
+            <FontFamily x:Key="BottonFont">Sitka Text</FontFamily>
+            <System:Double x:Key="BottonSize">35</System:Double>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

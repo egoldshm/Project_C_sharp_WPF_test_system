@@ -32,9 +32,9 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test:"/>
+                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <xctk:DateTimePicker x:Name="dateOfTestDatePicker"  Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id:"/>
+                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <ComboBox Margin="10,15" x:Name="testerIdList" Grid.Column="1" Grid.Row="1" >
                     <ComboBox.Background>
                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -43,7 +43,7 @@
                         </LinearGradientBrush>
                     </ComboBox.Background>
                 </ComboBox>
-                <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:"/>
+                <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <ComboBox Margin="10,15" x:Name="traineeIdList" Grid.Column="1" Grid.Row="2">
                     <ComboBox.Background>
                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -52,16 +52,16 @@
                         </LinearGradientBrush>
                     </ComboBox.Background>
                 </ComboBox>
-                <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City:"/>
+                <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <TextBox x:Name="city" Grid.Row="3" Margin="3,5"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street:"/>
+                <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <TextBox x:Name="street" Grid.Row="4" Margin="3,5"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="5" Margin="3,5"  Grid.Column="0" Content="building number:"/>
+                <Label VerticalAlignment="Center" Grid.Row="5" Margin="3,5"  Grid.Column="0" Content="building number" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <TextBox x:Name="building_number" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Margin="3,5" Grid.Column="1"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <Button x:Name="button" Content="Add Test" Click="Button_Click" Margin="20,10" Background="White">
+            <Button x:Name="button" Content="Add Test" Click="Button_Click" Margin="5,3" Background="White" FontFamily="{DynamicResource BottonFont}" FontSize="{DynamicResource BottonSize}" BorderBrush="{DynamicResource GoogleBlue}">
                 <Button.Style>
                     <Style>
                         <Style.Triggers>
