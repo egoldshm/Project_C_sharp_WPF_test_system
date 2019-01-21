@@ -6,4 +6,10 @@
     <role>Admin</role>
     <ConnectTo />
   </user>
+  <user>
+    <username>rebardug</username>
+    <password>e1ba7e370863cba244a5749076371be664ad2523678b2315ae825e9311350f9f943447c6c0f78c9f5c5aae038b88e1f9d3dba526b64bc70ec93bb035b0a48afb</password>
+    <role>Admin</role>
+    <ConnectTo />
+  </user>
 </users>

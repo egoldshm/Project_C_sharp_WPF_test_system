@@ -49,3 +49,14 @@ C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS
 C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.pdb
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.dll
 C:\Users\school\Desktop\school\12th grade\C sharp\egoldshm\mini-project-Eitan-Ariel-2\DAL\bin\Debug\DS.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\bin\Debug\DAL.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\bin\Debug\DAL.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\bin\Debug\BE.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\bin\Debug\DS.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\bin\Debug\BE.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\bin\Debug\DS.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.pdb

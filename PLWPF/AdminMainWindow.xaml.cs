@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SnakeWPF.View;
 using Ibl;
 using BE;
 namespace PLWPF
@@ -37,8 +38,9 @@ namespace PLWPF
             title.user = user;
             loginas.User = user;
             ViewTest.AllExistTests = bl.GetAllTests();
-        }
+            AddSnakeGame();
 
+        }
         private void viewTest(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
@@ -88,6 +90,28 @@ namespace PLWPF
                 
                 OldTab = tabControl.SelectedValue.ToString();
             }
+        }
+
+        //private void StartGameClick(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBoxResult result = MessageBox.Show("Play during your work request permissions of your employer, do you sure you have?", "Do you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Asterisk);
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        AddSnakeGame();
+        //    }
+        //    else if (result == MessageBoxResult.No)
+        //    {
+        //        MessageBox.Show("okey. bye!");
+        //    }
+        //}
+
+        private void AddSnakeGame()
+        {
+            SnakeView snakeView = new SnakeView();
+            snakeView.Margin = new Thickness(15);
+            snakeView.BorderBrush = new SolidColorBrush(Colors.DarkRed);
+            snakeView.BorderThickness = new Thickness(15, 20, 15, 20);
+            game.Content = snakeView;
         }
     }
 }

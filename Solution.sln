@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLWPF", "PLWPF\PLWPF.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{3E64CF85-0867-4107-9160-4C0767869006}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeWPF", "SnakeWPF\SnakeWPF.csproj", "{9FCE2235-1CCF-479A-BA8F-7D3659BED3E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{3E64CF85-0867-4107-9160-4C0767869006}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E64CF85-0867-4107-9160-4C0767869006}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E64CF85-0867-4107-9160-4C0767869006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCE2235-1CCF-479A-BA8F-7D3659BED3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCE2235-1CCF-479A-BA8F-7D3659BED3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCE2235-1CCF-479A-BA8F-7D3659BED3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCE2235-1CCF-479A-BA8F-7D3659BED3E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

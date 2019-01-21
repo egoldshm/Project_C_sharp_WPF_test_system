@@ -27,3 +27,9 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\BE\obj\Debug\BE.cspro
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\BE\obj\Debug\BE.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\BE\obj\Debug\BE.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\BE\bin\Debug\BE.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\BE\bin\Debug\BE.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.csprojAssemblyReference.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.pdb

@@ -70,9 +70,6 @@
     <Reference Include="Xceed.Wpf.Toolkit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit.3.4.0.0.Fakes">
-      <HintPath>FakesAssemblies\Xceed.Wpf.Toolkit.3.4.0.0.Fakes.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -322,6 +319,10 @@
     <ProjectReference Include="..\IBL\IBL.csproj">
       <Project>{942e0748-52d2-4ede-9fa0-2267ccef5e54}</Project>
       <Name>IBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeWPF\SnakeWPF.csproj">
+      <Project>{9fce2235-1ccf-479a-ba8f-7d3659bed3e8}</Project>
+      <Name>SnakeWPF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

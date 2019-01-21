@@ -43,3 +43,12 @@ C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DS\DS\obj\Debug\DS.cs
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DS\DS\obj\Debug\DS.dll
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-22\DS\DS\obj\Debug\DS.pdb
 C:\Users\egoldshm\Source\Repos\mini-project-Eitan-Ariel-2\DS\DS\obj\Debug\DS.csprojAssemblyReference.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\bin\Debug\DS.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\bin\Debug\DS.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\bin\Debug\BE.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\bin\Debug\BE.pdb
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.csprojAssemblyReference.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.csproj.CoreCompileInputs.cache
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.csproj.CopyComplete
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.dll
+C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.pdb
