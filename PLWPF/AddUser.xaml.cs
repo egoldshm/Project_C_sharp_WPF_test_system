@@ -60,7 +60,7 @@ namespace PLWPF
                     bl.CreateUser(Username.Text, password.Password, (User.RoleTypes)role, items.SelectionBoxItem);
                     Username.Text = string.Empty;
                     password.Password = string.Empty;
-                    MainWindow.ErrorMessage("new user created successfully");
+                    MessageBox.Show("successe", "new user created successfully",MessageBoxButton.OK,MessageBoxImage.Information);
                 }
             }
             catch(Exception ex)

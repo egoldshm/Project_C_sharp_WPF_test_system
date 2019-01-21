@@ -15,10 +15,15 @@ using BE;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for ChangePassword.xaml
+    /// Window of change password panal.
     /// </summary>
     public partial class ChangePassword : Window
     {
+
+        /// <summary>
+        /// constractor of window of change password.
+        /// </summary>
+        /// <param name="user">User that only for him you can change the password</param>
         public ChangePassword(User user = null)
         {
             InitializeComponent();
@@ -29,6 +34,9 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// Event that start when change-password button clicked. and try to change than
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             User user = factoryBL.FactoryBL.GetBL().GetUser(username.Text, OldPassword.Password);

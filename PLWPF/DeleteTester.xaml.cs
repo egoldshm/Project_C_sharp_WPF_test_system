@@ -16,16 +16,22 @@ using BE;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for DeleteTester.xaml
+    /// usercontrol for delete Tester
     /// </summary>
     public partial class DeleteTester : UserControl
     {
         Ibl.IBL bl = factoryBL.FactoryBL.GetBL();
+
+        /// <summary>
+        /// Constractor for the usercontrol. get all the testers who not registers to tests.
+        /// </summary>
         public DeleteTester()
         {
             InitializeComponent();
             idlist.ItemsSource = bl.GetAllTesters(Tester => bl.GetAllTests(test => test.TesterId == Tester.Id).Count == 0);
         }
+
+
         /// <summary>
         /// function that reset the element that may to change for update changes. for admin use.
         /// </summary>
@@ -36,6 +42,9 @@ namespace PLWPF
                 this.idlist.ItemsSource = list;
         }
 
+        /// <summary>
+        /// Event that started when the button is clicked and try to delete the tester that selected.
+        /// </summary>
         private void button_Click(object sender, RoutedEventArgs e)
         {
             try

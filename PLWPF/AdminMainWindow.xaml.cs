@@ -92,18 +92,23 @@ namespace PLWPF
             }
         }
 
-        //private void StartGameClick(object sender, RoutedEventArgs e)
-        //{
-        //    MessageBoxResult result = MessageBox.Show("Play during your work request permissions of your employer, do you sure you have?", "Do you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Asterisk);
-        //    if (result == MessageBoxResult.Yes)
-        //    {
-        //        AddSnakeGame();
-        //    }
-        //    else if (result == MessageBoxResult.No)
-        //    {
-        //        MessageBox.Show("okey. bye!");
-        //    }
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StartGameClick(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Play during your work request permissions of your employer, do you sure you have?", "Do you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Asterisk);
+            if (result == MessageBoxResult.Yes)
+            {
+                AddSnakeGame();
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                MessageBox.Show("okey. bye!");
+            }
+        }
 
         private void AddSnakeGame()
         {

@@ -121,9 +121,6 @@
     <Compile Include="myPasswordBox.xaml.cs">
       <DependentUpon>myPasswordBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Nothing.xaml.cs">
-      <DependentUpon>Nothing.xaml</DependentUpon>
-    </Compile>
     <Compile Include="showInfoAboutTrainee.xaml.cs">
       <DependentUpon>showInfoAboutTrainee.xaml</DependentUpon>
     </Compile>
@@ -223,10 +220,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="myPasswordBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Nothing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

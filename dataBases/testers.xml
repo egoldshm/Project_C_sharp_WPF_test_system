@@ -18,4 +18,22 @@
     <workDaysTostring>111101111101111101111101110101</workDaysTostring>
     <MaxDistance>50</MaxDistance>
   </Tester>
+  <Tester>
+    <Id>123456782</Id>
+    <LastName>gold</LastName>
+    <FirstName>eitan</FirstName>
+    <DateOfBirth>1977-01-26T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>584007354</PhoneNumber>
+    <Address>
+      <street_name>a</street_name>
+      <building_number>5</building_number>
+      <city>a</city>
+    </Address>
+    <YearsOfExperience>20</YearsOfExperience>
+    <MaxWeeklyTests>20</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>100000100000000000100000100000</workDaysTostring>
+    <MaxDistance>55</MaxDistance>
+  </Tester>
 </ArrayOfTester>

@@ -15,11 +15,15 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for myPasswordBox.xaml
+    /// user control of passwordbox. let you to generate new password and show/hide the password.
     /// </summary>
-    /// 
     public partial class myPasswordBox : UserControl
     {
+        /// <summary>
+        /// generate new password in lenght and with some letters.
+        /// </summary>
+        /// <param name="length">int that set the lenght of the new password</param>
+        /// <returns>new random password</returns>
         private string CreatePassword(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -31,15 +35,39 @@ namespace PLWPF
             }
             return res.ToString();
         }
+
+        /// <summary>
+        /// if the password now if hidden or not.
+        /// </summary>
         bool hidePassword = true;
 
+        /// <summary>
+        /// Proprty the set if we want to access to generate the new password.
+        /// </summary>
+        public bool GenerateOpionIsShowed { get => generate.Visibility == Visibility.Visible; set { if (value) generate.Visibility = Visibility.Visible; else generate.Visibility = Visibility.Hidden; } }
+
+
+        /// <summary>
+        /// return the password.
+        /// </summary>
         public string Password { get => inputPassword.Password; set => inputPassword.Password = inputPassword_Text.Text= value; }
+
+        /// <summary>
+        /// return the password.
+        /// </summary>
         public string Test { get => inputPassword.Password; set => inputPassword.Password = inputPassword_Text.Text = value; }
 
+        /// <summary>
+        /// constractor.
+        /// </summary>
         public myPasswordBox()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// event that start when we change the Visibility of the password.
+        /// </summary>
         private void Button_Click_show(object sender, RoutedEventArgs e)
         {
             if (hidePassword)
@@ -59,7 +87,9 @@ namespace PLWPF
             hidePassword = !hidePassword;
         }
 
-
+        /// <summary>
+        /// generate the password.
+        /// </summary>
         private void Button_Click_generate(object sender, RoutedEventArgs e)
         {
             string New_Password = CreatePassword(BE.Configuration.LENGHT_OF_RAND_PASSWORD);
