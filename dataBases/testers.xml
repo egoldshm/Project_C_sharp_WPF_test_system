@@ -8,9 +8,9 @@
     <Gender>Male</Gender>
     <PhoneNumber>584007354</PhoneNumber>
     <Address>
-      <street_name>b</street_name>
-      <building_number>14</building_number>
-      <city>a</city>
+      <street_name>שח"ל</street_name>
+      <building_number>12</building_number>
+      <city>ירושלים</city>
     </Address>
     <YearsOfExperience>12</YearsOfExperience>
     <MaxWeeklyTests>50</MaxWeeklyTests>
@@ -26,9 +26,9 @@
     <Gender>Male</Gender>
     <PhoneNumber>584007354</PhoneNumber>
     <Address>
-      <street_name>a</street_name>
-      <building_number>5</building_number>
-      <city>a</city>
+      <street_name>הלר</street_name>
+      <building_number>12</building_number>
+      <city>ירושלים</city>
     </Address>
     <YearsOfExperience>20</YearsOfExperience>
     <MaxWeeklyTests>20</MaxWeeklyTests>

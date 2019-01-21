@@ -212,7 +212,7 @@ namespace BL
                 hourByArr = date.Hour - 9;
             else throw new Exception(string.Format("You can not insert a test at {0} o'clock, it is an inactive hour", date.Hour));
             return new List<Tester>(GetAllTesters(tester =>
-            tester.WorkDays[(int)date.DayOfWeek, hourByArr] && !GetTestsByTesters(tester).Any(test => test.DateOfTest.Hour == date.Hour)));
+            tester.WorkDays[(int)date.DayOfWeek, hourByArr] && !GetTestsByTesters(tester).Any(test => test.DateOfTest.AddMinutes(Configuration.DURATION_OF_TEST) < date || test.DateOfTest > date)));
         }
 
         public List<Tester> GetTestersWhoLiveInDistanceOfX(Address address)
@@ -396,15 +396,16 @@ namespace BL
             Trainee trainee = GetTraineeById(TraineeId);
             if (trainee == null)
                 throw new Exception(string.Format("Trainee {0} not exist, so you can set for him test", TraineeId));
-            List<Tester> testers = new List<Tester>(
-                GetTestersWhoLiveInDistanceOfX(address).Intersect(GetTestersByAvailableTime(time)));
+            var listOfTestersByDistance = GetTestersWhoLiveInDistanceOfX(address);
+            var listOfTestersByTime = GetTestersByAvailableTime(time);
+            List<int> testers = new List<int>(
+                listOfTestersByDistance.Select(t => t.Id).Intersect(listOfTestersByTime.Select(t => t.Id)));
             Random random = new Random();
             if(testers.Count == 0)
             {
                 throw new Exception("Not found testers in the wanted time and loctaion");
             }
-            Tester tester = testers[random.Next(testers.Count)];
-            Test test = new Test(tester.Id, TraineeId, time, address);
+            Test test = new Test(testers[random.Next(testers.Count)], TraineeId, time, address);
             AddFutureTest(test);
             return test;
         }

@@ -47,6 +47,10 @@ namespace PLWPF
             {
                 ForTest? arg = e.Argument as ForTest?;
                 test = bl.createTest(arg.Value.Trainee.Id, arg.Value.Address, arg.Value.DateTime);
+                Result.Result = "added test";
+                Result.Exception = new Exception($"Test number {test.TestNumber} created. In {test.DateOfTest} with Tester {test.TesterId}");
+                e.Result = Result;
+
             }
             catch (Exception ex)
             {
@@ -54,13 +58,12 @@ namespace PLWPF
                 Result.Result = "Didn't add test";
                 e.Result = Result;
             }
-            Result.Result = "added test";
-            Result.Exception = new Exception( $"Test number {test.TestNumber} created. In {test.DateOfTest} with Tester {test.TesterId}");
-            e.Result = Result;
         }
-
+        
         private void GetDistanceThread_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            proccessMessage.Visibility = Visibility.Hidden ;
+            button.IsEnabled = true ;
             BackgroundResult? Result = e.Result as BackgroundResult?;
             MessageBox.Show(Result.Value.Result as string);
             errorMessage.Content = Result.Value.Exception.Message;
@@ -104,7 +107,10 @@ namespace PLWPF
                 arg.Trainee = new Trainee(traineeIdList.SelectionBoxItem as Trainee);
                 arg.DateTime = DateTime.Parse(dateOfTestDatePicker.Text);
                 arg.Address = new Address(city.Text, int.Parse(building_number.Text), street.Text);
-                
+
+                proccessMessage.Visibility = Visibility.Visible;
+                button.IsEnabled = false;
+
                 GetDistanceThread.RunWorkerAsync(arg);
             }
             catch (Exception ex)

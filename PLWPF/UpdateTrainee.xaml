@@ -47,7 +47,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0"  Grid.Column="0" Content="Id:"/>
                 <ComboBox DropDownClosed="IdTextBox_DropDownClosed" IsTextSearchEnabled="True" x:Name="idTextBox" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Grid.Column="1" Margin="5"/>
-                <Label  Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Content="Family Name:"/>
+                <Label Grid.Row="1" HorizontalAlignment="Left" Grid.Column="0" Content="Family Name:"/>
                 <TextBox x:Name="familyNameTextBox" Text="{Binding FamilyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Grid.Column="1"/>
                 <Label Grid.Row="2"  Grid.Column="0" Content="First Name:"/>
                 <TextBox x:Name="firstNameTextBox" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2"  Grid.Column="1"/>
