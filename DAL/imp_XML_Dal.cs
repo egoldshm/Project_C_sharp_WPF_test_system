@@ -24,26 +24,32 @@ namespace DAL
                 CreateUsersFiles();
             else
                 LoadUsersData();
-           if (File.Exists(Configuration.FILE_TESTERS) && File.ReadLines(Configuration.FILE_TESTERS).Count() > 2)
+            if (!File.Exists(Configuration.FILE_CONFIG))
+                CreateConfigFiles();
+            else
+                LoadConfigData();
+            if (File.Exists(Configuration.FILE_TESTERS) && File.ReadLines(Configuration.FILE_TESTERS).Count() > 2)
                DataSource.testers = Xml_files.LoadFromXML<List<Tester>>(Configuration.FILE_TESTERS);
            if (File.Exists(Configuration.FILE_TESTS) && File.ReadLines(Configuration.FILE_TESTS).Count() > 2)
                DataSource.tests = Xml_files.LoadFromXML<List<Test>>(Configuration.FILE_TESTS);
            if (File.Exists(Configuration.FILE_TRAINEES) && File.ReadLines(Configuration.FILE_TRAINEES).Count() > 2)
                DataSource.trainees = Xml_files.LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEES);
 
-           //Static var
-            if (File.Exists(Configuration.FILE_CONFIG) && File.ReadLines(Configuration.FILE_CONFIG).Count() != 0)
-            {
-                if (!File.Exists(Configuration.FILE_CONFIG))
-                {
-                    configRoot = new XElement("staticNumber");
-                    configRoot.Value = "10000000";
-                    configRoot.Save(Configuration.FILE_USERS);
-                }
-                Test.TestIdTotal = int.Parse(XElement.Load(Configuration.FILE_CONFIG).Element("staticNumber").Value);
-            }
-
         }
+
+        private void LoadConfigData()
+        {
+            configRoot = XElement.Load(Configuration.FILE_CONFIG);
+            Test.TestIdTotal = int.Parse(configRoot.Value);
+        }
+
+        private void CreateConfigFiles()
+        {
+            configRoot = new XElement("staticNumber");
+            configRoot.Value = "10000000";
+            configRoot.Save(Configuration.FILE_CONFIG);
+        }
+
         /// <summary>
         /// Create new file of users data. if the file not exist.
         /// </summary>
