@@ -12,4 +12,10 @@
     <role>Admin</role>
     <ConnectTo />
   </user>
+  <user>
+    <username>a</username>
+    <password>31ca225e740f1937b02412b006931d555a6f10e4debc34bb7f9e5ee7a3e8b06f80a5e0611c6c92d9e16e58662f807a204ecef041220548608bb4a31613e51523</password>
+    <role>Admin</role>
+    <ConnectTo />
+  </user>
 </users>

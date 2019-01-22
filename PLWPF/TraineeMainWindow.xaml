@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d" Icon ="/photos/icon.jpg"
-        Title="trainee mode - driving system" Width="900" Height="700" MinHeight="700" MinWidth="800" FontFamily="Dubai Medium">
+        Title="trainee mode - driving system" Width="900" Height="700" MinHeight="700" MinWidth="800" FontFamily="Dubai Medium" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

@@ -6,7 +6,7 @@
         xmlns:other ="clr-namespace:SnakeWPF.View;assembly=SnakeWPF"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d" Icon ="/photos/icon.jpg"
-        Title="Admin driving system" Width="900" Height="700" MinHeight="700" MinWidth="800" FontFamily="Dubai Medium">
+        Title="Admin driving system" Width="900" Height="700" MinHeight="700" MinWidth="800" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
