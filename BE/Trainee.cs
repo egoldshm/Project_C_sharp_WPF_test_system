@@ -56,6 +56,10 @@ namespace BE
         //copy CTOR for get_all
         public Trainee(Trainee trainee)
         {
+            if (trainee == null)
+            {
+                throw new Exception("No such trainee");
+            }
             this.FirstName = trainee.FirstName;
             this.FamilyName = trainee.FamilyName;
             this.Id = trainee.Id;

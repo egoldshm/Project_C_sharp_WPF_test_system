@@ -8,7 +8,7 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-   
+
     <Grid>
         <Grid x:Name="list">
             <Grid.RowDefinitions>
@@ -29,48 +29,38 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <RadioButton x:Name="CarTypeSearch" IsChecked="False" GroupName="Search" Grid.Column="0" Content="Car type" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="CarTypeSearch_Checked" Foreground="{DynamicResource GoogleBlue}" />
-                            <RadioButton x:Name="AvailableTimeSearch" GroupName="Search" Grid.Column="1" Content="Available time" HorizontalAlignment="Stretch" Margin="0,0,0,0.2" Checked="AvailableTimeSearch_Checked" Foreground="{DynamicResource GoogleRed}" />
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <RadioButton x:Name="InDistanceOfSearch" GroupName="Search" Grid.Column="0" Content="In distance of:" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="InDistanceOfSearch_Checked" Foreground="{DynamicResource GoogleYe}"/>
-                            <RadioButton x:Name="IdSearch" GroupName="Search" Grid.Column="1" Content="ID" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="IdSearch_Checked" Foreground="{DynamicResource GoogleGreen}"/>
-                        </Grid>
+                        <RadioButton x:Name="CarTypeSearch" Grid.Row="0" IsChecked="False" GroupName="Search" Grid.Column="0" Content="Car type" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="CarTypeSearch_Checked" Foreground="{DynamicResource GoogleBlue}" />
+                        <RadioButton x:Name="AvailableTimeSearch" Grid.Row="1" GroupName="Search" Content="Available time" HorizontalAlignment="Stretch" Checked="AvailableTimeSearch_Checked" Foreground="{DynamicResource GoogleRed}" />
+                        <RadioButton x:Name="InDistanceOfSearch" Grid.Row="2" GroupName="Search" Content="In distance of" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="InDistanceOfSearch_Checked" Foreground="{DynamicResource GoogleYe}" />
+                        <RadioButton x:Name="IdSearch" Grid.Row="3" GroupName="Search" Content="ID" HorizontalAlignment="Stretch" VerticalAlignment="Center" Checked="IdSearch_Checked" Foreground="{DynamicResource GoogleGreen}"/>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1.5*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <ComboBox x:Name="CarTypePicker" Grid.Column="0" Margin="10,20" Visibility="Hidden">
-                            <ComboBoxItem Content="Private car"/>
-                            <ComboBoxItem Content="Two wheeled vehicles"/>
-                            <ComboBoxItem Content="Medium truck"/>
-                            <ComboBoxItem Content="Heavy truck"/>
-                        </ComboBox>
-                        <xctk:DateTimePicker x:Name="DatePicker" Grid.Column="0" Margin="10,20" Visibility="Hidden" />
-                        <TextBox x:Name="IdBox" Grid.Column="0" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Margin="10,20" FontSize="20" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <Grid x:Name="AddressGrid" Grid.Column="0" Visibility="Hidden">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <TextBox x:Name="AddressCity" Text="City" Grid.Row="0" Margin="5" GotFocus="AddressCity_GotFocus" Foreground="Gray"/>
-                            <TextBox x:Name="AddressStreet" Text="Street"  Grid.Row="1" Margin="5" GotFocus="AddressStreet_GotFocus" Foreground="Gray"/>
-                            <TextBox x:Name="AddressNumber" Text="Number"  Grid.Row="2" Margin="5" PreviewTextInput="NumberValidationTextBox" GotFocus="AddressNumber_GotFocus" Foreground="Gray"/>
-                        </Grid>
-                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <ComboBox x:Name="CarTypePicker" Grid.Column="0" Margin="10,20" Visibility="Hidden">
+                                <ComboBoxItem Content="Private car"/>
+                                <ComboBoxItem Content="Two wheeled vehicles"/>
+                                <ComboBoxItem Content="Medium truck"/>
+                                <ComboBoxItem Content="Heavy truck"/>
+                            </ComboBox>
+                            <xctk:DateTimePicker x:Name="DatePicker" Grid.Column="0" Margin="10,20" Visibility="Hidden" />
+                            <TextBox x:Name="IdBox" Grid.Column="0" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Margin="10,20" FontSize="20" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Grid x:Name="AddressGrid" Grid.Column="0" Visibility="Hidden">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBox x:Name="AddressCity" Text="City" Grid.Row="0" Margin="5" GotFocus="AddressCity_GotFocus" Foreground="Gray"/>
+                                <TextBox x:Name="AddressStreet" Text="Street"  Grid.Row="1" Margin="5" GotFocus="AddressStreet_GotFocus" Foreground="Gray"/>
+                                <TextBox x:Name="AddressNumber" Text="Number"  Grid.Row="2" Margin="5" PreviewTextInput="NumberValidationTextBox" GotFocus="AddressNumber_GotFocus" Foreground="Gray"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
@@ -116,13 +106,13 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <ComboBox x:Name ="sortByComboBox"  Grid.ColumnSpan="2" Grid.Column="3" Margin="3">
-                    <ComboBoxItem Content="First name"/>
-                    <ComboBoxItem Content="Last name"/>
-                    <ComboBoxItem Content="ID"/>
-                    <ComboBoxItem Content="Years of experience"/>
+                        <ComboBoxItem Content="First name"/>
+                        <ComboBoxItem Content="Last name"/>
+                        <ComboBoxItem Content="ID"/>
+                        <ComboBoxItem Content="Years of experience"/>
 
-                </ComboBox>
-                <Button x:Name="sortByButton" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3" Margin="4" Click="sortByButton_Click" ContentStringFormat="sort by {0}" Content="{Binding SelectionBoxItem, ElementName=sortByComboBox, Mode=OneWay}"/>
+                    </ComboBox>
+                    <Button x:Name="sortByButton" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3" Margin="4" Click="sortByButton_Click" ContentStringFormat="sort by {0}" Content="{Binding SelectionBoxItem, ElementName=sortByComboBox, Mode=OneWay}"/>
                 </Grid>
                 <TextBlock x:Name="errorMessage" HorizontalAlignment="Center" Foreground="Red" FontSize="18" Background="AliceBlue" Grid.ColumnSpan="2" VerticalAlignment="Top" />
             </Grid>

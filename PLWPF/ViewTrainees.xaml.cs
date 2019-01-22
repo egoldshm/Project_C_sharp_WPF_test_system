@@ -81,7 +81,17 @@ namespace PLWPF
             else if (SearchID.IsChecked == true)
             {
                 trainees = new ObservableCollection<Trainee>();
-                trainees.Add(new Trainee(bl.GetTraineeById(int.Parse(SearchBar.Text))));
+                try
+                {
+                    trainees.Add(new Trainee(bl.GetTraineeById(int.Parse(SearchBar.Text))));
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message != "No such trainee")
+                    {
+                        throw ex;
+                    }
+                }
             }
             else if (SearchName.IsChecked == true)
             {
