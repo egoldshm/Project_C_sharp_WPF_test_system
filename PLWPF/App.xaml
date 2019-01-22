@@ -458,6 +458,7 @@
             <!-- End of Flat ComboBox -->
             <Style TargetType="{x:Type Button}">
                 <Setter Property="Background" Value="White"/>
+                <Setter Property="ContentTemplate" Value="{DynamicResource labelForInfo}"/>
             </Style>
             <SolidColorBrush x:Key="GoogleBlue" Color="#FF4885ED"/>
             <System:Double x:Key="FontLabels">20</System:Double>
@@ -467,6 +468,29 @@
             <System:Double x:Key="BottonSize">35</System:Double>
             <SolidColorBrush x:Key="GoogleRed" Color="#FFD62D20"/>
             <SolidColorBrush x:Key="GoogleYe" Color="#FFFFA700"/>
+            <Style TargetType="Button" x:Key="sendButton">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource GoogleBlue}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource BottonFont}"/>
+                <Setter Property="FontSize" Value="{DynamicResource BottonSize}"/>
+
+            </Style>
+            <Style TargetType="Label" x:Key="info">
+                <Setter Property="Foreground" Value="{DynamicResource GoogleGreen}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontLabels}"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <!--<Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Trainee Id:" Foreground="{DynamicResource GoogleGreen}" FontSize="{DynamicResource FontLabels}" FontFamily="{DynamicResource FontLabel}"/>-->
+                
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="FontFamily" Value="Eras ITC"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

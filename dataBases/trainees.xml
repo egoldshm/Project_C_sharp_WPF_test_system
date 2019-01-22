@@ -18,4 +18,22 @@
     <TeacherName>b</TeacherName>
     <LessonsNumber>51</LessonsNumber>
   </Trainee>
+  <Trainee>
+    <Id>322521303</Id>
+    <FirstName>hghg</FirstName>
+    <FamilyName>gfgh</FamilyName>
+    <Gender>Male</Gender>
+    <PhoneNumber>584007354</PhoneNumber>
+    <Address>
+      <street_name>5</street_name>
+      <building_number>4</building_number>
+      <city>5</city>
+    </Address>
+    <Birthday>0001-01-01T00:00:00</Birthday>
+    <TypeCarLearned>Private_Car</TypeCarLearned>
+    <TransmissionLearned>Manual</TransmissionLearned>
+    <SchoolName>0584007354</SchoolName>
+    <TeacherName>555</TeacherName>
+    <LessonsNumber>50</LessonsNumber>
+  </Trainee>
 </ArrayOfTrainee>

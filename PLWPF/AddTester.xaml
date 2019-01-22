@@ -8,6 +8,7 @@
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="PLWPF.AddTester"
              mc:Ignorable="d" 
              d:DesignHeight="631" d:DesignWidth="800">
+
     <ScrollViewer >
         <Grid Background="White">
             <Grid x:Name="grid1" >
@@ -32,31 +33,31 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Id:"/>
-                <xctk:MaskedTextBox Mask="000000000" x:Name="idTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding Id, Mode=TwoWay}" Grid.Row="0" Margin="3,5" Grid.Column="1" GotKeyboardFocus="idTextBox_GotKeyboardFocus"/>
-                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Last Name:"/>
+                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Id" Style="{DynamicResource info}"/>
+                <xctk:MaskedTextBox Mask="000000000" x:Name="idTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding Id, Mode=TwoWay}" Grid.Row="0" Margin="3,5" Grid.Column="1" GotKeyboardFocus="idTextBox_GotKeyboardFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Last Name" Style="{DynamicResource info}"/>
                 <TextBox x:Name="lastNameTextBox" Text="{Binding LastName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3,5" Grid.Column="1"/>
-                <Label Grid.Row="2" Margin="3" Grid.Column="0" Content="First Name:"/>
+                <Label Grid.Row="2" Margin="3" Grid.Column="0" Content="First Name" Style="{DynamicResource info}"/>
                 <TextBox x:Name="firstNameTextBox" Text="{Binding FirstName, Mode=TwoWay}" Grid.Row="2" Margin="3,5" Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,5" HorizontalAlignment="Left" Grid.Column="0" Content="Gender:"/>
-                <ComboBox x:Name="genderComboBox" Grid.Row="3" Margin="3,5" SelectedItem="{Binding Gender, Mode=TwoWay}" Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Car Type:"/>
-                <ComboBox x:Name="carTypeComboBox" Grid.Row="4" Margin="3,5" SelectedItem="{Binding CarType, Mode=TwoWay}" Height="Auto" Grid.Column="1"/>
-                <Label Grid.Row="5" Margin="3" Grid.Column="0" Content="Date Of Birth:"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="3" Margin="3,5" HorizontalAlignment="Left" Grid.Column="0" Content="Gender"/>
+                <ComboBox x:Name="genderComboBox" Grid.Row="3" Margin="3,5" SelectedItem="{Binding Gender, Mode=TwoWay}" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Car Type:"/>
+                <ComboBox x:Name="carTypeComboBox" Grid.Row="4" Margin="3,5" SelectedItem="{Binding CarType, Mode=TwoWay}" Height="Auto" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label Style="{DynamicResource info}" Grid.Row="5" Margin="3" Grid.Column="0" Content="Date Of Birth:"/>
                 <DatePicker x:Name="dateOfBirthDatePicker" SelectedDate="{Binding DateOfBirth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3,5"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Max Distance:"/>
-                <xctk:ByteUpDown x:Name="maxDistanceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxDistance, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="7" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Max Weekly Tests:"/>
-                <xctk:ByteUpDown x:Name="maxWeeklyTestsTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxWeeklyTests, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="8" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Phone Number:"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Max Distance:"/>
+                <xctk:ByteUpDown x:Name="maxDistanceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxDistance, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1" HorizontalContentAlignment="Center"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="7" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Max Weekly Tests:"/>
+                <xctk:ByteUpDown x:Name="maxWeeklyTestsTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxWeeklyTests, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3"  Grid.Column="1" HorizontalContentAlignment="Center"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="8" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Phone Number:"/>
                 <TextBox x:Name="phoneNumberTextBox" GotKeyboardFocus="idTextBox_GotKeyboardFocus" PreviewTextInput="NumberValidationTextBox" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Margin="3"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="9" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Years Of Experience:"/>
-                <xctk:ByteUpDown x:Name="yearsOfExperienceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding YearsOfExperience, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Margin="3"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="10" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City:"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="9" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Years Of Experience:"/>
+                <xctk:ByteUpDown x:Name="yearsOfExperienceTextBox" PreviewTextInput="NumberValidationTextBox" Text="{Binding YearsOfExperience, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Margin="3"  Grid.Column="1" HorizontalContentAlignment="Center"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="10" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="City:"/>
                 <TextBox x:Name="city" Grid.Row="10" Margin="3,5"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="11" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street:"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="11" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Street:"/>
                 <TextBox x:Name="street" Grid.Row="11" Margin="3,5"  Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="12" Margin="3,5"  Grid.Column="0" Content="building number:"/>
+                <Label Style="{DynamicResource info}" VerticalAlignment="Center" Grid.Row="12" Margin="3,5"  Grid.Column="0" Content="building number:"/>
                 <TextBox x:Name="building_number" PreviewTextInput="NumberValidationTextBox" Grid.Row="12" Margin="3,5" Grid.Column="1"/>
                 <Grid Grid.ColumnSpan="2" Grid.Row="13" x:Name="WorkHours">
                     <Grid.RowDefinitions>
@@ -76,18 +77,18 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Content="Sunday"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="2" Content="Monday"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="3" Content="Tuesday"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="4" Content="Wednesday"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="5" Content="Thursday"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="0" Content="9:00 - 10:00"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="0" Content="10:00 - 11:00"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="0" Content="11:00 - 12:00"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="4" Grid.Column="0" Content="13:00 - 14:00"/>
-                    <Label HorizontalContentAlignment="Center" Grid.Row="5" Grid.Column="0" Content="14:00 - 15:00"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Content="Sunday"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="2" Content="Monday"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="3" Content="Tuesday"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="4" Content="Wednesday"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="5" Content="Thursday"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="0" Content="9:00 - 10:00"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="0" Content="10:00 - 11:00"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="0" Content="11:00 - 12:00"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="4" Grid.Column="0" Content="13:00 - 14:00"/>
+                    <Label Style="{DynamicResource info}" HorizontalContentAlignment="Center" Grid.Row="5" Grid.Column="0" Content="14:00 - 15:00"/>
                 </Grid>
-                <Button Margin="5" x:Name="addTesterButton" MouseLeave="addTesterButton_MouseLeave" Content="Add tester" Click="Button_Click" Grid.Row="14" Grid.ColumnSpan="2" MinHeight="30" FontSize="20">
+                <Button Margin="5" x:Name="addTesterButton" MouseLeave="addTesterButton_MouseLeave" Content="Add tester" Click="Button_Click" Grid.Row="14" Grid.ColumnSpan="2" MinHeight="30" FontSize="{DynamicResource BottonSize}" Background="White" Foreground="{DynamicResource GoogleBlue}" FontFamily="{DynamicResource BottonFont}">
                     <Button.Style>
                         <Style>
                             <Style.Triggers>

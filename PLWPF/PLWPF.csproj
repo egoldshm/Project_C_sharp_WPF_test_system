@@ -324,5 +324,14 @@
   <ItemGroup>
     <Resource Include="photos\LogoMOT-HE.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="photos\add.png" />
+    <Resource Include="photos\delete.png" />
+    <Resource Include="photos\game.png" />
+    <Resource Include="photos\home.png" />
+    <Resource Include="photos\loginAs.png" />
+    <Resource Include="photos\update.png" />
+    <Resource Include="photos\view.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

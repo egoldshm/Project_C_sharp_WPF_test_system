@@ -84,7 +84,7 @@ namespace PLWPF
 
         private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
-            errorMessage.Text = "";
+            MainWindow.doFunctionInFewSecond(() => { errorMessage.Text = ""; });
         }
     }
 }

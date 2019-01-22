@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Ibl;
 using BE;
+using System.ComponentModel;
+using System.Threading;
+
 namespace PLWPF
 {
     /// <summary>
@@ -91,6 +94,29 @@ namespace PLWPF
         private void Window_Closed1(object sender, EventArgs e)
         {
             newAccount.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// function that get Action and start it in delay of few second
+        /// </summary>
+        /// <param name="action">the action to do</param>
+        internal static void doFunctionInFewSecond(Action action)
+        {
+            BackgroundWorker backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += BackgroundWorker_DoWork;
+            backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
+            backgroundWorker.RunWorkerAsync(action);
+        }
+
+        private static void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            (e.Result as Action)();
+        }
+
+        private static void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(10000);
+            e.Result = e.Argument;
         }
     }
 }

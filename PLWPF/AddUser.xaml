@@ -26,18 +26,18 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <RadioButton x:Name="adminRadio" Content="admin" GroupName="type" VerticalAlignment="Center" Checked="AdminRadio_Checked"/>
-            <RadioButton x:Name="traineeRadio" Content="trainee" GroupName="type" Grid.Column="1" VerticalAlignment="Center" Checked="TraineeRadio_Checked"/>
-            <RadioButton x:Name="testerRadion" Content="tester" GroupName="type" Grid.Column="2" VerticalAlignment="Center" Checked="TesterRadion_Checked"/>
-            <RadioButton x:Name="teacherRadion" Content="teacher" GroupName="type" Grid.Column="3" VerticalAlignment="Center" Checked="TeacherRadion_Checked"/>
-            <RadioButton x:Name="SchoolRadion" Content="school" GroupName="type" Grid.Column="4" VerticalAlignment="Center" Checked="SchoolRadion_Checked"/>
+            <RadioButton x:Name="adminRadio" Content="admin" GroupName="type" VerticalAlignment="Center" Checked="AdminRadio_Checked" FontFamily="{DynamicResource FontLabel}" VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Left" Foreground="{DynamicResource GoogleBlue}"/>
+            <RadioButton x:Name="traineeRadio" Content="trainee" GroupName="type" Grid.Column="1" VerticalAlignment="Center" Checked="TraineeRadio_Checked" FontFamily="{DynamicResource FontLabel}" VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Left" Foreground="{DynamicResource GoogleBlue}"/>
+            <RadioButton x:Name="testerRadion" Content="tester" GroupName="type" Grid.Column="2" VerticalAlignment="Center" Checked="TesterRadion_Checked" FontFamily="{DynamicResource FontLabel}" VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Left" Foreground="{DynamicResource GoogleBlue}"/>
+            <RadioButton x:Name="teacherRadion" Content="teacher" GroupName="type" Grid.Column="3" VerticalAlignment="Center" Checked="TeacherRadion_Checked" FontFamily="{DynamicResource FontLabel}" VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Left" Foreground="{DynamicResource GoogleBlue}"/>
+            <RadioButton x:Name="SchoolRadion" Content="school" GroupName="type" Grid.Column="4" VerticalAlignment="Center" Checked="SchoolRadion_Checked" FontFamily="{DynamicResource FontLabel}" VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Left" Foreground="{DynamicResource GoogleBlue}"/>
         </Grid>
-        <Label Content="username:" Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <Label Style="{StaticResource info}" Content="username" Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
         <TextBox x:Name="Username" TextChanged="Username_TextChanged" Grid.Row="1" Margin="15" Grid.Column="1"/>
-        <Label Content="password:" Grid.Column="0" Grid.Row="2" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <Label Style="{StaticResource info}" Content="password" Grid.Column="0" Grid.Row="2" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
         <local:myPasswordBox x:Name="password" Grid.Row="2" Margin="15" Grid.Column="1" />
         <Label x:Name="chooseType" Grid.Row="3" Visibility="Hidden" Content="choose" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         <ComboBox x:Name="items" Visibility="Hidden" Grid.Row="3" Grid.Column="1" Margin="10,15"/>
-        <Button Content="create user"  Grid.Row="4" Grid.ColumnSpan="2" Margin="10,15" FontSize="35" Click="Button_Click"/>
+        <Button Content="create user"  Grid.Row="4" Grid.ColumnSpan="2" Margin="10,15" FontSize="{DynamicResource BottonSize}" Click="Button_Click" FontFamily="{DynamicResource BottonFont}" BorderBrush="{DynamicResource GoogleBlue}"/>
     </Grid>
 </UserControl>

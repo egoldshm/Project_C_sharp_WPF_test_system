@@ -166,7 +166,7 @@ namespace PLWPF
 
         private void addTesterButton_MouseLeave(object sender, MouseEventArgs e)
         {
-            errorMessage.Text = "";
+            MainWindow.doFunctionInFewSecond(() => { errorMessage.Text = ""; });
         }
     }
 }
