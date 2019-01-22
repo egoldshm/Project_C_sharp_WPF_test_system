@@ -28,7 +28,6 @@ namespace PLWPF
             var image = new Image();
             BitmapImage BitImg = new BitmapImage(new Uri(@".\photos\icon.jpg", UriKind.Relative));
             image.Source = BitImg;
-            icon.Icon = image;
         }
 
         public User user { get => _user; set 

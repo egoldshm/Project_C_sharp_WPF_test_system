@@ -41,18 +41,33 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem Header="Home">
+                    <TabItem>
+                        <!-- home -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Name="img" Height="25" Width="25" Source=".\photos\home.png" />
+                                <Label Content="Home" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
+
                         <Grid>
-                            <Label Content="Welcome to the AMAZINING d.m.v system ever!!!" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50" FontSize="23" Foreground="#FF4977D8"/>
-                            <Label FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,50" FontSize="18">
-                                <TextBlock Foreground="#FF74CF5F">This project was developed by Eitan Goldschmidt and Ariel Darshan <LineBreak></LineBreak>
+                            <Label Content="Welcome to the AMAZINING d.m.v system ever!!!" FontFamily="Cooper Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50" FontSize="28" Foreground="#FF4977D8"/>
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,50" FontSize="18">
+                                <TextBlock FontSize="24" Foreground="#FF74CF5F" FontFamily="Cooper Black">This project was developed by Eitan Goldschmidt and Ariel Darshan <LineBreak></LineBreak>
                                 during the course Mini Project in .NET and wpf with Mr. David Kidron</TextBlock>
                             </Label>
 
                             <Image Source=".\photos\LogoMOT-HE.png"/>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name="Add" Header="Add" >
+                    <TabItem x:Name="Add">
+                        <!-- add -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="25" Height="25" Source=".\photos\add.png" Stretch="Fill" />
+                                <Label x:Name="label" Content="Add" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="Add Trainee">
@@ -76,7 +91,14 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="delete" Header="Delete" >
+                    <TabItem x:Name ="delete">
+                        <!-- delete -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Width="25" Source=".\photos\delete.png" />
+                                <Label Content="delete" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="delete trainee">
@@ -91,7 +113,14 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="update" Header="Update">
+                    <TabItem x:Name ="update" >
+                        <!-- update -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Width="25" Source=".\photos\update.png" />
+                                <Label Content="update" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="update trainee">
@@ -106,7 +135,14 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="view" Header="View" >
+                    <TabItem x:Name ="view">
+                        <!-- view -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Width="25" Source=".\photos\view.png" />
+                                <Label Content="view" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
                         <Grid>
                             <TabControl TabStripPlacement="Left">
                                 <TabItem Header="view trainees" >
@@ -121,16 +157,31 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Login as">
+                    <TabItem x:Name="loginAs">
+                        <!-- view -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Width="25" Source=".\photos\LoginAs.png" />
+                                <Label Content="login as" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
                         <local:LoginAs x:Name="loginas"/>
                     </TabItem>
-                    <TabItem Header="free Time" x:Name="game">
+                    <TabItem x:Name="game">
+                        <!-- view -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Width="25" Source=".\photos\game.png" />
+                                <Label Content="free time!" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
                         <Button Content="Start Game" FontSize="45" Click="StartGameClick"/>
-
                     </TabItem>
                 </TabControl>
 
             </Grid>
         </Grid>
     </Grid>
+
 </Window>
+    

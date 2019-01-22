@@ -6,9 +6,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="LabelOfField.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
+
             <!--In this example, an implecit style for Calendar is defined elsewhere 
   in the application.  DatePickerCalendarStyle is based on the implicit 
   style so that the DatePicker will use the application's calendar style.-->
@@ -467,6 +465,8 @@
             <FontFamily x:Key="FontLabel">Narkisim</FontFamily>
             <FontFamily x:Key="BottonFont">Sitka Text</FontFamily>
             <System:Double x:Key="BottonSize">35</System:Double>
+            <SolidColorBrush x:Key="GoogleRed" Color="#FFD62D20"/>
+            <SolidColorBrush x:Key="GoogleYe" Color="#FFFFA700"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
