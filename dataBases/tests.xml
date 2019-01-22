@@ -14,26 +14,27 @@
       <Criterions>
         <Criterion>
           <Name>keeping distance</Name>
-          <Mode>NotDetermined</Mode>
+          <Mode>passed</Mode>
         </Criterion>
         <Criterion>
           <Name>reverse parking</Name>
-          <Mode>NotDetermined</Mode>
+          <Mode>Fails</Mode>
         </Criterion>
         <Criterion>
           <Name>looking at The mirror</Name>
-          <Mode>NotDetermined</Mode>
+          <Mode>passed</Mode>
         </Criterion>
         <Criterion>
           <Name>Indecating</Name>
-          <Mode>NotDetermined</Mode>
+          <Mode>passed</Mode>
         </Criterion>
         <Criterion>
           <Name>Right of way</Name>
-          <Mode>NotDetermined</Mode>
+          <Mode>passed</Mode>
         </Criterion>
       </Criterions>
     </Criterions>
-    <Pass>false</Pass>
+    <Pass>true</Pass>
+    <TesterNote>gdfhgf</TesterNote>
   </Test>
 </ArrayOfTest>

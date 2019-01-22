@@ -20,6 +20,11 @@ namespace BE
             _name = name ?? throw new ArgumentNullException(nameof(name));
             _mode = CriterionMode.NotDetermined;
         }
+        public Criterion(Criterion criterion)
+        {
+            _name = criterion.Name;
+            _mode = criterion.Mode;
+        }
         public Criterion(string name, CriterionMode mode) : this(name)
         {
             Mode = mode;
@@ -52,7 +57,13 @@ namespace BE
             Criterions = criterions ?? throw new ArgumentNullException(nameof(criterions));
         }
 
-        public List<Criterion> Criterions { get => _criterions; set => _criterions = value; }
+        public List<Criterion> Criterions { get => _criterions;
+            set
+            { _criterions = value;
+                if (_criterions.FindAll(c => c.Mode != CriterionMode.NotDetermined).Count > 0)
+                    _criterions.RemoveAll(c => c.Mode == CriterionMode.NotDetermined);
+            }
+        }
 
         public override string ToString()
         {

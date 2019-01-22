@@ -1,24 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfTester xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Tester>
-    <Id>322521303</Id>
-    <LastName>a</LastName>
-    <FirstName>b</FirstName>
-    <DateOfBirth>1977-01-26T00:00:00</DateOfBirth>
-    <Gender>Male</Gender>
-    <PhoneNumber>584007354</PhoneNumber>
-    <Address>
-      <street_name>שח"ל</street_name>
-      <building_number>12</building_number>
-      <city>ירושלים</city>
-    </Address>
-    <YearsOfExperience>12</YearsOfExperience>
-    <MaxWeeklyTests>50</MaxWeeklyTests>
-    <CarType>Private_Car</CarType>
-    <workDaysTostring>111101111101111101111101110101</workDaysTostring>
-    <MaxDistance>50</MaxDistance>
-  </Tester>
-  <Tester>
     <Id>123456782</Id>
     <LastName>gold</LastName>
     <FirstName>eitan</FirstName>
@@ -35,5 +17,23 @@
     <CarType>Private_Car</CarType>
     <workDaysTostring>100000100000000000100000100000</workDaysTostring>
     <MaxDistance>55</MaxDistance>
+  </Tester>
+  <Tester>
+    <Id>322521303</Id>
+    <LastName>a</LastName>
+    <FirstName>b</FirstName>
+    <DateOfBirth>2030-01-26T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>878</PhoneNumber>
+    <Address>
+      <street_name>hghg</street_name>
+      <building_number>5</building_number>
+      <city>vfg</city>
+    </Address>
+    <YearsOfExperience>12</YearsOfExperience>
+    <MaxWeeklyTests>50</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>111101111101111101111101110101</workDaysTostring>
+    <MaxDistance>50</MaxDistance>
   </Tester>
 </ArrayOfTester>

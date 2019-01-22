@@ -56,10 +56,10 @@ namespace PLWPF
         }
         private void resert()
         {
-            foreach (var item in gridCriterions.Children)
+            /*foreach (var item in gridCriterions.Children)
             {
                 gridCriterions.Children.Remove((UIElement)item);
-            }
+            }*/
         }
     }
 }

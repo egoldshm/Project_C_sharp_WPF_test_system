@@ -12,6 +12,9 @@
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="FontFamily" Value="Gisha"/>
             <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+            <Setter Property="FontSize" Value="{DynamicResource FontLabels}"/>
+            <Setter Property="Foreground" Value="{DynamicResource GoogleYe}"/>
         </Style>
     </UserControl.Resources>
     <ScrollViewer >
@@ -31,26 +34,26 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0"  Grid.Column="0" Content="Test Number:"  />
-                <Label x:Name="testNumberLabel" Grid.Row="0"  Grid.Column="1" Content="{Binding TestNumber}"/>
-                <Label  Grid.Row="1"  Grid.Column="0" Content="Trainee Id:"/>
-                <Label x:Name="traineeIdLabel" Grid.Row="1" Grid.Column="1" Content="{Binding TraineeId}"/>
-                <Label  Grid.Row="2" Grid.Column="0" Content="Tester Id:"  />
-                <Label x:Name="testerIdLabel"  Grid.Row="2" Grid.Column="1" Content="{Binding TesterId}"/>
+                <Label Style="{StaticResource info}" Grid.Row="0"  Grid.Column="0" Content="Test Number:"  />
+                <Label x:Name="testNumberLabel" Grid.Row="0"  Grid.Column="1" Content="{Binding TestNumber}" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleYe}"/>
+                <Label Style="{StaticResource info}" Grid.Row="1"  Grid.Column="0" Content="Trainee Id:"/>
+                <Label x:Name="traineeIdLabel" Grid.Row="1" Grid.Column="1" Content="{Binding TraineeId}" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleYe}"/>
+                <Label Style="{StaticResource info}" Grid.Row="2" Grid.Column="0" Content="Tester Id:"  />
+                <Label  x:Name="testerIdLabel"  Grid.Row="2" Grid.Column="1" Content="{Binding TesterId}" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleYe}"/>
+                <Label Style="{StaticResource info}" Grid.Row="3" Grid.Column="0" Content="Date Of Test:"/>
+                <Label x:Name="dateOfTestLabel" Grid.Row="3" Grid.Column="1" Content="{Binding DateOfTest}" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleYe}"/>
 
-                <Label  Grid.Row="3" Grid.Column="0" Content="Date Of Test:"/>
-                <Label x:Name="dateOfTestLabel" Grid.Row="3" Grid.Column="1" Content="{Binding DateOfTest}"/>
-                <Label  Visibility="Collapsed" Grid.Row="4" Grid.Column="0" Content="Pass:"/>
-                <CheckBox x:Name="passCheckBox" Visibility="Collapsed" IsEnabled="False" Grid.Row="4" IsChecked="{Binding Pass, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Column="1" Content=""/>
-                <Label  Visibility="Collapsed" Grid.Row="5" Grid.Column="0" Content="Real Date Of Test:" />
+                <Label Style="{StaticResource info}" Visibility="Collapsed" Grid.Row="4" Grid.Column="0" Content="Pass:"/>
+                <Label x:Name="passCheckBox" IsEnabled="False" Grid.Row="4" Visibility="Collapsed" Content="{Binding Pass}" Grid.Column="1" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleYe}"/>
+                <Label Style="{StaticResource info}" Visibility="Collapsed" Grid.Row="5" Grid.Column="0" Content="Real Date Of Test:" />
                 <Label x:Name="realDateOfTestLabel" Visibility="Collapsed"  Grid.Row="5" Grid.Column="1" Content="{Binding RealDateOfTest}" />
-                <Label  Grid.Row="6"  Visibility="Collapsed" Grid.Column="0" Content="Tester Note:"/>
-                <Label x:Name="testerNoteLabel" Visibility="Collapsed" Grid.Row="6" Grid.Column="1" Content="{Binding TesterNote}" />
-                <Label Visibility="Collapsed" Grid.Row="7" FontSize="16" Content="Criterions: " Foreground="Red"/>
-                <StackPanel Grid.Row="8" x:Name="gridCriterions" Grid.ColumnSpan="2" Visibility="Collapsed"/>
+                <Label Style="{StaticResource info}" Visibility="Collapsed" Grid.Row="6" FontSize="{DynamicResource FontLabels}" Content="Criterions: " Grid.ColumnSpan="2" Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" HorizontalAlignment="Center"/>
+                <StackPanel Grid.Row="7" x:Name="gridCriterions" Visibility="Collapsed" Grid.ColumnSpan="2"/>
+                <Label Style="{StaticResource info}"  Grid.Row="8" Visibility="Collapsed" Grid.Column="0" Content="Tester Note:"/>
+                <Label x:Name="testerNoteLabel" Grid.Row="8" Visibility="Collapsed" Grid.Column="1" Content="{Binding TesterNote}" Foreground="{DynamicResource GoogleYe}" FontSize="{DynamicResource FontLabels}" FontFamily="{DynamicResource FontLabel}" />
             </Grid>
 
         </Grid>

@@ -16,7 +16,7 @@
     <TransmissionLearned>Manual</TransmissionLearned>
     <SchoolName>a</SchoolName>
     <TeacherName>b</TeacherName>
-    <LessonsNumber>51</LessonsNumber>
+    <LessonsNumber>83</LessonsNumber>
   </Trainee>
   <Trainee>
     <Id>322521303</Id>
@@ -34,6 +34,6 @@
     <TransmissionLearned>Manual</TransmissionLearned>
     <SchoolName>0584007354</SchoolName>
     <TeacherName>555</TeacherName>
-    <LessonsNumber>50</LessonsNumber>
+    <LessonsNumber>59</LessonsNumber>
   </Trainee>
 </ArrayOfTrainee>

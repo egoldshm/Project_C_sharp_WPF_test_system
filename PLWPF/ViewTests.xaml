@@ -22,18 +22,18 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By trainee:"/>
-            <Label Grid.Row="1" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By tester:"/>
+            <Label FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By trainee:" Foreground="{DynamicResource GoogleBlue}" FontFamily="{DynamicResource FontLabel}"/>
+            <Label Grid.Row="1" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="By tester:" FontFamily="{DynamicResource FontLabel}" Foreground="{DynamicResource GoogleBlue}"/>
             <ComboBox Grid.Column="1" Margin="5" x:Name="trainee" SelectionChanged="comboBox_SelectionChanged"/>
             <ComboBox Grid.Column="1" Grid.Row="1" Margin="5" x:Name="tester" SelectionChanged="comboBox_SelectionChanged"/>
 
-            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked"  x:Name="successfulTests" Margin="10" IsChecked="True" Content="Show successful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top"/>
-            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked" x:Name="unsuccessfulTests" Margin="10" IsChecked="True" Content="Show unsuccessful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Center"/>
-            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked" x:Name="unfinishedTests" Margin="10" IsChecked="True" Content="Show unfinished tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Bottom"/>
+            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked"  x:Name="successfulTests" Margin="10" IsChecked="True" Content="Show successful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Foreground="{DynamicResource GoogleRed}" FontFamily="{DynamicResource FontLabel}" FontSize="17"/>
+            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked" x:Name="unsuccessfulTests" Margin="10" IsChecked="True" Content="Show unsuccessful tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Center" Foreground="{DynamicResource GoogleRed}" FontFamily="{DynamicResource FontLabel}" FontSize="17"/>
+            <CheckBox Grid.Column="2" Click="SuccessfulTests_Checked" x:Name="unfinishedTests" Margin="10" IsChecked="True" Content="Show unfinished tests" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Bottom" Foreground="{DynamicResource GoogleRed}" FontFamily="{DynamicResource FontLabel}" FontSize="17"/>
 
         </Grid>
         <local:ViewTest Grid.Row="1" Grid.RowSpan="2" x:Name="viewSingleTest" Visibility="Collapsed"/>
-        <Button x:Name="backButton" Content="Back to all the tests" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Margin="10" Click="backButton_Click" Visibility="Collapsed"/>
+        <Button x:Name="backButton" Content="Back to all the tests" Visibility="Hidden" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="{DynamicResource BottonSize}" Margin="10" Click="backButton_Click" FontFamily="{DynamicResource BottonFont}" BorderBrush="{DynamicResource GoogleBlue}"/>
         <Grid Grid.Row="1" x:Name="menu">
             <Grid.Resources>
                 <Style TargetType="Label">
@@ -52,12 +52,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Content="show details"/>
-            <Label Content="test number:" Grid.Column="1"/>
-            <Label Content="trainee:" Grid.Column="2"/>
-            <Label Content="tester:" Grid.Column="3"/>
-            <Label Content="date of test:" Grid.Column="4"/>
-            <Label Content="state:" Grid.Column="5"/>
+            <Label Content="show details" FontFamily="Sylfaen"/>
+            <Label Content="test number:" Grid.Column="1" FontFamily="Sylfaen"/>
+            <Label Content="trainee:" Grid.Column="2" FontFamily="Sylfaen"/>
+            <Label Content="tester:" Grid.Column="3" FontFamily="Sylfaen"/>
+            <Label Content="date of test:" Grid.Column="4" FontFamily="Sylfaen"/>
+            <Label Content="state:" Grid.Column="5" FontFamily="Sylfaen"/>
         </Grid>
         <StackPanel x:Name="TestsView" Grid.Row="2"/>
         <Grid.ContextMenu>
