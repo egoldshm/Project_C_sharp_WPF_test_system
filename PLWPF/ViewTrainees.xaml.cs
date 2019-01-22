@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 using BE;
 using Ibl;
 namespace PLWPF
@@ -33,6 +34,13 @@ namespace PLWPF
             list.DataContext = ToDisplay;
 
         }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
         /// <summary>
         /// function that reset the element that may to change for update changes. for admin use.
         /// </summary>
@@ -61,6 +69,7 @@ namespace PLWPF
             {
                 ToDisplay = new ObservableCollection<Trainee>();
             }
+            list.DataContext = ToDisplay;
         }
 
         private void Search(object sender, RoutedEventArgs e)
@@ -132,5 +141,20 @@ namespace PLWPF
 
         }
 
+        private void SearchID_Checked(object sender, RoutedEventArgs e)
+        {
+            if (SearchBar != null)
+            {
+                SearchBar.PreviewTextInput += NumberValidationTextBox;
+            }
+        }
+
+        private void SearchID_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (SearchBar != null)
+            {
+                SearchBar.PreviewTextInput -= NumberValidationTextBox;
+            }
+        }
     }
 }
