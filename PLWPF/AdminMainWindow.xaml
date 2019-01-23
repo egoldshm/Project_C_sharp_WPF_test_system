@@ -41,7 +41,7 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem>
+                    <TabItem x:Name="Home">
                         <!-- home -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -49,7 +49,7 @@
                                 <Label Content="Home" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
                             </StackPanel>
                         </TabItem.Header>
-
+                        
                         <Grid>
                             <Label Content="Welcome to the AMAZINING d.m.v system ever!!!" FontFamily="Cooper Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50" FontSize="28" Foreground="#FF4977D8"/>
                             <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,50" FontSize="18">
@@ -60,7 +60,7 @@
                             <Image Source=".\photos\LogoMOT-HE.png"/>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name="Add">
+                    <TabItem x:Name="Add" GotFocus="Add_GotFocus">
                         <!-- add -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -91,7 +91,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="delete">
+                    <TabItem x:Name ="delete" GotFocus="Delete_GotFocus">
                         <!-- delete -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -113,7 +113,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="update" >
+                    <TabItem x:Name ="update" GotFocus="Update_GotFocus">
                         <!-- update -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -135,7 +135,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name ="view">
+                    <TabItem x:Name ="view" GotFocus="View_GotFocus">
                         <!-- view -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -157,7 +157,7 @@
                             </TabControl>
                         </Grid>
                     </TabItem>
-                    <TabItem x:Name="loginAs">
+                    <TabItem x:Name="loginAs" GotFocus="LoginAs_GotFocus">
                         <!-- view -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -167,7 +167,7 @@
                         </TabItem.Header>
                         <local:LoginAs x:Name="loginas"/>
                     </TabItem>
-                    <TabItem x:Name="game">
+                    <TabItem x:Name="game" GotFocus="Game_GotFocus">
                         <!-- view -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">

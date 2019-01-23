@@ -60,36 +60,36 @@ namespace PLWPF
         /// </summary>
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (OldTab != null && OldTab != tabControl.SelectedValue.ToString())
-            {
-                if (view.IsSelected)
-                {
-                    viewTestersUsercontrol.initializeData();
-                    viewTraineeUserconrol.initializeData();
-                    ViewTest.AllExistTests = bl.GetAllTests();
-                }
-                if (delete.IsSelected)
-                {
-                    deleteTester_uc.initializeData();
-                    deleteTrainee_uc.initializeData();
-                    deleteTest_uc.initializeData();
-                }
-                if (update.IsSelected)
-                {
-                    updateTrainee_uc.initializeData();
-                    UpdateTester_uc.initializeData();
-                    finishTest_uc.initializeData();
-                    AddLessonToTrainee_uc.initializeData();
-                }
-                if (Add.IsSelected)
-                {
-                    AddLessonToTrainee_uc.initializeData();
-                    AddTest_uc.initializeData();
-                    AddAutoTest_uc.initializeData();
-                }
+            //if (OldTab != null && OldTab != tabControl.SelectedValue.ToString())
+            //{
+            //    if (view.IsSelected)
+            //    {
+            //        viewTestersUsercontrol.initializeData();
+            //        viewTraineeUserconrol.initializeData();
+            //        ViewTest.AllExistTests = bl.GetAllTests();
+            //    }
+            //    if (delete.IsSelected)
+            //    {
+            //        deleteTester_uc.initializeData();
+            //        deleteTrainee_uc.initializeData();
+            //        deleteTest_uc.initializeData();
+            //    }
+            //    if (update.IsSelected)
+            //    {
+            //        updateTrainee_uc.initializeData();
+            //        UpdateTester_uc.initializeData();
+            //        finishTest_uc.initializeData();
+            //        AddLessonToTrainee_uc.initializeData();
+            //    }
+            //    if (Add.IsSelected)
+            //    {
+            //        AddLessonToTrainee_uc.initializeData();
+            //        AddTest_uc.initializeData();
+            //        AddAutoTest_uc.initializeData();
+            //    }
                 
-                OldTab = tabControl.SelectedValue.ToString();
-            }
+            //    OldTab = tabControl.SelectedValue.ToString();
+            //}
         }
 
         /// <summary>
@@ -117,6 +117,45 @@ namespace PLWPF
             snakeView.BorderBrush = new SolidColorBrush(Colors.DarkRed);
             snakeView.BorderThickness = new Thickness(15, 20, 15, 20);
             game.Content = snakeView;
+        }
+
+        private void Add_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //AddLessonToTrainee_uc.initializeData();
+            //AddTest_uc.initializeData();
+            //AddAutoTest_uc.initializeData();
+        }
+
+        private void Delete_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //deleteTester_uc.initializeData();
+            //deleteTrainee_uc.initializeData();
+            //deleteTest_uc.initializeData();
+        }
+
+        private void Update_GotFocus(object sender, RoutedEventArgs e)
+        {
+            //updateTrainee_uc.initializeData();
+            //UpdateTester_uc.initializeData();
+            //finishTest_uc.initializeData();
+            //AddLessonToTrainee_uc.initializeData();
+        }
+
+        private void View_GotFocus(object sender, RoutedEventArgs e)
+        {
+            viewTestersUsercontrol.initializeData();
+            viewTraineeUserconrol.initializeData();
+            ViewTest.AllExistTests = bl.GetAllTests();
+        }
+
+        private void LoginAs_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Game_GotFocus(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
