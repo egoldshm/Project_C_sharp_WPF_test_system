@@ -119,43 +119,64 @@ namespace PLWPF
             game.Content = snakeView;
         }
 
+        private void Home_GotFocus(object sender, RoutedEventArgs e)
+        {
+            OldTab = "Home";
+        }
+
         private void Add_GotFocus(object sender, RoutedEventArgs e)
         {
-            //AddLessonToTrainee_uc.initializeData();
-            //AddTest_uc.initializeData();
-            //AddAutoTest_uc.initializeData();
+            if (OldTab != "Add")
+            {
+                AddLessonToTrainee_uc.initializeData();
+                AddTest_uc.initializeData();
+                AddAutoTest_uc.initializeData();
+            }
+            OldTab = "Add";
         }
 
         private void Delete_GotFocus(object sender, RoutedEventArgs e)
         {
-            //deleteTester_uc.initializeData();
-            //deleteTrainee_uc.initializeData();
-            //deleteTest_uc.initializeData();
+            if (OldTab != "Delete")
+            {
+                deleteTester_uc.initializeData();
+                deleteTrainee_uc.initializeData();
+                deleteTest_uc.initializeData();
+            }
+            OldTab = "Delete";
         }
 
         private void Update_GotFocus(object sender, RoutedEventArgs e)
         {
-            //updateTrainee_uc.initializeData();
-            //UpdateTester_uc.initializeData();
-            //finishTest_uc.initializeData();
-            //AddLessonToTrainee_uc.initializeData();
+            if (OldTab != "Update")
+            {
+                updateTrainee_uc.initializeData();
+                UpdateTester_uc.initializeData();
+                finishTest_uc.initializeData();
+                AddLessonToTrainee_uc.initializeData();
+            }
+            OldTab = "Update";
         }
 
         private void View_GotFocus(object sender, RoutedEventArgs e)
         {
-            viewTestersUsercontrol.initializeData();
-            viewTraineeUserconrol.initializeData();
-            ViewTest.AllExistTests = bl.GetAllTests();
+            if (OldTab != "View")
+            {
+                viewTestersUsercontrol.initializeData();
+                viewTraineeUserconrol.initializeData();
+                ViewTest.AllExistTests = bl.GetAllTests();
+            }
+            OldTab = "View";
         }
 
         private void LoginAs_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            OldTab = "Login As";
         }
 
         private void Game_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            OldTab = "Game";
         }
     }
 }

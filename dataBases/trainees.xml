@@ -2,21 +2,21 @@
 <ArrayOfTrainee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Trainee>
     <Id>322521303</Id>
-    <FirstName>hghg</FirstName>
-    <FamilyName>gfgh</FamilyName>
+    <FirstName>Eitan</FirstName>
+    <FamilyName>Goldsmith</FamilyName>
     <Gender>Male</Gender>
     <PhoneNumber>584007354</PhoneNumber>
     <Address>
-      <street_name>5</street_name>
-      <building_number>4</building_number>
-      <city>5</city>
+      <street_name>Gad</street_name>
+      <building_number>2</building_number>
+      <city>Bet Shemesh</city>
     </Address>
     <Birthday>0001-01-01T00:00:00</Birthday>
     <TypeCarLearned>Private_Car</TypeCarLearned>
     <TransmissionLearned>Manual</TransmissionLearned>
-    <SchoolName>0584007354</SchoolName>
-    <TeacherName>555</TeacherName>
-    <LessonsNumber>59</LessonsNumber>
+    <SchoolName>שבתאי</SchoolName>
+    <TeacherName>איציק</TeacherName>
+    <LessonsNumber>25</LessonsNumber>
   </Trainee>
   <Trainee>
     <Id>324218544</Id>
@@ -25,8 +25,8 @@
     <Gender>Male</Gender>
     <PhoneNumber>543488241</PhoneNumber>
     <Address>
-      <street_name>HaCHavatzelet</street_name>
-      <building_number>15</building_number>
+      <street_name>HaHavatzelet</street_name>
+      <building_number>16</building_number>
       <city>Bet Shemesh</city>
     </Address>
     <Birthday>2001-08-03T00:00:00</Birthday>

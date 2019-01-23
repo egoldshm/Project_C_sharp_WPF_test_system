@@ -38,8 +38,8 @@ namespace PLWPF
         public void initializeData()
         {
             var list = bl.GetAllTesters(Tester => bl.GetAllTests(test => test.TesterId == Tester.Id).Count == 0);
-            if (list.ToString() != idlist.ItemsSource.ToString())
-                this.idlist.ItemsSource = list;
+            //if (list.ToString() != idlist.ItemsSource.ToString())
+            this.idlist.ItemsSource = list;
         }
 
         /// <summary>

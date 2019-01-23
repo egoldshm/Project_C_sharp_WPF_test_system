@@ -32,8 +32,8 @@ namespace PLWPF
         public void initializeData()
         {
             var list= bl.GetAllTrainees(trainee => bl.GetAllTests(test => test.TraineeId == trainee.Id).Count == 0);
-            if (this.idlist.ItemsSource.ToString() != list.ToString())
-                this.idlist.ItemsSource = list;
+            //if (this.idlist.ItemsSource.ToString() != list.ToString())
+            this.idlist.ItemsSource = list;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -46,7 +46,6 @@ namespace PLWPF
                 {
                     bl.DeleteTrainee(id);
                     MessageBox.Show("deleted successfully");
-                    initializeData();
                 }
                 else
                 {
@@ -57,6 +56,11 @@ namespace PLWPF
             catch(Exception ex)
             {
                 MainWindow.ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                initializeData();
+                idlist.SelectedIndex = -1;
             }
         }
     }

@@ -32,8 +32,8 @@ namespace PLWPF
         public void initializeData()
         {
             var list = bl.GetAllTests();
-            if (list.ToString() != idlist.ItemsSource.ToString())
-                this.idlist.ItemsSource = list;
+            //if (list.ToString() != idlist.ItemsSource.ToString())
+            this.idlist.ItemsSource = list;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

@@ -41,7 +41,7 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem x:Name="Home">
+                    <TabItem x:Name="Home" GotFocus="Home_GotFocus">
                         <!-- home -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
@@ -158,7 +158,7 @@
                         </Grid>
                     </TabItem>
                     <TabItem x:Name="loginAs" GotFocus="LoginAs_GotFocus">
-                        <!-- view -->
+                        <!-- login as -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <Image Height="25" Width="25" Source=".\photos\LoginAs.png" />
@@ -168,7 +168,7 @@
                         <local:LoginAs x:Name="loginas"/>
                     </TabItem>
                     <TabItem x:Name="game" GotFocus="Game_GotFocus">
-                        <!-- view -->
+                        <!-- game -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <Image Height="25" Width="25" Source=".\photos\game.png" />
