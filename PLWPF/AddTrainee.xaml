@@ -8,8 +8,8 @@
              xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.AddTrainee"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400">
+    <ScrollViewer>
     <Grid>
-
         <Grid x:Name="input"  HorizontalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -106,4 +106,5 @@
         <TextBlock HorizontalAlignment="Center" x:Name="errorMessage" Foreground="Red" Background="White" VerticalAlignment="Bottom" />
 
     </Grid>
+    </ScrollViewer>
 </UserControl>
