@@ -28,6 +28,7 @@ namespace PLWPF
         public MainWindow()
         {
             InitializeComponent();
+            UserName.Focus();
         }
         public static void ErrorMessage(string message)
         {

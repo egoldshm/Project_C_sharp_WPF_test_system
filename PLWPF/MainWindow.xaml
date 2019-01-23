@@ -42,7 +42,7 @@
                     <ColumnDefinition Width="0.2*"/>
 
                 </Grid.ColumnDefinitions>
-                <Button Content="Login as your role" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="40" FontFamily="Cooper Black" Click="Button_Click" Foreground="{DynamicResource GoogleRed}"/>
+                <Button Content="Login as your role" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="40" FontFamily="Cooper Black" Click="Button_Click" IsDefault="True" Foreground="{DynamicResource GoogleRed}"/>
                 <Label x:Name="errorMessage" Visibility="Hidden" FontSize="18" Content="username or password is incorrect" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFF38888" Foreground="#FF0C0A01" BorderBrush="#FFFF0101" Margin="2"/>
                 <Button Content="Trainee and you havn't account? register here" x:Name="newAccount" Grid.Column="0" RenderTransformOrigin="0.5,0.5" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" FontSize="10" Click="Button_Click_CreateNewTraineeUser" Foreground="{DynamicResource GoogleYe}"/>
             </Grid>

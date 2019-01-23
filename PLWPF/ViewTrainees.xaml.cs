@@ -95,7 +95,7 @@ namespace PLWPF
             }
             else if (SearchName.IsChecked == true)
             {
-                throw new NotImplementedException();
+                trainees = new ObservableCollection<Trainee>(bl.GetAllTrainees(trainee => trainee.ToString().Contains(SearchBar.Text)));
             }
             else if (SearchSchool.IsChecked == true)
             {
