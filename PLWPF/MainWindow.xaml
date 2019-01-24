@@ -43,10 +43,15 @@
 
                 </Grid.ColumnDefinitions>
                 <Button Content="Login as your role" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="40" FontFamily="Cooper Black" Click="Button_Click" IsDefault="True" Foreground="{DynamicResource GoogleRed}"/>
-                <Label x:Name="errorMessage" Visibility="Hidden" FontSize="18" Content="username or password is incorrect" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFF38888" Foreground="#FF0C0A01" BorderBrush="#FFFF0101" Margin="2"/>
                 <Button Content="Trainee and you havn't account? register here" x:Name="newAccount" Grid.Column="0" RenderTransformOrigin="0.5,0.5" FontFamily="Bauhaus 93" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" FontSize="10" Click="Button_Click_CreateNewTraineeUser" Foreground="{DynamicResource GoogleYe}"/>
+
+                <StackPanel Margin="5">
+                    <Label x:Name="errorMessage" Visibility="Hidden" FontSize="18" Content="username or password is incorrect" Background="#FFF38888" Foreground="#FF0C0A01" BorderBrush="#FFFF0101" Margin="2"/>
+                    <Button x:Name="resetPassword" Visibility="Hidden" Content="Forgot your password?" Margin="2" Foreground="{DynamicResource GoogleRed}" FontFamily="{DynamicResource BottonFont}" FontSize="{DynamicResource FontLabels}" Click="resetPassword_Click"/>
+                </StackPanel>
             </Grid>
 
         </Grid>
+        <Path Data="M-301,12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="-301,12,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
     </Grid>
 </Window>

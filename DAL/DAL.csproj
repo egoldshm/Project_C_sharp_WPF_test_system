@@ -58,6 +58,10 @@
       <Project>{106a391f-7ba3-4f1b-a4ba-013489252256}</Project>
       <Name>DS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MailSender\MailSender.csproj">
+      <Project>{f8f2a2d0-cc8e-4d23-9449-96c9fd8a0341}</Project>
+      <Name>MailSender</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

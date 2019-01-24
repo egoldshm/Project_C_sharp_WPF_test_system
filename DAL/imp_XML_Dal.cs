@@ -87,7 +87,7 @@ namespace DAL
                             break;
 
                     }
-                    DataSource.users.Add(new User(role, newConnectTo, item.Element("username").Value, item.Element("password").Value));
+                    DataSource.users.Add(new User(role, newConnectTo, item.Element("username").Value, item.Element("password").Value, item.Element("email").Value));
                 }
             }
             catch
@@ -233,16 +233,18 @@ namespace DAL
 
         #region UsersFunctions
 
-        public bool CreateUser(string username, string password, User.RoleTypes roleTypes, object obj)
+        public bool CreateUser(string username, string password, User.RoleTypes roleTypes, object obj, string email)
         {
+
             string hashPassword = User.GetSha512FromString(password);
-            User user = new User(roleTypes, obj, username, hashPassword);
+            User user = new User(roleTypes, obj, username, hashPassword, email);
             if (DataSource.users.Any(_user => _user.Username == username))
                 return false;
             DataSource.users.Add(user);
             XElement usernameElement = new XElement("username", user.Username);
             XElement passswordElement = new XElement("password", user.Password);
             XElement roleElement = new XElement("role", user.role);
+            XElement emailElement = new XElement("email", user.EmailAddress);
             XElement objElement = null;
             switch (user.role)
             {
@@ -260,9 +262,27 @@ namespace DAL
                     objElement = new XElement("ConnectTo", null);
                     break;
             }
-            usersRoot.Add(new XElement("user", usernameElement, passswordElement, roleElement, objElement));
+            usersRoot.Add(new XElement("user", usernameElement, passswordElement, roleElement, objElement, emailElement));
+            usersRoot.Save(Configuration.FILE_USERS);
+            MailSender.MailSender.sendMail(email, username, "Welcome to our cool system!", $"Hello {username}\nYou registerd to our system! Welcome!" +
+                $"\nYou password is: {password}" +
+                $"\nYour role is: {roleTypes}" +
+                $"\nHere for you" +
+                $"\nEitan and Ariel");
+            return true;
+        }
+
+        public bool resetPassword(string username, string email)
+        {
+            User User = DataSource.users.Find(user => user.Username == username && user.EmailAddress == email);
+            if (User == null)
+                return false;
+            User.CreateNewPasswordAndChange();
+            XElement newUser = (from user in usersRoot.Elements() where usersRoot.Element("user").Element("username").Value == username select user).FirstOrDefault();
+            newUser.Element("password").Value = User.Password;
             usersRoot.Save(Configuration.FILE_USERS);
             return true;
+                
         }
 
         public User GetUser(string username, string password)

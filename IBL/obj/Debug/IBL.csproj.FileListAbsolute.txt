@@ -52,3 +52,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\IBL\obj\Debug\IBL.csproj.CoreCompileInput
 C:\Users\egoldshm\Source\Repos\NewRepo\IBL\obj\Debug\IBL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\NewRepo\IBL\obj\Debug\IBL.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\IBL\obj\Debug\IBL.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\IBL\bin\Debug\MailSender.dll
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\IBL\bin\Debug\MailSender.pdb

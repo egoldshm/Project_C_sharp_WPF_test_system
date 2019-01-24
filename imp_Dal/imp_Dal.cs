@@ -188,10 +188,16 @@ namespace imp_Dal
         #endregion Test
 
         #region User
-        public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj)
+
+        public bool resetPassword(string username, string email)
+        {
+            return false;
+        }
+
+        public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj, string email)
         {
             string hashPassword = User.GetSha512FromString(password);
-            User user = new User(roleTypes, obj, username, hashPassword);
+            User user = new User(roleTypes, obj, username, hashPassword, email);
             if (DS.DataSource.users.Any(_user => _user.Username == username))
                 return false;
             DS.DataSource.users.Add(user);

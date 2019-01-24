@@ -44,6 +44,7 @@ namespace PLWPF
                 this.UserName.Text = "";
                 password.Password = "";
                 errorMessage.Visibility = Visibility.Visible;
+                resetPassword.Visibility = Visibility.Visible;
             }
             else
             {
@@ -118,6 +119,12 @@ namespace PLWPF
         {
             Thread.Sleep(10000);
             e.Result = e.Argument;
+        }
+
+        private void resetPassword_Click(object sender, RoutedEventArgs e)
+        {
+            ResetPassword window = new ResetPassword();
+            window.ShowDialog();
         }
     }
 }

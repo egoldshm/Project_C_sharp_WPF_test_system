@@ -19,22 +19,8 @@ namespace PLWPF
     /// </summary>
     public partial class myPasswordBox : UserControl
     {
-        /// <summary>
-        /// generate new password in lenght and with some letters.
-        /// </summary>
-        /// <param name="length">int that set the lenght of the new password</param>
-        /// <returns>new random password</returns>
-        private string CreatePassword(int length)
-        {
-            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
-            while (0 < length--)
-            {
-                res.Append(valid[rnd.Next(valid.Length)]);
-            }
-            return res.ToString();
-        }
+        
+      
 
         /// <summary>
         /// if the password now if hidden or not.
@@ -92,7 +78,7 @@ namespace PLWPF
         /// </summary>
         private void Button_Click_generate(object sender, RoutedEventArgs e)
         {
-            string New_Password = CreatePassword(BE.Configuration.LENGHT_OF_RAND_PASSWORD);
+            string New_Password = BE.User.createNewPassword(BE.Configuration.LENGHT_OF_RAND_PASSWORD);
             inputPassword.Password = inputPassword_Text.Text = New_Password;
         }
 

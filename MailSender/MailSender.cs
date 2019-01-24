@@ -19,7 +19,7 @@ namespace MailSender
         /// <summary>
         /// name's who send the mails
         /// </summary>
-        const string MAIL_NAME = "From Name";
+        const string MAIL_NAME = "Driving system";
         /// <summary>
         /// password of who send the mails.
         /// </summary>
@@ -56,7 +56,7 @@ namespace MailSender
         /// </summary>
         private static void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            runWorkerCompleted();
+            runWorkerCompleted?.Invoke();
         }
 
         /// <summary>

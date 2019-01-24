@@ -76,3 +76,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\imp_Dal\obj\Debug\imp_Dal.csproj.CoreComp
 C:\Users\egoldshm\Source\Repos\NewRepo\imp_Dal\obj\Debug\imp_Dal.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\NewRepo\imp_Dal\obj\Debug\imp_Dal.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\imp_Dal\obj\Debug\imp_Dal.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\MailSender.dll
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\imp_Dal\bin\Debug\MailSender.pdb

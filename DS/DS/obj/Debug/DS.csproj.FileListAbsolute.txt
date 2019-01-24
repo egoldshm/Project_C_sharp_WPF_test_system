@@ -52,3 +52,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.csproj.CoreCompileInpu
 C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\DS\DS\obj\Debug\DS.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\MailSender.dll
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\DS\DS\bin\Debug\MailSender.pdb

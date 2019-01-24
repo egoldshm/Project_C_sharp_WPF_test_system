@@ -60,3 +60,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.csproj.CoreCompileInput
 C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\DAL\obj\Debug\DAL.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\DAL\bin\Debug\MailSender.dll
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\DAL\bin\Debug\MailSender.pdb

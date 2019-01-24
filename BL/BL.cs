@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace BL
 {
+
     public class BL : IBL
     {
         private static IDal dal;
@@ -18,26 +19,26 @@ namespace BL
             //Init();
         }
 
-        private void Init()
-        {
-            try
-            {
-                CreateUser("eitan", "4545", User.RoleTypes.Admin, null);
-                CreateUser("Ariel", "hello world", User.RoleTypes.Admin, null);
-                AddTrainee(new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
-                CreateUser("ariel", "4545", User.RoleTypes.Trainee, new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
-                AddTester(new Tester(324218544, "Coren", "Eyal", DateTime.Parse("16.10.1970"), Gender.Male, 0581234567, new Address(), 15, 3, CarType.Private_Car, new bool[5, 6], 100));
-                AddFutureTest(new Test(324218544, 324218544, DateTime.Parse("1.2.2019"), new Address()));
-                AddTrainee(new Trainee(322521303, "eitan", "goldshmidt", Gender.Male, 0584007354, new Address(), DateTime.Parse("26.11.2000"), CarType.Private_Car, TransmissionType.Manual, "yatmal", "doron", 30));
-                AddTester(new Tester(324218544));
-                AddTrainee(new Trainee(123456789));
-                AddFutureTest(new Test(new Tester(0), new Trainee(0)));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //private void Init()
+        //{
+        //    try
+        //    {
+        //        CreateUser("eitan", "4545", User.RoleTypes.Admin, null);
+        //        CreateUser("Ariel", "hello world", User.RoleTypes.Admin, null);
+        //        AddTrainee(new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
+        //        CreateUser("ariel", "4545", User.RoleTypes.Trainee, new Trainee(324218544, "Darshan", "Ariel", Gender.Male, 0584007353, new Address(), DateTime.Parse("16.10.2000"), CarType.Private_Car, TransmissionType.Manual, "a", "b", 30));
+        //        AddTester(new Tester(324218544, "Coren", "Eyal", DateTime.Parse("16.10.1970"), Gender.Male, 0581234567, new Address(), 15, 3, CarType.Private_Car, new bool[5, 6], 100));
+        //        AddFutureTest(new Test(324218544, 324218544, DateTime.Parse("1.2.2019"), new Address()));
+        //        AddTrainee(new Trainee(322521303, "eitan", "goldshmidt", Gender.Male, 0584007354, new Address(), DateTime.Parse("26.11.2000"), CarType.Private_Car, TransmissionType.Manual, "yatmal", "doron", 30));
+        //        AddTester(new Tester(324218544));
+        //        AddTrainee(new Trainee(123456789));
+        //        AddFutureTest(new Test(new Tester(0), new Trainee(0)));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
 
         /// <summary>
         /// function that get a ID and return if is valid israeli number or not.
@@ -413,10 +414,19 @@ namespace BL
 
         #region User
 
-        public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj)
+        public static bool IsValidEmailAddress(string s)
+        {
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            return regex.IsMatch(s);
+        }
+        public bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj, string email)
         {
             if (username == string.Empty)
                 throw new Exception("username is empty");
+            if (email == string.Empty)
+                throw new Exception("email is empty");
+            if (!IsValidEmailAddress(email))
+                throw new Exception("email is not valid email address");
             if (password == string.Empty)
                 throw new Exception("password is empty");
             if (roleTypes == User.RoleTypes.School && !(obj is string))
@@ -427,7 +437,7 @@ namespace BL
                 throw new Exception("to user as trainee should be connect to Trainee");
             if (roleTypes == User.RoleTypes.Tester && !(obj is Tester))
                 throw new Exception("to user as Tester should be connect to Tester");
-            return dal.CreateUser(username, password, roleTypes, obj);
+            return dal.CreateUser(username, password, roleTypes, obj, email);
         }
 
         public BE.User GetUser(string username, string password)
@@ -440,6 +450,12 @@ namespace BL
             return dal.ChangePassword(user, OldPassword, NewPassword);
         }
 
+        public bool resetPassword(string username, string email)
+        {
+            return dal.resetPassword(username, email);
+        }
+
+        
         #endregion User
     }
 }

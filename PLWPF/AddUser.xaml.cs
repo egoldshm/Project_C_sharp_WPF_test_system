@@ -19,7 +19,7 @@ namespace PLWPF
     /// Interaction logic for AddUser.xaml
     /// </summary>
     /// 
-    
+
     public partial class AddUser : UserControl
     {
         User.RoleTypes? role = null;
@@ -28,10 +28,15 @@ namespace PLWPF
         {
             InitializeComponent();
         }
+        public static bool IsValidEmailAddress(string s)
+        {
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            return regex.IsMatch(s);
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(role == null)
+            if (role == null)
             {
                 MainWindow.ErrorMessage("choose role");
                 return;
@@ -57,15 +62,16 @@ namespace PLWPF
                     MainWindow.ErrorMessage("one or more from the nessery box empty");
                 else
                 {
-                    bl.CreateUser(Username.Text, password.Password, (User.RoleTypes)role, items.SelectionBoxItem);
+                    bl.CreateUser(Username.Text, password.Password, (User.RoleTypes)role, items.SelectionBoxItem, email.Text);
                     Username.Text = string.Empty;
                     password.Password = string.Empty;
-                    MessageBox.Show("successe", "new user created successfully",MessageBoxButton.OK,MessageBoxImage.Information);
+                    email.Text = string.Empty;
+                    MessageBox.Show("successe", "new user created successfully", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MainWindow.ErrorMessage(ex.Message);
+                message.Content = ex.Message;
             }
         }
 
@@ -123,5 +129,21 @@ namespace PLWPF
         {
             password.Background = null;
         }
+
+        private void email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (IsValidEmailAddress(email.Text))
+            {
+                email.BorderBrush = null;
+                createButton.IsEnabled = true;
+            }
+            else
+            {
+                email.BorderBrush = new SolidColorBrush(Colors.Red);
+                email.BorderThickness = new Thickness(3);
+                createButton.IsEnabled = false;
+            }
+        }
     }
+
 }

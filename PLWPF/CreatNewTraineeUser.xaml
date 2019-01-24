@@ -39,13 +39,17 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label Content="Enter your id:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
                     <TextBox Grid.Column="1" MaxLength="9" x:Name="inputId" PreviewTextInput="NumberValidationTextBox" Grid.Row="0" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
                     <Label Grid.Row="1" Content="Enter your username:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="inputUsername" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
                     <Label Grid.Row="2" Content="Enter your new password:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
-                    <local:myPasswordBox Grid.Row="2" Grid.Column="1" x:Name="inputPassword"/>
+                    <local:myPasswordBox Grid.Row="3" Grid.Column="1" x:Name="inputPassword"/>
+                    <Label Grid.Row="2" Content="Enter your new email address:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
+                    <local:myPasswordBox Grid.Row="3" Grid.Column="1" x:Name="mail"/>
+
                 </Grid>
                 <Button Grid.Row="2" Content="Create user" FontSize="50" Margin="5" Background="White" Click="Button_Click_1"/>
             </Grid>

@@ -116,3 +116,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\FactoryBL\obj\Debug\FactoryBL.csproj.Core
 C:\Users\egoldshm\Source\Repos\NewRepo\FactoryBL\obj\Debug\FactoryBL.csproj.CopyComplete
 C:\Users\egoldshm\Source\Repos\NewRepo\FactoryBL\obj\Debug\FactoryBL.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\FactoryBL\obj\Debug\FactoryBL.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\MailSender.dll
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\MailSender.pdb

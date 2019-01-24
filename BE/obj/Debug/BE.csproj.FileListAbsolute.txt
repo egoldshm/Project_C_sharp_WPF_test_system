@@ -33,3 +33,6 @@ C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.csprojAssemblyReference.c
 C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\BE\obj\Debug\BE.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\BE\bin\Debug\MailSender.dll
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\BE\bin\Debug\MailSender.pdb
+C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\BE\obj\Debug\BE.csproj.CopyComplete

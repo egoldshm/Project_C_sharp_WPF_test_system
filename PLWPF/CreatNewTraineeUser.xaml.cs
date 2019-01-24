@@ -52,7 +52,7 @@ namespace PLWPF
             }
             else
             {
-                if (!bl.CreateUser(username, password, User.RoleTypes.Trainee, trainee))
+                if (!bl.CreateUser(username, password, User.RoleTypes.Trainee, trainee, mail.Test))
                 {
                     MainWindow.ErrorMessage(string.Format("Trainee with username {0} already exist.", username));
                     clearTestsBox();
@@ -85,6 +85,12 @@ namespace PLWPF
             addTraineeUsercontol.traineeAdded += AddTraineeUsercontol_traineeAdded;
             this.MinHeight += 50;
             this.Height += 50;
+        }
+
+        public static bool IsValidEmailAddress(string s)
+        {
+            Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            return regex.IsMatch(s);
         }
 
         private void AddTraineeUsercontol_traineeAdded(object sender, EventArgs e)

@@ -4,18 +4,14 @@
     <username>eitan</username>
     <password>4f2b22c6793707a59024a47a837d618bc9ef174869a8157ddff6ff765d917cb23fc406e753c172065fafb8b47c39ba399690a5caa059730f88c6ec81c2967288</password>
     <role>Admin</role>
+    <email>eitntt@gmail.com</email>
     <ConnectTo />
   </user>
   <user>
-    <username>david</username>
-    <password>fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe</password>
+    <username>eitan2</username>
+    <password>4f2b22c6793707a59024a47a837d618bc9ef174869a8157ddff6ff765d917cb23fc406e753c172065fafb8b47c39ba399690a5caa059730f88c6ec81c2967288</password>
     <role>Admin</role>
     <ConnectTo />
-  </user>
-  <user>
-    <username>a</username>
-    <password>31ca225e740f1937b02412b006931d555a6f10e4debc34bb7f9e5ee7a3e8b06f80a5e0611c6c92d9e16e58662f807a204ecef041220548608bb4a31613e51523</password>
-    <role>Admin</role>
-    <ConnectTo />
+    <email>egoldshm@gmail.com</email>
   </user>
 </users>

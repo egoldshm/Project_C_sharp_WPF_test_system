@@ -56,5 +56,11 @@
   <ItemGroup>
     <None Include="Properties\DataSources\Tester.datasource" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MailSender\MailSender.csproj">
+      <Project>{f8f2a2d0-cc8e-4d23-9449-96c9fd8a0341}</Project>
+      <Name>MailSender</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

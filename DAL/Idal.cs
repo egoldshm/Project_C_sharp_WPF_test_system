@@ -138,7 +138,9 @@ namespace DAL
 
         #region User
 
-        bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj);
+        bool CreateUser(string username, string password, BE.User.RoleTypes roleTypes, object obj, string email);
+
+        bool resetPassword(string username, string email);
 
         BE.User GetUser(string username, string password);
 
