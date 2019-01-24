@@ -14,4 +14,11 @@
     <ConnectTo />
     <email>egoldshm@gmail.com</email>
   </user>
+  <user>
+    <username>ariel.dars2@gmail.com </username>
+    <password>f6211ac1226933efa566551a3f3555a252cf21b0a5bf76d376880ba1b83682bdf95631dc312e47deed79735d63153184a8f5ba792b129eaf47d6ae66516e581e</password>
+    <role>Admin</role>
+    <ConnectTo />
+    <email>ariel.dars2@gmail.com</email>
+  </user>
 </users>
