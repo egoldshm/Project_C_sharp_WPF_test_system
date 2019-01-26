@@ -114,3 +114,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\BL\obj\Debug\BL.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\BL\obj\Debug\BL.pdb
 C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\BL\bin\Debug\MailSender.dll
 C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\BL\bin\Debug\MailSender.pdb
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BL\bin\Debug\MailSender.dll
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\BL\bin\Debug\MailSender.pdb

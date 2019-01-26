@@ -167,6 +167,16 @@
                         </TabItem.Header>
                         <local:LoginAs x:Name="loginas"/>
                     </TabItem>
+                    <TabItem x:Name="statisticalTab" GotFocus="StatisticalTab_GotFocus">
+                        <!-- statistical -->
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="25" Width="25" Source=".\photos\.png" />
+                                <Label Content="Statistical Information" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <local:StatisticalInformation x:Name="statisticalInformation"/>
+                    </TabItem>
                     <TabItem x:Name="game" GotFocus="Game_GotFocus">
                         <!-- game -->
                         <TabItem.Header>
@@ -178,7 +188,7 @@
                         <Button Content="Start Game" FontSize="45" Click="StartGameClick"/>
                     </TabItem>
                 </TabControl>
-
+               
             </Grid>
         </Grid>
     </Grid>

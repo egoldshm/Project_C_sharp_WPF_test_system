@@ -64,7 +64,6 @@ namespace PLWPF
                 bl.FinishTest(id, new CriterionsOfTest(newList), pass, note);
                 tests.ItemsSource = bl.GetAllTests(test => test.Criterions.Criterions.Any(c => c.Mode == CriterionMode.NotDetermined));
                 TesterNote.Text = "";
-                realDateOfTest.Text = "";
                 PassTest.IsChecked = false;
             }
             catch (Exception ex)

@@ -100,6 +100,7 @@
     <Compile Include="ChangePassword.xaml.cs">
       <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConvetorToIsEnable.cs" />
     <Compile Include="CreatNewTraineeUser.xaml.cs">
       <DependentUpon>CreatNewTraineeUser.xaml</DependentUpon>
     </Compile>
@@ -126,6 +127,9 @@
     </Compile>
     <Compile Include="showInfoAboutTrainee.xaml.cs">
       <DependentUpon>showInfoAboutTrainee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticalInformation.xaml.cs">
+      <DependentUpon>StatisticalInformation.xaml</DependentUpon>
     </Compile>
     <Compile Include="TesterMainWindow.xaml.cs">
       <DependentUpon>TesterMainWindow.xaml</DependentUpon>
@@ -231,6 +235,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="showInfoAboutTrainee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatisticalInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

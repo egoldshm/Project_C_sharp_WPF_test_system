@@ -178,5 +178,10 @@ namespace PLWPF
         {
             OldTab = "Game";
         }
+
+        private void StatisticalTab_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

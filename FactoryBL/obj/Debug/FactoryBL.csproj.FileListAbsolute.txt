@@ -118,3 +118,5 @@ C:\Users\egoldshm\Source\Repos\NewRepo\FactoryBL\obj\Debug\FactoryBL.dll
 C:\Users\egoldshm\Source\Repos\NewRepo\FactoryBL\obj\Debug\FactoryBL.pdb
 C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\MailSender.dll
 C:\Users\egoldshm\source\repos\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\MailSender.pdb
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\MailSender.dll
+C:\Users\eitan\Source\Repos\egoldshm\mini-project-Eitan-Ariel-2\FactoryBL\bin\Debug\MailSender.pdb

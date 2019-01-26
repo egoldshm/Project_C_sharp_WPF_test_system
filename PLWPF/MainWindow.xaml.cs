@@ -125,6 +125,8 @@ namespace PLWPF
         {
             ResetPassword window = new ResetPassword();
             window.ShowDialog();
+            errorMessage.Visibility = Visibility.Hidden;
+            resetPassword.Visibility = Visibility.Hidden;
         }
     }
 }
