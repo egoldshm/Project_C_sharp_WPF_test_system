@@ -48,11 +48,15 @@ namespace PLWPF
             {
                 TraineeData.Visibility = Visibility.Visible;
                 TesterData.Visibility = Visibility.Hidden;
+                messageToSelect.Visibility = Visibility.Hidden;
+
                 traineeInfo.Children.Clear();
                 List<Trainee> list = new List<Trainee>(items.SelectedItems.Cast<Trainee>());
                 if (list.Count == 0)
                 {
                     TraineeData.Visibility = Visibility.Hidden;
+                    messageToSelect.Visibility = Visibility.Visible;
+
                     return;
                 }
                 //Add data about the trainees:
@@ -105,12 +109,14 @@ namespace PLWPF
             {
                 TraineeData.Visibility = Visibility.Hidden;
                 TesterData.Visibility = Visibility.Visible;
+                messageToSelect.Visibility = Visibility.Hidden;
                 List<Tester> list = new List<Tester>(items.SelectedItems.Cast<Tester>());
                 testerInfo.Children.Clear();
 
                 if (list.Count == 0)
                 {
                     TesterData.Visibility = Visibility.Hidden;
+                    messageToSelect.Visibility = Visibility.Visible;
                     return;
                 }
                 //Add data about the testers:

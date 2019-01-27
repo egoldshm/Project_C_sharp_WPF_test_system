@@ -98,10 +98,7 @@ namespace PLWPF
             inputPassword.Password = inputPassword_Text.Text = New_Password;
         }
 
-        private void inputPassword_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            inputPassword_Text.Text = inputPassword.Password;
-        }
+     
 
         private void inputPassword_Text_TextChanged(object sender, TextChangedEventArgs e)
         {

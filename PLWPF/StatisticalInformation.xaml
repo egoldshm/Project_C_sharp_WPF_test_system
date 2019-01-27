@@ -26,6 +26,10 @@
                 <ComboBoxItem Content="Testers" Selected="tester_Selected" HorizontalContentAlignment="Center" FontFamily="Segoe UI Emoji" FontSize="20"/>
             </ComboBox>
         </Grid>
+        <Grid Grid.Row="1" x:Name="messageToSelect">
+            <Label Content="Choose type and items to show" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="35" FontFamily="Snap ITC" Foreground="{DynamicResource GoogleGreen}"/>
+
+        </Grid>
         <Grid Grid.Row="1" Visibility="Hidden" x:Name="TraineeData">
             <!-- Trainees:-->
             <Grid.RowDefinitions>

@@ -55,6 +55,7 @@ namespace PLWPF
                 message.Visibility = Visibility.Visible;
                 message.Content = "new password sended to your email.";
                 message.Foreground = new SolidColorBrush(Colors.Green);
+                createButton.IsEnabled = false;
                 backgroudworker.DoWork += Backgroudworker_DoWork;
                 backgroudworker.RunWorkerCompleted += Backgroudworker_RunWorkerCompleted;
                 backgroudworker.RunWorkerAsync();
