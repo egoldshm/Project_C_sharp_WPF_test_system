@@ -9,102 +9,116 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400">
     <ScrollViewer>
-    <Grid>
-        <Grid x:Name="input"  HorizontalAlignment="Stretch">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label Style="{StaticResource info}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Birthday"/>
-            <DatePicker x:Name="birthdayDatePicker"  SelectedDate="{Binding Birthday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Style="{StaticResource info}" Grid.Row="1" Margin="3,3,0,3" HorizontalAlignment="Left" Grid.Column="0" Content="Family Name"/>
-            <TextBox x:Name="familyNameTextBox" Text="{Binding FamilyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="2" Margin="3" Grid.Column="0" Content="First Name"/>
-            <TextBox x:Name="firstNameTextBox" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="3" Margin="3" Grid.Column="0" Content="Gender"/>
-            <ComboBox x:Name="genderComboBox" Grid.Row="3" Margin="5" SelectedItem="{Binding Gender, Mode=TwoWay}" Grid.Column="1" HorizontalContentAlignment="Center"/>
-            <Label Style="{StaticResource info}" Grid.Row="4" Margin="3" Grid.Column="0" Content="Id"/>
-            <xctk:MaskedTextBox Mask="000000000" x:Name="idTextBox" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Style="{StaticResource info}" Grid.Row="5" Margin="3" Grid.Column="0" Content="Lessons Number" />
-            <xctk:ByteUpDown HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" x:Name="lessonsNumberTextBox" PreviewTextInput="NumberValidationTextBox" MaxLength="3" Text="{Binding LessonsNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="6" Margin="3" Grid.Column="0" Content="Phone Number"/>
-            <TextBox x:Name="phoneNumberTextBox" MaxLength="11" PreviewTextInput="NumberValidationTextBox" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="7" Margin="3" Grid.Column="0" Content="School Name"/>
-            <TextBox x:Name="schoolNameTextBox" Text="{Binding SchoolName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="8" Margin="3" Grid.Column="0" Content="Teacher Name"/>
-            <TextBox x:Name="teacherNameTextBox" Text="{Binding TeacherName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="9" Margin="3" Grid.Column="0" Content="Transmission Learned"/>
-            <ComboBox x:Name="transmissionLearnedComboBox" Grid.Row="9" SelectedItem="{Binding TransmissionLearned, Mode=TwoWay}" Grid.Column="1" Margin="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Style="{StaticResource info}" Grid.Row="10"  Grid.Column="0" Content="Type Car Learned"/>
-            <ComboBox x:Name="typeCarLearnedComboBox"  Grid.Row="10" SelectedItem="{Binding TypeCarLearned, Mode=TwoWay}" Grid.Column="1" Margin="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Style="{StaticResource info}" Grid.Row="11" Margin="3" Grid.Column="0" Content="city"/>
-            <TextBox x:Name="city" Grid.Row="11" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="12" Margin="3" Grid.Column="0" Content="Street name"/>
-            <TextBox x:Name="street_name" Grid.Row="12" Margin="3" Grid.Column="1"/>
-            <Label Style="{StaticResource info}" Grid.Row="13" Margin="3" Grid.Column="0" Content="Building number"/>
-            <TextBox x:Name="building_number" MaxLength="5" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Margin="3" Grid.Column="1"/>
-            <Button Content="Add trainee" Grid.Row="14" Grid.ColumnSpan="2" Margin="2" MouseLeave="Button_MouseLeave" HorizontalAlignment="Stretch" Click="Button_Click" FontFamily="{DynamicResource BottonFont}" FontSize="{DynamicResource BottonSize}" BorderBrush="{DynamicResource GoogleBlue}" Background="White">
-                <Button.Style>
-                    <Style>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=birthdayDatePicker, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=familyNameTextBox, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=firstNameTextBox, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=idTextBox, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=lessonsNumberTextBox, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=phoneNumberTextBox, Path=Text}" Value="0">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=schoolNameTextBox, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=teacherNameTextBox, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=street_name, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=building_number, Path=Text}" Value="">
-                                <Setter Property="Button.IsEnabled" Value="false"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
+        <Grid>
+            <StackPanel>
+                <!--<Label x:Name="OutputLabel" Content="" HorizontalAlignment="Center" Foreground="{DynamicResource GoogleGreen}" />-->
+                <TextBlock HorizontalAlignment="Center" x:Name="errorMessage" Background="White" Foreground="{DynamicResource GoogleGreen}" />
+                <Grid x:Name="input"  HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource info}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Birthday"/>
+                    <DatePicker x:Name="birthdayDatePicker"  SelectedDate="{Binding Birthday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Style="{StaticResource info}" Grid.Row="1" Margin="3,3,0,3" HorizontalAlignment="Left" Grid.Column="0" Content="Family Name"/>
+                    <TextBox x:Name="familyNameTextBox" Text="{Binding FamilyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="2" Margin="3" Grid.Column="0" Content="First Name"/>
+                    <TextBox x:Name="firstNameTextBox" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="3" Margin="3" Grid.Column="0" Content="Gender"/>
+                    <ComboBox x:Name="genderComboBox" Grid.Row="3" Margin="5" SelectedItem="{Binding Gender, Mode=TwoWay}" Grid.Column="1" HorizontalContentAlignment="Center"/>
+                    <Label Style="{StaticResource info}" Grid.Row="4" Margin="3" Grid.Column="0" Content="Id"/>
+                    <xctk:MaskedTextBox Mask="000000000" x:Name="idTextBox" MaxLength="9" PreviewTextInput="NumberValidationTextBox" Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Style="{StaticResource info}" Grid.Row="5" Margin="3" Grid.Column="0" Content="Lessons Number" />
+                    <xctk:ByteUpDown HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" x:Name="lessonsNumberTextBox" PreviewTextInput="NumberValidationTextBox" MaxLength="3" Text="{Binding LessonsNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="6" Margin="3" Grid.Column="0" Content="Phone Number"/>
+                    <TextBox x:Name="phoneNumberTextBox" MaxLength="11" PreviewTextInput="NumberValidationTextBox" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="7" Margin="3" Grid.Column="0" Content="School Name"/>
+                    <TextBox x:Name="schoolNameTextBox" Text="{Binding SchoolName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="8" Margin="3" Grid.Column="0" Content="Teacher Name"/>
+                    <TextBox x:Name="teacherNameTextBox" Text="{Binding TeacherName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="9" Margin="3" Grid.Column="0" Content="Transmission Learned"/>
+                    <ComboBox x:Name="transmissionLearnedComboBox" Grid.Row="9" SelectedItem="{Binding TransmissionLearned, Mode=TwoWay}" Grid.Column="1" Margin="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Style="{StaticResource info}" Grid.Row="10"  Grid.Column="0" Content="Type Car Learned"/>
+                    <ComboBox x:Name="typeCarLearnedComboBox"  Grid.Row="10" SelectedItem="{Binding TypeCarLearned, Mode=TwoWay}" Grid.Column="1" Margin="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Style="{StaticResource info}" Grid.Row="11" Margin="3" Grid.Column="0" Content="city"/>
+                    <TextBox x:Name="city" Grid.Row="11" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="12" Margin="3" Grid.Column="0" Content="Street name"/>
+                    <TextBox x:Name="street_name" Grid.Row="12" Margin="3" Grid.Column="1"/>
+                    <Label Style="{StaticResource info}" Grid.Row="13" Margin="3" Grid.Column="0" Content="Building number"/>
+                    <TextBox x:Name="building_number" MaxLength="5" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Margin="3" Grid.Column="1"/>
+                    <Button Content="Add trainee" Grid.Row="14" Grid.ColumnSpan="2" Margin="2" MouseLeave="Button_MouseLeave" HorizontalAlignment="Stretch" Click="Button_Click" FontFamily="{DynamicResource BottonFont}" FontSize="{DynamicResource BottonSize}" BorderBrush="{DynamicResource GoogleBlue}" Background="White" IsDefault="True">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=birthdayDatePicker, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=familyNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=firstNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=idTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=lessonsNumberTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=phoneNumberTextBox, Path=Text}" Value="0">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=schoolNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=teacherNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=street_name, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=building_number, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="false"/>
+                                        <Setter Property="Button.IsDefault" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-            </Button>
+                    </Button>
+
+                </Grid>
+            </StackPanel>
         </Grid>
-        <TextBlock HorizontalAlignment="Center" x:Name="errorMessage" Foreground="Red" Background="White" VerticalAlignment="Bottom" />
-
-    </Grid>
     </ScrollViewer>
 </UserControl>
