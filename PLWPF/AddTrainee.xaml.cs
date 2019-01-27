@@ -64,16 +64,19 @@ namespace PLWPF
                     MainWindow.ErrorMessage(string.Format("you have a cells {0} is empty, fill all and try again", whoEmpty));
                     return;
                 }
-                trainee.Address = new Address(city.Text, int.Parse(building_number.Text), street_name.Text);
+                trainee.Address = new Address(street_name.Text, int.Parse(building_number.Text), city.Text);
                 bl.AddTrainee(trainee);
                 traineeAdded?.Invoke(sender, new EventArgs());
                 trainee = new Trainee();
                 DataContext = trainee;
                 city.Text = ""; building_number.Text = ""; street_name.Text = "";
+                errorMessage.Text = "Successfully added!";
+                errorMessage.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF3CBA54"));
             }
             catch(Exception ex)
             {
                 errorMessage.Text = ex.Message;
+                errorMessage.Foreground = Brushes.Red;
             }
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
