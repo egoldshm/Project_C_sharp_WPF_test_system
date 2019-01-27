@@ -70,7 +70,7 @@ namespace BL
         /// </summary>
         /// <param name="birthday">the Birthday of the humen. type: DateTime</param>
         /// <returns>age of the men (float) </returns>
-        private static float GetAgeByBirthday(DateTime birthday)
+        public static float GetAgeByBirthday(DateTime birthday)
         {
             int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
             int birthdayINT = int.Parse(birthday.ToString("yyyyMMdd"));

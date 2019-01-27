@@ -7,11 +7,7 @@
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Style>
-        <Style>
-            
-        </Style>
-    </UserControl.Style>
+
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,28 +19,24 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <xctk:SplitButton Click="ButtonToDisplay_Click" IsEnabled="False" x:Name="buttonToDisplay" Margin="15" Content="Select type to display" Background="White" FontFamily="{DynamicResource BottonFont}" FontSize="20">
-                <xctk:SplitButton.DropDownContent>
-                    <xctk:CheckListBox x:Name="items" ItemSelectionChanged="Items_ItemSelectionChanged"/>
-                </xctk:SplitButton.DropDownContent>
-            </xctk:SplitButton>
-            <ComboBox x:Name="type" Grid.Column="1" Margin="15">
+            <!--<ComboBox IsEnabled="False" x:Name="buttonToDisplay" Text="Select type" Margin="15" Background="White" FontFamily="{DynamicResource BottonFont}" FontSize="20"/>-->
+            <xctk:CheckComboBox IsEnabled="False" x:Name="items" Margin="15" ItemSelectionChanged="Items_ItemSelectionChanged"/>
+            <ComboBox x:Name="type" Grid.Column="1" Margin="15" Text="Select type">
                 <ComboBoxItem Content="Trainees" Selected="trainee_Selected" HorizontalContentAlignment="Center" FontFamily="Segoe UI Emoji" FontSize="20"/>
                 <ComboBoxItem Content="Testers" Selected="tester_Selected" HorizontalContentAlignment="Center" FontFamily="Segoe UI Emoji" FontSize="20"/>
             </ComboBox>
         </Grid>
-        <Grid Grid.Row="1" x:Name="TraineeData">
+        <Grid Grid.Row="1" Visibility="Hidden" x:Name="TraineeData">
             <!-- Trainees:-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -54,16 +46,117 @@
             <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.RowSpan="4"/>
             <Label Style="{DynamicResource info}" Content="Tests:" Grid.Column="1"/>
             <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="1" Grid.RowSpan="4"/>
-            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="2" Grid.RowSpan="4"/>
-            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="3" Grid.RowSpan="4"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4"/>
 
-            <Label Style="{DynamicResource info}" Content="Personal Info:" Grid.Column="2"/>
+            <Label Style="{DynamicResource info}" Content="Personal Info:" Grid.Column="2" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"/>
+            <StackPanel Grid.Column="3" Grid.Row="1">
+                <Label Content="Ages:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="AverageAge" ContentStringFormat="Average age: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="maxAge" ContentStringFormat="Max age: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="MinAge" ContentStringFormat="Min age: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="3" Grid.Row="2">
+                <Label Content="Lessons:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="AverageLesson" ContentStringFormat="Average num of Lessons: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="maxLesson" ContentStringFormat="Max num of Lessons: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="MinLesson" ContentStringFormat="Min num of Lessons: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="totalLessons" ContentStringFormat="Lesson at total Lessons: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="4" Grid.Row="1" Grid.RowSpan="2">
+                <Label Content="Summary:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="TotalTrainees" ContentStringFormat="Total Trainees: {0}" Content="1" Foreground="{DynamicResource GoogleYe}"/>
+                <Label x:Name="MaleNumber" ContentStringFormat="number of male: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="femaleNumber" ContentStringFormat="number of female: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="AutomaticCars" ContentStringFormat="number of Automatic Cars: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="ManualCars" ContentStringFormat="number of Manual Cars: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="Heavy_truckCars" ContentStringFormat="number of Heavy truck: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+                <Label x:Name="Medium_truckCars" ContentStringFormat="number of Medium truck: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+                <Label x:Name="Private_CarCars" ContentStringFormat="number of private cars: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+                <Label x:Name="Two_wheeled_vehiclesCars" ContentStringFormat="number of Two_wheeled_vehicles Cars: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <Label Content="Info about tests:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="totalTests" ContentStringFormat="total tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="totalGoodTests" ContentStringFormat="total Successful tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="totalBadTests" ContentStringFormat="total failed tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="totalDidntDone" ContentStringFormat="total tests future: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+            </StackPanel>
+
         </Grid>
         <!-- Testers:-->
         <Grid Grid.Row="1" Visibility="Hidden" x:Name="TesterData">
-            
-            
-            
+            <!-- Trainees:-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Style="{DynamicResource info}" Content="Selected trainees:"/>
+            <StackPanel x:Name="testerInfo" Grid.Row="1" Grid.RowSpan="3">
+            </StackPanel>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.RowSpan="4"/>
+            <Label Style="{DynamicResource info}" Content="Tests:" Grid.Column="1"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="1" Grid.RowSpan="4"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4"/>
+
+            <Label Style="{DynamicResource info}" Content="Personal Info:" Grid.Column="2" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"/>
+            <StackPanel Grid.Column="3" Grid.Row="1">
+                <Label Content="Ages:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="AverageAgeTester" ContentStringFormat="Average age: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="maxAgeTester" ContentStringFormat="Max age: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="MinAgeTester" ContentStringFormat="Min age: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="2">
+                <Label Content="Years of experience:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="YearsOfExperienceAvg" ContentStringFormat="Average Years Of Experience: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}"/>
+                <Label x:Name="YearsOfExperienceMax" ContentStringFormat="Max Years Of Experience: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}"/>
+                <Label x:Name="YearsOfExperienceMin" ContentStringFormat="Min Years Of Experience: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="1">
+                <Label Content="max weekly tests:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="MaxDistanceAvg" ContentStringFormat="Average Max Distance: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="MaxDistanceMax" ContentStringFormat="Max Max Distance: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="MaxDistanceMin" ContentStringFormat="Min Max Distance: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3" Grid.Row="2">
+                <Label Content="max weekly tests:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="MaxWeeklyAvg" ContentStringFormat="Average weekly tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="MaxWeeklyMax" ContentStringFormat="Max weekly tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="MaxWeeklyMin" ContentStringFormat="Min weekly tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="4" Grid.Row="1" Grid.RowSpan="2">
+                <Label Content="Summary:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="TotalTests" ContentStringFormat="Total tests: {0}" Content="1" Foreground="{DynamicResource GoogleYe}"/>
+                <Label x:Name="MaleNumberTester" ContentStringFormat="number of male: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="femaleNumberTester" ContentStringFormat="number of female: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
+                <Label x:Name="Heavy_truckCarsTester" ContentStringFormat="number of Heavy truck: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+                <Label x:Name="Medium_truckCarsTester" ContentStringFormat="number of Medium truck: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+                <Label x:Name="Private_CarCarsTester" ContentStringFormat="number of private cars: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+                <Label x:Name="Two_wheeled_vehiclesCarsTester" ContentStringFormat="number of Two_wheeled_vehicles Cars: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <Label Content="Info about tests:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="totalTestsTester" ContentStringFormat="total tests: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="totalGoodTestsTester" ContentStringFormat="total Successful tests: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="totalBadTestsTester" ContentStringFormat="total failed tests: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+                <Label x:Name="totalDidntDoneTester" ContentStringFormat="total tests future: {0}" Content="1" Foreground="{DynamicResource GoogleBlue}"/>
+            </StackPanel>
+
+
+
         </Grid>
     </Grid>
 </UserControl>
