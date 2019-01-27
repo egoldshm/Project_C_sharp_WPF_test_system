@@ -14,6 +14,26 @@
       <Criterions>
         <Criterion>
           <Name>keeping distance</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>reverse parking</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>looking at The mirror</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>Indecating</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>Right of way</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>keeping distance</Name>
           <Mode>passed</Mode>
         </Criterion>
         <Criterion>
@@ -36,5 +56,41 @@
     </Criterions>
     <Pass>true</Pass>
     <TesterNote>gdfhgf</TesterNote>
+  </Test>
+  <Test>
+    <TesterId>123456782</TesterId>
+    <TraineeId>322521303</TraineeId>
+    <DateOfTest>2019-02-03T09:00:00</DateOfTest>
+    <RealDateOfTest>0001-01-01T00:00:00</RealDateOfTest>
+    <AddressOfBegining>
+      <street_name>ירושלים</street_name>
+      <building_number>21</building_number>
+      <city>הועד הלאומי</city>
+    </AddressOfBegining>
+    <Criterions>
+      <Criterions>
+        <Criterion>
+          <Name>keeping distance</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>reverse parking</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>looking at The mirror</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>Indecating</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+        <Criterion>
+          <Name>Right of way</Name>
+          <Mode>NotDetermined</Mode>
+        </Criterion>
+      </Criterions>
+    </Criterions>
+    <Pass>false</Pass>
   </Test>
 </ArrayOfTest>

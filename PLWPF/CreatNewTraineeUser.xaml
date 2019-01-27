@@ -40,18 +40,39 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Label Content="Enter your id:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" MaxLength="9" x:Name="inputId" PreviewTextInput="NumberValidationTextBox" Grid.Row="0" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
+                    <ComboBox Grid.Column="1" x:Name="inputId" Grid.Row="0" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
                     <Label Grid.Row="1" Content="Enter your username:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="inputUsername" Margin="10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
                     <Label Grid.Row="2" Content="Enter your new password:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
-                    <local:myPasswordBox Grid.Row="3" Grid.Column="1" x:Name="inputPassword"/>
-                    <Label Grid.Row="2" Content="Enter your new email address:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
-                    <local:myPasswordBox Grid.Row="3" Grid.Column="1" x:Name="mail"/>
+                    <local:myPasswordBox Grid.Row="2" Grid.Column="1" x:Name="inputPassword"/>
+                    <Label Grid.Row="3" Content="Enter your new email address:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="25" Grid.Column="0"/>
+                    <TextBox Margin="5" TextChanged="mail_TextChanged" Grid.Row="3" Grid.Column="1" x:Name="mail"/>
+                    <Label Grid.Row="4" HorizontalContentAlignment="Center" FontSize="15" Foreground="Red" Grid.ColumnSpan="2" x:Name="messageError"/>
 
                 </Grid>
-                <Button Grid.Row="2" Content="Create user" FontSize="50" Margin="5" Background="White" Click="Button_Click_1"/>
+                <Button x:Name="createUser" Grid.Row="2" Content="Create user" FontSize="50" Margin="5" Background="White" Click="Button_Click_1">
+                    <Button.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=inputId, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=inputUsername, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=inputPassword, Path=password}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=mail, Path=Test}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
         </Grid>
     </Grid>

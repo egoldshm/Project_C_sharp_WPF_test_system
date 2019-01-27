@@ -1,24 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfTrainee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Trainee>
-    <Id>322521303</Id>
-    <FirstName>eitan</FirstName>
-    <FamilyName>goldshmidt</FamilyName>
-    <Gender>Male</Gender>
-    <PhoneNumber>584007354</PhoneNumber>
-    <Address>
-      <street_name>mevo horon</street_name>
-      <building_number>4</building_number>
-      <city>a</city>
-    </Address>
-    <Birthday>2000-11-26T00:00:00</Birthday>
-    <TypeCarLearned>Private_Car</TypeCarLearned>
-    <TransmissionLearned>Manual</TransmissionLearned>
-    <SchoolName>a</SchoolName>
-    <TeacherName>a</TeacherName>
-    <LessonsNumber>26</LessonsNumber>
-  </Trainee>
-  <Trainee>
     <Id>123456782</Id>
     <FirstName>lgkfj;lk</FirstName>
     <FamilyName>dklsj</FamilyName>
@@ -53,5 +35,23 @@
     <SchoolName>Driving Safely</SchoolName>
     <TeacherName>Eyal Coren</TeacherName>
     <LessonsNumber>13</LessonsNumber>
+  </Trainee>
+  <Trainee>
+    <Id>322521303</Id>
+    <FirstName>eitan</FirstName>
+    <FamilyName>goldshmidt</FamilyName>
+    <Gender>Male</Gender>
+    <PhoneNumber>584007354</PhoneNumber>
+    <Address>
+      <street_name>mevo horon</street_name>
+      <building_number>4</building_number>
+      <city>a</city>
+    </Address>
+    <Birthday>2000-11-26T00:00:00</Birthday>
+    <TypeCarLearned>Private_Car</TypeCarLearned>
+    <TransmissionLearned>Manual</TransmissionLearned>
+    <SchoolName>a</SchoolName>
+    <TeacherName>a</TeacherName>
+    <LessonsNumber>27</LessonsNumber>
   </Trainee>
 </ArrayOfTrainee>

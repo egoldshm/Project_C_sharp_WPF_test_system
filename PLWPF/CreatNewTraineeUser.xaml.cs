@@ -26,40 +26,42 @@ namespace PLWPF
         public CreatNewTraineeUser()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             buttons.Visibility = Visibility.Collapsed;
             create1.Visibility = Visibility.Visible;
+            inputId.ItemsSource = bl.GetAllTrainees().Select(trainee => trainee.Id);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string id = inputId.Text;
+            string id = inputId.SelectionBoxItem.ToString();
             string username = inputUsername.Text;
             string password = inputPassword.Password;
-            if (id == "" || username == "" || password == "")
+            if (id == string.Empty || username == string.Empty || password == string.Empty || mail.Text == string.Empty)
             {
-                MainWindow.ErrorMessage("input box one or more empty");
+                messageError.Content = "input box one or more empty";
                 return;
             }
             Trainee trainee = bl.GetTraineeById(int.Parse(id));
             if(trainee == null)
             {
-                MainWindow.ErrorMessage(string.Format("Trainee with id {0} not found.", id));
+                messageError.Content = $"Trainee with id {id} not found.";
                 clearTestsBox();
             }
             else
             {
-                if (!bl.CreateUser(username, password, User.RoleTypes.Trainee, trainee, mail.Test))
+                if (!bl.CreateUser(username, password, User.RoleTypes.Trainee, trainee, mail.Text))
                 {
-                    MainWindow.ErrorMessage(string.Format("Trainee with username {0} already exist.", username));
+                    messageError.Content = $"Trainee with username {username} already exist.";
                     clearTestsBox();
                 }
                 else
                 {
-                    MainWindow.ErrorMessage("user created");
+                    MessageBox.Show("user created");
                     this.Close();
                 }
             }
@@ -103,5 +105,12 @@ namespace PLWPF
             MainWindow.ErrorMessage("the trainee created. you can register now as user");
         }
 
+        private void mail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (IsValidEmailAddress(mail.Text))
+                createUser.IsEnabled = true;
+            else
+                createUser.IsEnabled = false;
+        }
     }
 }
