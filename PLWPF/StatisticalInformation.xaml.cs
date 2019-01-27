@@ -45,15 +45,34 @@ namespace PLWPF
             buttonToDisplay.Content = "show information or change your selection";
             
         }
-
+        
         private void ButtonToDisplay_Click(object sender, RoutedEventArgs e)
         {
             if(type.SelectedIndex == 0)//trainees
             {
                 TraineeData.Visibility = Visibility.Visible;
                 TesterData.Visibility = Visibility.Hidden;
+                traineeInfo.Children.Clear();
                 List<Trainee> list = new List<Trainee>(items.SelectedItems.Cast<Trainee>());
-
+                //Add data about the trainees:
+                list.ForEach(trainee =>
+                {
+                    Expander expander = new Expander();
+                    expander.Header = trainee;
+                    StackPanel stackPanel = new StackPanel();
+                    addLabelToStackPanel(stackPanel, $"Name: {trainee.FirstName} {trainee.FamilyName}");
+                    addLabelToStackPanel(stackPanel, $"Birthday: {trainee.Birthday}");
+                    addLabelToStackPanel(stackPanel, $"Gander: {trainee.Gender}");
+                    addLabelToStackPanel(stackPanel, $"Transmission Learned: {trainee.TransmissionLearned}");
+                    addLabelToStackPanel(stackPanel, $"Type Car Learned: {trainee.TypeCarLearned}");
+                    addLabelToStackPanel(stackPanel, $"Lesson number: {trainee.LessonsNumber}");
+                    addLabelToStackPanel(stackPanel, $"school name: {trainee.SchoolName}");
+                    addLabelToStackPanel(stackPanel, $"Teacher name: {trainee.TeacherName}");
+                    addLabelToStackPanel(stackPanel, $"phone number: {trainee.PhoneNumber}");
+                    addLabelToStackPanel(stackPanel, $"Address: {trainee.Address}");
+                    expander.Content = stackPanel;
+                    traineeInfo.Children.Add(expander);
+                });
             }
             else if (type.SelectedIndex == 1)//testers
             {
@@ -63,6 +82,14 @@ namespace PLWPF
 
 
             }
+        }
+
+        private static void addLabelToStackPanel(StackPanel stackPanel, string str)
+        {
+            Label label = new Label();
+            label.Content = str;
+            stackPanel.Children.Add(label);
+
         }
     }
 }

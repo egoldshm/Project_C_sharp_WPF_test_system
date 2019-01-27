@@ -7,7 +7,11 @@
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
+    <UserControl.Style>
+        <Style>
+            
+        </Style>
+    </UserControl.Style>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -30,8 +34,9 @@
             </ComboBox>
         </Grid>
         <Grid Grid.Row="1" x:Name="TraineeData">
+            <!-- Trainees:-->
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -43,9 +48,22 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Label Style="{DynamicResource info}" Content="Selectet trainees:"/>
+            <StackPanel x:Name="traineeInfo" Grid.Row="1" Grid.RowSpan="3">
+            </StackPanel>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.RowSpan="4"/>
+            <Label Style="{DynamicResource info}" Content="Tests:" Grid.Column="1"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="1" Grid.RowSpan="4"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="2" Grid.RowSpan="4"/>
+            <Rectangle Fill="#FFF4F4F5" Stroke="Black" HorizontalAlignment="Right" Grid.Column="3" Grid.RowSpan="4"/>
 
+            <Label Style="{DynamicResource info}" Content="Personal Info:" Grid.Column="2"/>
         </Grid>
+        <!-- Testers:-->
         <Grid Grid.Row="1" Visibility="Hidden" x:Name="TesterData">
+            
+            
+            
         </Grid>
     </Grid>
 </UserControl>
