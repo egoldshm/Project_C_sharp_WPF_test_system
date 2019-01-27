@@ -14,7 +14,7 @@
         public const int DefaultGameStepMilliSeconds = 250;
         public const int DecreaseGameStepMilliSeconds = 1;
         public const int RestartStepMilliSeconds = 1000;
-        public const int RestartCountdownStartSeconds = 120;
+        public const int RestartCountdownStartSeconds = 15;
         public const double DirectionUpDegrees = 0;
         public const double DirectionRightDegrees = 90;
         public const double DirectionDownDegrees = 180;

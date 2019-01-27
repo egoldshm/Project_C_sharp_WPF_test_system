@@ -1,24 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfTrainee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Trainee>
-    <Id>324218544</Id>
-    <FirstName>Ariel</FirstName>
-    <FamilyName>Darshan</FamilyName>
-    <Gender>Male</Gender>
-    <PhoneNumber>543488241</PhoneNumber>
-    <Address>
-      <street_name>HaHavatzelet</street_name>
-      <building_number>16</building_number>
-      <city>Bet Shemesh</city>
-    </Address>
-    <Birthday>2001-08-03T00:00:00</Birthday>
-    <TypeCarLearned>Private_Car</TypeCarLearned>
-    <TransmissionLearned>Manual</TransmissionLearned>
-    <SchoolName>Driving Safely</SchoolName>
-    <TeacherName>Eyal Coren</TeacherName>
-    <LessonsNumber>12</LessonsNumber>
-  </Trainee>
-  <Trainee>
     <Id>322521303</Id>
     <FirstName>eitan</FirstName>
     <FamilyName>goldshmidt</FamilyName>
@@ -52,6 +34,24 @@
     <TransmissionLearned>Manual</TransmissionLearned>
     <SchoolName>jljglkj</SchoolName>
     <TeacherName>jkhgkjlha</TeacherName>
-    <LessonsNumber>7</LessonsNumber>
+    <LessonsNumber>14</LessonsNumber>
+  </Trainee>
+  <Trainee>
+    <Id>324218544</Id>
+    <FirstName>Ariel</FirstName>
+    <FamilyName>Darshan</FamilyName>
+    <Gender>Male</Gender>
+    <PhoneNumber>543488241</PhoneNumber>
+    <Address>
+      <street_name>HaHavatzelet</street_name>
+      <building_number>16</building_number>
+      <city>Bet Shemesh</city>
+    </Address>
+    <Birthday>2001-08-03T00:00:00</Birthday>
+    <TypeCarLearned>Private_Car</TypeCarLearned>
+    <TransmissionLearned>Manual</TransmissionLearned>
+    <SchoolName>Driving Safely</SchoolName>
+    <TeacherName>Eyal Coren</TeacherName>
+    <LessonsNumber>13</LessonsNumber>
   </Trainee>
 </ArrayOfTrainee>

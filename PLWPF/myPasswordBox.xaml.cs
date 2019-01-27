@@ -36,12 +36,28 @@ namespace PLWPF
         /// <summary>
         /// return the password.
         /// </summary>
-        public string Password { get => inputPassword.Password; set => inputPassword.Password = inputPassword_Text.Text= value; }
+        public string Password
+        {
+            get => inputPassword.Password; set
+            {
+                {
+                    inputPassword.Password = value; inputPassword_Text.Text = value;
+                }
+            }
+        }
 
         /// <summary>
         /// return the password.
         /// </summary>
-        public string Test { get => inputPassword.Password; set => inputPassword.Password = inputPassword_Text.Text = value; }
+        public string Test
+        {
+            get => inputPassword.Password;
+            set
+            {
+                inputPassword.Password = value;
+                inputPassword_Text.Text = value;
+            }
+        }
 
         /// <summary>
         /// constractor.
@@ -82,5 +98,15 @@ namespace PLWPF
             inputPassword.Password = inputPassword_Text.Text = New_Password;
         }
 
+        private void inputPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            inputPassword_Text.Text = inputPassword.Password;
+        }
+
+        private void inputPassword_Text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            inputPassword.Password = inputPassword_Text.Text;
+
+        }
     }
 }
