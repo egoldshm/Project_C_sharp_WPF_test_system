@@ -7,7 +7,7 @@
                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
- 
+
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <xctk:SplitButton Click="ButtonToDisplay_Click" x:Name="buttonToDisplay" Margin="15" Content="Select type to display" Background="White" FontFamily="{DynamicResource BottonFont}" FontSize="20">
+            <xctk:SplitButton Click="ButtonToDisplay_Click" IsEnabled="False" x:Name="buttonToDisplay" Margin="15" Content="Select type to display" Background="White" FontFamily="{DynamicResource BottonFont}" FontSize="20">
                 <xctk:SplitButton.DropDownContent>
                     <xctk:CheckListBox x:Name="items" ItemSelectionChanged="Items_ItemSelectionChanged"/>
                 </xctk:SplitButton.DropDownContent>
@@ -29,8 +29,21 @@
                 <ComboBoxItem Content="Testers" Selected="tester_Selected" HorizontalContentAlignment="Center" FontFamily="Segoe UI Emoji" FontSize="20"/>
             </ComboBox>
         </Grid>
-        <Grid Grid.Row="1" Visibility="Hidden" x:Name="TraineeData">
-            
+        <Grid Grid.Row="1" x:Name="TraineeData">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
         </Grid>
         <Grid Grid.Row="1" Visibility="Hidden" x:Name="TesterData">
         </Grid>

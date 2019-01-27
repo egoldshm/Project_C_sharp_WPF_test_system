@@ -171,7 +171,7 @@
                         <!-- statistical -->
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <Image Height="25" Width="25" Source=".\photos\.png" />
+                                <Image Height="25" Width="25" Source=".\photos\math.png" />
                                 <Label Content="Statistical Information" Margin="2,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource GoogleBlue}" FontFamily="Copperplate Gothic Bold" />
                             </StackPanel>
                         </TabItem.Header>

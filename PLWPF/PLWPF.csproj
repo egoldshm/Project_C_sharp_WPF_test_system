@@ -348,5 +348,8 @@
     <Resource Include="photos\update.png" />
     <Resource Include="photos\view.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="photos\math.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

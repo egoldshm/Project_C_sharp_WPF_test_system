@@ -29,11 +29,13 @@ namespace PLWPF
 
         private void trainee_Selected(object sender, RoutedEventArgs e)
         {
+            buttonToDisplay.IsEnabled = true;
             items.ItemsSource = factoryBL.FactoryBL.GetBL().GetAllTrainees();
             buttonToDisplay.Content = "Select trainees to display";
         }
         private void tester_Selected(object sender, RoutedEventArgs e)
         {
+            buttonToDisplay.IsEnabled = true;
             items.ItemsSource = factoryBL.FactoryBL.GetBL().GetAllTesters();
             buttonToDisplay.Content = "Select testers to display";
         }
@@ -51,6 +53,7 @@ namespace PLWPF
                 TraineeData.Visibility = Visibility.Visible;
                 TesterData.Visibility = Visibility.Hidden;
                 List<Trainee> list = new List<Trainee>(items.SelectedItems.Cast<Trainee>());
+
             }
             else if (type.SelectedIndex == 1)//testers
             {
