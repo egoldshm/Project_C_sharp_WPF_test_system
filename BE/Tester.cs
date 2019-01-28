@@ -23,7 +23,10 @@ namespace BE
         #endregion Private variables
 
         #region CTORs
-        public Tester() { _workDays = new bool[5, 6]; }
+        public Tester() {
+            _workDays = new bool[5, 6];
+            DateOfBirth = DateTime.Today.AddYears(-Configuration.MIN_TESTER_AGE);
+        }
         public Tester(int id)
         {
             _workDays = new bool[5, 6];

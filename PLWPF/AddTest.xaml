@@ -33,7 +33,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Date Of Test" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
-                <xctk:DateTimePicker x:Name="dateOfTestDatePicker"  Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1"/>
+                <xctk:DateTimePicker x:Name="dateOfTestDatePicker" Text="{Binding DateOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Tester Id" FontFamily="{DynamicResource FontLabel}" FontSize="{DynamicResource FontLabels}" Foreground="{DynamicResource GoogleGreen}"/>
                 <ComboBox Margin="10,15" x:Name="testerIdList" Grid.Column="1" Grid.Row="1" >
                     <ComboBox.Background>

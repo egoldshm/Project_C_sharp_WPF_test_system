@@ -24,6 +24,8 @@ namespace BE
         #region CTORs
         public Trainee()
         {
+            _birthday = DateTime.Now.AddYears(-(int)Configuration.MIN_STUDENT_AGE);
+
         }
         public Trainee(int id)
         {

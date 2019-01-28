@@ -83,7 +83,7 @@ namespace BE
 
         #region Properties
 
-        public int TestNumber { get => _TestNumber; }
+        public int TestNumber { get => _TestNumber; set => _TestNumber = value; }
         public int TesterId { get => _TesterId; set => _TesterId = value; }
         public int TraineeId { get => _TraineeId; set => _TraineeId = value; }
         public DateTime DateOfTest { get => _dateOfTest; set => _dateOfTest = value; }

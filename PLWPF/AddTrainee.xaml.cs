@@ -34,6 +34,8 @@ namespace PLWPF
             genderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
             this.transmissionLearnedComboBox.ItemsSource = Enum.GetValues(typeof(TransmissionType));
             this.typeCarLearnedComboBox.ItemsSource = Enum.GetValues(typeof(CarType));
+            birthdayDatePicker.DisplayDateStart = DateTime.Now.AddYears(-120);
+
         }
         /// <summary>
         /// event of create new trainee that happen when the button is click

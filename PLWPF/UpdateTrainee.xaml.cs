@@ -39,6 +39,7 @@ namespace PLWPF
             genderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
             this.transmissionLearnedComboBox.ItemsSource = Enum.GetValues(typeof(TransmissionType));
             this.typeCarLearnedComboBox.ItemsSource = Enum.GetValues(typeof(CarType));
+            birthdayDatePicker.DisplayDateStart = DateTime.Now.AddYears(-120);
             this.idTextBox.ItemsSource = bl.GetAllTrainees().Select(_trainee => _trainee.Id); ;
         }
         public void setTrainees(List<Trainee> trainees)

@@ -29,6 +29,7 @@ namespace PLWPF
         {
             InitializeComponent();
             initializeData();
+            dateOfTestDatePicker.Minimum = DateTime.Now;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)

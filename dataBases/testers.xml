@@ -36,4 +36,22 @@
     <workDaysTostring>111101111101111101111101110101</workDaysTostring>
     <MaxDistance>50</MaxDistance>
   </Tester>
+  <Tester>
+    <Id>327095154</Id>
+    <LastName>ואל</LastName>
+    <FirstName>דורון</FirstName>
+    <DateOfBirth>1960-01-01T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>583541234</PhoneNumber>
+    <Address>
+      <street_name>יפה נוף</street_name>
+      <building_number>42</building_number>
+      <city>כפר האורנים</city>
+    </Address>
+    <YearsOfExperience>12</YearsOfExperience>
+    <MaxWeeklyTests>20</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>100000100001111111111111111111</workDaysTostring>
+    <MaxDistance>15</MaxDistance>
+  </Tester>
 </ArrayOfTester>
