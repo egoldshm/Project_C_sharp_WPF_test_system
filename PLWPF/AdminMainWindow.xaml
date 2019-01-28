@@ -51,13 +51,15 @@
                         </TabItem.Header>
                         
                         <Grid>
-                            <Label Content="Welcome to the AMAZINING d.m.v system ever!!!" FontFamily="Cooper Black" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50" FontSize="28" Foreground="#FF4977D8"/>
+
+
+                            <Image Source=".\photos\LOGO.jpg" Stretch="Fill"/>
+                            
+                            <Label Content="Welcome to the AMAZINING system ever!!!" FontFamily="Yu Gothic" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50" FontSize="35" Foreground="{DynamicResource GoogleRed}" FontWeight="Bold"/>
                             <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,50" FontSize="18">
                                 <TextBlock FontSize="24" Foreground="#FF74CF5F" FontFamily="Cooper Black">This project was developed by Eitan Goldschmidt and Ariel Darshan <LineBreak></LineBreak>
                                 during the course Mini Project in .NET and wpf with Mr. David Kidron</TextBlock>
                             </Label>
-
-                            <Image Source=".\photos\LogoMOT-HE.png"/>
                         </Grid>
                     </TabItem>
                     <TabItem x:Name="Add" GotFocus="Add_GotFocus">

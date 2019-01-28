@@ -164,7 +164,8 @@ namespace PLWPF
             {
                 viewTestersUsercontrol.initializeData();
                 viewTraineeUserconrol.initializeData();
-                ViewTest.AllExistTests = bl.GetAllTests();
+                //ViewTest.AllExistTests = bl.GetAllTests();
+                ViewTest.InitializeData();
             }
             OldTab = "View";
         }

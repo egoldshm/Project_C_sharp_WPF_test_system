@@ -26,6 +26,11 @@ namespace PLWPF
         public ViewTests()
         {
             InitializeComponent();
+            InitializeData();
+        }
+
+        public void InitializeData()
+        {
             allExistTests = bl.GetAllTests();
             setTraineeExist = bl.GetAllTrainees();
             setTestersExist = bl.GetAllTesters();

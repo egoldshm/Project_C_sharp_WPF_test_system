@@ -76,14 +76,17 @@ namespace PLWPF
             {
                 inputPassword.Visibility = Visibility.Hidden;
                 inputPassword_Text.Visibility = Visibility.Visible;
-                password_hidder.Content = "hide\npassword";
+                password_hidder.Content = "***";
+                password_hidder.FontSize = 12;
                 inputPassword_Text.Text = inputPassword.Password;
             }
             else
             {
                 inputPassword.Visibility = Visibility.Visible;
                 inputPassword_Text.Visibility = Visibility.Hidden;
-                password_hidder.Content = "show\npassword";
+                var image = new Image();
+                image.Source = new BitmapImage(new Uri("photos/view.png", UriKind.Relative));
+                password_hidder.Content = image; 
                 inputPassword.Password = inputPassword_Text.Text;
             }
             hidePassword = !hidePassword;

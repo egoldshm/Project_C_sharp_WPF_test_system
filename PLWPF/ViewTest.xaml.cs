@@ -24,8 +24,10 @@ namespace PLWPF
         public ViewTest()
         {
             InitializeComponent();
+
         }
 
+      
         public Test Test {
             get => test;
             set
@@ -56,6 +58,7 @@ namespace PLWPF
         }
         private void resert()
         {
+            gridCriterions.Children.Clear();
             /*foreach (var item in gridCriterions.Children)
             {
                 gridCriterions.Children.Remove((UIElement)item);

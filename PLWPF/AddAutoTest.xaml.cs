@@ -33,7 +33,7 @@ namespace PLWPF
         public AddAutoTest()
         {
             InitializeComponent();
-            dateOfTestDatePicker.Minimum = DateTime.Now;
+            dateOfTestDatePicker.DefaultValue = DateTime.Today.AddDays(1);
             GetDistanceThread = new BackgroundWorker();
             GetDistanceThread.DoWork += GetDistanceThread_DoWork;
             GetDistanceThread.RunWorkerCompleted += GetDistanceThread_RunWorkerCompleted;
