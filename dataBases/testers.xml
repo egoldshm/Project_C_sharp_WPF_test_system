@@ -54,4 +54,40 @@
     <workDaysTostring>100000100001111111111111111111</workDaysTostring>
     <MaxDistance>15</MaxDistance>
   </Tester>
+  <Tester>
+    <Id>335984639</Id>
+    <LastName>שמני</LastName>
+    <FirstName>דני</FirstName>
+    <DateOfBirth>1972-01-28T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>723100199</PhoneNumber>
+    <Address>
+      <street_name>אלבק חנוך</street_name>
+      <building_number>20</building_number>
+      <city>ירושלים</city>
+    </Address>
+    <YearsOfExperience>10</YearsOfExperience>
+    <MaxWeeklyTests>10</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>110111111111111111111111000000</workDaysTostring>
+    <MaxDistance>20</MaxDistance>
+  </Tester>
+  <Tester>
+    <Id>228559514</Id>
+    <LastName>שטרן</LastName>
+    <FirstName>פיני</FirstName>
+    <DateOfBirth>1980-01-28T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>723231446</PhoneNumber>
+    <Address>
+      <street_name>בן יהודה</street_name>
+      <building_number>1</building_number>
+      <city>כפר סבא</city>
+    </Address>
+    <YearsOfExperience>15</YearsOfExperience>
+    <MaxWeeklyTests>20</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>111111111111111011111111111101</workDaysTostring>
+    <MaxDistance>15</MaxDistance>
+  </Tester>
 </ArrayOfTester>
