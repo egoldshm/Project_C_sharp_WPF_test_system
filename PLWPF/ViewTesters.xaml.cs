@@ -40,6 +40,7 @@ namespace PLWPF
         {
             testers = new ObservableCollection<Tester>(bl.GetAllTesters());
             ToDisplay = testers;
+            list.DataContext = ToDisplay;
         }
 
         private void Search(object sender, RoutedEventArgs e)

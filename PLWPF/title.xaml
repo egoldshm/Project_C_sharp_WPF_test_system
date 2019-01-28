@@ -11,10 +11,10 @@
         <SolidColorBrush x:Key="GoogleY" Color="#FFFFA700"/>
     </UserControl.Resources>
     <Grid>
-        <Label x:Name="role" Content="" ContentStringFormat="You are login as {0}"  Margin="0,70,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" FontFamily="Kristen ITC" Foreground="{DynamicResource GoogleYe}"/>
-        <Label ContentStringFormat="Welcome {0}" x:Name="welcomeMessage" Content="a" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" FontFamily="Snap ITC" Foreground="{DynamicResource GoogleGreen}"/>
-        <Button Content="Log out" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" FontSize="25" Background="White" FontFamily="Snap ITC" Click="Button_Click" Foreground="#FFD62D20"/>
-        <Label Visibility="Hidden" x:Name="LicenseLable" Content="you have no License"  HorizontalAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#FFCF2929" FontSize="20"/>
-        <Button Content="change password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="15" Background="White" FontFamily="Snap ITC" Click="Button_Click_1" Foreground="{DynamicResource GoogleRed}"/>
+        <Label x:Name="role" Content="" ContentStringFormat="You are logged in as {0}"  Margin="0,70,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" FontFamily="STIXVariants" Foreground="{DynamicResource GoogleBlue}"/>
+        <Label ContentStringFormat="Welcome {0}" x:Name="welcomeMessage" Content="a" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="72" FontFamily="Vivaldi" Foreground="{DynamicResource GoogleGreen}"/>
+        <Button Content="Log out" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" FontSize="25" Background="White" FontFamily="Stencil" Click="Button_Click" Foreground="#FFD62D20"/>
+        <Label Visibility="Hidden" x:Name="LicenseLable" Content="you have no License"  HorizontalAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#FFCF2929" FontSize="10"/>
+        <Button Content="change password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="15" Background="White" FontFamily="Stencil" Click="Button_Click_1" Foreground="{DynamicResource GoogleRed}"/>
     </Grid>
 </UserControl>

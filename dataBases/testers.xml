@@ -90,4 +90,22 @@
     <workDaysTostring>111111111111111011111111111101</workDaysTostring>
     <MaxDistance>15</MaxDistance>
   </Tester>
+  <Tester>
+    <Id>238184188</Id>
+    <LastName>דני</LastName>
+    <FirstName>שמני</FirstName>
+    <DateOfBirth>1980-01-28T00:00:00</DateOfBirth>
+    <Gender>Male</Gender>
+    <PhoneNumber>724007354</PhoneNumber>
+    <Address>
+      <street_name>אלבק</street_name>
+      <building_number>20</building_number>
+      <city>ירושלים</city>
+    </Address>
+    <YearsOfExperience>10</YearsOfExperience>
+    <MaxWeeklyTests>50</MaxWeeklyTests>
+    <CarType>Private_Car</CarType>
+    <workDaysTostring>110000110000110000100000100000</workDaysTostring>
+    <MaxDistance>50</MaxDistance>
+  </Tester>
 </ArrayOfTester>

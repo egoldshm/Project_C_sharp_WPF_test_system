@@ -104,6 +104,10 @@ namespace PLWPF
                 totalGoodTests.Content = list.Sum(trainee => bl.GetTestsByTrainee(trainee).Where(test => bl.isTestFinished(test) && test.Pass).Count());
                 totalBadTests.Content = list.Sum(trainee => bl.GetTestsByTrainee(trainee).Where(test => bl.isTestFinished(test) && !test.Pass).Count());
                 totalDidntDone.Content = list.Sum(trainee => bl.GetTestsByTrainee(trainee).Where(test => !bl.isTestFinished(test)).Count());
+
+                mostCommonCity.Content = list.GroupBy(trainee => trainee.Address.city).OrderByDescending(gp => gp.Count()).Select(g => g.Key).FirstOrDefault();
+                mostCommonSchool.Content = list.GroupBy(trainee => trainee.SchoolName).OrderByDescending(gp => gp.Count()).Select(g => g.Key).FirstOrDefault();
+                mostCommonTeacher.Content = list.GroupBy(trainee => trainee.TeacherName).OrderByDescending(gp => gp.Count()).Select(g => g.Key).FirstOrDefault();
             }
             else if (type.SelectedIndex == 1)//testers
             {
@@ -168,8 +172,7 @@ namespace PLWPF
                 totalTestsTester.Content = list.Sum(tester => bl.GetTestsByTesters(tester).Count);
                 totalGoodTestsTester.Content = list.Sum(tester => bl.GetAllSuccessfullTestsByTester(tester).Count);
                 totalBadTestsTester.Content = list.Sum(tester => bl.GetAllSuccessfullTestsByTester(tester,false).Count);
-                totalDidntDoneTester.Content = list.Sum(tester => bl.GetTestsByTesters(tester).Where(test => !bl.isTestFinished(test)).Count()); ;
-
+                totalDidntDoneTester.Content = list.Sum(tester => bl.GetTestsByTesters(tester).Where(test => !bl.isTestFinished(test)).Count());
             }
         }
         /// <summary>

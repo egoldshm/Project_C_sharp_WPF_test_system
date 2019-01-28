@@ -88,6 +88,12 @@
                 <Label x:Name="totalBadTests" ContentStringFormat="total failed tests: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
                 <Label x:Name="totalDidntDone" ContentStringFormat="total tests future: {0}" Content="1" Foreground="{DynamicResource GoogleRed}"/>
             </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2">
+                <Label Content="General Info:" FontFamily="{DynamicResource FontLabel}" FontSize="18" Background="#FFF7E0C3"/>
+                <Label x:Name="mostCommonCity" ContentStringFormat="most common city: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}"/>
+                <Label x:Name="mostCommonTeacher" ContentStringFormat="most common teacher: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}"/>
+                <Label x:Name="mostCommonSchool" ContentStringFormat="most common school: {0}" Content="1" Foreground="{DynamicResource GoogleGreen}"/>
+            </StackPanel>
 
         </Grid>
         <!-- Testers:-->

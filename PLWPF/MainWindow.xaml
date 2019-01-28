@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d" Icon ="/photos/icon.jpg"
-        Title="log in window" MinHeight="500" MinWidth="800" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="log in window" MinHeight="500" MinWidth="800" Height="500" Width="800" MaxHeight="500" MaxWidth="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -18,9 +18,9 @@
                 <RowDefinition Height="1.5*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Welcome to our amazing driving system!" FontSize="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Snap ITC" Foreground="{DynamicResource GoogleGreen}"/>
+            <Label Grid.Row="0" Content="Welcome to our amazing driving system!" FontSize="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" Foreground="{DynamicResource GoogleGreen}"/>
             <Grid Grid.Row="1">
-                <TextBox Margin ="15" x:Name="UserName" Grid.Column="1" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Cooper Black" BorderBrush="#FFB3ABAE" CaretBrush="Black"/>
+                <TextBox Margin ="15" x:Name="UserName" Grid.Column="1" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Cooper Black" BorderBrush="#FFB3ABAE" CaretBrush="Black" Height="70" />
                 <Label Content="Username:" Grid.Column="0" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"  FontFamily="Cooper Black" Foreground="{DynamicResource GoogleBlue}"/>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
@@ -28,8 +28,8 @@
                 </Grid.ColumnDefinitions>
             </Grid>
             <Grid Grid.Row="2">
-                <local:myPasswordBox Margin="10,5" x:Name="password" Grid.Column="1" GenerateOpionIsShowed="False" FontFamily="Cooper Black"/>
-                <Label Content="password:" Grid.Column="0" FontSize="35" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Cooper Black" Foreground="{DynamicResource GoogleBlue}"/>
+                <local:myPasswordBox Margin="10,5" x:Name="password" Grid.Column="1" GenerateOpionIsShowed="False" FontFamily="Cooper Black" Height="70"/>
+                <Label Content="Password:" Grid.Column="0" FontSize="35" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Cooper Black" Foreground="{DynamicResource GoogleBlue}"/>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="5*"/>

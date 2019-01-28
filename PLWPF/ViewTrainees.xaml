@@ -130,7 +130,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn x:Name="addressColumn" Header="Address" Width="80">
+                        <GridViewColumn x:Name="addressColumn" Header="Address" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Label Content="{Binding Address}" />

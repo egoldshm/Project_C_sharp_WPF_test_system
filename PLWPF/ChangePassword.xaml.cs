@@ -53,7 +53,26 @@ namespace PLWPF
                 bool done = factoryBL.FactoryBL.GetBL().ChangePassword(user, OldPassword.Password, NewPassword.Password);
                 if(done)
                 {
-                    MainWindow.ErrorMessage("Password changed successfully.");
+                    MessageBox.Show("Password changed successfully.");
+                    string message = "";
+                    switch (user.role)
+                    {
+                        case User.RoleTypes.Trainee:
+                            message = " teacher";
+                            break;
+                        case User.RoleTypes.Teacher:
+                            message = " school administrator";
+                            break;
+                        case User.RoleTypes.Tester:
+                        case User.RoleTypes.School:
+                            message = " contact at the Driving system";
+                            break;
+                        case User.RoleTypes.Admin:
+                            message = "self";
+                            break;
+                    }
+                    MailSender.MailSender.sendMail(user.EmailAddress, user.Username, "Driving system - Password changed alert",
+                        "If it wasn't you who changed tyhe password, please contact your" + message);
                     this.Close();
                 }
                 else
