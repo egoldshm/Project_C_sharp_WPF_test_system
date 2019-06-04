@@ -1,4 +1,3 @@
-# mini-project-Eitan-Ariel-2
-mini project C# and wpf
+# Project_C_sharp_WPF_test_system
 
-notice please - I created new file - TODO list.txt. look.
+Mini project as part of the degree in computer science, advanced programming in C # and WPF. Building a test system for driving students. The project received a score of 100 in the course.
